@@ -1,0 +1,215 @@
+<!DOCTYPE html><html><head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+            position: relative;
+        }
+        .toc {
+            width: 250px;
+            background: #f5f5f5;
+            overflow-y: auto;
+            padding: 20px;
+            transition: transform 0.3s ease, margin-left 0.3s ease;
+        }
+        .toc.hidden {
+            transform: translateX(-100%);
+            margin-left: -340px;
+        }
+        .toc h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        .toc li {
+            margin: 5px 0;
+        }
+        .toc a {
+            display: block;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: #333;
+            background: white;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .toc a:hover {
+            background: #e0e0e0;
+        }
+        .toc a.active {
+            background: #4CAF50;
+            color: white;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: #333;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.3s;
+            font-weight: bold;
+        }
+        .section-header:hover {
+            background: #444;
+        }
+        .section-header .toggle-icon {
+            margin-left: auto;
+            transition: transform 0.3s;
+            font-size: 18px;
+        }
+        .section-header.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+        .subsection {
+            margin-left: 15px;
+            margin-top: 5px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+        }
+        .subsection.collapsed {
+            max-height: 0;
+            opacity: 0;
+        }
+        .subsection.expanded {
+            max-height: 500px;
+            opacity: 1;
+        }
+        .toggle-toc-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: background 0.3s, left 0.3s ease, transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .toggle-toc-btn:hover {
+            background: #45a049;
+            transform: scale(1.1);
+        }
+        .toggle-toc-btn:active {
+            transform: scale(0.95);
+        }
+        .toggle-toc-btn.toc-hidden {
+            left: 20px;
+        }
+        .toggle-toc-btn.toc-visible {
+            left: 270px;
+        }
+        .content {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        iframe {
+            width: 100%;
+            flex: 1;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <button class="toggle-toc-btn toc-visible" id="toggleBtn" onclick="toggleTOC()">◀</button>
+
+    <div class="toc" id="toc">
+        <h2>Mladý počítačový fyzik</h2>
+        <ul>
+            <li>
+                <div class="section-header" onclick="toggleSection('section1')">
+                    <span>Úvod</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <ul class="subsection expanded" id="section1">
+                    <li><a href="#" onclick="loadPage('pages/Zoznámte_sa_so_SageMath.html', event)">Zoznámte sa so SageMath</a></li>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <iframe id="contentFrame" src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"></iframe>
+    </div>
+</div>
+
+<script>
+    let tocVisible = true;
+
+    function toggleTOC() {
+        const toc = document.getElementById('toc');
+        const toggleBtn = document.getElementById('toggleBtn');
+
+        tocVisible = !tocVisible;
+
+        if (tocVisible) {
+            toc.classList.remove('hidden');
+            toggleBtn.classList.remove('toc-hidden');
+            toggleBtn.classList.add('toc-visible');
+            toggleBtn.innerHTML = '◀';
+        } else {
+            toc.classList.add('hidden');
+            toggleBtn.classList.remove('toc-visible');
+            toggleBtn.classList.add('toc-hidden');
+            toggleBtn.innerHTML = '▶';
+        }
+    }
+
+    function loadPage(url, event) {
+        event.preventDefault();
+
+        const iframe = document.getElementById('contentFrame');
+        iframe.src = url;
+
+        if (url.includes('youtube.com')) {
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+            iframe.setAttribute('allowfullscreen', '');
+        } else {
+            iframe.removeAttribute('allow');
+            iframe.removeAttribute('allowfullscreen');
+        }
+
+        document.querySelectorAll('.toc a').forEach(link => {
+            link.classList.remove('active');
+        });
+        event.target.classList.add('active');
+    }
+
+    function toggleSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        const header = section.previousElementSibling;
+
+        section.classList.toggle('collapsed');
+        section.classList.toggle('expanded');
+        header.classList.toggle('collapsed');
+    }
+
+    document.querySelector('.toc a').classList.add('active');
+</script>
+
+
+</body></html>

@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;polygon points='50,6 88,28 88,72 50,94 12,72 12,28' fill='%234CAF50'/&gt;&lt;text x='50' y='68' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='%23fff' text-anchor='middle'&gt;S&lt;/text&gt;&lt;/svg&gt;">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+<script src="https://dahn-research.eu/nbplayer/vendor/js/vendor/es5-shim.min.js"></script>
+<script src="https://dahn-research.eu/nbplayer/vendor/js/vendor/marked.min.js"></script>
+<script src="https://dahn-research.eu/nbplayer/vendor/js/vendor/purify.min.js"></script>
+<script src="https://dahn-research.eu/nbplayer/vendor/js/vendor/ansi_up.min.js"></script>
+<script src="https://dahn-research.eu/nbplayer/vendor/js/vendor/prism.min.js"></script>
+<script src="https://dahn-research.eu/nbplayer/vendor/js/vendor/katex.min.js"></script>
+<script src="https://dahn-research.eu/nbplayer/vendor/js/vendor/katex-auto-render.min.js"></script>
+<script src="https://dahn-research.eu/nbplayer/vendor/js/vendor/notebook.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://dahn-research.eu/nbplayer/vendor/css/vendor/katex.min.css">
+<link rel="stylesheet" href="https://dahn-research.eu/nbplayer/vendor/css/vendor/prism.css">
+<link rel="stylesheet" href="https://dahn-research.eu/nbplayer/vendor/css/notebook.css">
+<link rel="stylesheet" href="https://dahn-research.eu/nbplayer/vendor/css/nbpreview.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/css/nbplayer11.css">
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/texme@1.2.2"></script>
+<div id="main">
+            
+            
+            
+            <div id="notebook-holder"><div class="nb-notebook"><div class="nb-worksheet"><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584175" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Autori:&lt;/strong&gt; RNDr. Dominik Borovský&lt;sup&gt;1&lt;/sup&gt;, doc. RNDr. Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;, PhD.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, ÚFV PF, Univerzita Pavla Jozefa Šafárika v Košiciach&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt;&nbsp;&lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt;&nbsp;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&nbsp;&lt;/p&gt;" style="display: none;">&lt;p&gt;&lt;img style="float: right;" src="https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png" alt="" width="100" height="85" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Autori:&lt;/strong&gt; RNDr. Dominik Borovský&lt;sup&gt;1&lt;/sup&gt;, doc. RNDr. Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;, PhD.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, ÚFV PF, Univerzita Pavla Jozefa Šafárika v Košiciach&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href="mailto:dominik.borovsky@student.upjs.sk"&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt;&nbsp;&lt;sup&gt;2&lt;/sup&gt;&lt;a href="mailto:jozef.hanc@upjs.sk"&gt;jozef.hanc@upjs.sk&lt;/a&gt;&nbsp;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&nbsp;&lt;/p&gt;</textarea>
+        </div>
+        <div id="preview-1773326584175" class="markdown-preview" style="display: block;" data-original-markdown="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Autori:&lt;/strong&gt; RNDr. Dominik Borovský&lt;sup&gt;1&lt;/sup&gt;, doc. RNDr. Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;, PhD.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, ÚFV PF, Univerzita Pavla Jozefa Šafárika v Košiciach&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt;&nbsp;&lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt;&nbsp;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&nbsp;&lt;/p&gt;"><p><img style="float: right;" src="https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png" alt="" width="100" height="85"></p>
+<p><strong>Autori:</strong> RNDr. Dominik Borovský<sup>1</sup>, doc. RNDr. Jozef Hanč<sup>2</sup>, PhD.</p>
+<p><em>2026, ÚFV PF, Univerzita Pavla Jozefa Šafárika v Košiciach</em></p>
+<p><sup>1</sup><a href="mailto:dominik.borovsky@student.upjs.sk">dominik.borovsky@student.upjs.sk,</a>&nbsp;<sup>2</sup><a href="mailto:jozef.hanc@upjs.sk">jozef.hanc@upjs.sk</a>&nbsp;</p>
+<hr>
+<p>&nbsp;</p></div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584175" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="# Zoznámte sa so SageMath" style="display: none;"># Zoznámte sa so SageMath</textarea>
+        </div>
+        <div id="preview-1773326584175" class="markdown-preview" style="display: block;" data-original-markdown="# Zoznámte sa so SageMath"><h1 id="zoznámte-sa-so-sagemath">Zoznámte sa so SageMath</h1>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584175" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="V tomto minikurze, ktorý pozostáva zo série niekoľkých materiálov, získate zručnosti so softvérom, ktorý vám umožní efektívne riešiť fyzikálne alebo aj matematické úlohy a problémy s využitím počítača. V rámci neho sa naučíte používať matematický sofvér [***SageMath***](https://www.sagemath.org/) (alebo skrátene ***Sage***, anglicky to znamená *mudrc*).
+
+***Sage*** je voľne dostupný pythonovský open-source softvér, ktorý je tzv. *systémom počítačovej algebry* (CAS z ang. computer algebra system)." style="display: none;">V tomto minikurze, ktorý pozostáva zo série niekoľkých materiálov, získate zručnosti so softvérom, ktorý vám umožní efektívne riešiť fyzikálne alebo aj matematické úlohy a problémy s využitím počítača. V rámci neho sa naučíte používať matematický sofvér [***SageMath***](https://www.sagemath.org/) (alebo skrátene ***Sage***, anglicky to znamená *mudrc*).
+
+***Sage*** je voľne dostupný pythonovský open-source softvér, ktorý je tzv. *systémom počítačovej algebry* (CAS z ang. computer algebra system).</textarea>
+        </div>
+        <div id="preview-1773326584175" class="markdown-preview" style="display: block;" data-original-markdown="V tomto minikurze, ktorý pozostáva zo série niekoľkých materiálov, získate zručnosti so softvérom, ktorý vám umožní efektívne riešiť fyzikálne alebo aj matematické úlohy a problémy s využitím počítača. V rámci neho sa naučíte používať matematický sofvér [***SageMath***](https://www.sagemath.org/) (alebo skrátene ***Sage***, anglicky to znamená *mudrc*).
+
+***Sage*** je voľne dostupný pythonovský open-source softvér, ktorý je tzv. *systémom počítačovej algebry* (CAS z ang. computer algebra system)."><p>V tomto minikurze, ktorý pozostáva zo série niekoľkých materiálov, získate zručnosti so softvérom, ktorý vám umožní efektívne riešiť fyzikálne alebo aj matematické úlohy a problémy s využitím počítača. V rámci neho sa naučíte používať matematický sofvér <a href="https://www.sagemath.org/"><em><strong>SageMath</strong></em></a> (alebo skrátene <em><strong>Sage</strong></em>, anglicky to znamená <em>mudrc</em>).</p>
+<p><em><strong>Sage</strong></em> je voľne dostupný pythonovský open-source softvér, ktorý je tzv. <em>systémom počítačovej algebry</em> (CAS z ang. computer algebra system).</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584175" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;https://i.postimg.cc/rw6CX24C/logo-sagemath.png&quot; alt=&quot;logo-sagemath&quot; width=&quot;50%&quot; border=&quot;0&quot; /&gt;" style="display: none;">&lt;img style="display: block; margin-left: auto; margin-right: auto;" src="https://i.postimg.cc/rw6CX24C/logo-sagemath.png" alt="logo-sagemath" width="50%" border="0" /&gt;</textarea>
+        </div>
+        <div id="preview-1773326584175" class="markdown-preview" style="display: block;" data-original-markdown="&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;https://i.postimg.cc/rw6CX24C/logo-sagemath.png&quot; alt=&quot;logo-sagemath&quot; width=&quot;50%&quot; border=&quot;0&quot; /&gt;"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://i.postimg.cc/rw6CX24C/logo-sagemath.png" alt="logo-sagemath" width="50%" border="0"></div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584175" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Sage umožňuje:
+
+* ***manipuláciu s matematickými výrazmi,*** ako je napr. zadávanie komplikovaých funkcií alebo vyčíslenie konkrétnych funkčných hodnôt
+&gt; ***Príklad:*** *Zadanie závislosti výchylky $x$ od času $t$ pre tlmené kmity: $x(t) = A \, e^{-bt} \cos(\omega t)$, výpočet výchylky $x$ pre konkrétne číselné hodnoty $A, b, \omega$ v konkrétnom čase $t$.* 
+* ***riešenie a úprava rovníc***, ich sústav
+&gt; ***Príklad:*** *Riešenie sústavy rovníc s neznámymi $x,y,z$:*
+&gt; 
+&gt; $$\begin{aligned}
+2x + y - z = 3 \\
+- x + 3y + 2z = 7 \\
+4x - 2y + z = 1
+\end{aligned}$$
+
+* ***symbolické úpravy a výpočty*** (t.j. práca s premennými v podobe písmen) ako je napr. automatické zjednodušenie výrazov alebo všeobecné riešenie rovníc
+&gt; ***Príklad:*** *Nájdenie všeobecného vzťahu pre čas $t$, v ktorom dosiahne voľne vyhodené teleso konkrétnu výšku $h$ z pohybovej rovnice:
+&gt; $$h = h_0 + v_0 t - \frac{1}{2} g t^2$$*
+* ***pokročilú štatistickú analýzu*** (napríklad výsledkov meraní)
+* ***kvalitné vizualizácie*** v podobe rôzne kombinovaných *grafov*, zobrazenie dát, pekne nasádzaných, ľahko čitateľných výrazov a rovnice
+* ***automatizáciu*** všetkých vyššie zmienených krokov (napr. pomocou `if` a `for` cyklov)." style="display: none;">Sage umožňuje:
+
+* ***manipuláciu s matematickými výrazmi,*** ako je napr. zadávanie komplikovaých funkcií alebo vyčíslenie konkrétnych funkčných hodnôt
+&gt; ***Príklad:*** *Zadanie závislosti výchylky $x$ od času $t$ pre tlmené kmity: $x(t) = A \, e^{-bt} \cos(\omega t)$, výpočet výchylky $x$ pre konkrétne číselné hodnoty $A, b, \omega$ v konkrétnom čase $t$.* 
+* ***riešenie a úprava rovníc***, ich sústav
+&gt; ***Príklad:*** *Riešenie sústavy rovníc s neznámymi $x,y,z$:*
+&gt; 
+&gt; $$\begin{aligned}
+2x + y - z = 3 \\
+- x + 3y + 2z = 7 \\
+4x - 2y + z = 1
+\end{aligned}$$
+
+* ***symbolické úpravy a výpočty*** (t.j. práca s premennými v podobe písmen) ako je napr. automatické zjednodušenie výrazov alebo všeobecné riešenie rovníc
+&gt; ***Príklad:*** *Nájdenie všeobecného vzťahu pre čas $t$, v ktorom dosiahne voľne vyhodené teleso konkrétnu výšku $h$ z pohybovej rovnice:
+&gt; $$h = h_0 + v_0 t - \frac{1}{2} g t^2$$*
+* ***pokročilú štatistickú analýzu*** (napríklad výsledkov meraní)
+* ***kvalitné vizualizácie*** v podobe rôzne kombinovaných *grafov*, zobrazenie dát, pekne nasádzaných, ľahko čitateľných výrazov a rovnice
+* ***automatizáciu*** všetkých vyššie zmienených krokov (napr. pomocou `if` a `for` cyklov).</textarea>
+        </div>
+        <div id="preview-1773326584175" class="markdown-preview" style="display: block;" data-original-markdown="Sage umožňuje:
+
+* ***manipuláciu s matematickými výrazmi,*** ako je napr. zadávanie komplikovaých funkcií alebo vyčíslenie konkrétnych funkčných hodnôt
+&gt; ***Príklad:*** *Zadanie závislosti výchylky $x$ od času $t$ pre tlmené kmity: $x(t) = A \, e^{-bt} \cos(\omega t)$, výpočet výchylky $x$ pre konkrétne číselné hodnoty $A, b, \omega$ v konkrétnom čase $t$.* 
+* ***riešenie a úprava rovníc***, ich sústav
+&gt; ***Príklad:*** *Riešenie sústavy rovníc s neznámymi $x,y,z$:*
+&gt; 
+&gt; $$\begin{aligned}
+2x + y - z = 3 \\
+- x + 3y + 2z = 7 \\
+4x - 2y + z = 1
+\end{aligned}$$
+
+* ***symbolické úpravy a výpočty*** (t.j. práca s premennými v podobe písmen) ako je napr. automatické zjednodušenie výrazov alebo všeobecné riešenie rovníc
+&gt; ***Príklad:*** *Nájdenie všeobecného vzťahu pre čas $t$, v ktorom dosiahne voľne vyhodené teleso konkrétnu výšku $h$ z pohybovej rovnice:
+&gt; $$h = h_0 + v_0 t - \frac{1}{2} g t^2$$*
+* ***pokročilú štatistickú analýzu*** (napríklad výsledkov meraní)
+* ***kvalitné vizualizácie*** v podobe rôzne kombinovaných *grafov*, zobrazenie dát, pekne nasádzaných, ľahko čitateľných výrazov a rovnice
+* ***automatizáciu*** všetkých vyššie zmienených krokov (napr. pomocou `if` a `for` cyklov)."><p>Sage umožňuje:</p>
+<ul>
+<li><p><em><strong>manipuláciu s matematickými výrazmi,</strong></em> ako je napr. zadávanie komplikovaých funkcií alebo vyčíslenie konkrétnych funkčných hodnôt</p>
+<blockquote>
+<p><em><strong>Príklad:</strong></em> <em>Zadanie závislosti výchylky $x$ od času $t$ pre tlmené kmity: $x(t) = A \, e^{-bt} \cos(\omega t)$, výpočet výchylky $x$ pre konkrétne číselné hodnoty $A, b, \omega$ v konkrétnom čase $t$.</em> </p>
+</blockquote>
+</li>
+<li><p><em><strong>riešenie a úprava rovníc</strong></em>, ich sústav</p>
+<blockquote>
+<p><em><strong>Príklad:</strong></em> <em>Riešenie sústavy rovníc s neznámymi $x,y,z$:</em></p>
+<p>$$\begin{aligned}
+2x + y - z = 3 \\
+- x + 3y + 2z = 7 \\
+4x - 2y + z = 1
+\end{aligned}$$</p>
+</blockquote>
+</li>
+<li><p><em><strong>symbolické úpravy a výpočty</strong></em> (t.j. práca s premennými v podobe písmen) ako je napr. automatické zjednodušenie výrazov alebo všeobecné riešenie rovníc</p>
+<blockquote>
+<p><em><strong>Príklad:</strong></em> <em>Nájdenie všeobecného vzťahu pre čas $t$, v ktorom dosiahne voľne vyhodené teleso konkrétnu výšku $h$ z pohybovej rovnice:
+$$h = h_0 + v_0 t - \frac{1}{2} g t^2$$</em></p>
+</blockquote>
+</li>
+<li><p><em><strong>pokročilú štatistickú analýzu</strong></em> (napríklad výsledkov meraní)</p>
+</li>
+<li><p><em><strong>kvalitné vizualizácie</strong></em> v podobe rôzne kombinovaných <em>grafov</em>, zobrazenie dát, pekne nasádzaných, ľahko čitateľných výrazov a rovnice</p>
+</li>
+<li><p><em><strong>automatizáciu</strong></em> všetkých vyššie zmienených krokov (napr. pomocou <code>if</code> a <code>for</code> cyklov).</p>
+</li>
+</ul>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584175" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; ***Pre pokročilých:*** Sage umožňuje aj prácu v rámci diferenciálneho a integrálneho počtu v podobe získania derivácií funkcií, integrálov (v analytickej podobe či približne vyčíslené pre konkrétne hranice integrálu) alebo priamo riešenie diferenciálnych rovníc." style="display: none;">&gt; ***Pre pokročilých:*** Sage umožňuje aj prácu v rámci diferenciálneho a integrálneho počtu v podobe získania derivácií funkcií, integrálov (v analytickej podobe či približne vyčíslené pre konkrétne hranice integrálu) alebo priamo riešenie diferenciálnych rovníc.</textarea>
+        </div>
+        <div id="preview-1773326584175" class="markdown-preview" style="display: block;" data-original-markdown="&gt; ***Pre pokročilých:*** Sage umožňuje aj prácu v rámci diferenciálneho a integrálneho počtu v podobe získania derivácií funkcií, integrálov (v analytickej podobe či približne vyčíslené pre konkrétne hranice integrálu) alebo priamo riešenie diferenciálnych rovníc."><blockquote>
+<p><em><strong>Pre pokročilých:</strong></em> Sage umožňuje aj prácu v rámci diferenciálneho a integrálneho počtu v podobe získania derivácií funkcií, integrálov (v analytickej podobe či približne vyčíslené pre konkrétne hranice integrálu) alebo priamo riešenie diferenciálnych rovníc.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584175" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Filozofiou Sagu je spájať dokopy množstvo balíkov z univerza otvoreného matematického softvéru. Lepidlom, ktoré spája všetky tieto dostupné prostriedky, je **Python**, ktorý je najpopulárnejším a najľahšie naučiteľným programovacím jazykom. Takže a
+
+Zo spomenutých softvérov, ktoré sú súčasťou Sagu môžeme zmieniť:
+
+* *Maxima:* jednoducho použiteľný CAS
+* *SciPy*: Scienfific Python - knižnica na vedecké výpočty v Pythone
+* *NumPy*: Numerical Python - knižnica na rýchle numerické výpočty
+* *Pandas*: pythonovská knižnica pre prácu s dátami (napr. z excel súborov)
+* *R*: veľmi rozšírený programovací jazyk medzi dátovými analytikmi a štatistikmi
+* a množstvo iných
+
+Sage je **švajčiarsky nožík** medzi otvorenými matematickým softvérami. Veľa vecí je ihneď k dispozícii bez toho, aby bolo potrebné ich individuálne sťahovať/inštalovať a nie je nutné ich používať oddelene." style="display: none;">Filozofiou Sagu je spájať dokopy množstvo balíkov z univerza otvoreného matematického softvéru. Lepidlom, ktoré spája všetky tieto dostupné prostriedky, je **Python**, ktorý je najpopulárnejším a najľahšie naučiteľným programovacím jazykom. Takže a
+
+Zo spomenutých softvérov, ktoré sú súčasťou Sagu môžeme zmieniť:
+
+* *Maxima:* jednoducho použiteľný CAS
+* *SciPy*: Scienfific Python - knižnica na vedecké výpočty v Pythone
+* *NumPy*: Numerical Python - knižnica na rýchle numerické výpočty
+* *Pandas*: pythonovská knižnica pre prácu s dátami (napr. z excel súborov)
+* *R*: veľmi rozšírený programovací jazyk medzi dátovými analytikmi a štatistikmi
+* a množstvo iných
+
+Sage je **švajčiarsky nožík** medzi otvorenými matematickým softvérami. Veľa vecí je ihneď k dispozícii bez toho, aby bolo potrebné ich individuálne sťahovať/inštalovať a nie je nutné ich používať oddelene.</textarea>
+        </div>
+        <div id="preview-1773326584175" class="markdown-preview" style="display: block;" data-original-markdown="Filozofiou Sagu je spájať dokopy množstvo balíkov z univerza otvoreného matematického softvéru. Lepidlom, ktoré spája všetky tieto dostupné prostriedky, je **Python**, ktorý je najpopulárnejším a najľahšie naučiteľným programovacím jazykom. Takže a
+
+Zo spomenutých softvérov, ktoré sú súčasťou Sagu môžeme zmieniť:
+
+* *Maxima:* jednoducho použiteľný CAS
+* *SciPy*: Scienfific Python - knižnica na vedecké výpočty v Pythone
+* *NumPy*: Numerical Python - knižnica na rýchle numerické výpočty
+* *Pandas*: pythonovská knižnica pre prácu s dátami (napr. z excel súborov)
+* *R*: veľmi rozšírený programovací jazyk medzi dátovými analytikmi a štatistikmi
+* a množstvo iných
+
+Sage je **švajčiarsky nožík** medzi otvorenými matematickým softvérami. Veľa vecí je ihneď k dispozícii bez toho, aby bolo potrebné ich individuálne sťahovať/inštalovať a nie je nutné ich používať oddelene."><p>Filozofiou Sagu je spájať dokopy množstvo balíkov z univerza otvoreného matematického softvéru. Lepidlom, ktoré spája všetky tieto dostupné prostriedky, je <strong>Python</strong>, ktorý je najpopulárnejším a najľahšie naučiteľným programovacím jazykom. Takže a</p>
+<p>Zo spomenutých softvérov, ktoré sú súčasťou Sagu môžeme zmieniť:</p>
+<ul>
+<li><em>Maxima:</em> jednoducho použiteľný CAS</li>
+<li><em>SciPy</em>: Scienfific Python - knižnica na vedecké výpočty v Pythone</li>
+<li><em>NumPy</em>: Numerical Python - knižnica na rýchle numerické výpočty</li>
+<li><em>Pandas</em>: pythonovská knižnica pre prácu s dátami (napr. z excel súborov)</li>
+<li><em>R</em>: veľmi rozšírený programovací jazyk medzi dátovými analytikmi a štatistikmi</li>
+<li>a množstvo iných</li>
+</ul>
+<p>Sage je <strong>švajčiarsky nožík</strong> medzi otvorenými matematickým softvérami. Veľa vecí je ihneď k dispozícii bez toho, aby bolo potrebné ich individuálne sťahovať/inštalovať a nie je nutné ich používať oddelene.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584175" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## Na čo sa to vlastne pozerám?" style="display: none;">## Na čo sa to vlastne pozerám?</textarea>
+        </div>
+        <div id="preview-1773326584175" class="markdown-preview" style="display: block;" data-original-markdown="## Na čo sa to vlastne pozerám?"><h2 id="na-čo-sa-to-vlastne-pozerám">Na čo sa to vlastne pozerám?</h2>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584175" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="To, na čo sa práve pozeráte, je jeden z materiálov vo formáte [**interaktívneho SageMath AI notebooku**](https://github.com/JupyterPER/SageMathAINotebooks). Jedná sa o projekt autorov tohto materiálu (D. Borovský, J. Hanč), ktorého cieľom je jednoducho a pohodlne sprístupniť SageMath v podobnom formáte ako sú známe [Jupyter notebooky](https://jupyter.org/).
+
+Jedná sa o súbory s koncovkou `.html`, ktoré viete otvárať a upravovať cez akýkoľvek **webový priehliadač** (Google Chrome, Firefox, MS Edge a pod.). Nevyžadujú **žiadnu inštaláciu** a je možné ich používať cez ľubovoľné zariadenia, od PC cez tablety až po mobily s podporou pre všetky štandardné platformy (Windows, MacOS, Linux, Android, iOS atď.). Môžete ich mať uložené na svojom zariadení/zariadeniach, alebo vám môžu byť poskytnuté aj ako webová stránka. Aby boli tieto dokumenty plne funkčné, potrebujete jedinú vec: **pripojenie na Internet**.
+
+skladajú sa z týchto základných častí:
+
+* **ovládací panel** navrchu (zelené tlačidlá)
+* **telo** zložené s tzv. **buniek** (*angl.* cells) s textom, obrázkami, prípadne videami a ***spustiteľným kódom***" style="display: none;">To, na čo sa práve pozeráte, je jeden z materiálov vo formáte [**interaktívneho SageMath AI notebooku**](https://github.com/JupyterPER/SageMathAINotebooks). Jedná sa o projekt autorov tohto materiálu (D. Borovský, J. Hanč), ktorého cieľom je jednoducho a pohodlne sprístupniť SageMath v podobnom formáte ako sú známe [Jupyter notebooky](https://jupyter.org/).
+
+Jedná sa o súbory s koncovkou `.html`, ktoré viete otvárať a upravovať cez akýkoľvek **webový priehliadač** (Google Chrome, Firefox, MS Edge a pod.). Nevyžadujú **žiadnu inštaláciu** a je možné ich používať cez ľubovoľné zariadenia, od PC cez tablety až po mobily s podporou pre všetky štandardné platformy (Windows, MacOS, Linux, Android, iOS atď.). Môžete ich mať uložené na svojom zariadení/zariadeniach, alebo vám môžu byť poskytnuté aj ako webová stránka. Aby boli tieto dokumenty plne funkčné, potrebujete jedinú vec: **pripojenie na Internet**.
+
+skladajú sa z týchto základných častí:
+
+* **ovládací panel** navrchu (zelené tlačidlá)
+* **telo** zložené s tzv. **buniek** (*angl.* cells) s textom, obrázkami, prípadne videami a ***spustiteľným kódom***</textarea>
+        </div>
+        <div id="preview-1773326584175" class="markdown-preview" style="display: block;" data-original-markdown="To, na čo sa práve pozeráte, je jeden z materiálov vo formáte [**interaktívneho SageMath AI notebooku**](https://github.com/JupyterPER/SageMathAINotebooks). Jedná sa o projekt autorov tohto materiálu (D. Borovský, J. Hanč), ktorého cieľom je jednoducho a pohodlne sprístupniť SageMath v podobnom formáte ako sú známe [Jupyter notebooky](https://jupyter.org/).
+
+Jedná sa o súbory s koncovkou `.html`, ktoré viete otvárať a upravovať cez akýkoľvek **webový priehliadač** (Google Chrome, Firefox, MS Edge a pod.). Nevyžadujú **žiadnu inštaláciu** a je možné ich používať cez ľubovoľné zariadenia, od PC cez tablety až po mobily s podporou pre všetky štandardné platformy (Windows, MacOS, Linux, Android, iOS atď.). Môžete ich mať uložené na svojom zariadení/zariadeniach, alebo vám môžu byť poskytnuté aj ako webová stránka. Aby boli tieto dokumenty plne funkčné, potrebujete jedinú vec: **pripojenie na Internet**.
+
+skladajú sa z týchto základných častí:
+
+* **ovládací panel** navrchu (zelené tlačidlá)
+* **telo** zložené s tzv. **buniek** (*angl.* cells) s textom, obrázkami, prípadne videami a ***spustiteľným kódom***"><p>To, na čo sa práve pozeráte, je jeden z materiálov vo formáte <a href="https://github.com/JupyterPER/SageMathAINotebooks"><strong>interaktívneho SageMath AI notebooku</strong></a>. Jedná sa o projekt autorov tohto materiálu (D. Borovský, J. Hanč), ktorého cieľom je jednoducho a pohodlne sprístupniť SageMath v podobnom formáte ako sú známe <a href="https://jupyter.org/">Jupyter notebooky</a>.</p>
+<p>Jedná sa o súbory s koncovkou <code>.html</code>, ktoré viete otvárať a upravovať cez akýkoľvek <strong>webový priehliadač</strong> (Google Chrome, Firefox, MS Edge a pod.). Nevyžadujú <strong>žiadnu inštaláciu</strong> a je možné ich používať cez ľubovoľné zariadenia, od PC cez tablety až po mobily s podporou pre všetky štandardné platformy (Windows, MacOS, Linux, Android, iOS atď.). Môžete ich mať uložené na svojom zariadení/zariadeniach, alebo vám môžu byť poskytnuté aj ako webová stránka. Aby boli tieto dokumenty plne funkčné, potrebujete jedinú vec: <strong>pripojenie na Internet</strong>.</p>
+<p>skladajú sa z týchto základných častí:</p>
+<ul>
+<li><strong>ovládací panel</strong> navrchu (zelené tlačidlá)</li>
+<li><strong>telo</strong> zložené s tzv. <strong>buniek</strong> (<em>angl.</em> cells) s textom, obrázkami, prípadne videami a <em><strong>spustiteľným kódom</strong></em></li>
+</ul>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584175" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## Ovládací panel" style="display: none;">## Ovládací panel</textarea>
+        </div>
+        <div id="preview-1773326584175" class="markdown-preview" style="display: block;" data-original-markdown="## Ovládací panel"><h2 id="ovládací-panel">Ovládací panel</h2>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584175" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Vo vrchnej časti obrazovky môžete vidieť ovládací panel s niekoľkým tlačidlami. Jedno z najdôležitejších je tlačidlo
+
+***Save* (ikonka diskety &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot;
+     width=&quot;22&quot; height=&quot;22&quot;
+     viewBox=&quot;0 0 24 24&quot;
+     fill=&quot;none&quot;
+     stroke=&quot;currentColor&quot;
+     stroke-width=&quot;2&quot;
+     stroke-linecap=&quot;round&quot;
+     stroke-linejoin=&quot;round&quot;&gt;
+  &lt;path stroke=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot; fill=&quot;none&quot;/&gt;
+  &lt;path d=&quot;M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2&quot; /&gt;
+  &lt;path d=&quot;M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0&quot; /&gt;
+  &lt;path d=&quot;M14 4l0 4l-6 0l0 -4&quot; /&gt;
+&lt;/svg&gt;)**
+
+* uloží notebook, v ktorom ste urobili nejaké zmeny (text, kód, úpravy buniek)
+* po stlačení vás vyzve na stiahnutie `.html` dokumentu, pričom sa obsah zafixuje
+* po uložení, ak chcete pokračovať v predošlej práci, otvorte `.html` dokumentu, ktorý sa vám stiahol
+
+&gt; ***Odporúčanie:*** *Zvyčajne prehliadače všetok sťahovaný obsah ukladajú do priečinka &quot;Prevzaté&quot; (prípadne &quot;Downloads&quot;). Najlepšie je nastaviť si webový prehliadač tak, aby sa vás stále opýtal, kde si chcete sťahovaný obsah uložiť. V Google Chrome sa to dá nastaviť cez:*
+&gt; 1. &quot;Tri bodky&quot; (vpravo hore na paneli) 
+&gt; 2. &quot;Nastavenia&quot;
+&gt; 3. &quot;Stiahnuté&quot;
+&gt; 4. zašktrnúť &quot;Pred každým sťahovaním sa spýtať, kam uložiť súbor&quot;
+&gt;   
+&gt; *Alebo skratka cez [chrome://settings/downloads](chrome://settings/downloads) (skopíruj túto adresu do Chrome).*
+&gt;
+&gt; *Podobne by to malo ísť aj v iných prehliadačoch.*
+
+Význam ďalších tlačidiel je ozrejmený v [návode ku SageMath AI Notebookom (odkaz)](https://docs.google.com/document/d/e/2PACX-1vTKGQxS4MhGdYBFHGYsGAc16vJV0aL-DNEcwT5ETWUEN6ikGR4TtZHAy1aw7rNGTzFFPb9l91BasqSM/pub).
+
+&gt; ***Vyskúšajte si:*** *Po prečítaní/vašich úpravách uložte tento materiál do svojho počítača/zariadenia.*" style="display: none;">Vo vrchnej časti obrazovky môžete vidieť ovládací panel s niekoľkým tlačidlami. Jedno z najdôležitejších je tlačidlo
+
+***Save* (ikonka diskety &lt;svg xmlns="http://www.w3.org/2000/svg"
+     width="22" height="22"
+     viewBox="0 0 24 24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"&gt;
+  &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/&gt;
+  &lt;path d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2" /&gt;
+  &lt;path d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /&gt;
+  &lt;path d="M14 4l0 4l-6 0l0 -4" /&gt;
+&lt;/svg&gt;)**
+
+* uloží notebook, v ktorom ste urobili nejaké zmeny (text, kód, úpravy buniek)
+* po stlačení vás vyzve na stiahnutie `.html` dokumentu, pričom sa obsah zafixuje
+* po uložení, ak chcete pokračovať v predošlej práci, otvorte `.html` dokumentu, ktorý sa vám stiahol
+
+&gt; ***Odporúčanie:*** *Zvyčajne prehliadače všetok sťahovaný obsah ukladajú do priečinka "Prevzaté" (prípadne "Downloads"). Najlepšie je nastaviť si webový prehliadač tak, aby sa vás stále opýtal, kde si chcete sťahovaný obsah uložiť. V Google Chrome sa to dá nastaviť cez:*
+&gt; 1. "Tri bodky" (vpravo hore na paneli) 
+&gt; 2. "Nastavenia"
+&gt; 3. "Stiahnuté"
+&gt; 4. zašktrnúť "Pred každým sťahovaním sa spýtať, kam uložiť súbor"
+&gt;   
+&gt; *Alebo skratka cez [chrome://settings/downloads](chrome://settings/downloads) (skopíruj túto adresu do Chrome).*
+&gt;
+&gt; *Podobne by to malo ísť aj v iných prehliadačoch.*
+
+Význam ďalších tlačidiel je ozrejmený v [návode ku SageMath AI Notebookom (odkaz)](https://docs.google.com/document/d/e/2PACX-1vTKGQxS4MhGdYBFHGYsGAc16vJV0aL-DNEcwT5ETWUEN6ikGR4TtZHAy1aw7rNGTzFFPb9l91BasqSM/pub).
+
+&gt; ***Vyskúšajte si:*** *Po prečítaní/vašich úpravách uložte tento materiál do svojho počítača/zariadenia.*</textarea>
+        </div>
+        <div id="preview-1773326584175" class="markdown-preview" style="display: block;" data-original-markdown="Vo vrchnej časti obrazovky môžete vidieť ovládací panel s niekoľkým tlačidlami. Jedno z najdôležitejších je tlačidlo
+
+***Save* (ikonka diskety &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot;
+     width=&quot;22&quot; height=&quot;22&quot;
+     viewBox=&quot;0 0 24 24&quot;
+     fill=&quot;none&quot;
+     stroke=&quot;currentColor&quot;
+     stroke-width=&quot;2&quot;
+     stroke-linecap=&quot;round&quot;
+     stroke-linejoin=&quot;round&quot;&gt;
+  &lt;path stroke=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot; fill=&quot;none&quot;/&gt;
+  &lt;path d=&quot;M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2&quot; /&gt;
+  &lt;path d=&quot;M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0&quot; /&gt;
+  &lt;path d=&quot;M14 4l0 4l-6 0l0 -4&quot; /&gt;
+&lt;/svg&gt;)**
+
+* uloží notebook, v ktorom ste urobili nejaké zmeny (text, kód, úpravy buniek)
+* po stlačení vás vyzve na stiahnutie `.html` dokumentu, pričom sa obsah zafixuje
+* po uložení, ak chcete pokračovať v predošlej práci, otvorte `.html` dokumentu, ktorý sa vám stiahol
+
+&gt; ***Odporúčanie:*** *Zvyčajne prehliadače všetok sťahovaný obsah ukladajú do priečinka &quot;Prevzaté&quot; (prípadne &quot;Downloads&quot;). Najlepšie je nastaviť si webový prehliadač tak, aby sa vás stále opýtal, kde si chcete sťahovaný obsah uložiť. V Google Chrome sa to dá nastaviť cez:*
+&gt; 1. &quot;Tri bodky&quot; (vpravo hore na paneli) 
+&gt; 2. &quot;Nastavenia&quot;
+&gt; 3. &quot;Stiahnuté&quot;
+&gt; 4. zašktrnúť &quot;Pred každým sťahovaním sa spýtať, kam uložiť súbor&quot;
+&gt;   
+&gt; *Alebo skratka cez [chrome://settings/downloads](chrome://settings/downloads) (skopíruj túto adresu do Chrome).*
+&gt;
+&gt; *Podobne by to malo ísť aj v iných prehliadačoch.*
+
+Význam ďalších tlačidiel je ozrejmený v [návode ku SageMath AI Notebookom (odkaz)](https://docs.google.com/document/d/e/2PACX-1vTKGQxS4MhGdYBFHGYsGAc16vJV0aL-DNEcwT5ETWUEN6ikGR4TtZHAy1aw7rNGTzFFPb9l91BasqSM/pub).
+
+&gt; ***Vyskúšajte si:*** *Po prečítaní/vašich úpravách uložte tento materiál do svojho počítača/zariadenia.*"><p>Vo vrchnej časti obrazovky môžete vidieť ovládací panel s niekoľkým tlačidlami. Jedno z najdôležitejších je tlačidlo</p>
+<p><strong><em>Save</em> (ikonka diskety <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2"></path>
+  <path d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+  <path d="M14 4l0 4l-6 0l0 -4"></path>
+</svg>)</strong></p>
+<ul>
+<li>uloží notebook, v ktorom ste urobili nejaké zmeny (text, kód, úpravy buniek)</li>
+<li>po stlačení vás vyzve na stiahnutie <code>.html</code> dokumentu, pričom sa obsah zafixuje</li>
+<li>po uložení, ak chcete pokračovať v predošlej práci, otvorte <code>.html</code> dokumentu, ktorý sa vám stiahol</li>
+</ul>
+<blockquote>
+<p><em><strong>Odporúčanie:</strong></em> <em>Zvyčajne prehliadače všetok sťahovaný obsah ukladajú do priečinka "Prevzaté" (prípadne "Downloads"). Najlepšie je nastaviť si webový prehliadač tak, aby sa vás stále opýtal, kde si chcete sťahovaný obsah uložiť. V Google Chrome sa to dá nastaviť cez:</em></p>
+<ol>
+<li>"Tri bodky" (vpravo hore na paneli) </li>
+<li>"Nastavenia"</li>
+<li>"Stiahnuté"</li>
+<li>zašktrnúť "Pred každým sťahovaním sa spýtať, kam uložiť súbor"</li>
+</ol>
+<p><em>Alebo skratka cez <a href="chrome://settings/downloads">chrome://settings/downloads</a> (skopíruj túto adresu do Chrome).</em></p>
+<p><em>Podobne by to malo ísť aj v iných prehliadačoch.</em></p>
+</blockquote>
+<p>Význam ďalších tlačidiel je ozrejmený v <a href="https://docs.google.com/document/d/e/2PACX-1vTKGQxS4MhGdYBFHGYsGAc16vJV0aL-DNEcwT5ETWUEN6ikGR4TtZHAy1aw7rNGTzFFPb9l91BasqSM/pub">návode ku SageMath AI Notebookom (odkaz)</a>.</p>
+<blockquote>
+<p><em><strong>Vyskúšajte si:</strong></em> <em>Po prečítaní/vašich úpravách uložte tento materiál do svojho počítača/zariadenia.</em></p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584176" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## Telo notebooku - bunky" style="display: none;">## Telo notebooku - bunky</textarea>
+        </div>
+        <div id="preview-1773326584176" class="markdown-preview" style="display: block;" data-original-markdown="## Telo notebooku - bunky"><h2 id="telo-notebooku---bunky">Telo notebooku - bunky</h2>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584176" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Každý notebook je postavený zo série **buniek** (*cells*) - akoby kúskov textu, či už v podobe vysvetlení (ako je práve toto), alebo kódu. Keď prechádzate myšou po tomto notebooku, tak sa vám ku každej z buniek v tomto dokumente zobrazujú menšie ovládacie panely pre každú z buniek. Pomocou nich viete upravovať poradie buniek, pridávať prázdne, mazať bunky a podobne.
+
+&gt; ***Vyskúšajte si:** Čo robia jednotlivé tlačidlá v menších ovládacích paneloch pri bunkách? Ak sa vám podarí tento notebook &quot;rozbiť&quot;, môžete ho obnoviť pomocou `F5` (refresh).*
+
+* **textové bunky**, v ktorých sa píšu sprievodné informácie/obsah k Vašim výpočtom. Používajú jednoduchý jazyk ***Markdown***, ktorý pomocou obyčajného textu umožňuje rozličné editácie, podporuje aj $\LaTeX$, ktorý slúži na sádzanie skvele vyzerajúcich matematických formúl, napr.:
+    * Eulerova identita: $e^{i\pi} + 1 = 0$
+    * Schrödingerova rovnica:
+$$i\hbar \frac{\partial}{\partial t}\Psi(\vec{r},t)
+=
+\left[
+-\frac{\hbar^2}{2m}\nabla^2 + V(\vec{r},t)
+\right]
+\Psi(\vec{r},t)$$
+    * Markdown v kódových bunkách môžete upravovať po stlačení tlačidla *&quot;Edit/View&quot;*. Ak sa niečo napíšete, obsah sa ihneď &quot;rendruje&quot; pod editovacím oknom." style="display: none;">Každý notebook je postavený zo série **buniek** (*cells*) - akoby kúskov textu, či už v podobe vysvetlení (ako je práve toto), alebo kódu. Keď prechádzate myšou po tomto notebooku, tak sa vám ku každej z buniek v tomto dokumente zobrazujú menšie ovládacie panely pre každú z buniek. Pomocou nich viete upravovať poradie buniek, pridávať prázdne, mazať bunky a podobne.
+
+&gt; ***Vyskúšajte si:** Čo robia jednotlivé tlačidlá v menších ovládacích paneloch pri bunkách? Ak sa vám podarí tento notebook "rozbiť", môžete ho obnoviť pomocou `F5` (refresh).*
+
+* **textové bunky**, v ktorých sa píšu sprievodné informácie/obsah k Vašim výpočtom. Používajú jednoduchý jazyk ***Markdown***, ktorý pomocou obyčajného textu umožňuje rozličné editácie, podporuje aj $\LaTeX$, ktorý slúži na sádzanie skvele vyzerajúcich matematických formúl, napr.:
+    * Eulerova identita: $e^{i\pi} + 1 = 0$
+    * Schrödingerova rovnica:
+$$i\hbar \frac{\partial}{\partial t}\Psi(\vec{r},t)
+=
+\left[
+-\frac{\hbar^2}{2m}\nabla^2 + V(\vec{r},t)
+\right]
+\Psi(\vec{r},t)$$
+    * Markdown v kódových bunkách môžete upravovať po stlačení tlačidla *"Edit/View"*. Ak sa niečo napíšete, obsah sa ihneď "rendruje" pod editovacím oknom.</textarea>
+        </div>
+        <div id="preview-1773326584176" class="markdown-preview" style="display: block;" data-original-markdown="Každý notebook je postavený zo série **buniek** (*cells*) - akoby kúskov textu, či už v podobe vysvetlení (ako je práve toto), alebo kódu. Keď prechádzate myšou po tomto notebooku, tak sa vám ku každej z buniek v tomto dokumente zobrazujú menšie ovládacie panely pre každú z buniek. Pomocou nich viete upravovať poradie buniek, pridávať prázdne, mazať bunky a podobne.
+
+&gt; ***Vyskúšajte si:** Čo robia jednotlivé tlačidlá v menších ovládacích paneloch pri bunkách? Ak sa vám podarí tento notebook &quot;rozbiť&quot;, môžete ho obnoviť pomocou `F5` (refresh).*
+
+* **textové bunky**, v ktorých sa píšu sprievodné informácie/obsah k Vašim výpočtom. Používajú jednoduchý jazyk ***Markdown***, ktorý pomocou obyčajného textu umožňuje rozličné editácie, podporuje aj $\LaTeX$, ktorý slúži na sádzanie skvele vyzerajúcich matematických formúl, napr.:
+    * Eulerova identita: $e^{i\pi} + 1 = 0$
+    * Schrödingerova rovnica:
+$$i\hbar \frac{\partial}{\partial t}\Psi(\vec{r},t)
+=
+\left[
+-\frac{\hbar^2}{2m}\nabla^2 + V(\vec{r},t)
+\right]
+\Psi(\vec{r},t)$$
+    * Markdown v kódových bunkách môžete upravovať po stlačení tlačidla *&quot;Edit/View&quot;*. Ak sa niečo napíšete, obsah sa ihneď &quot;rendruje&quot; pod editovacím oknom."><p>Každý notebook je postavený zo série <strong>buniek</strong> (<em>cells</em>) - akoby kúskov textu, či už v podobe vysvetlení (ako je práve toto), alebo kódu. Keď prechádzate myšou po tomto notebooku, tak sa vám ku každej z buniek v tomto dokumente zobrazujú menšie ovládacie panely pre každú z buniek. Pomocou nich viete upravovať poradie buniek, pridávať prázdne, mazať bunky a podobne.</p>
+<blockquote>
+<p><em><strong>Vyskúšajte si:</strong> Čo robia jednotlivé tlačidlá v menších ovládacích paneloch pri bunkách? Ak sa vám podarí tento notebook "rozbiť", môžete ho obnoviť pomocou <code>F5</code> (refresh).</em></p>
+</blockquote>
+<ul>
+<li><strong>textové bunky</strong>, v ktorých sa píšu sprievodné informácie/obsah k Vašim výpočtom. Používajú jednoduchý jazyk <em><strong>Markdown</strong></em>, ktorý pomocou obyčajného textu umožňuje rozličné editácie, podporuje aj $\LaTeX$, ktorý slúži na sádzanie skvele vyzerajúcich matematických formúl, napr.:<ul>
+<li>Eulerova identita: $e^{i\pi} + 1 = 0$</li>
+<li>Schrödingerova rovnica:
+$$i\hbar \frac{\partial}{\partial t}\Psi(\vec{r},t)
+=
+\left[
+-\frac{\hbar^2}{2m}\nabla^2 + V(\vec{r},t)
+\right]
+\Psi(\vec{r},t)$$</li>
+<li>Markdown v kódových bunkách môžete upravovať po stlačení tlačidla <em>"Edit/View"</em>. Ak sa niečo napíšete, obsah sa ihneď "rendruje" pod editovacím oknom.</li>
+</ul>
+</li>
+</ul>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584176" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="* **kódové bunky** obsahujú vopred pripravený kód alebo sú ponechané prázdne a môžete v nich sami napísať
+    *  na ich spúšťanie môžete použiť tlačidlo `Execute`
+    *  ak ste s kurzorom v bunke (pri písaní), môžete ich spúšťať súčasným stlačením kláves `Ctrl + Enter` (alebo aj klávesová skratka `Shift + Enter`)
+    *  pri spustení kódovej bunky sa program vykoná a buď sa **zobrazí výsledok**, alebo sa **uložia do pamäte** vami zadané údaje (napr. premenné). 
+    * Kódové bunky je potrebné **spúšťať postupne** od prvej, aby sa medzivýsledok z každej predošlej načítal do tej nasledujúcej. Ak urobíte v niektorej bunke zmenu, tak po **opätovnom spustení** bunky za v nej zmenené hodnoty prepíšu, resp. sa aktualizuje výstup.
+
+
+&gt; *Ďalšie užitočné **klávesové skratky** nájdete sú uvedené v menu pod ikonkou otáznik &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;/&gt;&lt;path fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-linecap=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M10 8.484C10.5 7.494 11 7 12 7c1.246 0 2 .989 2 1.978s-.5 1.483-2 2.473V13m0 3.5v.5&quot;/&gt;&lt;/svg&gt;.*
+&gt; 
+&gt; Niektoré markdown príkazy sú v pomôcke pri markdown bunkách dostupnej cez ikonku žiarovky &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M10 1c3.11 0 5.63 2.52 5.63 5.62 0 1.84-2.03 4.58-2.03 4.58-.33.44-.6 1.25-.6 1.8v1c0 .55-.45 1-1 1H8c-.55 0-1-.45-1-1v-1c0-.55-.27-1.36-.6-1.8 0 0-2.02-2.74-2.02-4.58C4.38 3.52 6.89 1 10 1zM7 16.87V16h6v.87c0 .62-.13 1.13-.75 1.13H12c0 .62-.4 1-1.02 1h-2c-.61 0-.98-.38-.98-1h-.25c-.62 0-.75-.51-.75-1.13z&quot; fill=&quot;#616161&quot;/&gt;&lt;/svg&gt; *(&quot;Markdown Tips&quot;)*" style="display: none;">* **kódové bunky** obsahujú vopred pripravený kód alebo sú ponechané prázdne a môžete v nich sami napísať
+    *  na ich spúšťanie môžete použiť tlačidlo `Execute`
+    *  ak ste s kurzorom v bunke (pri písaní), môžete ich spúšťať súčasným stlačením kláves `Ctrl + Enter` (alebo aj klávesová skratka `Shift + Enter`)
+    *  pri spustení kódovej bunky sa program vykoná a buď sa **zobrazí výsledok**, alebo sa **uložia do pamäte** vami zadané údaje (napr. premenné). 
+    * Kódové bunky je potrebné **spúšťať postupne** od prvej, aby sa medzivýsledok z každej predošlej načítal do tej nasledujúcej. Ak urobíte v niektorej bunke zmenu, tak po **opätovnom spustení** bunky za v nej zmenené hodnoty prepíšu, resp. sa aktualizuje výstup.
+
+
+&gt; *Ďalšie užitočné **klávesové skratky** nájdete sú uvedené v menu pod ikonkou otáznik &lt;svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"&gt;&lt;circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/&gt;&lt;path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M10 8.484C10.5 7.494 11 7 12 7c1.246 0 2 .989 2 1.978s-.5 1.483-2 2.473V13m0 3.5v.5"/&gt;&lt;/svg&gt;.*
+&gt; 
+&gt; Niektoré markdown príkazy sú v pomôcke pri markdown bunkách dostupnej cez ikonku žiarovky &lt;svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"&gt;&lt;path d="M10 1c3.11 0 5.63 2.52 5.63 5.62 0 1.84-2.03 4.58-2.03 4.58-.33.44-.6 1.25-.6 1.8v1c0 .55-.45 1-1 1H8c-.55 0-1-.45-1-1v-1c0-.55-.27-1.36-.6-1.8 0 0-2.02-2.74-2.02-4.58C4.38 3.52 6.89 1 10 1zM7 16.87V16h6v.87c0 .62-.13 1.13-.75 1.13H12c0 .62-.4 1-1.02 1h-2c-.61 0-.98-.38-.98-1h-.25c-.62 0-.75-.51-.75-1.13z" fill="#616161"/&gt;&lt;/svg&gt; *("Markdown Tips")*</textarea>
+        </div>
+        <div id="preview-1773326584176" class="markdown-preview" style="display: block;" data-original-markdown="* **kódové bunky** obsahujú vopred pripravený kód alebo sú ponechané prázdne a môžete v nich sami napísať
+    *  na ich spúšťanie môžete použiť tlačidlo `Execute`
+    *  ak ste s kurzorom v bunke (pri písaní), môžete ich spúšťať súčasným stlačením kláves `Ctrl + Enter` (alebo aj klávesová skratka `Shift + Enter`)
+    *  pri spustení kódovej bunky sa program vykoná a buď sa **zobrazí výsledok**, alebo sa **uložia do pamäte** vami zadané údaje (napr. premenné). 
+    * Kódové bunky je potrebné **spúšťať postupne** od prvej, aby sa medzivýsledok z každej predošlej načítal do tej nasledujúcej. Ak urobíte v niektorej bunke zmenu, tak po **opätovnom spustení** bunky za v nej zmenené hodnoty prepíšu, resp. sa aktualizuje výstup.
+
+
+&gt; *Ďalšie užitočné **klávesové skratky** nájdete sú uvedené v menu pod ikonkou otáznik &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;/&gt;&lt;path fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-linecap=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M10 8.484C10.5 7.494 11 7 12 7c1.246 0 2 .989 2 1.978s-.5 1.483-2 2.473V13m0 3.5v.5&quot;/&gt;&lt;/svg&gt;.*
+&gt; 
+&gt; Niektoré markdown príkazy sú v pomôcke pri markdown bunkách dostupnej cez ikonku žiarovky &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M10 1c3.11 0 5.63 2.52 5.63 5.62 0 1.84-2.03 4.58-2.03 4.58-.33.44-.6 1.25-.6 1.8v1c0 .55-.45 1-1 1H8c-.55 0-1-.45-1-1v-1c0-.55-.27-1.36-.6-1.8 0 0-2.02-2.74-2.02-4.58C4.38 3.52 6.89 1 10 1zM7 16.87V16h6v.87c0 .62-.13 1.13-.75 1.13H12c0 .62-.4 1-1.02 1h-2c-.61 0-.98-.38-.98-1h-.25c-.62 0-.75-.51-.75-1.13z&quot; fill=&quot;#616161&quot;/&gt;&lt;/svg&gt; *(&quot;Markdown Tips&quot;)*"><ul>
+<li><strong>kódové bunky</strong> obsahujú vopred pripravený kód alebo sú ponechané prázdne a môžete v nich sami napísať<ul>
+<li>na ich spúšťanie môžete použiť tlačidlo <code>Execute</code></li>
+<li>ak ste s kurzorom v bunke (pri písaní), môžete ich spúšťať súčasným stlačením kláves <code>Ctrl + Enter</code> (alebo aj klávesová skratka <code>Shift + Enter</code>)</li>
+<li>pri spustení kódovej bunky sa program vykoná a buď sa <strong>zobrazí výsledok</strong>, alebo sa <strong>uložia do pamäte</strong> vami zadané údaje (napr. premenné). </li>
+<li>Kódové bunky je potrebné <strong>spúšťať postupne</strong> od prvej, aby sa medzivýsledok z každej predošlej načítal do tej nasledujúcej. Ak urobíte v niektorej bunke zmenu, tak po <strong>opätovnom spustení</strong> bunky za v nej zmenené hodnoty prepíšu, resp. sa aktualizuje výstup.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><em>Ďalšie užitočné <strong>klávesové skratky</strong> nájdete sú uvedené v menu pod ikonkou otáznik <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"></circle><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M10 8.484C10.5 7.494 11 7 12 7c1.246 0 2 .989 2 1.978s-.5 1.483-2 2.473V13m0 3.5v.5"></path></svg>.</em></p>
+<p>Niektoré markdown príkazy sú v pomôcke pri markdown bunkách dostupnej cez ikonku žiarovky <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path d="M10 1c3.11 0 5.63 2.52 5.63 5.62 0 1.84-2.03 4.58-2.03 4.58-.33.44-.6 1.25-.6 1.8v1c0 .55-.45 1-1 1H8c-.55 0-1-.45-1-1v-1c0-.55-.27-1.36-.6-1.8 0 0-2.02-2.74-2.02-4.58C4.38 3.52 6.89 1 10 1zM7 16.87V16h6v.87c0 .62-.13 1.13-.75 1.13H12c0 .62-.4 1-1.02 1h-2c-.61 0-.98-.38-.98-1h-.25c-.62 0-.75-.51-.75-1.13z" fill="#616161"></path></svg> <em>("Markdown Tips")</em></p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584176" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## Bunka na úpravu markdown
+* Vyskúšajte niečo dopísať nejaký markdown text do tejto bunky
+* Výskúšajte webový doplnok [LaTeX From Web](https://chromewebstore.google.com/detail/latex-from-web/ofdiijcdkgpfjgoklcpkmffkiaalfjma) pre kopírovanie $\LaTeX$-u z webu, napr. Wikipédie." style="display: none;">## Bunka na úpravu markdown
+* Vyskúšajte niečo dopísať nejaký markdown text do tejto bunky
+* Výskúšajte webový doplnok [LaTeX From Web](https://chromewebstore.google.com/detail/latex-from-web/ofdiijcdkgpfjgoklcpkmffkiaalfjma) pre kopírovanie $\LaTeX$-u z webu, napr. Wikipédie.</textarea>
+        </div>
+        <div id="preview-1773326584176" class="markdown-preview" style="display: block;" data-original-markdown="## Bunka na úpravu markdown
+* Vyskúšajte niečo dopísať nejaký markdown text do tejto bunky
+* Výskúšajte webový doplnok [LaTeX From Web](https://chromewebstore.google.com/detail/latex-from-web/ofdiijcdkgpfjgoklcpkmffkiaalfjma) pre kopírovanie $\LaTeX$-u z webu, napr. Wikipédie."><h2 id="bunka-na-úpravu-markdown">Bunka na úpravu markdown</h2>
+<ul>
+<li>Vyskúšajte niečo dopísať nejaký markdown text do tejto bunky</li>
+<li>Výskúšajte webový doplnok <a href="https://chromewebstore.google.com/detail/latex-from-web/ofdiijcdkgpfjgoklcpkmffkiaalfjma">LaTeX From Web</a> pre kopírovanie $\LaTeX$-u z webu, napr. Wikipédie.</li>
+</ul>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584176" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## Kódové bunky na vyskúšanie" style="display: none;">## Kódové bunky na vyskúšanie</textarea>
+        </div>
+        <div id="preview-1773326584176" class="markdown-preview" style="display: block;" data-original-markdown="## Kódové bunky na vyskúšanie"><h2 id="kódové-bunky-na-vyskúšanie">Kódové bunky na vyskúšanie</h2>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584176" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Vyskúšajte spustiť/upravovať nasledujúce bunky:" style="display: none;">Vyskúšajte spustiť/upravovať nasledujúce bunky:</textarea>
+        </div>
+        <div id="preview-1773326584176" class="markdown-preview" style="display: block;" data-original-markdown="Vyskúšajte spustiť/upravovať nasledujúce bunky:"><p>Vyskúšajte spustiť/upravovať nasledujúce bunky:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute sagecell output_58947bd4e6ed4b70a6ee3eaabe8ddf78" style="display: none;">
+
+
+<div class="sagecell_output_elements" style="display: none;">
+    
+    
+</div></div>
+  <div class="compute" style="display: none;">
+    <script type="text/x-sage"># všetky riadky, ktoré začínajú mriežkou sú komentáre 
+# jedná sa o text, ktorý sa neinterpretuje ako súčasť kódu
+# uloženie pozdravu do premennej "pozdrav"
+pozdrav = "Ahoj, toto je Sage!"
+</script>
+  </div></div><div class="nb-cell nb-code-cell"><div class="compute sagecell output_20e1b836fb5349158fbc566361152a23" style="display: none;">
+
+
+<div class="sagecell_output_elements" style="display: none;">
+    
+    
+</div></div>
+  <div class="compute" style="display: none;">
+    <script type="text/x-sage"># vytlačenie uloženej hodnoty z predošlej bunky
+print(pozdrav)
+</script>
+  </div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584176" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; ***Vyskúšajte si:** Zmeňte text v `pozdrav`-e (bunku je potrebné spustiť pre uloźenie zmeny) a opäť ho vytlačte, môžete pridať a svoju vlastnú premennú s textom (medzi úvodzovkami `&quot;&quot;`) a zobraziť ju pomocou `print()`.*" style="display: none;">&gt; ***Vyskúšajte si:** Zmeňte text v `pozdrav`-e (bunku je potrebné spustiť pre uloźenie zmeny) a opäť ho vytlačte, môžete pridať a svoju vlastnú premennú s textom (medzi úvodzovkami `""`) a zobraziť ju pomocou `print()`.*</textarea>
+        </div>
+        <div id="preview-1773326584176" class="markdown-preview" style="display: block;" data-original-markdown="&gt; ***Vyskúšajte si:** Zmeňte text v `pozdrav`-e (bunku je potrebné spustiť pre uloźenie zmeny) a opäť ho vytlačte, môžete pridať a svoju vlastnú premennú s textom (medzi úvodzovkami `&quot;&quot;`) a zobraziť ju pomocou `print()`.*"><blockquote>
+<p><em><strong>Vyskúšajte si:</strong> Zmeňte text v <code>pozdrav</code>-e (bunku je potrebné spustiť pre uloźenie zmeny) a opäť ho vytlačte, môžete pridať a svoju vlastnú premennú s textom (medzi úvodzovkami <code>""</code>) a zobraziť ju pomocou <code>print()</code>.</em></p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute sagecell output_d6c5e151a94b400088400ea9ca0e1b05" style="display: none;">
+
+
+<div class="sagecell_output_elements" style="display: none;">
+    
+    
+</div></div>
+  <div class="compute" style="display: none;">
+    <script type="text/x-sage"># typické veci v Sagi: priklad 2. NZ
+var("F m a")              # všeobecné premenné
+druhy_NZ = a == F/m       # uloženie 2. NZ ako rovnice (dvojité "rovná sa")
+</script>
+  </div></div><div class="nb-cell nb-code-cell"><div class="compute sagecell output_199477f61dc941af9357ed03a6db2314" style="display: none;">
+
+
+<div class="sagecell_output_elements" style="display: none;">
+    
+    
+</div></div>
+  <div class="compute" style="display: none;">
+    <script type="text/x-sage"># pekne ukáž (angl. show, ako napr. TV show) uložený druhy_NZ
+show(druhy_NZ)
+</script>
+  </div></div><div class="nb-cell nb-code-cell"><div class="compute sagecell output_79e75f9108ad44cd9fffb1c875221557" style="display: none;">
+
+
+<div class="sagecell_output_elements" style="display: none;">
+    
+    
+</div></div>
+  <div class="compute" style="display: none;">
+    <script type="text/x-sage"># rieš (angl. solve) pre neznámu m (hmotnosť)
+druhy_NZ_m = solve(druhy_NZ, m)
+show(druhy_NZ_m)
+</script>
+  </div></div><div class="nb-cell nb-code-cell"><div class="compute sagecell output_75078b0d260c4d05845854edbdb37f20" style="display: none;">
+
+
+<div class="sagecell_output_elements" style="display: none;">
+    
+    
+</div></div>
+  <div class="compute" style="display: none;">
+    <script type="text/x-sage"># zadanie funkcie
+f(x) = 1/x*sin(x)
+show(f)
+</script>
+  </div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584177" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; *Všimnite si: Hoci bolo formálne zadané $f(x) = \dfrac{1}{x} \cdot \sin x$, Sage to automaticky zjednodušil na $f(x) = \dfrac{ \sin x}{x}$*. Vo väčšom meradle to vie robiť aj s omnoho komplikovanejšími výrazmi." style="display: none;">&gt; *Všimnite si: Hoci bolo formálne zadané $f(x) = \dfrac{1}{x} \cdot \sin x$, Sage to automaticky zjednodušil na $f(x) = \dfrac{ \sin x}{x}$*. Vo väčšom meradle to vie robiť aj s omnoho komplikovanejšími výrazmi.</textarea>
+        </div>
+        <div id="preview-1773326584177" class="markdown-preview" style="display: block;" data-original-markdown="&gt; *Všimnite si: Hoci bolo formálne zadané $f(x) = \dfrac{1}{x} \cdot \sin x$, Sage to automaticky zjednodušil na $f(x) = \dfrac{ \sin x}{x}$*. Vo väčšom meradle to vie robiť aj s omnoho komplikovanejšími výrazmi."><blockquote>
+<p><em>Všimnite si: Hoci bolo formálne zadané $f(x) = \dfrac{1}{x} \cdot \sin x$, Sage to automaticky zjednodušil na $f(x) = \dfrac{ \sin x}{x}$</em>. Vo väčšom meradle to vie robiť aj s omnoho komplikovanejšími výrazmi.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute sagecell output_2b21ab8557be49faa023856dc106293e" style="display: none;">
+
+
+<div class="sagecell_output_elements" style="display: none;">
+    
+    
+</div></div>
+  <div class="compute" style="display: none;">
+    <script type="text/x-sage"># jednoduchý graf (po angl. plot) pre pre funkciu f s x od -30 po 30
+graf_f = plot(f, (x,-30,30))
+show(graf_f)
+</script>
+  </div></div><div class="nb-cell nb-code-cell"><div class="compute sagecell output_eec463236f6e4b0da82f07620321b1f8" style="display: none;">
+
+
+<div class="sagecell_output_elements" style="display: none;">
+    
+    
+</div></div>
+  <div class="compute" style="display: none;">
+    <script type="text/x-sage"># predošlý graf aj s "profi" formátovaním
+graf_f_format = plot(f, (x,-30,30), color="magenta") # farby sa zadávajú v angličtine, napr. "red", "green" a tak podobne
+show(graf_f_format, title=r"Graf funkcie $f = \dfrac{\sin x}{x}$", frame=True, gridlines=True)
+</script>
+  </div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584178" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## Prečo používať Sage?" style="display: none;">## Prečo používať Sage?</textarea>
+        </div>
+        <div id="preview-1773326584178" class="markdown-preview" style="display: block;" data-original-markdown="## Prečo používať Sage?"><h2 id="prečo-používať-sage">Prečo používať Sage?</h2>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584178" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Hlavnými pomôckami pri výpočtoch v matematike a fyzike sú klasicky papier, pero a kalkulačka, prípadne tabuľkový kalkulátor (napr. Excel). Poďme si vzájomne porovnať tieto tradičné nástroje so Sagom." style="display: none;">Hlavnými pomôckami pri výpočtoch v matematike a fyzike sú klasicky papier, pero a kalkulačka, prípadne tabuľkový kalkulátor (napr. Excel). Poďme si vzájomne porovnať tieto tradičné nástroje so Sagom.</textarea>
+        </div>
+        <div id="preview-1773326584178" class="markdown-preview" style="display: block;" data-original-markdown="Hlavnými pomôckami pri výpočtoch v matematike a fyzike sú klasicky papier, pero a kalkulačka, prípadne tabuľkový kalkulátor (napr. Excel). Poďme si vzájomne porovnať tieto tradičné nástroje so Sagom."><p>Hlavnými pomôckami pri výpočtoch v matematike a fyzike sú klasicky papier, pero a kalkulačka, prípadne tabuľkový kalkulátor (napr. Excel). Poďme si vzájomne porovnať tieto tradičné nástroje so Sagom.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584178" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="### Výpočty
+
+* na papieri (z hlavy) sa môžeme ľahko dopustiť chyby, časovo náročné
+* v kalkulačke je to často prácne, neprehľadné, pri zapnutí/vypnutí kalkulačky prídeme o výsledky
+* v Sagi vieme zadať aj veľmi komplikované vzorce na výpočet, výsledky sa ukladajú do pamäte a dajú sa ľahko použiť v ďalších výpočtoch
+    * výpočet sa dá ľahko upraviť a okamžite získať nový výsledok, celý postup si vieme uložiť a kedykoľvek upraviť
+    * **SageMath je superkalkulačka**, úplne jednoduché výpočty môžu vyzerať už takto" style="display: none;">### Výpočty
+
+* na papieri (z hlavy) sa môžeme ľahko dopustiť chyby, časovo náročné
+* v kalkulačke je to často prácne, neprehľadné, pri zapnutí/vypnutí kalkulačky prídeme o výsledky
+* v Sagi vieme zadať aj veľmi komplikované vzorce na výpočet, výsledky sa ukladajú do pamäte a dajú sa ľahko použiť v ďalších výpočtoch
+    * výpočet sa dá ľahko upraviť a okamžite získať nový výsledok, celý postup si vieme uložiť a kedykoľvek upraviť
+    * **SageMath je superkalkulačka**, úplne jednoduché výpočty môžu vyzerať už takto</textarea>
+        </div>
+        <div id="preview-1773326584178" class="markdown-preview" style="display: block;" data-original-markdown="### Výpočty
+
+* na papieri (z hlavy) sa môžeme ľahko dopustiť chyby, časovo náročné
+* v kalkulačke je to často prácne, neprehľadné, pri zapnutí/vypnutí kalkulačky prídeme o výsledky
+* v Sagi vieme zadať aj veľmi komplikované vzorce na výpočet, výsledky sa ukladajú do pamäte a dajú sa ľahko použiť v ďalších výpočtoch
+    * výpočet sa dá ľahko upraviť a okamžite získať nový výsledok, celý postup si vieme uložiť a kedykoľvek upraviť
+    * **SageMath je superkalkulačka**, úplne jednoduché výpočty môžu vyzerať už takto"><h3 id="výpočty">Výpočty</h3>
+<ul>
+<li>na papieri (z hlavy) sa môžeme ľahko dopustiť chyby, časovo náročné</li>
+<li>v kalkulačke je to často prácne, neprehľadné, pri zapnutí/vypnutí kalkulačky prídeme o výsledky</li>
+<li>v Sagi vieme zadať aj veľmi komplikované vzorce na výpočet, výsledky sa ukladajú do pamäte a dajú sa ľahko použiť v ďalších výpočtoch<ul>
+<li>výpočet sa dá ľahko upraviť a okamžite získať nový výsledok, celý postup si vieme uložiť a kedykoľvek upraviť</li>
+<li><strong>SageMath je superkalkulačka</strong>, úplne jednoduché výpočty môžu vyzerať už takto</li>
+</ul>
+</li>
+</ul>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute sagecell output_423007530914449890cf57704d8d1f96" style="display: none;">
+
+
+<div class="sagecell_output_elements" style="display: none;">
+    
+    
+</div></div>
+  <div class="compute" style="display: none;">
+    <script type="text/x-sage">m = 1200
+v = 25
+
+E_k = (1/2)*m*v^2     # znak ^ sa používa na umocňovanie, dá sa ale používať **
+E_k
+</script>
+  </div></div><div class="nb-cell nb-code-cell"><div class="compute sagecell output_180143fc9e5847168831989b24d14e2b" style="display: none;">
+
+
+<div class="sagecell_output_elements" style="display: none;">
+    
+    
+</div></div>
+  <div class="compute" style="display: none;">
+    <script type="text/x-sage"># Riešenie sústavy troch lineárnych rovníc s tromi neznámymi
+var('x y z')
+
+# Definícia rovníc
+r1 = 2*x + y - z == 3
+r2 = -x + 3*y + 2*z == 7
+r3 = 4*x - 2*y + z == 1
+
+# Riešenie sústavy
+riesenie = solve([r1, r2, r3], x, y, z)
+show(riesenie)
+</script>
+  </div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584178" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="### Úprava výrazov 
+
+* na štandardných kalkulačkách nemožné
+* pri ručnej úprave na papieri sa môže v niektorom z krokov vyskytnúť chyba
+* v Sagi sú úpravy automatické, nedopúšťa sa chyby, ľahko vieme zadaný výraz skontrolovať/upraviť" style="display: none;">### Úprava výrazov 
+
+* na štandardných kalkulačkách nemožné
+* pri ručnej úprave na papieri sa môže v niektorom z krokov vyskytnúť chyba
+* v Sagi sú úpravy automatické, nedopúšťa sa chyby, ľahko vieme zadaný výraz skontrolovať/upraviť</textarea>
+        </div>
+        <div id="preview-1773326584178" class="markdown-preview" style="display: block;" data-original-markdown="### Úprava výrazov 
+
+* na štandardných kalkulačkách nemožné
+* pri ručnej úprave na papieri sa môže v niektorom z krokov vyskytnúť chyba
+* v Sagi sú úpravy automatické, nedopúšťa sa chyby, ľahko vieme zadaný výraz skontrolovať/upraviť"><h3 id="úprava-výrazov">Úprava výrazov</h3>
+<ul>
+<li>na štandardných kalkulačkách nemožné</li>
+<li>pri ručnej úprave na papieri sa môže v niektorom z krokov vyskytnúť chyba</li>
+<li>v Sagi sú úpravy automatické, nedopúšťa sa chyby, ľahko vieme zadaný výraz skontrolovať/upraviť</li>
+</ul>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584178" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt;***Ukážka:*** Zjednodušenie výrazu $\sqrt{\dfrac{m^2 v^4}{m^2 v^2} \cdot x}$" style="display: none;">&gt;***Ukážka:*** Zjednodušenie výrazu $\sqrt{\dfrac{m^2 v^4}{m^2 v^2} \cdot x}$</textarea>
+        </div>
+        <div id="preview-1773326584178" class="markdown-preview" style="display: block;" data-original-markdown="&gt;***Ukážka:*** Zjednodušenie výrazu $\sqrt{\dfrac{m^2 v^4}{m^2 v^2} \cdot x}$"><blockquote>
+<p><em><strong>Ukážka:</strong></em> Zjednodušenie výrazu $\sqrt{\dfrac{m^2 v^4}{m^2 v^2} \cdot x}$</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute sagecell output_0c4d0d7989564db7be47afafd8cbc287" style="display: none;">
+
+
+<div class="sagecell_output_elements" style="display: none;">
+    
+    
+</div></div>
+  <div class="compute" style="display: none;">
+    <script type="text/x-sage"># Zjednodušenie výrazu s odmocninou pomocou substitúcie x=1 a úpravy
+var('m v')
+vyraz = sqrt((m^2 * v^4)/(m^2 * v^2)*x)
+
+# Zjednodušený výraz
+show(vyraz)
+</script>
+  </div></div><div class="nb-cell nb-code-cell"><div class="compute sagecell output_1fa48ec6a5304cedb49f16a54dce1162" style="display: none;">
+
+
+<div class="sagecell_output_elements" style="display: none;">
+    
+    
+</div></div>
+  <div class="compute" style="display: none;">
+    <script type="text/x-sage"># Ešte viac jednodušený výraz
+show(vyraz.canonicalize_radical())
+</script>
+  </div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584179" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="### Vykresľovanie grafov
+
+* na papieri je kreslenie grafov časovo náročné a často nepresné, najmä pri zložitejších funkciách
+* na bežných kalkulačkách sa to nedá, je potrebná špeciálna grafická kalkulačka, problematický je potom prenos obrázku do počítača (napr. do prezentácie, laboratórneho protokolu)
+* v Exceli je možné vytvárať grafy, ale je to obmedzené na dáta v tabuľkách (jednotlivé body grafu je potrebné predtým vypočítať)
+* v Geogebre sa dobre vytvárajú grafy, no pri zložitejších grafoch to vyžaduje veľa vyklikávania, najmä pri zmene hodnôt viacerých parametrov grafu 
+* v Sagi môžeme:
+  * ľahko vykresliť grafy zložitých funkcií s vysokou presnosťou
+  * jednoducho upravovať parametre grafov (farby, hrúbka čiar, mierka osí)
+  * kombinovať viacero grafov do jedného obrázka pre porovnanie
+  * interaktívne meniť grafy a okamžite vidieť výsledky zmien" style="display: none;">### Vykresľovanie grafov
+
+* na papieri je kreslenie grafov časovo náročné a často nepresné, najmä pri zložitejších funkciách
+* na bežných kalkulačkách sa to nedá, je potrebná špeciálna grafická kalkulačka, problematický je potom prenos obrázku do počítača (napr. do prezentácie, laboratórneho protokolu)
+* v Exceli je možné vytvárať grafy, ale je to obmedzené na dáta v tabuľkách (jednotlivé body grafu je potrebné predtým vypočítať)
+* v Geogebre sa dobre vytvárajú grafy, no pri zložitejších grafoch to vyžaduje veľa vyklikávania, najmä pri zmene hodnôt viacerých parametrov grafu 
+* v Sagi môžeme:
+  * ľahko vykresliť grafy zložitých funkcií s vysokou presnosťou
+  * jednoducho upravovať parametre grafov (farby, hrúbka čiar, mierka osí)
+  * kombinovať viacero grafov do jedného obrázka pre porovnanie
+  * interaktívne meniť grafy a okamžite vidieť výsledky zmien</textarea>
+        </div>
+        <div id="preview-1773326584179" class="markdown-preview" style="display: block;" data-original-markdown="### Vykresľovanie grafov
+
+* na papieri je kreslenie grafov časovo náročné a často nepresné, najmä pri zložitejších funkciách
+* na bežných kalkulačkách sa to nedá, je potrebná špeciálna grafická kalkulačka, problematický je potom prenos obrázku do počítača (napr. do prezentácie, laboratórneho protokolu)
+* v Exceli je možné vytvárať grafy, ale je to obmedzené na dáta v tabuľkách (jednotlivé body grafu je potrebné predtým vypočítať)
+* v Geogebre sa dobre vytvárajú grafy, no pri zložitejších grafoch to vyžaduje veľa vyklikávania, najmä pri zmene hodnôt viacerých parametrov grafu 
+* v Sagi môžeme:
+  * ľahko vykresliť grafy zložitých funkcií s vysokou presnosťou
+  * jednoducho upravovať parametre grafov (farby, hrúbka čiar, mierka osí)
+  * kombinovať viacero grafov do jedného obrázka pre porovnanie
+  * interaktívne meniť grafy a okamžite vidieť výsledky zmien"><h3 id="vykresľovanie-grafov">Vykresľovanie grafov</h3>
+<ul>
+<li>na papieri je kreslenie grafov časovo náročné a často nepresné, najmä pri zložitejších funkciách</li>
+<li>na bežných kalkulačkách sa to nedá, je potrebná špeciálna grafická kalkulačka, problematický je potom prenos obrázku do počítača (napr. do prezentácie, laboratórneho protokolu)</li>
+<li>v Exceli je možné vytvárať grafy, ale je to obmedzené na dáta v tabuľkách (jednotlivé body grafu je potrebné predtým vypočítať)</li>
+<li>v Geogebre sa dobre vytvárajú grafy, no pri zložitejších grafoch to vyžaduje veľa vyklikávania, najmä pri zmene hodnôt viacerých parametrov grafu </li>
+<li>v Sagi môžeme:<ul>
+<li>ľahko vykresliť grafy zložitých funkcií s vysokou presnosťou</li>
+<li>jednoducho upravovať parametre grafov (farby, hrúbka čiar, mierka osí)</li>
+<li>kombinovať viacero grafov do jedného obrázka pre porovnanie</li>
+<li>interaktívne meniť grafy a okamžite vidieť výsledky zmien</li>
+</ul>
+</li>
+</ul>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584179" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Pokročilá ukážka vytvorenia grafu." style="display: none;">Pokročilá ukážka vytvorenia grafu.</textarea>
+        </div>
+        <div id="preview-1773326584179" class="markdown-preview" style="display: block;" data-original-markdown="Pokročilá ukážka vytvorenia grafu."><p>Pokročilá ukážka vytvorenia grafu.</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute sagecell output_32668721cbdd441395550be4d74d1e30" style="display: none;">
+
+
+<div class="sagecell_output_elements" style="display: none;">
+    
+    
+</div></div>
+  <div class="compute" style="display: none;">
+    <script type="text/x-sage"># Definícia tlmených kmitov
+x(t, A, b, omega) = A * exp(-b*t) * cos(omega*t)
+show(x)
+</script>
+  </div></div><div class="nb-cell nb-code-cell"><div class="compute sagecell output_1803cdd0f03f45b683b08585432329f4" style="display: none;">
+
+
+<div class="sagecell_output_elements" style="display: none;">
+    
+    
+</div></div>
+  <div class="compute" style="display: none;">
+    <script type="text/x-sage"># Krivka 1: základné parametre (A=1, b=1, omega=1)
+graf_1 = plot(x(t, 1, 1, 1), (t, 0, 10),
+              legend_label=r"$A, b, \omega$ = 1,  1, 1")
+
+# Krivka 2: zvýšená frekvencia (omega=5)
+graf_2 = plot(x(t, 1, 1, 5), (t, 0, 10),
+              color="red",
+              legend_label=r"$A, b, \omega$ = 1,  1, 10")
+
+# Krivka 3: znížené tlmenie (b=0.3)
+graf_3 = plot(x(t, 1, 0.3, 1), (t, 0, 10),
+              color="green",
+              legend_label=r"$A, b, \omega$ = 1, 0.3, 1")
+
+# Krivka 4: zvýšená amplitúda (A=2)
+graf_4 = plot(x(t, 2, 1, 1), (t, 0, 10),
+              color="cyan",
+              legend_label=r"$A, b, \omega$ = 2,  1, 1",
+              frame=True, gridlines=True, title="Tlmené kmitanie pre rôzne parametre", axes_labels=[r"$t$", r"$x(t)$"])
+</script>
+  </div></div><div class="nb-cell nb-code-cell"><div class="compute sagecell output_f44b7ae8fb6d48d2acd94621a9574b51" style="display: none;">
+
+
+<div class="sagecell_output_elements" style="display: none;">
+    
+    
+</div></div>
+  <div class="compute" style="display: none;">
+    <script type="text/x-sage"># Kombinácia všetkých grafov do jedného
+graf_vysledny = graf_1 + graf_2 + graf_3 + graf_4
+
+# Zobrazenie výsledného grafu s rámčekom a mriežkou
+show(graf_vysledny)
+</script>
+  </div></div><div class="nb-cell nb-code-cell"><div class="compute sagecell output_4002643f0e664aac8aa382fd346d0f43" style="display: none;">
+
+
+<div class="sagecell_output_elements" style="display: none;">
+    
+    
+</div></div>
+  <div class="compute" style="display: none;">
+    <script type="text/x-sage"># Uloženie grafu v HD kvalite (300 DPI) do súboru PNG
+graf_vysledny.save("tlmene_kmity.png", dpi=300)
+</script>
+  </div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584179" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## Ako sa dá ešte Sage používať?" style="display: none;">## Ako sa dá ešte Sage používať?</textarea>
+        </div>
+        <div id="preview-1773326584179" class="markdown-preview" style="display: block;" data-original-markdown="## Ako sa dá ešte Sage používať?"><h2 id="ako-sa-dá-ešte-sage-používať">Ako sa dá ešte Sage používať?</h2>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584180" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Existuje hneď niekoľko možností, ako môžete používať Sage:
+
+### SageMathCell [(sagecell.sagemath.org)](https://sagecell.sagemath.org/)
+
+* jednoduchá online služba, ktorá umožňuje spúšťať kód Sage priamo vo webovom prehliadači bez potreby inštalácie alebo registrácie
+* **MIMORIADNE UŽITOČNÉ** pre rýchle a jednoduché použitie Sage s jednou kódovou bunkou
+
+### CoCalc [(cocalc.com)](https://cocalc.com/)
+
+* pokročilá online platforma pre prácu so Sage, Pythonom a ďalšími nástrojmi
+* umožňuje vytvárať interaktívne dokumenty - *Jupyter Notebooky* - so spustiteľným kódom, sprievodným textom a iným obsahom
+* platený, resp. dostupný v obmedzenej free skúšobnej verzii  (menšia kapacita úložiska, nestabilný výkon)" style="display: none;">Existuje hneď niekoľko možností, ako môžete používať Sage:
+
+### SageMathCell [(sagecell.sagemath.org)](https://sagecell.sagemath.org/)
+
+* jednoduchá online služba, ktorá umožňuje spúšťať kód Sage priamo vo webovom prehliadači bez potreby inštalácie alebo registrácie
+* **MIMORIADNE UŽITOČNÉ** pre rýchle a jednoduché použitie Sage s jednou kódovou bunkou
+
+### CoCalc [(cocalc.com)](https://cocalc.com/)
+
+* pokročilá online platforma pre prácu so Sage, Pythonom a ďalšími nástrojmi
+* umožňuje vytvárať interaktívne dokumenty - *Jupyter Notebooky* - so spustiteľným kódom, sprievodným textom a iným obsahom
+* platený, resp. dostupný v obmedzenej free skúšobnej verzii  (menšia kapacita úložiska, nestabilný výkon)</textarea>
+        </div>
+        <div id="preview-1773326584180" class="markdown-preview" style="display: block;" data-original-markdown="Existuje hneď niekoľko možností, ako môžete používať Sage:
+
+### SageMathCell [(sagecell.sagemath.org)](https://sagecell.sagemath.org/)
+
+* jednoduchá online služba, ktorá umožňuje spúšťať kód Sage priamo vo webovom prehliadači bez potreby inštalácie alebo registrácie
+* **MIMORIADNE UŽITOČNÉ** pre rýchle a jednoduché použitie Sage s jednou kódovou bunkou
+
+### CoCalc [(cocalc.com)](https://cocalc.com/)
+
+* pokročilá online platforma pre prácu so Sage, Pythonom a ďalšími nástrojmi
+* umožňuje vytvárať interaktívne dokumenty - *Jupyter Notebooky* - so spustiteľným kódom, sprievodným textom a iným obsahom
+* platený, resp. dostupný v obmedzenej free skúšobnej verzii  (menšia kapacita úložiska, nestabilný výkon)"><p>Existuje hneď niekoľko možností, ako môžete používať Sage:</p>
+<h3 id="sagemathcell-sagecellsagemathorg">SageMathCell <a href="https://sagecell.sagemath.org/">(sagecell.sagemath.org)</a></h3>
+<ul>
+<li>jednoduchá online služba, ktorá umožňuje spúšťať kód Sage priamo vo webovom prehliadači bez potreby inštalácie alebo registrácie</li>
+<li><strong>MIMORIADNE UŽITOČNÉ</strong> pre rýchle a jednoduché použitie Sage s jednou kódovou bunkou</li>
+</ul>
+<h3 id="cocalc-cocalccom">CoCalc <a href="https://cocalc.com/">(cocalc.com)</a></h3>
+<ul>
+<li>pokročilá online platforma pre prácu so Sage, Pythonom a ďalšími nástrojmi</li>
+<li>umožňuje vytvárať interaktívne dokumenty - <em>Jupyter Notebooky</em> - so spustiteľným kódom, sprievodným textom a iným obsahom</li>
+<li>platený, resp. dostupný v obmedzenej free skúšobnej verzii  (menšia kapacita úložiska, nestabilný výkon)</li>
+</ul>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1773326584180" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="### Offline inštalácia [(sagemath.org)](https://www.sagemath.org)
+
+* nezávisí pri používaní od internetu, ale vyžaduje inštaláciu na vlastnom počítači
+* je to lokálna verzia Sage a taktiež umožňuje vytvárať *Jupyter Notebooky*
+* inštalácia je žiaľ **netriviálna**, vyžaduje si isté pokročilé zručnosti s Linuxom (&quot;WSL&quot; - Windows Subsystem for Linux)" style="display: none;">### Offline inštalácia [(sagemath.org)](https://www.sagemath.org)
+
+* nezávisí pri používaní od internetu, ale vyžaduje inštaláciu na vlastnom počítači
+* je to lokálna verzia Sage a taktiež umožňuje vytvárať *Jupyter Notebooky*
+* inštalácia je žiaľ **netriviálna**, vyžaduje si isté pokročilé zručnosti s Linuxom ("WSL" - Windows Subsystem for Linux)</textarea>
+        </div>
+        <div id="preview-1773326584180" class="markdown-preview" style="display: block;" data-original-markdown="### Offline inštalácia [(sagemath.org)](https://www.sagemath.org)
+
+* nezávisí pri používaní od internetu, ale vyžaduje inštaláciu na vlastnom počítači
+* je to lokálna verzia Sage a taktiež umožňuje vytvárať *Jupyter Notebooky*
+* inštalácia je žiaľ **netriviálna**, vyžaduje si isté pokročilé zručnosti s Linuxom (&quot;WSL&quot; - Windows Subsystem for Linux)"><h3 id="offline-inštalácia-sagemathorg">Offline inštalácia <a href="https://www.sagemath.org">(sagemath.org)</a></h3>
+<ul>
+<li>nezávisí pri používaní od internetu, ale vyžaduje inštaláciu na vlastnom počítači</li>
+<li>je to lokálna verzia Sage a taktiež umožňuje vytvárať <em>Jupyter Notebooky</em></li>
+<li>inštalácia je žiaľ <strong>netriviálna</strong>, vyžaduje si isté pokročilé zručnosti s Linuxom ("WSL" - Windows Subsystem for Linux)</li>
+</ul>
+</div>
+    </div></div></div></div>
+
+
+            
+        </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<script src="https://dahn-research.eu/nbplayer/vendor/js/FileSaver.min.js"></script>
+<script src="https://dahn-research.eu/nbplayer/nbplayerConfig.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/closebrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/fold/foldcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/fold/foldgutter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/fold/markdown-fold.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/fold/foldgutter.min.css">
+<script>let RUN_DELAY = 1000;</script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbrunner12.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaiengine12.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaipriming.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbautocompletion10.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+  playerConfig={"panes":"Exec","lang":"sage","linked":true,"eval":false,"hide":["fullScreen"],"execute":true,"showRead":false,"collapsable":false,"playerPath":"https://dahn-research.eu/nbplayer","name":"SageMath"};
+  playerMode={"showSage":true,"showNotebookInput":true,"showSageInput":true};
+  let API_KEY="";
+  let API_URL="";
+  let CURRENT_MODEL="";
+  let CURRENT_LANGUAGE="English";
+  let SAGECELL_URL="https://sagecell.sagemath.org/";
+  makeMenu();
+  localize();
+  loadStatus();
+  makeSageCells(playerConfig);
+  launchPlayer();
+  addControlPanel();
+  setupRunAllCells();
+  addSageCellNumbering();
+  enhanceSageCellsWithGlobalAutocomplete();
+  window.onload = initializeMarkdownCells;
+  let CUSTOM_CONTEXT="";
+</script>
+</body>
+</html>

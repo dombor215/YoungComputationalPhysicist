@@ -1,4 +1,7 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html><html>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
     <style>
         body {
             margin: 0;
@@ -138,6 +141,19 @@
     </style>
     <title>Mladý počítačový fyzik</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,6 88,28 88,72 50,94 12,72 12,28' fill='%232196F3'/><text x='50' y='68' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='%23fff' text-anchor='middle'>S</text></svg>">
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+	<script>
+	document.getElementById("contentFrame").addEventListener("load", () => {
+		const iframe = document.getElementById("contentFrame");
+		const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+		if (iframeDoc && iframeDoc.body && window.MathJax && window.MathJax.typesetPromise) {
+			window.MathJax.typesetPromise([iframeDoc.body]);
+		}
+	});
+	</script>
+
+
 </head>
 
 <body>

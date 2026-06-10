@@ -13,7 +13,7 @@ const tocData = {
                 {
                     name: "Sage ako superkalkulačka",
                     path: "pages/02_Sage_ako_superkalkulačka.html",
-                    level: 1
+                    level: 2
                 }
             ]
         }

@@ -28,7 +28,7 @@ An interactive educational webpage with a dynamic table of contents for teaching
    {
      name: "Section Name",
      items: [
-       { name: "Page Title", path: "pages/filename.html", level: 1 }
+       { name: "Page Title", path: "pages/filename.html"}
      ]
    }
    ```

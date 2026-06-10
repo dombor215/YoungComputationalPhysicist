@@ -1,7 +1,6 @@
-<!DOCTYPE html><html>
-<meta charset="UTF-8">
+<!DOCTYPE html><html><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<head>
+
     <style>
         body {
             margin: 0;
@@ -140,20 +139,19 @@
         }
     </style>
     <title>Mladý počítačový fyzik</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,6 88,28 88,72 50,94 12,72 12,28' fill='%232196F3'/><text x='50' y='68' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='%23fff' text-anchor='middle'>S</text></svg>">
-	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
-	<script>
-	document.getElementById("contentFrame").addEventListener("load", () => {
-		const iframe = document.getElementById("contentFrame");
-		const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;polygon points='50,6 88,28 88,72 50,94 12,72 12,28' fill='%232196F3'/&gt;&lt;text x='50' y='68' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='%23fff' text-anchor='middle'&gt;S&lt;/text&gt;&lt;/svg&gt;">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+    <script src="toc.js"></script>
+    <script>
+    document.getElementById("contentFrame").addEventListener("load", () => {
+        const iframe = document.getElementById("contentFrame");
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
-		if (iframeDoc && iframeDoc.body && window.MathJax && window.MathJax.typesetPromise) {
-			window.MathJax.typesetPromise([iframeDoc.body]);
-		}
-	});
-	</script>
-
-
+        if (iframeDoc && iframeDoc.body && window.MathJax && window.MathJax.typesetPromise) {
+            window.MathJax.typesetPromise([iframeDoc.body]);
+        }
+    });
+    </script>
 </head>
 
 <body>
@@ -161,21 +159,7 @@
     <button class="toggle-toc-btn toc-visible" id="toggleBtn" onclick="toggleTOC()">◀</button>
 
     <div class="toc" id="toc">
-        <h2 onclick="loadHome()">Mladý počítačový fyzik</h2>
-        <ul>
-            <li>
-                <div class="section-header" onclick="toggleSection('section1')">
-                    <span>Úvod</span>
-                    <!-- <span class="toggle-icon">▼</span> -->
-                </div>
-                <ul class="subsection" id="section1">
-                    <li><a href="#" onclick="loadPage('pages/01_Zoznámte_sa_so_SageMath.html', event)">Zoznámte sa so SageMath</a></li>
-                </ul>
-				<ul class="subsection" id="section2">
-                    <li><a href="#" onclick="loadPage('pages/02_Sage_ako_superkalkulačka.html', event)">Sage ako superkalkulačka</a></li>
-                </ul>
-            </li>
-        </ul>
+        <!-- TOC will be generated here by JavaScript -->
     </div>
 
     <div class="content">
@@ -185,6 +169,56 @@
 
 <script>
     let tocVisible = true;
+
+    // Generate TOC from toc.js data
+    function generateTOC() {
+        const tocContainer = document.getElementById('toc');
+        
+        // Create title
+        const title = document.createElement('h2');
+        title.textContent = tocData.title;
+        title.onclick = loadHome;
+        tocContainer.appendChild(title);
+        
+        // Create sections
+        const ul = document.createElement('ul');
+        
+        tocData.sections.forEach((section, sectionIndex) => {
+            const sectionId = `section${sectionIndex + 1}`;
+            
+            // Section header
+            const li = document.createElement('li');
+            const sectionHeader = document.createElement('div');
+            sectionHeader.className = 'section-header';
+            sectionHeader.onclick = () => toggleSection(sectionId);
+            sectionHeader.innerHTML = `
+                <span>${section.name}</span>
+                <span class="toggle-icon">▼</span>
+            `;
+            li.appendChild(sectionHeader);
+            
+            // Subsection items
+            const subsection = document.createElement('ul');
+            subsection.className = 'subsection expanded';
+            subsection.id = sectionId;
+            
+            section.items.forEach(item => {
+                const itemLi = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#';
+                link.textContent = item.name;
+                link.dataset.path = item.path;
+                link.onclick = (e) => loadPage(item.path, e);
+                itemLi.appendChild(link);
+                subsection.appendChild(itemLi);
+            });
+            
+            li.appendChild(subsection);
+            ul.appendChild(li);
+        });
+        
+        tocContainer.appendChild(ul);
+    }
 
     function toggleTOC() {
         const toc = document.getElementById('toc');
@@ -207,7 +241,7 @@
 
     function loadHome() {
         const iframe = document.getElementById('contentFrame');
-        iframe.src = 'pages/00_TOC.html';
+        iframe.src = tocData.homePage;
         iframe.removeAttribute('allow');
         iframe.removeAttribute('allowfullscreen');
 
@@ -245,7 +279,15 @@
         header.classList.toggle('collapsed');
     }
 
-    document.querySelector('.toc a').classList.add('active');
+    // Initialize TOC when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        generateTOC();
+        // Set first link as active
+        const firstLink = document.querySelector('.toc a');
+        if (firstLink) {
+            firstLink.classList.add('active');
+        }
+    });
 </script>
 
 

@@ -6,23 +6,21 @@ const tocData = {
             name: "Úvod",
             items: [
                 {
-                    name: "Zoznámte sa so Sage",
-                    path: "pages/01_Zoznámte_sa_so_SageMath.html",
-                    level: 1
+                    name: "Zoznámte sa so SageMath",
+                    path: "pages/01_Zoznámte_sa_so_SageMath.html"
                 },
                 {
                     name: "Sage ako superkalkulačka",
-                    path: "pages/02_Sage_ako_superkalkulačka.html",
-                    level: 2
+                    path: "pages/02_Sage_ako_superkalkulačka.html"
                 }
             ]
         }
         // Add more sections here as needed
         // {
-        //     name: "Ďalšia sekcia",
+        //     name: "Ďalšia kapitola",
         //     items: [
-        //         { name: "Podkapitola 1", path: "pages/03_...", level: 1 },
-        //         { name: "Podkapitola 2", path: "pages/04_...", level: 2 }
+        //         { name: "Podkapitola 1", path: "pages/03_..." },
+        //         { name: "Podkapitola 2", path: "pages/04_..." }
         //     ]
         // }
     ]

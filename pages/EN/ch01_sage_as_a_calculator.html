@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;polygon points='50,6 88,28 88,72 50,94 12,72 12,28' fill='%234CAF50'/&gt;&lt;text x='50' y='68' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='%23fff' text-anchor='middle'&gt;S&lt;/text&gt;&lt;/svg&gt;">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/es5-shim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/ansi_up.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex-auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/notebook.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/prism.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/notebook.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/nbpreview.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/css/nbplayer24.css">
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/texme@1.2.2"></script>
+<div id="main">
+<div id="notebook-holder"><div class="nb-notebook"><div class="nb-worksheet"><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320885-1" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Faculty of Science, Pavol Jozef Šafárik University in Košice, Slovakia&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt;&nbsp;&lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt;&nbsp;&lt;/p&gt;" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320885-1" class="markdown-preview" style="display: block;" data-original-markdown="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Faculty of Science, Pavol Jozef Šafárik University in Košice, Slovakia&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt;&nbsp;&lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt;&nbsp;&lt;/p&gt;"><p><img style="float: right;" src="https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png" alt="" width="100" height="85"></p>
+<p><strong>Authors:</strong> Dominik Borovský<sup>1</sup> &amp; Jozef Hanč<sup>2</sup></p>
+<p><em>2026, Faculty of Science, Pavol Jozef Šafárik University in Košice, Slovakia</em></p>
+<p><sup>1</sup><a href="mailto:dominik.borovsky@student.upjs.sk">dominik.borovsky@student.upjs.sk,</a>&nbsp;<sup>2</sup><a href="mailto:jozef.hanc@upjs.sk">jozef.hanc@upjs.sk</a>&nbsp;</p></div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320885-2" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="# **Chapter 1: The Stone in the Well**" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320885-2" class="markdown-preview" style="display: block;" data-original-markdown="# **Chapter 1: The Stone in the Well**"><h1 id="chapter-1-the-stone-in-the-well"><strong>Chapter 1: The Stone in the Well</strong></h1>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320885-3" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **1.1 Free fall in one formula**
+
+Drop a stone and it does not float: it falls faster and faster the longer it drops. Galileo worked out the rule more than 400 years ago, and it is remarkably simple. If we ignore air resistance, an object dropped from rest covers the height
+
+$$h = \frac{1}{2}\, g\, t^2$$
+
+after time $t$, where $g = 9.81\ \mathrm{m/s^2}$ is the gravitational acceleration at the Earth's surface (may change slightly with altitude and latitude). Turning the formula around, the time needed to fall through a height $h$ is
+
+$$t = \sqrt{\frac{2h}{g}}.$$
+
+Doubling the depth of a fall does not double the time: it grows like the square root: $t \propto \sqrt{h}$. A stone falling 90 m takes only about 1.4 times longer than one falling 45 m.
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;https://i.postimg.cc/kGLTQYQX/well-drop.png&quot; alt=&quot;free fall well depth diagram&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+*Fig. 1.1: Free fall into a well: depth h, fall time t, and the growing velocity arrows of a stone dropped from rest.*
+
+**Units convention.** In this whole book we work in SI units: meters, seconds, kilograms. We do not attach units to numbers inside Sage. Instead we write the unit into the variable name or a comment, and into axis labels on plots. So a depth is stored as `h = 45` with the understanding that this means 45 meters." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320885-3" class="markdown-preview" style="display: block;" data-original-markdown="## **1.1 Free fall in one formula**
+
+Drop a stone and it does not float: it falls faster and faster the longer it drops. Galileo worked out the rule more than 400 years ago, and it is remarkably simple. If we ignore air resistance, an object dropped from rest covers the height
+
+$$h = \frac{1}{2}\, g\, t^2$$
+
+after time $t$, where $g = 9.81\ \mathrm{m/s^2}$ is the gravitational acceleration at the Earth's surface (may change slightly with altitude and latitude). Turning the formula around, the time needed to fall through a height $h$ is
+
+$$t = \sqrt{\frac{2h}{g}}.$$
+
+Doubling the depth of a fall does not double the time: it grows like the square root: $t \propto \sqrt{h}$. A stone falling 90 m takes only about 1.4 times longer than one falling 45 m.
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;https://i.postimg.cc/kGLTQYQX/well-drop.png&quot; alt=&quot;free fall well depth diagram&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+*Fig. 1.1: Free fall into a well: depth h, fall time t, and the growing velocity arrows of a stone dropped from rest.*
+
+**Units convention.** In this whole book we work in SI units: meters, seconds, kilograms. We do not attach units to numbers inside Sage. Instead we write the unit into the variable name or a comment, and into axis labels on plots. So a depth is stored as `h = 45` with the understanding that this means 45 meters."><h2 id="11-free-fall-in-one-formula"><strong>1.1 Free fall in one formula</strong></h2>
+<p>Drop a stone and it does not float: it falls faster and faster the longer it drops. Galileo worked out the rule more than 400 years ago, and it is remarkably simple. If we ignore air resistance, an object dropped from rest covers the height</p>
+<p>$$h = \frac{1}{2}\, g\, t^2$$</p>
+<p>after time $t$, where $g = 9.81\ \mathrm{m/s^2}$ is the gravitational acceleration at the Earth's surface (may change slightly with altitude and latitude). Turning the formula around, the time needed to fall through a height $h$ is</p>
+<p>$$t = \sqrt{\frac{2h}{g}}.$$</p>
+<p>Doubling the depth of a fall does not double the time: it grows like the square root: $t \propto \sqrt{h}$. A stone falling 90 m takes only about 1.4 times longer than one falling 45 m.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://i.postimg.cc/kGLTQYQX/well-drop.png" alt="free fall well depth diagram" width="500"></p>
+
+<p><em>Fig. 1.1: Free fall into a well: depth h, fall time t, and the growing velocity arrows of a stone dropped from rest.</em></p>
+<p><strong>Units convention.</strong> In this whole book we work in SI units: meters, seconds, kilograms. We do not attach units to numbers inside Sage. Instead we write the unit into the variable name or a comment, and into axis labels on plots. So a depth is stored as <code>h = 45</code> with the understanding that this means 45 meters.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320885-4" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **1.2 Meet Sage: exact and approximate numbers**
+
+Before we solve the well problem, two minutes on the tool itself. SageMath here runs in a notebook of cells: you type into a cell, press Shift+Enter, and the result appears below. The same cells greet you wherever you run it, and there are several places to run it:
+
+&gt; **Note: where to run SageMath.** For simple, fast computations the quickest door is a SageMath cell: open https://sagecell.sagemath.org/ in a browser, type, evaluate. Our SageCell IDE at https://sage-sk.org/IDE/ offers the same cells in a more advanced mode. When your problem solving grows into something continuous, a *computational essay* mixing text, code and results, move to Jupyter notebooks. If you prefer the cloud, where the computations run on a web server, there is CoCalc (paid) and our SageMath AI Notebooks (free, suitable for lightweight work, see https://sage-sk.org/). To install SageMath on your own computer, follow the instructions at https://www.sagemath.org/; on Windows the installation needs a little tweaking with WSL (Windows Subsystem for Linux), see https://doc.sagemath.org/html/en/installation/index.html.
+
+Whichever door you choose, the first cells are plain arithmetic, and it works the way paper does. Multiplication and division bind before addition and subtraction:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320885-4" class="markdown-preview" style="display: block;" data-original-markdown="## **1.2 Meet Sage: exact and approximate numbers**
+
+Before we solve the well problem, two minutes on the tool itself. SageMath here runs in a notebook of cells: you type into a cell, press Shift+Enter, and the result appears below. The same cells greet you wherever you run it, and there are several places to run it:
+
+&gt; **Note: where to run SageMath.** For simple, fast computations the quickest door is a SageMath cell: open https://sagecell.sagemath.org/ in a browser, type, evaluate. Our SageCell IDE at https://sage-sk.org/IDE/ offers the same cells in a more advanced mode. When your problem solving grows into something continuous, a *computational essay* mixing text, code and results, move to Jupyter notebooks. If you prefer the cloud, where the computations run on a web server, there is CoCalc (paid) and our SageMath AI Notebooks (free, suitable for lightweight work, see https://sage-sk.org/). To install SageMath on your own computer, follow the instructions at https://www.sagemath.org/; on Windows the installation needs a little tweaking with WSL (Windows Subsystem for Linux), see https://doc.sagemath.org/html/en/installation/index.html.
+
+Whichever door you choose, the first cells are plain arithmetic, and it works the way paper does. Multiplication and division bind before addition and subtraction:"><h2 id="12-meet-sage-exact-and-approximate-numbers"><strong>1.2 Meet Sage: exact and approximate numbers</strong></h2>
+<p>Before we solve the well problem, two minutes on the tool itself. SageMath here runs in a notebook of cells: you type into a cell, press Shift+Enter, and the result appears below. The same cells greet you wherever you run it, and there are several places to run it:</p>
+<blockquote>
+<p><strong>Note: where to run SageMath.</strong> For simple, fast computations the quickest door is a SageMath cell: open <a href="https://sagecell.sagemath.org/">https://sagecell.sagemath.org/</a> in a browser, type, evaluate. Our SageCell IDE at <a href="https://sage-sk.org/IDE/">https://sage-sk.org/IDE/</a> offers the same cells in a more advanced mode. When your problem solving grows into something continuous, a <em>computational essay</em> mixing text, code and results, move to Jupyter notebooks. If you prefer the cloud, where the computations run on a web server, there is CoCalc (paid) and our SageMath AI Notebooks (free, suitable for lightweight work, see <a href="https://sage-sk.org/">https://sage-sk.org/</a>). To install SageMath on your own computer, follow the instructions at <a href="https://www.sagemath.org/">https://www.sagemath.org/</a>; on Windows the installation needs a little tweaking with WSL (Windows Subsystem for Linux), see <a href="https://doc.sagemath.org/html/en/installation/index.html">https://doc.sagemath.org/html/en/installation/index.html</a>.</p>
+</blockquote>
+<p>Whichever door you choose, the first cells are plain arithmetic, and it works the way paper does. Multiplication and division bind before addition and subtraction:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># precedence of * and / over + and -
+2 - 1 + 3*4
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320886-5" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Parentheses group exactly as on paper. Only round parentheses are used, and they must be closed:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320886-5" class="markdown-preview" style="display: block;" data-original-markdown="Parentheses group exactly as on paper. Only round parentheses are used, and they must be closed:"><p>Parentheses group exactly as on paper. Only round parentheses are used, and they must be closed:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">(2 + 3)*4
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320886-6" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Powers are typed with `^` (Shift+6 on a US keyboard) or with two asterisks, whichever your keyboard prefers:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320886-6" class="markdown-preview" style="display: block;" data-original-markdown="Powers are typed with `^` (Shift+6 on a US keyboard) or with two asterisks, whichever your keyboard prefers:"><p>Powers are typed with <code>^</code> (Shift+6 on a US keyboard) or with two asterisks, whichever your keyboard prefers:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">2^10, 2**10
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320886-7" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Both give `1024`. A small typing matter before we go on: Sage will also meet text in your cells - names of files, comments in quotes, later whole columns of data - and text is always wrapped in quote marks. Python, on which SageMath is built, accepts both the double `&quot;` and the single `'` quote: `&quot;hello&quot;` and `'hello'` are the same string. The only rule is consistency: a string must start and end with the same mark, so `'hello&quot;` is an error. This book mostly uses double quotes, single ones appear where they read better.
+
+And now the thing a (relatively basic) pocket calculator cannot do properly:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320886-7" class="markdown-preview" style="display: block;" data-original-markdown="Both give `1024`. A small typing matter before we go on: Sage will also meet text in your cells - names of files, comments in quotes, later whole columns of data - and text is always wrapped in quote marks. Python, on which SageMath is built, accepts both the double `&quot;` and the single `'` quote: `&quot;hello&quot;` and `'hello'` are the same string. The only rule is consistency: a string must start and end with the same mark, so `'hello&quot;` is an error. This book mostly uses double quotes, single ones appear where they read better.
+
+And now the thing a (relatively basic) pocket calculator cannot do properly:"><p>Both give <code>1024</code>. A small typing matter before we go on: Sage will also meet text in your cells - names of files, comments in quotes, later whole columns of data - and text is always wrapped in quote marks. Python, on which SageMath is built, accepts both the double <code>"</code> and the single <code>'</code> quote: <code>"hello"</code> and <code>'hello'</code> are the same string. The only rule is consistency: a string must start and end with the same mark, so <code>'hello"</code> is an error. This book mostly uses double quotes, single ones appear where they read better.</p>
+<p>And now the thing a (relatively basic) pocket calculator cannot do properly:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">sqrt(2)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320887-8" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Sage answers with `sqrt(2)`, not with 1.4142135... It keeps the value *exact*, as a symbol. That is useful, because exact things stay exact:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320887-8" class="markdown-preview" style="display: block;" data-original-markdown="Sage answers with `sqrt(2)`, not with 1.4142135... It keeps the value *exact*, as a symbol. That is useful, because exact things stay exact:"><p>Sage answers with <code>sqrt(2)</code>, not with 1.4142135... It keeps the value <em>exact</em>, as a symbol. That is useful, because exact things stay exact:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">sqrt(2)^2
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320887-9" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="The answer is exactly `2`, not 2.0000000000000004. A normal calculator would have rounded along the way and lost that. If we want a decimal, we ask for one:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320887-9" class="markdown-preview" style="display: block;" data-original-markdown="The answer is exactly `2`, not 2.0000000000000004. A normal calculator would have rounded along the way and lost that. If we want a decimal, we ask for one:"><p>The answer is exactly <code>2</code>, not 2.0000000000000004. A normal calculator would have rounded along the way and lost that. If we want a decimal, we ask for one:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">N(sqrt(2))
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">round(N(sqrt(2)), 4)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320887-10" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Syntax box: `N()` and `round()`.**
+&gt; `N(expr)` converts an exact expression into a decimal number. You can ask for a specific number of digits with `N(expr, digits=30)` (try `N(pi, digits=100)` for fun), and `.n()` after an expression does the same: `sqrt(2).n()`. `round(x, n)` rounds the decimal `x` to `n` digits after the point. Rule of thumb: stay exact as long as possible, go decimal at the end.
+
+Fractions behave the same way. Sage does not turn $1/3$ into 0.3333...:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320887-10" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Syntax box: `N()` and `round()`.**
+&gt; `N(expr)` converts an exact expression into a decimal number. You can ask for a specific number of digits with `N(expr, digits=30)` (try `N(pi, digits=100)` for fun), and `.n()` after an expression does the same: `sqrt(2).n()`. `round(x, n)` rounds the decimal `x` to `n` digits after the point. Rule of thumb: stay exact as long as possible, go decimal at the end.
+
+Fractions behave the same way. Sage does not turn $1/3$ into 0.3333...:"><blockquote>
+<p><strong>Syntax box: <code>N()</code> and <code>round()</code>.</strong>
+<code>N(expr)</code> converts an exact expression into a decimal number. You can ask for a specific number of digits with <code>N(expr, digits=30)</code> (try <code>N(pi, digits=100)</code> for fun), and <code>.n()</code> after an expression does the same: <code>sqrt(2).n()</code>. <code>round(x, n)</code> rounds the decimal <code>x</code> to <code>n</code> digits after the point. Rule of thumb: stay exact as long as possible, go decimal at the end.</p>
+</blockquote>
+<p>Fractions behave the same way. Sage does not turn $1/3$ into 0.3333...:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">1/3 + 1/6
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320887-11" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="The answer is `1/2`, exactly. In ordinary Python this would come out as `0.5` only after rounding errors; in Sage exact arithmetic is the default. Of course we can also see it as a decimal:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320887-11" class="markdown-preview" style="display: block;" data-original-markdown="The answer is `1/2`, exactly. In ordinary Python this would come out as `0.5` only after rounding errors; in Sage exact arithmetic is the default. Of course we can also see it as a decimal:"><p>The answer is <code>1/2</code>, exactly. In ordinary Python this would come out as <code>0.5</code> only after rounding errors; in Sage exact arithmetic is the default. Of course we can also see it as a decimal:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">N(1/3 + 1/6)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320888-12" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="**Sage simplifies on its own.** It does not just store exact expressions, it tidies them up. The sum of fractions above came back already reduced to `1/2`, before you could reach for a pencil:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320888-12" class="markdown-preview" style="display: block;" data-original-markdown="**Sage simplifies on its own.** It does not just store exact expressions, it tidies them up. The sum of fractions above came back already reduced to `1/2`, before you could reach for a pencil:"><p><strong>Sage simplifies on its own.</strong> It does not just store exact expressions, it tidies them up. The sum of fractions above came back already reduced to <code>1/2</code>, before you could reach for a pencil:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">50/100
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">sqrt(8)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320888-13" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="The fraction comes out as `1/2`, and the root as `2*sqrt(2)` - the largest perfect square is pulled out of the radicand. You would have done both simplifications by hand on paper; Sage does them without being asked.
+
+One warning about decimal points, because it bites every newcomer once: Sage uses a **decimal point**, never a comma. `9,81` is not a number. And the moment a single decimal number enters a calculation, the whole result becomes approximate:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320888-13" class="markdown-preview" style="display: block;" data-original-markdown="The fraction comes out as `1/2`, and the root as `2*sqrt(2)` - the largest perfect square is pulled out of the radicand. You would have done both simplifications by hand on paper; Sage does them without being asked.
+
+One warning about decimal points, because it bites every newcomer once: Sage uses a **decimal point**, never a comma. `9,81` is not a number. And the moment a single decimal number enters a calculation, the whole result becomes approximate:"><p>The fraction comes out as <code>1/2</code>, and the root as <code>2*sqrt(2)</code> - the largest perfect square is pulled out of the radicand. You would have done both simplifications by hand on paper; Sage does them without being asked.</p>
+<p>One warning about decimal points, because it bites every newcomer once: Sage uses a <strong>decimal point</strong>, never a comma. <code>9,81</code> is not a number. And the moment a single decimal number enters a calculation, the whole result becomes approximate:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">1/3 + 1/6      # exact
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">0.33 + 0.17    # approximate: a decimal point appeared
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320888-14" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="The first cell answers `1/2`, a fraction. The second answers a decimal number: from the moment the decimal point appeared, Sage stopped doing exact arithmetic and switched to machine numbers of finite precision. Two tricks steer this behavior when you need to:
+
+&gt; **Note: forcing exact or approximate.** If you want approximate results without typing `N()` everywhere, write at least one input value as a decimal: `10.0` instead of `10`. If you want the opposite, exact results from numbers that are naturally decimal, write them as fractions: `981/100` instead of `9.81`. Then only integers are involved, and Sage stays exact until you call for a decimal. The fraction trick must be applied to *all* decimal numbers entering the calculation; one decimal anywhere spoils the exactness." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320888-14" class="markdown-preview" style="display: block;" data-original-markdown="The first cell answers `1/2`, a fraction. The second answers a decimal number: from the moment the decimal point appeared, Sage stopped doing exact arithmetic and switched to machine numbers of finite precision. Two tricks steer this behavior when you need to:
+
+&gt; **Note: forcing exact or approximate.** If you want approximate results without typing `N()` everywhere, write at least one input value as a decimal: `10.0` instead of `10`. If you want the opposite, exact results from numbers that are naturally decimal, write them as fractions: `981/100` instead of `9.81`. Then only integers are involved, and Sage stays exact until you call for a decimal. The fraction trick must be applied to *all* decimal numbers entering the calculation; one decimal anywhere spoils the exactness."><p>The first cell answers <code>1/2</code>, a fraction. The second answers a decimal number: from the moment the decimal point appeared, Sage stopped doing exact arithmetic and switched to machine numbers of finite precision. Two tricks steer this behavior when you need to:</p>
+<blockquote>
+<p><strong>Note: forcing exact or approximate.</strong> If you want approximate results without typing <code>N()</code> everywhere, write at least one input value as a decimal: <code>10.0</code> instead of <code>10</code>. If you want the opposite, exact results from numbers that are naturally decimal, write them as fractions: <code>981/100</code> instead of <code>9.81</code>. Then only integers are involved, and Sage stays exact until you call for a decimal. The fraction trick must be applied to <em>all</em> decimal numbers entering the calculation; one decimal anywhere spoils the exactness.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320888-15" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **1.3 The problem**
+
+Here is a real situation. You are standing at the mouth of an old hand-dug well in the mountains. A sign (and a long rope) tells you the water surface is 45 m below you. You drop a stone in.
+
+Two questions, both answerable before you let go:
+
+1. How long do you have to wait until the stone hits the water?
+2. How fast is the stone moving when it gets there? (Relevant if it were your phone instead of a stone.)
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;https://i.postimg.cc/yx2Lmpm6/well-top-look.jpg&quot; alt=&quot;deep old stone well looking down&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+*Fig. 1.2: The mouth of a hand-dug well. A drop and a stopwatch are all the physics instruments needed to measure its depth.*
+
+We will answer both with Sage, one small step at a time, checking every result before taking the next step. That is exactly how a working physicist uses a notebook: never type a long formula, run it, and hope." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320888-15" class="markdown-preview" style="display: block;" data-original-markdown="## **1.3 The problem**
+
+Here is a real situation. You are standing at the mouth of an old hand-dug well in the mountains. A sign (and a long rope) tells you the water surface is 45 m below you. You drop a stone in.
+
+Two questions, both answerable before you let go:
+
+1. How long do you have to wait until the stone hits the water?
+2. How fast is the stone moving when it gets there? (Relevant if it were your phone instead of a stone.)
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;https://i.postimg.cc/yx2Lmpm6/well-top-look.jpg&quot; alt=&quot;deep old stone well looking down&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+*Fig. 1.2: The mouth of a hand-dug well. A drop and a stopwatch are all the physics instruments needed to measure its depth.*
+
+We will answer both with Sage, one small step at a time, checking every result before taking the next step. That is exactly how a working physicist uses a notebook: never type a long formula, run it, and hope."><h2 id="13-the-problem"><strong>1.3 The problem</strong></h2>
+<p>Here is a real situation. You are standing at the mouth of an old hand-dug well in the mountains. A sign (and a long rope) tells you the water surface is 45 m below you. You drop a stone in.</p>
+<p>Two questions, both answerable before you let go:</p>
+<ol>
+<li>How long do you have to wait until the stone hits the water?</li>
+<li>How fast is the stone moving when it gets there? (Relevant if it were your phone instead of a stone.)</li>
+</ol>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://i.postimg.cc/yx2Lmpm6/well-top-look.jpg" alt="deep old stone well looking down" width="500"></p>
+
+<p><em>Fig. 1.2: The mouth of a hand-dug well. A drop and a stopwatch are all the physics instruments needed to measure its depth.</em></p>
+<p>We will answer both with Sage, one small step at a time, checking every result before taking the next step. That is exactly how a working physicist uses a notebook: never type a long formula, run it, and hope.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320888-16" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **1.4 Solution, step by step**
+
+**Step 1: store the numbers we know.**
+
+Physics first, precision later: start with a rounded value of $g$," style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320888-16" class="markdown-preview" style="display: block;" data-original-markdown="## **1.4 Solution, step by step**
+
+**Step 1: store the numbers we know.**
+
+Physics first, precision later: start with a rounded value of $g$,"><h2 id="14-solution-step-by-step"><strong>1.4 Solution, step by step</strong></h2>
+<p><strong>Step 1: store the numbers we know.</strong></p>
+<p>Physics first, precision later: start with a rounded value of $g$,</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">g = 10     # m/s^2, rounded
+h = 45     # m
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320889-17" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Syntax box: variables.**
+&gt; `g = 10` gives the name `g` to the number 10. From now on, typing `g` means 10. Names are your choice, but good names (`g`, `h`, `t`) make the notebook read like physics instead of like code. A line starting with `#` is a comment and is ignored by Sage, so we could also have written `g = 10  # m/s^2`.
+&gt; Note also that both numbers are *integers*. Watch what that buys us in the next steps.
+
+**Step 2: the formula, typed in one small piece at a time.**
+
+The formula says $t = \sqrt{2h/g}$. Rather than typing the whole thing at once, first build the inside:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320889-17" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Syntax box: variables.**
+&gt; `g = 10` gives the name `g` to the number 10. From now on, typing `g` means 10. Names are your choice, but good names (`g`, `h`, `t`) make the notebook read like physics instead of like code. A line starting with `#` is a comment and is ignored by Sage, so we could also have written `g = 10  # m/s^2`.
+&gt; Note also that both numbers are *integers*. Watch what that buys us in the next steps.
+
+**Step 2: the formula, typed in one small piece at a time.**
+
+The formula says $t = \sqrt{2h/g}$. Rather than typing the whole thing at once, first build the inside:"><blockquote>
+<p><strong>Syntax box: variables.</strong>
+<code>g = 10</code> gives the name <code>g</code> to the number 10. From now on, typing <code>g</code> means 10. Names are your choice, but good names (<code>g</code>, <code>h</code>, <code>t</code>) make the notebook read like physics instead of like code. A line starting with <code>#</code> is a comment and is ignored by Sage, so we could also have written <code>g = 10  # m/s^2</code>.
+Note also that both numbers are <em>integers</em>. Watch what that buys us in the next steps.</p>
+</blockquote>
+<p><strong>Step 2: the formula, typed in one small piece at a time.</strong></p>
+<p>The formula says $t = \sqrt{2h/g}$. Rather than typing the whole thing at once, first build the inside:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">2*h/g
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320889-18" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Sage answers `9` - exactly, because only integers went in. A rough sanity check in the head: 90 divided by 10 is 9, yes.
+
+&gt; **Note: The units work out.**
+&gt; $2h/g$ has units of $\mathrm{m}/(\mathrm{m/s^2}) = \mathrm{s^2}$, so its square root is a time. Always check units on intermediate results; it catches most formula mistakes.
+
+**Step 3: take the square root.**" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320889-18" class="markdown-preview" style="display: block;" data-original-markdown="Sage answers `9` - exactly, because only integers went in. A rough sanity check in the head: 90 divided by 10 is 9, yes.
+
+&gt; **Note: The units work out.**
+&gt; $2h/g$ has units of $\mathrm{m}/(\mathrm{m/s^2}) = \mathrm{s^2}$, so its square root is a time. Always check units on intermediate results; it catches most formula mistakes.
+
+**Step 3: take the square root.**"><p>Sage answers <code>9</code> - exactly, because only integers went in. A rough sanity check in the head: 90 divided by 10 is 9, yes.</p>
+<blockquote>
+<p><strong>Note: The units work out.</strong>
+$2h/g$ has units of $\mathrm{m}/(\mathrm{m/s^2}) = \mathrm{s^2}$, so its square root is a time. Always check units on intermediate results; it catches most formula mistakes.</p>
+</blockquote>
+<p><strong>Step 3: take the square root.</strong></p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">t = sqrt(2*h/g)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">t
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320889-19" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="The stone falls for exactly 3 seconds. Suspiciously clean - and that cleanliness is our own doing: it came from the rounded $g = 10$. Time for the realistic value:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320889-19" class="markdown-preview" style="display: block;" data-original-markdown="The stone falls for exactly 3 seconds. Suspiciously clean - and that cleanliness is our own doing: it came from the rounded $g = 10$. Time for the realistic value:"><p>The stone falls for exactly 3 seconds. Suspiciously clean - and that cleanliness is our own doing: it came from the rounded $g = 10$. Time for the realistic value:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">g = 9.81           # acceleration in m/s^2
+t = sqrt(2*h/g)    # impact time
+t                  # displaying the result
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320889-20" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="**Step 4: read the number, but not all of it.**
+
+`t` now shows something like `3.02891266407691`. Tempting to copy all of it; resist. Sage can print 15 digits (or any number you choose), but you cannot *measure* that precisely. The depth is known to two digits, so an answer of 3.02891266 s would be nonsense. How many digits deserve to be reported is part of physics too; we will return to it properly in the chapter on uncertainties. The stone falls for about 3.03 seconds. For a prettier look at a result there is also `show(t)`, which prints textbook typesetting - fractions as stacked bars, roots as radical signs, `pi` as $\pi$; try `show(1/3 + 1/6)` and compare with the raw output.
+
+Did you notice what changed with the second `g`? The first was `10`, an integer, so everything stayed exact and `sqrt(9)` was `3`. The second is `9.81`, a number with a decimal point, so the whole result became approximate at once. One decimal anywhere in the calculation is enough.
+
+**Step 5: round it for the answer.**" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320889-20" class="markdown-preview" style="display: block;" data-original-markdown="**Step 4: read the number, but not all of it.**
+
+`t` now shows something like `3.02891266407691`. Tempting to copy all of it; resist. Sage can print 15 digits (or any number you choose), but you cannot *measure* that precisely. The depth is known to two digits, so an answer of 3.02891266 s would be nonsense. How many digits deserve to be reported is part of physics too; we will return to it properly in the chapter on uncertainties. The stone falls for about 3.03 seconds. For a prettier look at a result there is also `show(t)`, which prints textbook typesetting - fractions as stacked bars, roots as radical signs, `pi` as $\pi$; try `show(1/3 + 1/6)` and compare with the raw output.
+
+Did you notice what changed with the second `g`? The first was `10`, an integer, so everything stayed exact and `sqrt(9)` was `3`. The second is `9.81`, a number with a decimal point, so the whole result became approximate at once. One decimal anywhere in the calculation is enough.
+
+**Step 5: round it for the answer.**"><p><strong>Step 4: read the number, but not all of it.</strong></p>
+<p><code>t</code> now shows something like <code>3.02891266407691</code>. Tempting to copy all of it; resist. Sage can print 15 digits (or any number you choose), but you cannot <em>measure</em> that precisely. The depth is known to two digits, so an answer of 3.02891266 s would be nonsense. How many digits deserve to be reported is part of physics too; we will return to it properly in the chapter on uncertainties. The stone falls for about 3.03 seconds. For a prettier look at a result there is also <code>show(t)</code>, which prints textbook typesetting - fractions as stacked bars, roots as radical signs, <code>pi</code> as $\pi$; try <code>show(1/3 + 1/6)</code> and compare with the raw output.</p>
+<p>Did you notice what changed with the second <code>g</code>? The first was <code>10</code>, an integer, so everything stayed exact and <code>sqrt(9)</code> was <code>3</code>. The second is <code>9.81</code>, a number with a decimal point, so the whole result became approximate at once. One decimal anywhere in the calculation is enough.</p>
+<p><strong>Step 5: round it for the answer.</strong></p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">round(t, 2)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320890-21" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Answer to question 1: **about 3.03 s**. We round to three digits because the depth (45 m, two digits) and $g$ (three digits) do not justify more precision. Carrying ten digits around would be pretending we know more than we do.
+
+**Step 6: the impact speed.**
+
+The stone starts from rest and gains speed steadily: $v = g\,t$. We already have `t` in memory, so reuse it:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320890-21" class="markdown-preview" style="display: block;" data-original-markdown="Answer to question 1: **about 3.03 s**. We round to three digits because the depth (45 m, two digits) and $g$ (three digits) do not justify more precision. Carrying ten digits around would be pretending we know more than we do.
+
+**Step 6: the impact speed.**
+
+The stone starts from rest and gains speed steadily: $v = g\,t$. We already have `t` in memory, so reuse it:"><p>Answer to question 1: <strong>about 3.03 s</strong>. We round to three digits because the depth (45 m, two digits) and $g$ (three digits) do not justify more precision. Carrying ten digits around would be pretending we know more than we do.</p>
+<p><strong>Step 6: the impact speed.</strong></p>
+<p>The stone starts from rest and gains speed steadily: $v = g\,t$. We already have <code>t</code> in memory, so reuse it:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">v = g*t
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">round(v, 1)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320891-22" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="About 29.7 m per second. In units that mean more for a car driver:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320891-22" class="markdown-preview" style="display: block;" data-original-markdown="About 29.7 m per second. In units that mean more for a car driver:"><p>About 29.7 m per second. In units that mean more for a car driver:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">v*3.6
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320892-23" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Multiplying m/s by 3.6 converts to km/h: the stone hits the water at roughly **107 km/h**. That is answer to question 2, and a good reason not to drop your phone down the well." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320892-23" class="markdown-preview" style="display: block;" data-original-markdown="Multiplying m/s by 3.6 converts to km/h: the stone hits the water at roughly **107 km/h**. That is answer to question 2, and a good reason not to drop your phone down the well."><p>Multiplying m/s by 3.6 converts to km/h: the stone hits the water at roughly <strong>107 km/h</strong>. That is answer to question 2, and a good reason not to drop your phone down the well.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320892-24" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **1.5 The reverse problem: timing the fall**
+
+Now flip the situation. You visit a second well with no sign and no rope, but you do have a stopwatch. You drop a stone and measure a fall time of 2.5 s. How deep is this well?
+
+From $h = \frac{1}{2}gt^2$:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320892-24" class="markdown-preview" style="display: block;" data-original-markdown="## **1.5 The reverse problem: timing the fall**
+
+Now flip the situation. You visit a second well with no sign and no rope, but you do have a stopwatch. You drop a stone and measure a fall time of 2.5 s. How deep is this well?
+
+From $h = \frac{1}{2}gt^2$:"><h2 id="15-the-reverse-problem-timing-the-fall"><strong>1.5 The reverse problem: timing the fall</strong></h2>
+<p>Now flip the situation. You visit a second well with no sign and no rope, but you do have a stopwatch. You drop a stone and measure a fall time of 2.5 s. How deep is this well?</p>
+<p>From $h = \frac{1}{2}gt^2$:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">t_measured = 2.5
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">h_found = g*t_measured^2/2
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">h_found
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320893-25" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="The well is about 31 m deep. Note what happened here: we used Sage as a *reverse* calculator. In school problems you are usually given the depth and asked for the time. With a stopwatch, reality gives you the time, and the depth is the unknown. A physicist runs the formula in whichever direction the data allow.
+
+One caution for real measurements: your stopwatch reading includes your reaction time, about 0.2 s, and the time the *sound* of the splash needs to climb back up (about 0.13 s for 45 m, since sound travels 340 m/s). We will meet both effects again in the exercises.
+
+Typing the formula fresh every time we change a number is no way to work. Sage can store the formula itself, as a **symbolic function**:
+
+$$t(h) = \sqrt{\dfrac{2h}{g}}$$
+
+Read it literally as &quot;the time $t$, depending on the height $h$&quot;:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320893-25" class="markdown-preview" style="display: block;" data-original-markdown="The well is about 31 m deep. Note what happened here: we used Sage as a *reverse* calculator. In school problems you are usually given the depth and asked for the time. With a stopwatch, reality gives you the time, and the depth is the unknown. A physicist runs the formula in whichever direction the data allow.
+
+One caution for real measurements: your stopwatch reading includes your reaction time, about 0.2 s, and the time the *sound* of the splash needs to climb back up (about 0.13 s for 45 m, since sound travels 340 m/s). We will meet both effects again in the exercises.
+
+Typing the formula fresh every time we change a number is no way to work. Sage can store the formula itself, as a **symbolic function**:
+
+$$t(h) = \sqrt{\dfrac{2h}{g}}$$
+
+Read it literally as &quot;the time $t$, depending on the height $h$&quot;:"><p>The well is about 31 m deep. Note what happened here: we used Sage as a <em>reverse</em> calculator. In school problems you are usually given the depth and asked for the time. With a stopwatch, reality gives you the time, and the depth is the unknown. A physicist runs the formula in whichever direction the data allow.</p>
+<p>One caution for real measurements: your stopwatch reading includes your reaction time, about 0.2 s, and the time the <em>sound</em> of the splash needs to climb back up (about 0.13 s for 45 m, since sound travels 340 m/s). We will meet both effects again in the exercises.</p>
+<p>Typing the formula fresh every time we change a number is no way to work. Sage can store the formula itself, as a <strong>symbolic function</strong>:</p>
+<p>$$t(h) = \sqrt{\dfrac{2h}{g}}$$</p>
+<p>Read it literally as "the time $t$, depending on the height $h$":</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">t_h(h) = sqrt(2*h/g)   # a function of h only; g is remembered
+show(t_h)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320894-26" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Now the depths answer on demand:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320894-26" class="markdown-preview" style="display: block;" data-original-markdown="Now the depths answer on demand:"><p>Now the depths answer on demand:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">show(t_h(45))
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">show(t_h(10))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320894-27" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="And results can be combined directly:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320894-27" class="markdown-preview" style="display: block;" data-original-markdown="And results can be combined directly:"><p>And results can be combined directly:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">N(t_h(20) - t_h(10))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320894-28" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="That last number is how much longer a 20 m drop takes than a 10 m drop. Notice the name we gave the function: `t_h`, not `t`. There is a reason, and it is a small lesson in notebook hygiene.
+
+&gt; **Note: names get overwritten.** Somewhere above, the number `3.02891266407691` was stored under the name `t`. Had we now written `t(h) = sqrt(2*h/g)`, that number would be gone, replaced by a function; earlier cells using `t` would silently mean something different after re-running. When a quantity changes *kind* (number to function), change its name too: `t_h(h)` for $t(h)$, `t_hg(h, g)` for $t(h, g)$. `time_in_minutes` would also work, but frequently used quantities deserve compact, readable names.
+
+The function `t_h(h)` holds `g` by reference, not by value. If you later change `g` and re-run the function definition, the new `g` applies; if you change `g` and *don't* re-run the definition, the old value is still baked in. And the function can take more than one argument:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320894-28" class="markdown-preview" style="display: block;" data-original-markdown="That last number is how much longer a 20 m drop takes than a 10 m drop. Notice the name we gave the function: `t_h`, not `t`. There is a reason, and it is a small lesson in notebook hygiene.
+
+&gt; **Note: names get overwritten.** Somewhere above, the number `3.02891266407691` was stored under the name `t`. Had we now written `t(h) = sqrt(2*h/g)`, that number would be gone, replaced by a function; earlier cells using `t` would silently mean something different after re-running. When a quantity changes *kind* (number to function), change its name too: `t_h(h)` for $t(h)$, `t_hg(h, g)` for $t(h, g)$. `time_in_minutes` would also work, but frequently used quantities deserve compact, readable names.
+
+The function `t_h(h)` holds `g` by reference, not by value. If you later change `g` and re-run the function definition, the new `g` applies; if you change `g` and *don't* re-run the definition, the old value is still baked in. And the function can take more than one argument:"><p>That last number is how much longer a 20 m drop takes than a 10 m drop. Notice the name we gave the function: <code>t_h</code>, not <code>t</code>. There is a reason, and it is a small lesson in notebook hygiene.</p>
+<blockquote>
+<p><strong>Note: names get overwritten.</strong> Somewhere above, the number <code>3.02891266407691</code> was stored under the name <code>t</code>. Had we now written <code>t(h) = sqrt(2*h/g)</code>, that number would be gone, replaced by a function; earlier cells using <code>t</code> would silently mean something different after re-running. When a quantity changes <em>kind</em> (number to function), change its name too: <code>t_h(h)</code> for $t(h)$, <code>t_hg(h, g)</code> for $t(h, g)$. <code>time_in_minutes</code> would also work, but frequently used quantities deserve compact, readable names.</p>
+</blockquote>
+<p>The function <code>t_h(h)</code> holds <code>g</code> by reference, not by value. If you later change <code>g</code> and re-run the function definition, the new <code>g</code> applies; if you change <code>g</code> and <em>don't</em> re-run the definition, the old value is still baked in. And the function can take more than one argument:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">t_hg(h, g) = sqrt(2*h/g)   # t as a function of two variables
+t_hg(45, 10).n()           # .n() at the end works like N()
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320894-29" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="With `g = 1.62` (the Moon) available as an argument, this one line answers Exercise 3 as well. Functions can also be modified wholesale:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320894-29" class="markdown-preview" style="display: block;" data-original-markdown="With `g = 1.62` (the Moon) available as an argument, this one line answers Exercise 3 as well. Functions can also be modified wholesale:"><p>With <code>g = 1.62</code> (the Moon) available as an argument, this one line answers Exercise 3 as well. Functions can also be modified wholesale:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">t_minutes = t_h/60         # the same times, in minutes
+show(t_minutes)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320895-30" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **1.6 Many depths at once: lists**
+
+So far each command produced one number. Physics rarely works in ones. Suppose you want the fall time for six depths at once. First put the depths in a **list**:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320895-30" class="markdown-preview" style="display: block;" data-original-markdown="## **1.6 Many depths at once: lists**
+
+So far each command produced one number. Physics rarely works in ones. Suppose you want the fall time for six depths at once. First put the depths in a **list**:"><h2 id="16-many-depths-at-once-lists"><strong>1.6 Many depths at once: lists</strong></h2>
+<p>So far each command produced one number. Physics rarely works in ones. Suppose you want the fall time for six depths at once. First put the depths in a <strong>list</strong>:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the list of depths for which we want the times
+depths = [5, 10, 15, 20, 25, 30]
+results = [t_h(h).n() for h in depths]
+results
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320895-31" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="A list is built with square brackets `[` `]`, its items separated by commas - one more reason for the decimal point, not the comma, in numbers. The line `[t_h(h).n() for h in depths]` reads, literally: *for each `h` in the list `depths`, compute `t_h(h).n()` and collect it into a new list named `results`.* The keywords `for` and `in` belong to the so-called **for loop**. This compact form is called a *list comprehension*, an elegant Python idiom. If you already know some Python, here is the same computation spelled out in the traditional way:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320895-31" class="markdown-preview" style="display: block;" data-original-markdown="A list is built with square brackets `[` `]`, its items separated by commas - one more reason for the decimal point, not the comma, in numbers. The line `[t_h(h).n() for h in depths]` reads, literally: *for each `h` in the list `depths`, compute `t_h(h).n()` and collect it into a new list named `results`.* The keywords `for` and `in` belong to the so-called **for loop**. This compact form is called a *list comprehension*, an elegant Python idiom. If you already know some Python, here is the same computation spelled out in the traditional way:"><p>A list is built with square brackets <code>[</code> <code>]</code>, its items separated by commas - one more reason for the decimal point, not the comma, in numbers. The line <code>[t_h(h).n() for h in depths]</code> reads, literally: <em>for each <code>h</code> in the list <code>depths</code>, compute <code>t_h(h).n()</code> and collect it into a new list named <code>results</code>.</em> The keywords <code>for</code> and <code>in</code> belong to the so-called <strong>for loop</strong>. This compact form is called a <em>list comprehension</em>, an elegant Python idiom. If you already know some Python, here is the same computation spelled out in the traditional way:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">depths = [5, 10, 15, 20, 25, 30]    # the list of values to go through
+results = []                        # a prepared empty list
+
+for h in depths:                    # the traditional for loop
+    value = t_h(h).n()
+    results.append(value)           # .append() attaches a value to the list
+
+results
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320895-32" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="One caution, the same lesson as with `t`: inside those cells, `h` is no longer the depth of our well. Defining `t_h(h)` turned it, and `g`, into *symbolic variables*. The list comprehension then used `h` as its running name. The number 45 survives inside the function only as a value you feed it. Nothing is lost, but names have drifted; this is why new quantities get new names.
+
+Working with a list means pulling values back out of it, and that is done with **indices**:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320895-32" class="markdown-preview" style="display: block;" data-original-markdown="One caution, the same lesson as with `t`: inside those cells, `h` is no longer the depth of our well. Defining `t_h(h)` turned it, and `g`, into *symbolic variables*. The list comprehension then used `h` as its running name. The number 45 survives inside the function only as a value you feed it. Nothing is lost, but names have drifted; this is why new quantities get new names.
+
+Working with a list means pulling values back out of it, and that is done with **indices**:"><p>One caution, the same lesson as with <code>t</code>: inside those cells, <code>h</code> is no longer the depth of our well. Defining <code>t_h(h)</code> turned it, and <code>g</code>, into <em>symbolic variables</em>. The list comprehension then used <code>h</code> as its running name. The number 45 survives inside the function only as a value you feed it. Nothing is lost, but names have drifted; this is why new quantities get new names.</p>
+<p>Working with a list means pulling values back out of it, and that is done with <strong>indices</strong>:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">results[0]      # the first value in the list
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">last_value = results[-1]   # the last value in the list
+last_value
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320896-33" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Indices count like this: the 1st value has index `0`, the 2nd has index `1`, the 3rd has index `2`, and so on. Python (and therefore SageMath) starts counting at `0`, which looks strange at first but pays off with negative indices: the last value has index `-1`, the second-to-last `-2`, so you never need to know the length of a list to reach its end. The 6th value of `results` sits at index `5` - and yes, in Python we would say &quot;the sixth value has index five&quot; without blinking.
+
+Values from a list work in further calculations like any number:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320896-33" class="markdown-preview" style="display: block;" data-original-markdown="Indices count like this: the 1st value has index `0`, the 2nd has index `1`, the 3rd has index `2`, and so on. Python (and therefore SageMath) starts counting at `0`, which looks strange at first but pays off with negative indices: the last value has index `-1`, the second-to-last `-2`, so you never need to know the length of a list to reach its end. The 6th value of `results` sits at index `5` - and yes, in Python we would say &quot;the sixth value has index five&quot; without blinking.
+
+Values from a list work in further calculations like any number:"><p>Indices count like this: the 1st value has index <code>0</code>, the 2nd has index <code>1</code>, the 3rd has index <code>2</code>, and so on. Python (and therefore SageMath) starts counting at <code>0</code>, which looks strange at first but pays off with negative indices: the last value has index <code>-1</code>, the second-to-last <code>-2</code>, so you never need to know the length of a list to reach its end. The 6th value of <code>results</code> sits at index <code>5</code> - and yes, in Python we would say "the sixth value has index five" without blinking.</p>
+<p>Values from a list work in further calculations like any number:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">results[2]/60     # the third value, converted to minutes
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320896-34" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="And lists grow without effort. Thirty calculations are no problem:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320896-34" class="markdown-preview" style="display: block;" data-original-markdown="And lists grow without effort. Thirty calculations are no problem:"><p>And lists grow without effort. Thirty calculations are no problem:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">depths30 = [5, 6 .. 30]   # a range: 5 to 30 in steps of 1 (the step of the second value)
+results30 = [t_h(h).n() for h in depths30]
+results30[5:10]          # the 6th through 10th values; in a slice, the last index is excluded
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">results30[10]
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320896-35" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Long lists like `[5, 6 .. 30]` are written with two dots between the first two values; the step is taken from the gap between them. A slice `results30[5:10]` is a list cut out of a list, and again the right-hand index is not included: it gives entries 5, 6, 7, 8, 9." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320896-35" class="markdown-preview" style="display: block;" data-original-markdown="Long lists like `[5, 6 .. 30]` are written with two dots between the first two values; the step is taken from the gap between them. A slice `results30[5:10]` is a list cut out of a list, and again the right-hand index is not included: it gives entries 5, 6, 7, 8, 9."><p>Long lists like <code>[5, 6 .. 30]</code> are written with two dots between the first two values; the step is taken from the gap between them. A slice <code>results30[5:10]</code> is a list cut out of a list, and again the right-hand index is not included: it gives entries 5, 6, 7, 8, 9.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320896-36" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **1.7 What you can do now**
+
+- Use Sage as a calculator that keeps exact values until you ask for decimals with `N()`, and simplifies fractions and roots on its own.
+- Store numbers under names (`g = 9.81`) and build formulas from them.
+- Round sensibly with `round(x, n)` at the end, not in the middle.
+- Solve a physics problem forwards (depth gives time) and backwards (time gives depth).
+- Store a formula itself as a symbolic function (`t_h(h) = sqrt(2*h/g)`), call it with any values, and modify it (`t_h/60` for minutes).
+- Turn one formula into a whole table of results with a list comprehension (`[t_h(h).n() for h in depths]`), and read values back out with indices, counting from `0`.
+
+We promised no programming, and a list comprehension may look like programming - it is. But it earned its place the same way every other command here did: one physics question, many inputs. From here on, a formula and a list of measurements are all we need." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320896-36" class="markdown-preview" style="display: block;" data-original-markdown="## **1.7 What you can do now**
+
+- Use Sage as a calculator that keeps exact values until you ask for decimals with `N()`, and simplifies fractions and roots on its own.
+- Store numbers under names (`g = 9.81`) and build formulas from them.
+- Round sensibly with `round(x, n)` at the end, not in the middle.
+- Solve a physics problem forwards (depth gives time) and backwards (time gives depth).
+- Store a formula itself as a symbolic function (`t_h(h) = sqrt(2*h/g)`), call it with any values, and modify it (`t_h/60` for minutes).
+- Turn one formula into a whole table of results with a list comprehension (`[t_h(h).n() for h in depths]`), and read values back out with indices, counting from `0`.
+
+We promised no programming, and a list comprehension may look like programming - it is. But it earned its place the same way every other command here did: one physics question, many inputs. From here on, a formula and a list of measurements are all we need."><h2 id="17-what-you-can-do-now"><strong>1.7 What you can do now</strong></h2>
+<ul>
+<li>Use Sage as a calculator that keeps exact values until you ask for decimals with <code>N()</code>, and simplifies fractions and roots on its own.</li>
+<li>Store numbers under names (<code>g = 9.81</code>) and build formulas from them.</li>
+<li>Round sensibly with <code>round(x, n)</code> at the end, not in the middle.</li>
+<li>Solve a physics problem forwards (depth gives time) and backwards (time gives depth).</li>
+<li>Store a formula itself as a symbolic function (<code>t_h(h) = sqrt(2*h/g)</code>), call it with any values, and modify it (<code>t_h/60</code> for minutes).</li>
+<li>Turn one formula into a whole table of results with a list comprehension (<code>[t_h(h).n() for h in depths]</code>), and read values back out with indices, counting from <code>0</code>.</li>
+</ul>
+<p>We promised no programming, and a list comprehension may look like programming - it is. But it earned its place the same way every other command here did: one physics question, many inputs. From here on, a formula and a list of measurements are all we need.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137320896-37" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **Exercises**
+
+**Exercise 1.** A stone slips out of your hand from a footbridge 1.80 m above a river. Compute the fall time and the impact speed in m/s. Why is it fair to ignore air resistance here even more than in the well?
+
+**Exercise 2.** The 10 m platform is the tallest board in Olympic diving. Compute how long a diver is in the air when jumping straight down, and their entry speed in km/h. (Divers actually jump slightly upwards first; you may ignore that.)
+
+**Exercise 3.** On the Moon, $g = 1.62\ \mathrm{m/s^2}$. An astronaut drops a stone into the same 45 m shaft (drilled for science, full of vacuum). Compute the fall time and impact speed. By what factor is the fall time longer than on Earth? Compare it with the factor $\sqrt{g_{\mathrm{Earth}}/g_{\mathrm{Moon}}}$.
+
+**Exercise 4.** You time a third well with your stopwatch and read 3.0 s. Compute the depth. Then repeat with a reading of 3.2 s. How many meters of depth does the extra 0.2 s of fall correspond to? Comment on how precisely you need to time in order to measure a depth to the nearest meter. *(A shortcut: `t_hg(h, g)` accepts the depth and the gravitational acceleration as its two arguments, and `[t_h(h).n() for h in depths]` turns any list of depths into a list of times.)*
+
+**Exercise 5.** *(Challenge)* When you *hear* the splash, the stone has fallen for time $t$ and the sound has traveled back up for time $h/340$, where $h$ is the depth. So the total wait is
+
+$$T = \sqrt{2h/g} + h/340.$$
+
+You measure $T = 3.2$ s. Find the depth. A purely algebraic `solve()` will struggle with this mix of a square root and a linear term, but Sage has a numerical hunter: `find_root(T(h) == 3.2, 1, 100)` searches for the solution inside the interval you give it. Define `T(h)` as a symbolic function first, and note that `find_root` wants the equation written with `==`, two equal signs. As a first guess, compute the naive depth $h = \frac{1}{2}gT^2$ that ignores the sound, feed it back into `T(h)` and see how much longer than 3.2 s it comes out - then let `find_root` do the hunting. How many meters did ignoring the sound cost you?" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137320896-37" class="markdown-preview" style="display: block;" data-original-markdown="## **Exercises**
+
+**Exercise 1.** A stone slips out of your hand from a footbridge 1.80 m above a river. Compute the fall time and the impact speed in m/s. Why is it fair to ignore air resistance here even more than in the well?
+
+**Exercise 2.** The 10 m platform is the tallest board in Olympic diving. Compute how long a diver is in the air when jumping straight down, and their entry speed in km/h. (Divers actually jump slightly upwards first; you may ignore that.)
+
+**Exercise 3.** On the Moon, $g = 1.62\ \mathrm{m/s^2}$. An astronaut drops a stone into the same 45 m shaft (drilled for science, full of vacuum). Compute the fall time and impact speed. By what factor is the fall time longer than on Earth? Compare it with the factor $\sqrt{g_{\mathrm{Earth}}/g_{\mathrm{Moon}}}$.
+
+**Exercise 4.** You time a third well with your stopwatch and read 3.0 s. Compute the depth. Then repeat with a reading of 3.2 s. How many meters of depth does the extra 0.2 s of fall correspond to? Comment on how precisely you need to time in order to measure a depth to the nearest meter. *(A shortcut: `t_hg(h, g)` accepts the depth and the gravitational acceleration as its two arguments, and `[t_h(h).n() for h in depths]` turns any list of depths into a list of times.)*
+
+**Exercise 5.** *(Challenge)* When you *hear* the splash, the stone has fallen for time $t$ and the sound has traveled back up for time $h/340$, where $h$ is the depth. So the total wait is
+
+$$T = \sqrt{2h/g} + h/340.$$
+
+You measure $T = 3.2$ s. Find the depth. A purely algebraic `solve()` will struggle with this mix of a square root and a linear term, but Sage has a numerical hunter: `find_root(T(h) == 3.2, 1, 100)` searches for the solution inside the interval you give it. Define `T(h)` as a symbolic function first, and note that `find_root` wants the equation written with `==`, two equal signs. As a first guess, compute the naive depth $h = \frac{1}{2}gT^2$ that ignores the sound, feed it back into `T(h)` and see how much longer than 3.2 s it comes out - then let `find_root` do the hunting. How many meters did ignoring the sound cost you?"><h2 id="exercises"><strong>Exercises</strong></h2>
+<p><strong>Exercise 1.</strong> A stone slips out of your hand from a footbridge 1.80 m above a river. Compute the fall time and the impact speed in m/s. Why is it fair to ignore air resistance here even more than in the well?</p>
+<p><strong>Exercise 2.</strong> The 10 m platform is the tallest board in Olympic diving. Compute how long a diver is in the air when jumping straight down, and their entry speed in km/h. (Divers actually jump slightly upwards first; you may ignore that.)</p>
+<p><strong>Exercise 3.</strong> On the Moon, $g = 1.62\ \mathrm{m/s^2}$. An astronaut drops a stone into the same 45 m shaft (drilled for science, full of vacuum). Compute the fall time and impact speed. By what factor is the fall time longer than on Earth? Compare it with the factor $\sqrt{g_{\mathrm{Earth}}/g_{\mathrm{Moon}}}$.</p>
+<p><strong>Exercise 4.</strong> You time a third well with your stopwatch and read 3.0 s. Compute the depth. Then repeat with a reading of 3.2 s. How many meters of depth does the extra 0.2 s of fall correspond to? Comment on how precisely you need to time in order to measure a depth to the nearest meter. <em>(A shortcut: <code>t_hg(h, g)</code> accepts the depth and the gravitational acceleration as its two arguments, and <code>[t_h(h).n() for h in depths]</code> turns any list of depths into a list of times.)</em></p>
+<p><strong>Exercise 5.</strong> <em>(Challenge)</em> When you <em>hear</em> the splash, the stone has fallen for time $t$ and the sound has traveled back up for time $h/340$, where $h$ is the depth. So the total wait is</p>
+<p>$$T = \sqrt{2h/g} + h/340.$$</p>
+<p>You measure $T = 3.2$ s. Find the depth. A purely algebraic <code>solve()</code> will struggle with this mix of a square root and a linear term, but Sage has a numerical hunter: <code>find_root(T(h) == 3.2, 1, 100)</code> searches for the solution inside the interval you give it. Define <code>T(h)</code> as a symbolic function first, and note that <code>find_root</code> wants the equation written with <code>==</code>, two equal signs. As a first guess, compute the naive depth $h = \frac{1}{2}gT^2$ that ignores the sound, feed it back into <code>T(h)</code> and see how much longer than 3.2 s it comes out - then let <code>find_root</code> do the hunting. How many meters did ignoring the sound cost you?</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># empty cells for exercises/experiments - feel free to add new cells anywhere by clicking "Add Bellow" button
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">
+</script></div></div></div></div></div>
+            
+        </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/embedded_sagecell_backup.js"></script>
+<script src="https://sage-sk.org/embedded_sagecell.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/FileSaver.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/nbplayerConfig.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/comment/comment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/markdown-fold.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.css">
+<script>let RUN_DELAY = 1000;</script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/customthemes15.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbrunner24.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaiengine23.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaipriming22.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbautocompletion20.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://code.datagridxl.com/datagridxl2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fflate@0.8.3/umd/index.min.js"></script>
+<script>
+  playerConfig={"panes":"Exec","lang":"sage","linked":true,"eval":false,"hide":["fullScreen"],"execute":true,"showRead":false,"collapsable":false,"playerPath":"https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main","name":"SageMath"};
+  playerMode={"showSage":true,"showNotebookInput":true,"showSageInput":true};
+  let API_KEY="";
+  let API_URL="";
+  let CURRENT_MODEL="";
+  let CURRENT_LANGUAGE="";
+  let SAGECELL_URL="https://sage-sk.org/";
+  let toggleEvalBtnsState=false;
+  let isFullWidthState=true;
+  window.hideCodeInputState=false;
+  let PRELOAD="";
+  let SETTINGS_PATH_NAME="settings.js";
+  let aiEduMode=true;
+  let aiCompleteMode=true;
+  let aiLogs=false;
+  window.aiLogs=false;
+  window.aiSettingsVisible=true;
+  window.aiLogsHistory=[];
+  makeMenu();
+  localize();
+  createTableOfContents();
+  loadStatus();
+  restoreUIState();
+  makeSageCells(playerConfig);
+  launchPlayer();
+  addControlPanel();
+  setupRunAllCells();
+  addSageCellNumbering();
+  enhanceSageCellsWithGlobalAutocomplete();
+  window.onload = initializeMarkdownCells;
+  let CUSTOM_CONTEXT="";
+  let CUSTOM_CSS="";
+  if (CUSTOM_CSS) applyCustomCSS(CUSTOM_CSS);
+  addCommentShortcutToAllSageCells();
+  applyPreloadCells();
+  setupBulkCellObserver();
+</script>
+<script src="settings.js"></script>
+</body>
+</html>

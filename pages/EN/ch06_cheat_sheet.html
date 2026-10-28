@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;polygon points='50,6 88,28 88,72 50,94 12,72 12,28' fill='%234CAF50'/&gt;&lt;text x='50' y='68' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='%23fff' text-anchor='middle'&gt;S&lt;/text&gt;&lt;/svg&gt;">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/es5-shim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/ansi_up.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex-auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/notebook.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/prism.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/notebook.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/nbpreview.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/css/nbplayer24.css">
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/texme@1.2.2"></script>
+<div id="main">
+<div id="notebook-holder"><div class="nb-notebook"><div class="nb-worksheet"><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340988-1" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Faculty of Science, Pavol Jozef Šafárik University in Košice, Slovakia&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt; &lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt; &lt;/p&gt;" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340988-1" class="markdown-preview" style="display: block;" data-original-markdown="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Faculty of Science, Pavol Jozef Šafárik University in Košice, Slovakia&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt; &lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt; &lt;/p&gt;"><p><img style="float: right;" src="https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png" alt="" width="100" height="85"></p>
+<p><strong>Authors:</strong> Dominik Borovský<sup>1</sup> &amp; Jozef Hanč<sup>2</sup></p>
+<p><em>2026, Faculty of Science, Pavol Jozef Šafárik University in Košice, Slovakia</em></p>
+<p><sup>1</sup><a href="mailto:dominik.borovsky@student.upjs.sk">dominik.borovsky@student.upjs.sk,</a> <sup>2</sup><a href="mailto:jozef.hanc@upjs.sk">jozef.hanc@upjs.sk</a> </p></div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340989-2" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="# **Chapter 6: The Cheat Sheet**" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340989-2" class="markdown-preview" style="display: block;" data-original-markdown="# **Chapter 6: The Cheat Sheet**"><h1 id="chapter-6-the-cheat-sheet"><strong>Chapter 6: The Cheat Sheet</strong></h1>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340989-3" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Everything the first five chapters put into your hands, on one page each: every command, in the exact spelling used in this book, grouped by the job it does. Keep this chapter open beside your notebook; when a command slips your mind, it is here. Where a command earned a warning in its home chapter, the warning travels with it." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340989-3" class="markdown-preview" style="display: block;" data-original-markdown="Everything the first five chapters put into your hands, on one page each: every command, in the exact spelling used in this book, grouped by the job it does. Keep this chapter open beside your notebook; when a command slips your mind, it is here. Where a command earned a warning in its home chapter, the warning travels with it."><p>Everything the first five chapters put into your hands, on one page each: every command, in the exact spelling used in this book, grouped by the job it does. Keep this chapter open beside your notebook; when a command slips your mind, it is here. Where a command earned a warning in its home chapter, the warning travels with it.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340989-4" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.1 Notebook basics**" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340989-4" class="markdown-preview" style="display: block;" data-original-markdown="## **6.1 Notebook basics**"><h2 id="61-notebook-basics"><strong>6.1 Notebook basics</strong></h2>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># a line starting with a hash sign is a comment, ignored by Sage
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340989-5" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="| Code | What it does |
+|---|---|
+| `Ctrl + Enter` | run the current cell |
+| `Shift + Enter` | run the cell and move to the next one |
+| `# comment` | a comment, ignored by Sage |
+| `print(x)` | display the value stored under the name `x` |
+| `show(expr)` | textbook typesetting: stacked fractions, radical signs, $\pi$ |
+
+Run cells **in sequence from the first**, so later cells see what earlier ones stored. Change a cell, **re-run** it. Names are overwritten silently: when a quantity changes kind (number to function), give it a new name (`t` the number, `t_h(h)` the function)." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340989-5" class="markdown-preview" style="display: block;" data-original-markdown="| Code | What it does |
+|---|---|
+| `Ctrl + Enter` | run the current cell |
+| `Shift + Enter` | run the cell and move to the next one |
+| `# comment` | a comment, ignored by Sage |
+| `print(x)` | display the value stored under the name `x` |
+| `show(expr)` | textbook typesetting: stacked fractions, radical signs, $\pi$ |
+
+Run cells **in sequence from the first**, so later cells see what earlier ones stored. Change a cell, **re-run** it. Names are overwritten silently: when a quantity changes kind (number to function), give it a new name (`t` the number, `t_h(h)` the function)."><table>
+<thead>
+<tr>
+<th>Code</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Ctrl + Enter</code></td>
+<td>run the current cell</td>
+</tr>
+<tr>
+<td><code>Shift + Enter</code></td>
+<td>run the cell and move to the next one</td>
+</tr>
+<tr>
+<td><code># comment</code></td>
+<td>a comment, ignored by Sage</td>
+</tr>
+<tr>
+<td><code>print(x)</code></td>
+<td>display the value stored under the name <code>x</code></td>
+</tr>
+<tr>
+<td><code>show(expr)</code></td>
+<td>textbook typesetting: stacked fractions, radical signs, $\pi$</td>
+</tr>
+</tbody></table>
+<p>Run cells <strong>in sequence from the first</strong>, so later cells see what earlier ones stored. Change a cell, <strong>re-run</strong> it. Names are overwritten silently: when a quantity changes kind (number to function), give it a new name (<code>t</code> the number, <code>t_h(h)</code> the function).</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340989-6" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.2 Numbers and arithmetic**
+
+| Code | What it does |
+|---|---|
+| `2 - 1 + 3*4` | arithmetic; `*` and `/` bind before `+` and `-` |
+| `(2 + 3)*4` | parentheses group; only round ones, always closed |
+| `2^10` or `2**10` | powers, both spellings identical |
+| `sqrt(8)` | exact root, simplified: `2*sqrt(2)` |
+| `1/3 + 1/6` | exact fractions: `1/2`, not `0.5` |
+| `N(sqrt(2))` | turn exact into decimal |
+| `N(pi, digits=100)` | decimal with a chosen number of digits |
+| `sqrt(2).n()` | the same as `N()`, typed after the expression |
+| `round(x, 4)` | round the decimal `x` to 4 digits after the point |" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340989-6" class="markdown-preview" style="display: block;" data-original-markdown="## **6.2 Numbers and arithmetic**
+
+| Code | What it does |
+|---|---|
+| `2 - 1 + 3*4` | arithmetic; `*` and `/` bind before `+` and `-` |
+| `(2 + 3)*4` | parentheses group; only round ones, always closed |
+| `2^10` or `2**10` | powers, both spellings identical |
+| `sqrt(8)` | exact root, simplified: `2*sqrt(2)` |
+| `1/3 + 1/6` | exact fractions: `1/2`, not `0.5` |
+| `N(sqrt(2))` | turn exact into decimal |
+| `N(pi, digits=100)` | decimal with a chosen number of digits |
+| `sqrt(2).n()` | the same as `N()`, typed after the expression |
+| `round(x, 4)` | round the decimal `x` to 4 digits after the point |"><h2 id="62-numbers-and-arithmetic"><strong>6.2 Numbers and arithmetic</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>2 - 1 + 3*4</code></td>
+<td>arithmetic; <code>*</code> and <code>/</code> bind before <code>+</code> and <code>-</code></td>
+</tr>
+<tr>
+<td><code>(2 + 3)*4</code></td>
+<td>parentheses group; only round ones, always closed</td>
+</tr>
+<tr>
+<td><code>2^10</code> or <code>2**10</code></td>
+<td>powers, both spellings identical</td>
+</tr>
+<tr>
+<td><code>sqrt(8)</code></td>
+<td>exact root, simplified: <code>2*sqrt(2)</code></td>
+</tr>
+<tr>
+<td><code>1/3 + 1/6</code></td>
+<td>exact fractions: <code>1/2</code>, not <code>0.5</code></td>
+</tr>
+<tr>
+<td><code>N(sqrt(2))</code></td>
+<td>turn exact into decimal</td>
+</tr>
+<tr>
+<td><code>N(pi, digits=100)</code></td>
+<td>decimal with a chosen number of digits</td>
+</tr>
+<tr>
+<td><code>sqrt(2).n()</code></td>
+<td>the same as <code>N()</code>, typed after the expression</td>
+</tr>
+<tr>
+<td><code>round(x, 4)</code></td>
+<td>round the decimal <code>x</code> to 4 digits after the point</td>
+</tr>
+</tbody></table>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the exactness rules, in one cell each
+1/3 + 1/6      # exact: 1/2
+0.33 + 0.17    # approximate: one decimal point spoils the whole result
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340989-7" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Note: forcing exact or approximate.** For a decimal answer without typing `N()`, write one input as a decimal: `10.0` instead of `10`. For exact arithmetic from naturally decimal values, write them as fractions: `981/100` instead of `9.81` - and the trick must cover *all* decimals entering the calculation, one decimal anywhere spoils the exactness. Numbers use a **decimal point, never a comma**. Stay exact as long as possible, go decimal at the end, and round only at the very end, never in the middle." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340989-7" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Note: forcing exact or approximate.** For a decimal answer without typing `N()`, write one input as a decimal: `10.0` instead of `10`. For exact arithmetic from naturally decimal values, write them as fractions: `981/100` instead of `9.81` - and the trick must cover *all* decimals entering the calculation, one decimal anywhere spoils the exactness. Numbers use a **decimal point, never a comma**. Stay exact as long as possible, go decimal at the end, and round only at the very end, never in the middle."><blockquote>
+<p><strong>Note: forcing exact or approximate.</strong> For a decimal answer without typing <code>N()</code>, write one input as a decimal: <code>10.0</code> instead of <code>10</code>. For exact arithmetic from naturally decimal values, write them as fractions: <code>981/100</code> instead of <code>9.81</code> - and the trick must cover <em>all</em> decimals entering the calculation, one decimal anywhere spoils the exactness. Numbers use a <strong>decimal point, never a comma</strong>. Stay exact as long as possible, go decimal at the end, and round only at the very end, never in the middle.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340989-8" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.3 Variables and functions**
+
+| Code | What it does |
+|---|---|
+| `g = 9.81` | store a number under a name; unit goes in a comment: `# m/s^2` |
+| `var('t alpha v0 g')` | declare symbolic variables: letters, empty slots |
+| `t_h(h) = sqrt(2*h/g)` | store a formula as a symbolic function of `h` |
+| `t_hg(h, g) = sqrt(2*h/g)` | a function of several variables |
+| `t_minutes = t_h/60` | functions are values: scale, add, combine them |
+| `show(t_h)` | typeset the formula |" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340989-8" class="markdown-preview" style="display: block;" data-original-markdown="## **6.3 Variables and functions**
+
+| Code | What it does |
+|---|---|
+| `g = 9.81` | store a number under a name; unit goes in a comment: `# m/s^2` |
+| `var('t alpha v0 g')` | declare symbolic variables: letters, empty slots |
+| `t_h(h) = sqrt(2*h/g)` | store a formula as a symbolic function of `h` |
+| `t_hg(h, g) = sqrt(2*h/g)` | a function of several variables |
+| `t_minutes = t_h/60` | functions are values: scale, add, combine them |
+| `show(t_h)` | typeset the formula |"><h2 id="63-variables-and-functions"><strong>6.3 Variables and functions</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>g = 9.81</code></td>
+<td>store a number under a name; unit goes in a comment: <code># m/s^2</code></td>
+</tr>
+<tr>
+<td><code>var('t alpha v0 g')</code></td>
+<td>declare symbolic variables: letters, empty slots</td>
+</tr>
+<tr>
+<td><code>t_h(h) = sqrt(2*h/g)</code></td>
+<td>store a formula as a symbolic function of <code>h</code></td>
+</tr>
+<tr>
+<td><code>t_hg(h, g) = sqrt(2*h/g)</code></td>
+<td>a function of several variables</td>
+</tr>
+<tr>
+<td><code>t_minutes = t_h/60</code></td>
+<td>functions are values: scale, add, combine them</td>
+</tr>
+<tr>
+<td><code>show(t_h)</code></td>
+<td>typeset the formula</td>
+</tr>
+</tbody></table>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the workflow from Chapter 2: state the model, solve, substitute, numbers last
+var('t alpha v0 g')
+
+x(t) = v0*cos(alpha)*t
+y(t) = v0*sin(alpha)*t - 1/2*g*t^2     # the model, two functions of time
+
+solutions = solve(y(t) == 0, t)        # an equation, solved for t
+t_land = solutions[1].rhs()            # pick by index, strip the right side
+show(t_land)
+
+R(alpha) = x(t_land)                   # substitute one formula into another
+show(R(alpha).trig_reduce())
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340989-9" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Note:** `==` (two equal signs) builds an equation, `=` (one) stores a value. `solve()` returns a list of *equations*, not values: index with `[i]`, strip the value with `.rhs()`. A function and a symbol cannot share a letter (`x(t)` and `x` collide); the fix is a trailing underscore in the code, `x_(t) = ...`, which `show()` typesets as plain $x$ anyway." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340989-9" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Note:** `==` (two equal signs) builds an equation, `=` (one) stores a value. `solve()` returns a list of *equations*, not values: index with `[i]`, strip the value with `.rhs()`. A function and a symbol cannot share a letter (`x(t)` and `x` collide); the fix is a trailing underscore in the code, `x_(t) = ...`, which `show()` typesets as plain $x$ anyway."><blockquote>
+<p><strong>Note:</strong> <code>==</code> (two equal signs) builds an equation, <code>=</code> (one) stores a value. <code>solve()</code> returns a list of <em>equations</em>, not values: index with <code>[i]</code>, strip the value with <code>.rhs()</code>. A function and a symbol cannot share a letter (<code>x(t)</code> and <code>x</code> collide); the fix is a trailing underscore in the code, <code>x_(t) = ...</code>, which <code>show()</code> typesets as plain $x$ anyway.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340989-10" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.4 Substitution**
+
+| Code | What it does |
+|---|---|
+| `expr.subs(alpha = pi/4)` | substitute by keyword, one or several at once |
+| `values = [y0 == 20, g == 9.81]` | collect parameter values as a list of equations |
+| `expr.subs(values)` | substitute the whole list at once |
+| `values += [m == 500]` | grow the list in place; several equations at once allowed |
+| `values_updated = values + [r == 15]` | the same, but leaving the old list untouched |
+
+Equations are objects like any other, so they live in lists, and `.subs()` eats the whole list in one call. Each equation carries its unit as a comment, so `values` doubles as the table of the physics input." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340989-10" class="markdown-preview" style="display: block;" data-original-markdown="## **6.4 Substitution**
+
+| Code | What it does |
+|---|---|
+| `expr.subs(alpha = pi/4)` | substitute by keyword, one or several at once |
+| `values = [y0 == 20, g == 9.81]` | collect parameter values as a list of equations |
+| `expr.subs(values)` | substitute the whole list at once |
+| `values += [m == 500]` | grow the list in place; several equations at once allowed |
+| `values_updated = values + [r == 15]` | the same, but leaving the old list untouched |
+
+Equations are objects like any other, so they live in lists, and `.subs()` eats the whole list in one call. Each equation carries its unit as a comment, so `values` doubles as the table of the physics input."><h2 id="64-substitution"><strong>6.4 Substitution</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>expr.subs(alpha = pi/4)</code></td>
+<td>substitute by keyword, one or several at once</td>
+</tr>
+<tr>
+<td><code>values = [y0 == 20, g == 9.81]</code></td>
+<td>collect parameter values as a list of equations</td>
+</tr>
+<tr>
+<td><code>expr.subs(values)</code></td>
+<td>substitute the whole list at once</td>
+</tr>
+<tr>
+<td><code>values += [m == 500]</code></td>
+<td>grow the list in place; several equations at once allowed</td>
+</tr>
+<tr>
+<td><code>values_updated = values + [r == 15]</code></td>
+<td>the same, but leaving the old list untouched</td>
+</tr>
+</tbody></table>
+<p>Equations are objects like any other, so they live in lists, and <code>.subs()</code> eats the whole list in one call. Each equation carries its unit as a comment, so <code>values</code> doubles as the table of the physics input.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340989-11" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.5 Solving and calculus**
+
+| Code | What it does |
+|---|---|
+| `solve(equation, unknown)` | symbolic solution; returns a list of equations |
+| `solve([eq1, eq2, eq3], x, y, z)` | a whole system of equations |
+| `solutions[1].rhs()` | pick the second solution, keep its right side |
+| `find_root(T(h) == 3.2, 1, 100)` | numerical hunter: a root inside the given interval |
+| `diff(expr, x)` | the derivative of `expr` with respect to `x` |
+| `diff(expr, x, 2)` | the second derivative |
+| `solve(diff(R(a), a) == 0, a)` | maximum candidates: where the tangent is horizontal |" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340989-11" class="markdown-preview" style="display: block;" data-original-markdown="## **6.5 Solving and calculus**
+
+| Code | What it does |
+|---|---|
+| `solve(equation, unknown)` | symbolic solution; returns a list of equations |
+| `solve([eq1, eq2, eq3], x, y, z)` | a whole system of equations |
+| `solutions[1].rhs()` | pick the second solution, keep its right side |
+| `find_root(T(h) == 3.2, 1, 100)` | numerical hunter: a root inside the given interval |
+| `diff(expr, x)` | the derivative of `expr` with respect to `x` |
+| `diff(expr, x, 2)` | the second derivative |
+| `solve(diff(R(a), a) == 0, a)` | maximum candidates: where the tangent is horizontal |"><h2 id="65-solving-and-calculus"><strong>6.5 Solving and calculus</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>solve(equation, unknown)</code></td>
+<td>symbolic solution; returns a list of equations</td>
+</tr>
+<tr>
+<td><code>solve([eq1, eq2, eq3], x, y, z)</code></td>
+<td>a whole system of equations</td>
+</tr>
+<tr>
+<td><code>solutions[1].rhs()</code></td>
+<td>pick the second solution, keep its right side</td>
+</tr>
+<tr>
+<td><code>find_root(T(h) == 3.2, 1, 100)</code></td>
+<td>numerical hunter: a root inside the given interval</td>
+</tr>
+<tr>
+<td><code>diff(expr, x)</code></td>
+<td>the derivative of <code>expr</code> with respect to <code>x</code></td>
+</tr>
+<tr>
+<td><code>diff(expr, x, 2)</code></td>
+<td>the second derivative</td>
+</tr>
+<tr>
+<td><code>solve(diff(R(a), a) == 0, a)</code></td>
+<td>maximum candidates: where the tangent is horizontal</td>
+</tr>
+</tbody></table>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># optimizing, the Chapter 2 recipe
+dR = diff(R(alpha), alpha)             # the derivative as its own formula
+optimal = solve(dR == 0, alpha)        # horizontal tangents
+
+show(dR.subs(alpha = pi/6))           # positive below the candidate: still rising
+show(dR.subs(alpha = pi/3))           # negative above: already falling - a maximum
+show(diff(R(alpha), alpha, 2).subs(alpha = pi/4))   # second derivative < 0 says the same
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340990-12" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Note:** A zero derivative means *horizontal tangent*, not *maximum*: crests and troughs both have one. Confirm the kind of point by the sign change of the derivative around it, by the sign of the second derivative, or by evaluating the neighbors (`N(R(40*pi/180))` vs. `N(R(45*pi/180))` vs. `N(R(50*pi/180))`). Use `find_root` when `solve` gives up, e.g. on a mix of a square root and a linear term; it wants the equation written with `==`." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340990-12" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Note:** A zero derivative means *horizontal tangent*, not *maximum*: crests and troughs both have one. Confirm the kind of point by the sign change of the derivative around it, by the sign of the second derivative, or by evaluating the neighbors (`N(R(40*pi/180))` vs. `N(R(45*pi/180))` vs. `N(R(50*pi/180))`). Use `find_root` when `solve` gives up, e.g. on a mix of a square root and a linear term; it wants the equation written with `==`."><blockquote>
+<p><strong>Note:</strong> A zero derivative means <em>horizontal tangent</em>, not <em>maximum</em>: crests and troughs both have one. Confirm the kind of point by the sign change of the derivative around it, by the sign of the second derivative, or by evaluating the neighbors (<code>N(R(40*pi/180))</code> vs. <code>N(R(45*pi/180))</code> vs. <code>N(R(50*pi/180))</code>). Use <code>find_root</code> when <code>solve</code> gives up, e.g. on a mix of a square root and a linear term; it wants the equation written with <code>==</code>.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340990-13" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.6 Simplification**
+
+| Code | What it does |
+|---|---|
+| `simplify(expr)` | the general cleaner |
+| `expr.factor()` | pull a polynomial apart into a product |
+| `expr.expand()` | the opposite: multiply out into a sum |
+| `expr.trig_reduce()` | rewrite trig products as single sines, e.g. $\sin(2\alpha)$ |
+| `expr.trig_simplify()` | the reverse: pack trig functions together |
+| `expr.simplify_rational()` | cancel fractions |
+| `expr.simplify_full()` | several of the above chained in one go |
+| `expr.canonicalize_radical()` | tidy up roots and radicals |
+
+There is no command that makes a formula &quot;simple&quot;, because Sage cannot know what *you* consider simple. Work as in Chapter 2: look at the result, decide what bothers you, pick the tool for exactly that." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340990-13" class="markdown-preview" style="display: block;" data-original-markdown="## **6.6 Simplification**
+
+| Code | What it does |
+|---|---|
+| `simplify(expr)` | the general cleaner |
+| `expr.factor()` | pull a polynomial apart into a product |
+| `expr.expand()` | the opposite: multiply out into a sum |
+| `expr.trig_reduce()` | rewrite trig products as single sines, e.g. $\sin(2\alpha)$ |
+| `expr.trig_simplify()` | the reverse: pack trig functions together |
+| `expr.simplify_rational()` | cancel fractions |
+| `expr.simplify_full()` | several of the above chained in one go |
+| `expr.canonicalize_radical()` | tidy up roots and radicals |
+
+There is no command that makes a formula &quot;simple&quot;, because Sage cannot know what *you* consider simple. Work as in Chapter 2: look at the result, decide what bothers you, pick the tool for exactly that."><h2 id="66-simplification"><strong>6.6 Simplification</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>simplify(expr)</code></td>
+<td>the general cleaner</td>
+</tr>
+<tr>
+<td><code>expr.factor()</code></td>
+<td>pull a polynomial apart into a product</td>
+</tr>
+<tr>
+<td><code>expr.expand()</code></td>
+<td>the opposite: multiply out into a sum</td>
+</tr>
+<tr>
+<td><code>expr.trig_reduce()</code></td>
+<td>rewrite trig products as single sines, e.g. $\sin(2\alpha)$</td>
+</tr>
+<tr>
+<td><code>expr.trig_simplify()</code></td>
+<td>the reverse: pack trig functions together</td>
+</tr>
+<tr>
+<td><code>expr.simplify_rational()</code></td>
+<td>cancel fractions</td>
+</tr>
+<tr>
+<td><code>expr.simplify_full()</code></td>
+<td>several of the above chained in one go</td>
+</tr>
+<tr>
+<td><code>expr.canonicalize_radical()</code></td>
+<td>tidy up roots and radicals</td>
+</tr>
+</tbody></table>
+<p>There is no command that makes a formula "simple", because Sage cannot know what <em>you</em> consider simple. Work as in Chapter 2: look at the result, decide what bothers you, pick the tool for exactly that.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340990-14" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.7 Trigonometry and angles**
+
+| Code | What it does |
+|---|---|
+| `sin(x)`, `cos(x)`, `tan(x)` | trig functions, **radians in, radians out** |
+| `30*pi/180` | degrees to radians: multiply by $\pi/180$ |
+| `pi/6*180/pi` | radians to degrees: multiply by $180/\pi$ |
+| `cos(45*pi/180)` | cos of 45 degrees, no need to memorize `pi/4` |
+
+A full turn is $2\pi$, so 180 degrees is `pi` and 30 degrees is `pi/6`. One conversion rule carries both directions: $\pi\ \mathrm{rad} = 180^\circ$." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340990-14" class="markdown-preview" style="display: block;" data-original-markdown="## **6.7 Trigonometry and angles**
+
+| Code | What it does |
+|---|---|
+| `sin(x)`, `cos(x)`, `tan(x)` | trig functions, **radians in, radians out** |
+| `30*pi/180` | degrees to radians: multiply by $\pi/180$ |
+| `pi/6*180/pi` | radians to degrees: multiply by $180/\pi$ |
+| `cos(45*pi/180)` | cos of 45 degrees, no need to memorize `pi/4` |
+
+A full turn is $2\pi$, so 180 degrees is `pi` and 30 degrees is `pi/6`. One conversion rule carries both directions: $\pi\ \mathrm{rad} = 180^\circ$."><h2 id="67-trigonometry-and-angles"><strong>6.7 Trigonometry and angles</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>sin(x)</code>, <code>cos(x)</code>, <code>tan(x)</code></td>
+<td>trig functions, <strong>radians in, radians out</strong></td>
+</tr>
+<tr>
+<td><code>30*pi/180</code></td>
+<td>degrees to radians: multiply by $\pi/180$</td>
+</tr>
+<tr>
+<td><code>pi/6*180/pi</code></td>
+<td>radians to degrees: multiply by $180/\pi$</td>
+</tr>
+<tr>
+<td><code>cos(45*pi/180)</code></td>
+<td>cos of 45 degrees, no need to memorize <code>pi/4</code></td>
+</tr>
+</tbody></table>
+<p>A full turn is $2\pi$, so 180 degrees is <code>pi</code> and 30 degrees is <code>pi/6</code>. One conversion rule carries both directions: $\pi\ \mathrm{rad} = 180^\circ$.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340990-15" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.8 Lists**
+
+| Code | What it does |
+|---|---|
+| `[5, 10, 15, 20]` | a list: square brackets, items separated by commas |
+| `[5, 6 .. 30]` | a range: from 5 to 30, step taken from the first gap |
+| `results[0]` | the first item; **counting starts at 0** |
+| `results[-1]`, `results[-2]` | the last item, the second-to-last |
+| `results[5:10]` | a slice: entries 5 to 9, **the right index excluded** |
+| `results.append(value)` | attach one value to the end |
+| `list1 + list2` | glue two lists into one longer list |" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340990-15" class="markdown-preview" style="display: block;" data-original-markdown="## **6.8 Lists**
+
+| Code | What it does |
+|---|---|
+| `[5, 10, 15, 20]` | a list: square brackets, items separated by commas |
+| `[5, 6 .. 30]` | a range: from 5 to 30, step taken from the first gap |
+| `results[0]` | the first item; **counting starts at 0** |
+| `results[-1]`, `results[-2]` | the last item, the second-to-last |
+| `results[5:10]` | a slice: entries 5 to 9, **the right index excluded** |
+| `results.append(value)` | attach one value to the end |
+| `list1 + list2` | glue two lists into one longer list |"><h2 id="68-lists"><strong>6.8 Lists</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[5, 10, 15, 20]</code></td>
+<td>a list: square brackets, items separated by commas</td>
+</tr>
+<tr>
+<td><code>[5, 6 .. 30]</code></td>
+<td>a range: from 5 to 30, step taken from the first gap</td>
+</tr>
+<tr>
+<td><code>results[0]</code></td>
+<td>the first item; <strong>counting starts at 0</strong></td>
+</tr>
+<tr>
+<td><code>results[-1]</code>, <code>results[-2]</code></td>
+<td>the last item, the second-to-last</td>
+</tr>
+<tr>
+<td><code>results[5:10]</code></td>
+<td>a slice: entries 5 to 9, <strong>the right index excluded</strong></td>
+</tr>
+<tr>
+<td><code>results.append(value)</code></td>
+<td>attach one value to the end</td>
+</tr>
+<tr>
+<td><code>list1 + list2</code></td>
+<td>glue two lists into one longer list</td>
+</tr>
+</tbody></table>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the list comprehension: one formula, many inputs
+depths = [5, 10, 15, 20, 25, 30]
+results = [t_h(h).n() for h in depths]     # for each h in depths, compute and collect
+results
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the same computation as a traditional for loop
+results = []                        # a prepared empty list
+for h in depths:                    # colon and indentation carry the body
+    value = t_h(h).n()
+    results.append(value)           # .append() attaches a value to the list
+results
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340990-16" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.9 Python in one place**
+
+| Code | What it does |
+|---|---|
+| `def f(x, y): return x + y` | name a recipe: parameters in, one value out |
+| `f(2, 3)` | call it; arguments fill the parameters in order |
+| `lambda a: N(...)` | the same, squeezed into one line; no equation, no `show()` |
+| `zip(xs, ys)` | join two lists into pairs, like a zipper |
+| `list(zip(xs, ys))` | turn the pairs into a plain list |
+| `str(a) + ' degrees'` | build text by concatenation |
+| `f&quot;Fit, $k = $ {round(fit[k], 2)}&quot;` | an f-string: values dropped into text between braces |
+| `rf&quot;...&quot;` | raw string: backslashes and $\LaTeX$ pass through untouched |
+| `&quot;text&quot;` or `'text'` | a string; Python (and SageMath) accepts both quote marks, but a string must open and close with the same one |
+| `sum(bars, start)` | add all items of `bars`, starting at `start` |
+| `fit[k]` | read a value from a dictionary by name |" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340990-16" class="markdown-preview" style="display: block;" data-original-markdown="## **6.9 Python in one place**
+
+| Code | What it does |
+|---|---|
+| `def f(x, y): return x + y` | name a recipe: parameters in, one value out |
+| `f(2, 3)` | call it; arguments fill the parameters in order |
+| `lambda a: N(...)` | the same, squeezed into one line; no equation, no `show()` |
+| `zip(xs, ys)` | join two lists into pairs, like a zipper |
+| `list(zip(xs, ys))` | turn the pairs into a plain list |
+| `str(a) + ' degrees'` | build text by concatenation |
+| `f&quot;Fit, $k = $ {round(fit[k], 2)}&quot;` | an f-string: values dropped into text between braces |
+| `rf&quot;...&quot;` | raw string: backslashes and $\LaTeX$ pass through untouched |
+| `&quot;text&quot;` or `'text'` | a string; Python (and SageMath) accepts both quote marks, but a string must open and close with the same one |
+| `sum(bars, start)` | add all items of `bars`, starting at `start` |
+| `fit[k]` | read a value from a dictionary by name |"><h2 id="69-python-in-one-place"><strong>6.9 Python in one place</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>def f(x, y): return x + y</code></td>
+<td>name a recipe: parameters in, one value out</td>
+</tr>
+<tr>
+<td><code>f(2, 3)</code></td>
+<td>call it; arguments fill the parameters in order</td>
+</tr>
+<tr>
+<td><code>lambda a: N(...)</code></td>
+<td>the same, squeezed into one line; no equation, no <code>show()</code></td>
+</tr>
+<tr>
+<td><code>zip(xs, ys)</code></td>
+<td>join two lists into pairs, like a zipper</td>
+</tr>
+<tr>
+<td><code>list(zip(xs, ys))</code></td>
+<td>turn the pairs into a plain list</td>
+</tr>
+<tr>
+<td><code>str(a) + ' degrees'</code></td>
+<td>build text by concatenation</td>
+</tr>
+<tr>
+<td><code>f"Fit, $k = $ {round(fit[k], 2)}"</code></td>
+<td>an f-string: values dropped into text between braces</td>
+</tr>
+<tr>
+<td><code>rf"..."</code></td>
+<td>raw string: backslashes and $\LaTeX$ pass through untouched</td>
+</tr>
+<tr>
+<td><code>"text"</code> or <code>'text'</code></td>
+<td>a string; Python (and SageMath) accepts both quote marks, but a string must open and close with the same one</td>
+</tr>
+<tr>
+<td><code>sum(bars, start)</code></td>
+<td>add all items of <code>bars</code>, starting at <code>start</code></td>
+</tr>
+<tr>
+<td><code>fit[k]</code></td>
+<td>read a value from a dictionary by name</td>
+</tr>
+</tbody></table>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># homemade functions, the Chapter 5 pattern
+def y_errorbar(x, y, dy):
+    return line([(x, y - dy), (x, y + dy)], color='lime', thickness=1.5)
+
+y_errorbar(0.06, 15.2, 1.2)     # a call computes the line and hands it back
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340990-17" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Note:** `def` for a body of one or more indented lines, `lambda` when it fits on one line. `return` is what makes the answer a value: storable, listable, summable. A `lambda` is pure computing - nothing to solve or differentiate - while a symbolic function like `t_h(h) = ...` is a formula Sage can solve, substitute into and differentiate." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340990-17" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Note:** `def` for a body of one or more indented lines, `lambda` when it fits on one line. `return` is what makes the answer a value: storable, listable, summable. A `lambda` is pure computing - nothing to solve or differentiate - while a symbolic function like `t_h(h) = ...` is a formula Sage can solve, substitute into and differentiate."><blockquote>
+<p><strong>Note:</strong> <code>def</code> for a body of one or more indented lines, <code>lambda</code> when it fits on one line. <code>return</code> is what makes the answer a value: storable, listable, summable. A <code>lambda</code> is pure computing - nothing to solve or differentiate - while a symbolic function like <code>t_h(h) = ...</code> is a formula Sage can solve, substitute into and differentiate.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340990-18" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.10 Plotting**
+
+| Code | What it does |
+|---|---|
+| `plot(f, (x, -30, 30))` | draw a function over a range |
+| `plot(f, xmin = 0, xmax = 25)` | the same, options spelled out; **the range is required** |
+| `plot(2, x, xmin = 0, xmax = 25)` | a constant; the plain `x` must stay |
+| `points(pairs)` | a list of $(x, y)$ pairs as dots |
+| `list_plot(pairs, plotjoined = True)` | the same pairs, joined into a line |
+| `line([(x1, y1), (x2, y2)])` | a line through given points |
+| `plot(p1 + p2 + p3)` | overlay: adding plots draws them in one picture |
+| `sum(list_of_plots)` | overlay a whole list at once |
+| `graphics_array([[p1], [p2]]).show(figsize=[10, 7])` | several pictures, one above another |
+| `piecewise([((0, 20), f1), ((20, 80), f2)])` | different formulas on different intervals |" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340990-18" class="markdown-preview" style="display: block;" data-original-markdown="## **6.10 Plotting**
+
+| Code | What it does |
+|---|---|
+| `plot(f, (x, -30, 30))` | draw a function over a range |
+| `plot(f, xmin = 0, xmax = 25)` | the same, options spelled out; **the range is required** |
+| `plot(2, x, xmin = 0, xmax = 25)` | a constant; the plain `x` must stay |
+| `points(pairs)` | a list of $(x, y)$ pairs as dots |
+| `list_plot(pairs, plotjoined = True)` | the same pairs, joined into a line |
+| `line([(x1, y1), (x2, y2)])` | a line through given points |
+| `plot(p1 + p2 + p3)` | overlay: adding plots draws them in one picture |
+| `sum(list_of_plots)` | overlay a whole list at once |
+| `graphics_array([[p1], [p2]]).show(figsize=[10, 7])` | several pictures, one above another |
+| `piecewise([((0, 20), f1), ((20, 80), f2)])` | different formulas on different intervals |"><h2 id="610-plotting"><strong>6.10 Plotting</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>plot(f, (x, -30, 30))</code></td>
+<td>draw a function over a range</td>
+</tr>
+<tr>
+<td><code>plot(f, xmin = 0, xmax = 25)</code></td>
+<td>the same, options spelled out; <strong>the range is required</strong></td>
+</tr>
+<tr>
+<td><code>plot(2, x, xmin = 0, xmax = 25)</code></td>
+<td>a constant; the plain <code>x</code> must stay</td>
+</tr>
+<tr>
+<td><code>points(pairs)</code></td>
+<td>a list of $(x, y)$ pairs as dots</td>
+</tr>
+<tr>
+<td><code>list_plot(pairs, plotjoined = True)</code></td>
+<td>the same pairs, joined into a line</td>
+</tr>
+<tr>
+<td><code>line([(x1, y1), (x2, y2)])</code></td>
+<td>a line through given points</td>
+</tr>
+<tr>
+<td><code>plot(p1 + p2 + p3)</code></td>
+<td>overlay: adding plots draws them in one picture</td>
+</tr>
+<tr>
+<td><code>sum(list_of_plots)</code></td>
+<td>overlay a whole list at once</td>
+</tr>
+<tr>
+<td><code>graphics_array([[p1], [p2]]).show(figsize=[10, 7])</code></td>
+<td>several pictures, one above another</td>
+</tr>
+<tr>
+<td><code>piecewise([((0, 20), f1), ((20, 80), f2)])</code></td>
+<td>different formulas on different intervals</td>
+</tr>
+</tbody></table>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># a family of curves, one comprehension
+plots = [plot(y_traj(x).subs(alpha = a*pi/180, v0 = 15, g = 9.81),
+              xmin = 0, xmax = 25,
+              color = hue(a/90),
+              legend_label = str(a) + ' degrees')
+         for a in [20, 30, 40, 50, 60, 70]]
+
+family_plot = sum(plots)     # build the sum, give it a name, then show it
+show(family_plot, ymin = 0)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># an empty plot that carries the formatting into every combination
+plot_format = plot([], title="Measurement of the dependence $F(x)$",
+                   axes_labels = [r"$x\;\mathrm{[m]}$", r"$F\;\mathrm{[N]}$"],
+                   frame=True, gridlines=True)
+
+final_plot = points(data_points, xmin=0) + plot_format
+final_plot
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340991-19" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Note:** `plot([])` paints nothing but accepts every formatting option, so the empty plot carries title, frame, gridlines and axis labels into any sum it joins - no retyping into whichever plot survives the combination.
+
+**Formatting options** (they work in `plot()`, `show()`, `save()` and `points()` alike):
+
+| Option | What it does |
+|---|---|
+| `color='red'`, `'magenta'`, ... or `hue(0.3)` | curve color; `hue` spreads a family over the rainbow |
+| `linestyle='--'` | dashed curve |
+| `legend_label='...'` | legend entry; LaTeX works between dollar signs |
+| `axes_labels=['$x$ [m]', '$y$ [m]']` | axis captions, LaTeX inside `$...$`, units here |
+| `title=r&quot;...&quot;` | picture title |
+| `frame=True` | box around the picture instead of plain axes |
+| `gridlines=True` | background grid |
+| `xmin, xmax, ymin, ymax` | axis ranges; `ymin = 0` is physics, not cosmetics |
+| `figsize=6` or `figsize=[12, 6]` | canvas size in inches; a single number means a square |
+| `size=40` | dot size in `points()` |
+| `thickness=1.5` | line thickness |" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340991-19" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Note:** `plot([])` paints nothing but accepts every formatting option, so the empty plot carries title, frame, gridlines and axis labels into any sum it joins - no retyping into whichever plot survives the combination.
+
+**Formatting options** (they work in `plot()`, `show()`, `save()` and `points()` alike):
+
+| Option | What it does |
+|---|---|
+| `color='red'`, `'magenta'`, ... or `hue(0.3)` | curve color; `hue` spreads a family over the rainbow |
+| `linestyle='--'` | dashed curve |
+| `legend_label='...'` | legend entry; LaTeX works between dollar signs |
+| `axes_labels=['$x$ [m]', '$y$ [m]']` | axis captions, LaTeX inside `$...$`, units here |
+| `title=r&quot;...&quot;` | picture title |
+| `frame=True` | box around the picture instead of plain axes |
+| `gridlines=True` | background grid |
+| `xmin, xmax, ymin, ymax` | axis ranges; `ymin = 0` is physics, not cosmetics |
+| `figsize=6` or `figsize=[12, 6]` | canvas size in inches; a single number means a square |
+| `size=40` | dot size in `points()` |
+| `thickness=1.5` | line thickness |"><blockquote>
+<p><strong>Note:</strong> <code>plot([])</code> paints nothing but accepts every formatting option, so the empty plot carries title, frame, gridlines and axis labels into any sum it joins - no retyping into whichever plot survives the combination.</p>
+</blockquote>
+<p><strong>Formatting options</strong> (they work in <code>plot()</code>, <code>show()</code>, <code>save()</code> and <code>points()</code> alike):</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>color='red'</code>, <code>'magenta'</code>, ... or <code>hue(0.3)</code></td>
+<td>curve color; <code>hue</code> spreads a family over the rainbow</td>
+</tr>
+<tr>
+<td><code>linestyle='--'</code></td>
+<td>dashed curve</td>
+</tr>
+<tr>
+<td><code>legend_label='...'</code></td>
+<td>legend entry; LaTeX works between dollar signs</td>
+</tr>
+<tr>
+<td><code>axes_labels=['$x$ [m]', '$y$ [m]']</code></td>
+<td>axis captions, LaTeX inside <code>$...$</code>, units here</td>
+</tr>
+<tr>
+<td><code>title=r"..."</code></td>
+<td>picture title</td>
+</tr>
+<tr>
+<td><code>frame=True</code></td>
+<td>box around the picture instead of plain axes</td>
+</tr>
+<tr>
+<td><code>gridlines=True</code></td>
+<td>background grid</td>
+</tr>
+<tr>
+<td><code>xmin, xmax, ymin, ymax</code></td>
+<td>axis ranges; <code>ymin = 0</code> is physics, not cosmetics</td>
+</tr>
+<tr>
+<td><code>figsize=6</code> or <code>figsize=[12, 6]</code></td>
+<td>canvas size in inches; a single number means a square</td>
+</tr>
+<tr>
+<td><code>size=40</code></td>
+<td>dot size in <code>points()</code></td>
+</tr>
+<tr>
+<td><code>thickness=1.5</code></td>
+<td>line thickness</td>
+</tr>
+</tbody></table>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># saving: the format follows the extension, dpi sets the pixel density
+final_plot.save("measurement_plot.png", dpi=300)     # dpi=300 for print, 100 for screen
+final_plot.save("final_plot_fit.pdf")               # vector: sharp at any zoom, no dpi
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340991-20" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.11 Data with pandas**
+
+| Code | What it does |
+|---|---|
+| `import pandas as pd` | load the pandas library |
+| `pd.read_excel(&quot;file.xlsx&quot;)` | read an Excel file from disk |
+| `pd.read_csv(&quot;file.csv&quot;)` | read a csv file from disk |
+| `dataframe_name = &quot;data&quot;` | the one name to change in the button-written loading cell |
+| `data` | display the table |
+| `data.info()` | health report: column names, non-null counts, types |
+| `data.sample(n=10)` | ten random rows, different each run |
+| `data.loc[17:22, :]` | rows by index, **both ends included**: six rows |
+| `data[&quot;x [m]&quot;] = data[&quot;x [cm]&quot;]/100` | create or overwrite a column |
+| `data.groupby(&quot;x [m]&quot;)[&quot;F [N]&quot;].agg([&quot;mean&quot;, &quot;std&quot;]).reset_index()` | means and stds per group |" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340991-20" class="markdown-preview" style="display: block;" data-original-markdown="## **6.11 Data with pandas**
+
+| Code | What it does |
+|---|---|
+| `import pandas as pd` | load the pandas library |
+| `pd.read_excel(&quot;file.xlsx&quot;)` | read an Excel file from disk |
+| `pd.read_csv(&quot;file.csv&quot;)` | read a csv file from disk |
+| `dataframe_name = &quot;data&quot;` | the one name to change in the button-written loading cell |
+| `data` | display the table |
+| `data.info()` | health report: column names, non-null counts, types |
+| `data.sample(n=10)` | ten random rows, different each run |
+| `data.loc[17:22, :]` | rows by index, **both ends included**: six rows |
+| `data[&quot;x [m]&quot;] = data[&quot;x [cm]&quot;]/100` | create or overwrite a column |
+| `data.groupby(&quot;x [m]&quot;)[&quot;F [N]&quot;].agg([&quot;mean&quot;, &quot;std&quot;]).reset_index()` | means and stds per group |"><h2 id="611-data-with-pandas"><strong>6.11 Data with pandas</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>import pandas as pd</code></td>
+<td>load the pandas library</td>
+</tr>
+<tr>
+<td><code>pd.read_excel("file.xlsx")</code></td>
+<td>read an Excel file from disk</td>
+</tr>
+<tr>
+<td><code>pd.read_csv("file.csv")</code></td>
+<td>read a csv file from disk</td>
+</tr>
+<tr>
+<td><code>dataframe_name = "data"</code></td>
+<td>the one name to change in the button-written loading cell</td>
+</tr>
+<tr>
+<td><code>data</code></td>
+<td>display the table</td>
+</tr>
+<tr>
+<td><code>data.info()</code></td>
+<td>health report: column names, non-null counts, types</td>
+</tr>
+<tr>
+<td><code>data.sample(n=10)</code></td>
+<td>ten random rows, different each run</td>
+</tr>
+<tr>
+<td><code>data.loc[17:22, :]</code></td>
+<td>rows by index, <strong>both ends included</strong>: six rows</td>
+</tr>
+<tr>
+<td><code>data["x [m]"] = data["x [cm]"]/100</code></td>
+<td>create or overwrite a column</td>
+</tr>
+<tr>
+<td><code>data.groupby("x [m]")["F [N]"].agg(["mean", "std"]).reset_index()</code></td>
+<td>means and stds per group</td>
+</tr>
+</tbody></table>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the loading cell the Import/Export button writes (table text shortened)
+dataframe_name = "data"
+import pandas as pd, json
+data_raw = r'[["x [cm]","F [N]"],[1,4.19],...]'     # the table flattened into text
+data_json = json.loads(data_raw)                    # text -> list of rows, header first
+globals()[dataframe_name] = pd.DataFrame(data_json[1:], columns=data_json[0])
+# the DataFrame is now stored under the chosen name, e.g. data
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340991-21" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="**Cleaning.**
+
+| Code | What it does |
+|---|---|
+| `data['x [cm]'].isna()` | a True/False answer per row: is the value missing? |
+| `data['x [cm]'].isna().value_counts()` | count the holes |
+| `data.loc[data['x [cm]'].isna(), :]` | show the rows with holes, all columns |
+| `data.dropna()` | the broom: remove every row containing a `NaN`, any column |
+| `mask = (data['F [N]'] &gt; 0) &amp; (data['F [N]'] &lt; 40) &amp; data['x [cm]'].notna()` | boolean mask: questions glued by `&amp;` |
+| `data[mask]` | keep the rows that answer True, whole |
+| `len(data)` | count the rows |
+
+&gt; **Note:** `dropna()` sweeps holes, but cannot see typos - a typo is not missing, it is wrong. The physics sets the limits (the strongest pull was near 30 N), so the physics writes the mask. A tidy spreadsheet - one table per file, column names in the first row, data top to bottom - loads in one line; anything else costs an afternoon of repairs. For `read_excel`, the `openpyxl` library must be installed (`!pip install openpyxl`)." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340991-21" class="markdown-preview" style="display: block;" data-original-markdown="**Cleaning.**
+
+| Code | What it does |
+|---|---|
+| `data['x [cm]'].isna()` | a True/False answer per row: is the value missing? |
+| `data['x [cm]'].isna().value_counts()` | count the holes |
+| `data.loc[data['x [cm]'].isna(), :]` | show the rows with holes, all columns |
+| `data.dropna()` | the broom: remove every row containing a `NaN`, any column |
+| `mask = (data['F [N]'] &gt; 0) &amp; (data['F [N]'] &lt; 40) &amp; data['x [cm]'].notna()` | boolean mask: questions glued by `&amp;` |
+| `data[mask]` | keep the rows that answer True, whole |
+| `len(data)` | count the rows |
+
+&gt; **Note:** `dropna()` sweeps holes, but cannot see typos - a typo is not missing, it is wrong. The physics sets the limits (the strongest pull was near 30 N), so the physics writes the mask. A tidy spreadsheet - one table per file, column names in the first row, data top to bottom - loads in one line; anything else costs an afternoon of repairs. For `read_excel`, the `openpyxl` library must be installed (`!pip install openpyxl`)."><p><strong>Cleaning.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>data['x [cm]'].isna()</code></td>
+<td>a True/False answer per row: is the value missing?</td>
+</tr>
+<tr>
+<td><code>data['x [cm]'].isna().value_counts()</code></td>
+<td>count the holes</td>
+</tr>
+<tr>
+<td><code>data.loc[data['x [cm]'].isna(), :]</code></td>
+<td>show the rows with holes, all columns</td>
+</tr>
+<tr>
+<td><code>data.dropna()</code></td>
+<td>the broom: remove every row containing a <code>NaN</code>, any column</td>
+</tr>
+<tr>
+<td><code>mask = (data['F [N]'] &gt; 0) &amp; (data['F [N]'] &lt; 40) &amp; data['x [cm]'].notna()</code></td>
+<td>boolean mask: questions glued by <code>&amp;</code></td>
+</tr>
+<tr>
+<td><code>data[mask]</code></td>
+<td>keep the rows that answer True, whole</td>
+</tr>
+<tr>
+<td><code>len(data)</code></td>
+<td>count the rows</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Note:</strong> <code>dropna()</code> sweeps holes, but cannot see typos - a typo is not missing, it is wrong. The physics sets the limits (the strongest pull was near 30 N), so the physics writes the mask. A tidy spreadsheet - one table per file, column names in the first row, data top to bottom - loads in one line; anything else costs an afternoon of repairs. For <code>read_excel</code>, the <code>openpyxl</code> library must be installed (<code>!pip install openpyxl</code>).</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340991-22" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.12 Fitting**
+
+| Code | What it does |
+|---|---|
+| `k = var(&quot;k&quot;)` | the model's unknown parameter, a symbol |
+| `F(x) = k*x` | write the model before using it |
+| `find_fit(points, F, solution_dict=True)` | hunt the parameters bringing the model to the points |
+| `fit[k]` | read the fitted value from the dictionary by name |
+| `F_fit(x) = F(x).subs(fit)` | substitute the fitted parameters into the model |
+| `list(zip(xs, ys))` | the data as $(x, y)$ pairs, the shape `find_fit` wants |" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340991-22" class="markdown-preview" style="display: block;" data-original-markdown="## **6.12 Fitting**
+
+| Code | What it does |
+|---|---|
+| `k = var(&quot;k&quot;)` | the model's unknown parameter, a symbol |
+| `F(x) = k*x` | write the model before using it |
+| `find_fit(points, F, solution_dict=True)` | hunt the parameters bringing the model to the points |
+| `fit[k]` | read the fitted value from the dictionary by name |
+| `F_fit(x) = F(x).subs(fit)` | substitute the fitted parameters into the model |
+| `list(zip(xs, ys))` | the data as $(x, y)$ pairs, the shape `find_fit` wants |"><h2 id="612-fitting"><strong>6.12 Fitting</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>k = var("k")</code></td>
+<td>the model's unknown parameter, a symbol</td>
+</tr>
+<tr>
+<td><code>F(x) = k*x</code></td>
+<td>write the model before using it</td>
+</tr>
+<tr>
+<td><code>find_fit(points, F, solution_dict=True)</code></td>
+<td>hunt the parameters bringing the model to the points</td>
+</tr>
+<tr>
+<td><code>fit[k]</code></td>
+<td>read the fitted value from the dictionary by name</td>
+</tr>
+<tr>
+<td><code>F_fit(x) = F(x).subs(fit)</code></td>
+<td>substitute the fitted parameters into the model</td>
+</tr>
+<tr>
+<td><code>list(zip(xs, ys))</code></td>
+<td>the data as $(x, y)$ pairs, the shape <code>find_fit</code> wants</td>
+</tr>
+</tbody></table>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the full recipe, Chapter 5
+data_points = list(zip(data["x [m]"], data["F [N]"]))   # all raw points
+x_F_means = list(zip(stats['x [m]'], stats['mean']))    # or the calmer means
+
+fit = find_fit(x_F_means, F, solution_dict=True)
+fit_label = rf"Fit, $k = $ {round(fit[k], 2)} N/m"
+plot_fit = plot(F_fit, xmin=0, xmax=0.1, legend_label=fit_label,
+                color='orange', linestyle='--')
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># a nontrivial model is just another model
+F0, a, x = var("F0 a x")
+F_magnet(x) = F0 * (1 - tanh(x/a)) * exp(-x/a)     # type it, fit it, same recipe
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340992-23" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Note:** Straight lines are routine for any tool; the power of `find_fit` is that nearly any formula that can be written down can be fitted - no dropdown menu needed. The f-string label beats a hand-typed one: when the data changes and the refit changes `fit[k]`, the label keeps telling the truth." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340992-23" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Note:** Straight lines are routine for any tool; the power of `find_fit` is that nearly any formula that can be written down can be fitted - no dropdown menu needed. The f-string label beats a hand-typed one: when the data changes and the refit changes `fit[k]`, the label keeps telling the truth."><blockquote>
+<p><strong>Note:</strong> Straight lines are routine for any tool; the power of <code>find_fit</code> is that nearly any formula that can be written down can be fitted - no dropdown menu needed. The f-string label beats a hand-typed one: when the data changes and the refit changes <code>fit[k]</code>, the label keeps telling the truth.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340992-24" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.13 Constants, units, types**
+
+| Code | What it does |
+|---|---|
+| `pi` | $\pi$, exact until `N()` is called |
+| `e` | Euler's number |
+| `sqrt`, `abs`, `exp`, `log`, `arcsin`, `arctan` | the everyday functions |
+
+**Units convention.** Numbers in the notebook stay bare, units live in variable-name comments and in axis labels: `h = 45  # m`, `axes_labels = ['$x$ [m]', '$y$ [m]']`. Multiplying m/s by `3.6` converts to km/h. Angles are radians; degrees must be converted. A `NaN` is pandas' word for a missing value, `int64` means whole numbers, `float64` decimals." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340992-24" class="markdown-preview" style="display: block;" data-original-markdown="## **6.13 Constants, units, types**
+
+| Code | What it does |
+|---|---|
+| `pi` | $\pi$, exact until `N()` is called |
+| `e` | Euler's number |
+| `sqrt`, `abs`, `exp`, `log`, `arcsin`, `arctan` | the everyday functions |
+
+**Units convention.** Numbers in the notebook stay bare, units live in variable-name comments and in axis labels: `h = 45  # m`, `axes_labels = ['$x$ [m]', '$y$ [m]']`. Multiplying m/s by `3.6` converts to km/h. Angles are radians; degrees must be converted. A `NaN` is pandas' word for a missing value, `int64` means whole numbers, `float64` decimals."><h2 id="613-constants-units-types"><strong>6.13 Constants, units, types</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>pi</code></td>
+<td>$\pi$, exact until <code>N()</code> is called</td>
+</tr>
+<tr>
+<td><code>e</code></td>
+<td>Euler's number</td>
+</tr>
+<tr>
+<td><code>sqrt</code>, <code>abs</code>, <code>exp</code>, <code>log</code>, <code>arcsin</code>, <code>arctan</code></td>
+<td>the everyday functions</td>
+</tr>
+</tbody></table>
+<p><strong>Units convention.</strong> Numbers in the notebook stay bare, units live in variable-name comments and in axis labels: <code>h = 45  # m</code>, <code>axes_labels = ['$x$ [m]', '$y$ [m]']</code>. Multiplying m/s by <code>3.6</code> converts to km/h. Angles are radians; degrees must be converted. A <code>NaN</code> is pandas' word for a missing value, <code>int64</code> means whole numbers, <code>float64</code> decimals.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137340992-25" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.14 The standard workflow**
+
+1. **Store what is known.** `g = 9.81  # m/s^2`
+2. **Declare symbols.** `var('t alpha v0 g')`
+3. **State the model.** `y(t) = v0*sin(alpha)*t - 1/2*g*t^2`
+4. **Solve conditions symbolically.** `solve(y(t) == 0, t)`, pick with `[i]`, strip with `.rhs()`
+5. **Substitute formulas into each other.** `R(alpha) = x(t_land)`
+6. **Clean up.** `.trig_reduce()`, `.factor()`, `simplify_full()`
+7. **Optimize.** `solve(diff(R, alpha) == 0, alpha)`, confirm with the sign change
+8. **Numbers last, in one list.** `values = [v0 == 15, g == 9.81]`, then `.subs(values)`
+9. **Go decimal.** `N(...)`, `round(..., 2)`
+10. **Draw and save.** `plot(...) + plot_format`, `.save(&quot;name.png&quot;, dpi=300)`
+
+Never type a long formula, run it, and hope: one small step, check the result, take the next. Sage carries the arithmetic flawlessly; what to compute, and whether the answer is sensible, stays your job." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137340992-25" class="markdown-preview" style="display: block;" data-original-markdown="## **6.14 The standard workflow**
+
+1. **Store what is known.** `g = 9.81  # m/s^2`
+2. **Declare symbols.** `var('t alpha v0 g')`
+3. **State the model.** `y(t) = v0*sin(alpha)*t - 1/2*g*t^2`
+4. **Solve conditions symbolically.** `solve(y(t) == 0, t)`, pick with `[i]`, strip with `.rhs()`
+5. **Substitute formulas into each other.** `R(alpha) = x(t_land)`
+6. **Clean up.** `.trig_reduce()`, `.factor()`, `simplify_full()`
+7. **Optimize.** `solve(diff(R, alpha) == 0, alpha)`, confirm with the sign change
+8. **Numbers last, in one list.** `values = [v0 == 15, g == 9.81]`, then `.subs(values)`
+9. **Go decimal.** `N(...)`, `round(..., 2)`
+10. **Draw and save.** `plot(...) + plot_format`, `.save(&quot;name.png&quot;, dpi=300)`
+
+Never type a long formula, run it, and hope: one small step, check the result, take the next. Sage carries the arithmetic flawlessly; what to compute, and whether the answer is sensible, stays your job."><h2 id="614-the-standard-workflow"><strong>6.14 The standard workflow</strong></h2>
+<ol>
+<li><strong>Store what is known.</strong> <code>g = 9.81  # m/s^2</code></li>
+<li><strong>Declare symbols.</strong> <code>var('t alpha v0 g')</code></li>
+<li><strong>State the model.</strong> <code>y(t) = v0*sin(alpha)*t - 1/2*g*t^2</code></li>
+<li><strong>Solve conditions symbolically.</strong> <code>solve(y(t) == 0, t)</code>, pick with <code>[i]</code>, strip with <code>.rhs()</code></li>
+<li><strong>Substitute formulas into each other.</strong> <code>R(alpha) = x(t_land)</code></li>
+<li><strong>Clean up.</strong> <code>.trig_reduce()</code>, <code>.factor()</code>, <code>simplify_full()</code></li>
+<li><strong>Optimize.</strong> <code>solve(diff(R, alpha) == 0, alpha)</code>, confirm with the sign change</li>
+<li><strong>Numbers last, in one list.</strong> <code>values = [v0 == 15, g == 9.81]</code>, then <code>.subs(values)</code></li>
+<li><strong>Go decimal.</strong> <code>N(...)</code>, <code>round(..., 2)</code></li>
+<li><strong>Draw and save.</strong> <code>plot(...) + plot_format</code>, <code>.save("name.png", dpi=300)</code></li>
+</ol>
+<p>Never type a long formula, run it, and hope: one small step, check the result, take the next. Sage carries the arithmetic flawlessly; what to compute, and whether the answer is sensible, stays your job.</p>
+</div>
+    </div></div></div></div>
+            
+        </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/embedded_sagecell_backup.js"></script>
+<script src="https://sage-sk.org/embedded_sagecell.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/FileSaver.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/nbplayerConfig.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/comment/comment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/markdown-fold.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.css">
+<script>let RUN_DELAY = 1000;</script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/customthemes15.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbrunner24.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaiengine23.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaipriming22.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbautocompletion20.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://code.datagridxl.com/datagridxl2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fflate@0.8.3/umd/index.min.js"></script>
+<script>
+  playerConfig={"panes":"Exec","lang":"sage","linked":true,"eval":false,"hide":["fullScreen"],"execute":true,"showRead":false,"collapsable":false,"playerPath":"https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main","name":"SageMath"};
+  playerMode={"showSage":true,"showNotebookInput":true,"showSageInput":true};
+  let API_KEY="";
+  let API_URL="";
+  let CURRENT_MODEL="";
+  let CURRENT_LANGUAGE="";
+  let SAGECELL_URL="https://sage-sk.org/";
+  let toggleEvalBtnsState=false;
+  let isFullWidthState=true;
+  window.hideCodeInputState=false;
+  let PRELOAD="";
+  let SETTINGS_PATH_NAME="settings.js";
+  let aiEduMode=true;
+  let aiCompleteMode=true;
+  let aiLogs=false;
+  window.aiLogs=false;
+  window.aiSettingsVisible=true;
+  window.aiLogsHistory=[];
+  makeMenu();
+  localize();
+  createTableOfContents();
+  loadStatus();
+  restoreUIState();
+  makeSageCells(playerConfig);
+  launchPlayer();
+  addControlPanel();
+  setupRunAllCells();
+  addSageCellNumbering();
+  enhanceSageCellsWithGlobalAutocomplete();
+  window.onload = initializeMarkdownCells;
+  let CUSTOM_CONTEXT="";
+  let CUSTOM_CSS="";
+  if (CUSTOM_CSS) applyCustomCSS(CUSTOM_CSS);
+  addCommentShortcutToAllSageCells();
+  applyPreloadCells();
+  setupBulkCellObserver();
+</script>
+<script src="settings.js"></script>
+</body>
+</html>

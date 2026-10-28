@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;polygon points='50,6 88,28 88,72 50,94 12,72 12,28' fill='%234CAF50'/&gt;&lt;text x='50' y='68' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='%23fff' text-anchor='middle'&gt;S&lt;/text&gt;&lt;/svg&gt;">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/es5-shim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/ansi_up.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex-auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/notebook.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/prism.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/notebook.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/nbpreview.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/css/nbplayer24.css">
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/texme@1.2.2"></script>
+<div id="main">
+<div id="notebook-holder"><div class="nb-notebook"><div class="nb-worksheet"><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175096158-1" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Autori:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Prírodovedecká fakulta, Univerzita Pavla Jozefa Šafárika v Košiciach, Slovensko&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt; &lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt; &lt;/p&gt;" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175096158-1" class="markdown-preview" style="display: block;" data-original-markdown="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Autori:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Prírodovedecká fakulta, Univerzita Pavla Jozefa Šafárika v Košiciach, Slovensko&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt; &lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt; &lt;/p&gt;"><p><img style="float: right;" src="https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png" alt="" width="100" height="85"></p>
+<p><strong>Autori:</strong> Dominik Borovský<sup>1</sup> &amp; Jozef Hanč<sup>2</sup></p>
+<p><em>2026, Prírodovedecká fakulta, Univerzita Pavla Jozefa Šafárika v Košiciach, Slovensko</em></p>
+<p><sup>1</sup><a href="mailto:dominik.borovsky@student.upjs.sk">dominik.borovsky@student.upjs.sk,</a> <sup>2</sup><a href="mailto:jozef.hanc@upjs.sk">jozef.hanc@upjs.sk</a> </p></div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175096158-2" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="# **Kapitola 0: Vitajte v SageMath!**" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175096158-2" class="markdown-preview" style="display: block;" data-original-markdown="# **Kapitola 0: Vitajte v SageMath!**"><h1 id="kapitola-0-vitajte-v-sagemath"><strong>Kapitola 0: Vitajte v SageMath!</strong></h1>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175096158-3" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Fyzika sa odjakživa robila pomocou troch nástrojov: vlastnej hlavy, ceruzky a veľkého množstva papiera. Vystačil si s nimi Galileo, Newton aj Einstein. Niekde medzi nimi a nami však fyzika vyrástla. Dnešné otázky – zrážka dvoch čiernych dier, počasie nad strednou Európou zajtra, státisíce až stovky miliónov zrážok každú sekundu v urýchľovači LHC, kvantová bodka široká niekoľko stoviek atómov – nechali ceruzku ďaleko za sebou. Nie preto, že by bolo ťažšie fyzike *porozumieť*, ale preto, že jej *rozsah* sa vymkol spod kontroly. Ani najrýchlejší človek na svete s kalkulačkou a nekonečnou trpezlivosťou by do obeda nedokončil výpočty, ktoré si súčasná fyzikálna otázka vyžaduje.
+
+Dnešný fyzik preto používa štvrtý nástroj: počítač. Nie ako náhradu hlavy, ale ako jej pracovnú silu na namáhavú rutinu. Skutoční fyzici trávia pozoruhodnú časť dňa *programovaním*, teda zapisovaním vzorcov, ktoré má počítač vyčísliť. Inak sa totiž reálny výpočet – nepresné dáta, mnoho navzájom viazaných rovníc, simulácia opakovaná tisíckrát – k výsledku nedostane.
+
+Pre začiatočníka je tu však háčik. Zdá sa, že kto sa chce k tomuto svetu priblížiť, musí ovládať dve remeslá naraz: fyzikovo aj programátorovo. Táto kniha vychádza z toho, že to nie je pravda. Existuje nástroj, ktorý umožňuje robiť vážnu, modernú výpočtovú fyziku iba zápisom vzorcov – **SageMath**. Táto kapitola ukazuje, čo všetko dokáže, skôr než sa pustíme do práce." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175096158-3" class="markdown-preview" style="display: block;" data-original-markdown="Fyzika sa odjakživa robila pomocou troch nástrojov: vlastnej hlavy, ceruzky a veľkého množstva papiera. Vystačil si s nimi Galileo, Newton aj Einstein. Niekde medzi nimi a nami však fyzika vyrástla. Dnešné otázky – zrážka dvoch čiernych dier, počasie nad strednou Európou zajtra, státisíce až stovky miliónov zrážok každú sekundu v urýchľovači LHC, kvantová bodka široká niekoľko stoviek atómov – nechali ceruzku ďaleko za sebou. Nie preto, že by bolo ťažšie fyzike *porozumieť*, ale preto, že jej *rozsah* sa vymkol spod kontroly. Ani najrýchlejší človek na svete s kalkulačkou a nekonečnou trpezlivosťou by do obeda nedokončil výpočty, ktoré si súčasná fyzikálna otázka vyžaduje.
+
+Dnešný fyzik preto používa štvrtý nástroj: počítač. Nie ako náhradu hlavy, ale ako jej pracovnú silu na namáhavú rutinu. Skutoční fyzici trávia pozoruhodnú časť dňa *programovaním*, teda zapisovaním vzorcov, ktoré má počítač vyčísliť. Inak sa totiž reálny výpočet – nepresné dáta, mnoho navzájom viazaných rovníc, simulácia opakovaná tisíckrát – k výsledku nedostane.
+
+Pre začiatočníka je tu však háčik. Zdá sa, že kto sa chce k tomuto svetu priblížiť, musí ovládať dve remeslá naraz: fyzikovo aj programátorovo. Táto kniha vychádza z toho, že to nie je pravda. Existuje nástroj, ktorý umožňuje robiť vážnu, modernú výpočtovú fyziku iba zápisom vzorcov – **SageMath**. Táto kapitola ukazuje, čo všetko dokáže, skôr než sa pustíme do práce."><p>Fyzika sa odjakživa robila pomocou troch nástrojov: vlastnej hlavy, ceruzky a veľkého množstva papiera. Vystačil si s nimi Galileo, Newton aj Einstein. Niekde medzi nimi a nami však fyzika vyrástla. Dnešné otázky – zrážka dvoch čiernych dier, počasie nad strednou Európou zajtra, státisíce až stovky miliónov zrážok každú sekundu v urýchľovači LHC, kvantová bodka široká niekoľko stoviek atómov – nechali ceruzku ďaleko za sebou. Nie preto, že by bolo ťažšie fyzike <em>porozumieť</em>, ale preto, že jej <em>rozsah</em> sa vymkol spod kontroly. Ani najrýchlejší človek na svete s kalkulačkou a nekonečnou trpezlivosťou by do obeda nedokončil výpočty, ktoré si súčasná fyzikálna otázka vyžaduje.</p>
+<p>Dnešný fyzik preto používa štvrtý nástroj: počítač. Nie ako náhradu hlavy, ale ako jej pracovnú silu na namáhavú rutinu. Skutoční fyzici trávia pozoruhodnú časť dňa <em>programovaním</em>, teda zapisovaním vzorcov, ktoré má počítač vyčísliť. Inak sa totiž reálny výpočet – nepresné dáta, mnoho navzájom viazaných rovníc, simulácia opakovaná tisíckrát – k výsledku nedostane.</p>
+<p>Pre začiatočníka je tu však háčik. Zdá sa, že kto sa chce k tomuto svetu priblížiť, musí ovládať dve remeslá naraz: fyzikovo aj programátorovo. Táto kniha vychádza z toho, že to nie je pravda. Existuje nástroj, ktorý umožňuje robiť vážnu, modernú výpočtovú fyziku iba zápisom vzorcov – <strong>SageMath</strong>. Táto kapitola ukazuje, čo všetko dokáže, skôr než sa pustíme do práce.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175096158-4" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **0.1 Čo je SageMath?**
+
+SageMath sa, úprimne povedané, len ťažko zaraďuje do jednej kategórie. Na prvý pohľad je to *superkalkulačka*: napíšete vzorec a dostanete výsledok. O vrstvu hlbšie je to *systém počítačovej algebry*: výrazy uchováva symbolicky a presne, podobne ako ich zapisujete na papier. Kreslí grafy v kvalite vhodnej na publikovanie, nájde presné všeobecné riešenia rovníc a vie počítať s ľubovoľnou presnosťou. V jadre je to programovací jazyk Python v kabáte fyziky. Keď vaša práca prerastie jediný vzorec – a prerastie – programovanie už máte po ruke a čaká na vás.
+
+Na prácu s touto knihou si nemusíte nič inštalovať, nepotrebujete výkonný počítač ani znalosť programovania. Stačí vám prehliadač, zmysel pre hľadanie pravidelností a chuť naučiť sa nové zručnosti využiteľné aj mimo fyziky.
+
+&gt; **Poznámka: kde spúšťať SageMath.** Na jednoduché a rýchle výpočty je najpohodlnejšia SageMath bunka (*SageMath cell*): otvorte v prehliadači https://sagecell.sagemath.org/, napíšte príkaz a vyhodnoťte ho. Naše prostredie SageCell IDE na https://sage-sk.org/IDE/ ponúka tie isté bunky v pokročilejšom režime. Keď sa riešenie problému rozrastie do súvislejšieho celku, do *výpočtovej eseje* spájajúcej text, kód a výsledky, prejdite na notebooky Jupyter. Ak uprednostňujete cloud, kde sa výpočty vykonávajú na webovom serveri, môžete použiť CoCalc (platený) alebo naše SageMath AI Notebooks (bezplatné, vhodné na menej náročnú prácu; práve v jednom z nich sa nachádzate; podrobnosti a aktualizácie nájdete na https://sage-sk.org/). Ak chcete SageMath nainštalovať na vlastný počítač, postupujte podľa návodu na https://www.sagemath.org/. Vo Windowse si inštalácia SageMath (spolu s úplným prostredím Jupyter) vyžaduje drobné úpravy pomocou WSL (Windows Subsystem for Linux), pozrite https://doc.sagemath.org/html/en/installation/index.html. Vyskúšať to môžete neskôr, keď budete samostatne riešiť náročnejšie úlohy.
+
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;https://i.postimg.cc/FzYPJXLh/logo-sagemath.png&quot; alt=&quot;logo-sagemath&quot; width=&quot;70%&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;Obr. 0.1: Logo SageMath (zdroj: &lt;a href=&quot;https://www.sagemath.org/&quot;&gt;sagemath.org&lt;/a&gt;).&lt;/em&gt;&lt;/p&gt;
+
+V tejto knihe pracujeme v *notebookoch* (výpočtových zošitoch): sú to dokumenty, v ktorých spolu existuje vysvetľujúci text, matematické vzorce a spustiteľné bunky s kódom. Každý výsledok sa zobrazí priamo pod úsekom kódu, ktorý ho vytvoril. Hotový notebook je vedecký dokument, ktorý môžete uložiť, znovu otvoriť, upraviť, odovzdať ďalej a opäť spustiť. Nasledujúci oddiel je krátkou prehliadkou takého notebooku." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175096158-4" class="markdown-preview" style="display: block;" data-original-markdown="## **0.1 Čo je SageMath?**
+
+SageMath sa, úprimne povedané, len ťažko zaraďuje do jednej kategórie. Na prvý pohľad je to *superkalkulačka*: napíšete vzorec a dostanete výsledok. O vrstvu hlbšie je to *systém počítačovej algebry*: výrazy uchováva symbolicky a presne, podobne ako ich zapisujete na papier. Kreslí grafy v kvalite vhodnej na publikovanie, nájde presné všeobecné riešenia rovníc a vie počítať s ľubovoľnou presnosťou. V jadre je to programovací jazyk Python v kabáte fyziky. Keď vaša práca prerastie jediný vzorec – a prerastie – programovanie už máte po ruke a čaká na vás.
+
+Na prácu s touto knihou si nemusíte nič inštalovať, nepotrebujete výkonný počítač ani znalosť programovania. Stačí vám prehliadač, zmysel pre hľadanie pravidelností a chuť naučiť sa nové zručnosti využiteľné aj mimo fyziky.
+
+&gt; **Poznámka: kde spúšťať SageMath.** Na jednoduché a rýchle výpočty je najpohodlnejšia SageMath bunka (*SageMath cell*): otvorte v prehliadači https://sagecell.sagemath.org/, napíšte príkaz a vyhodnoťte ho. Naše prostredie SageCell IDE na https://sage-sk.org/IDE/ ponúka tie isté bunky v pokročilejšom režime. Keď sa riešenie problému rozrastie do súvislejšieho celku, do *výpočtovej eseje* spájajúcej text, kód a výsledky, prejdite na notebooky Jupyter. Ak uprednostňujete cloud, kde sa výpočty vykonávajú na webovom serveri, môžete použiť CoCalc (platený) alebo naše SageMath AI Notebooks (bezplatné, vhodné na menej náročnú prácu; práve v jednom z nich sa nachádzate; podrobnosti a aktualizácie nájdete na https://sage-sk.org/). Ak chcete SageMath nainštalovať na vlastný počítač, postupujte podľa návodu na https://www.sagemath.org/. Vo Windowse si inštalácia SageMath (spolu s úplným prostredím Jupyter) vyžaduje drobné úpravy pomocou WSL (Windows Subsystem for Linux), pozrite https://doc.sagemath.org/html/en/installation/index.html. Vyskúšať to môžete neskôr, keď budete samostatne riešiť náročnejšie úlohy.
+
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;https://i.postimg.cc/FzYPJXLh/logo-sagemath.png&quot; alt=&quot;logo-sagemath&quot; width=&quot;70%&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;Obr. 0.1: Logo SageMath (zdroj: &lt;a href=&quot;https://www.sagemath.org/&quot;&gt;sagemath.org&lt;/a&gt;).&lt;/em&gt;&lt;/p&gt;
+
+V tejto knihe pracujeme v *notebookoch* (výpočtových zošitoch): sú to dokumenty, v ktorých spolu existuje vysvetľujúci text, matematické vzorce a spustiteľné bunky s kódom. Každý výsledok sa zobrazí priamo pod úsekom kódu, ktorý ho vytvoril. Hotový notebook je vedecký dokument, ktorý môžete uložiť, znovu otvoriť, upraviť, odovzdať ďalej a opäť spustiť. Nasledujúci oddiel je krátkou prehliadkou takého notebooku."><h2 id="01-čo-je-sagemath"><strong>0.1 Čo je SageMath?</strong></h2>
+<p>SageMath sa, úprimne povedané, len ťažko zaraďuje do jednej kategórie. Na prvý pohľad je to <em>superkalkulačka</em>: napíšete vzorec a dostanete výsledok. O vrstvu hlbšie je to <em>systém počítačovej algebry</em>: výrazy uchováva symbolicky a presne, podobne ako ich zapisujete na papier. Kreslí grafy v kvalite vhodnej na publikovanie, nájde presné všeobecné riešenia rovníc a vie počítať s ľubovoľnou presnosťou. V jadre je to programovací jazyk Python v kabáte fyziky. Keď vaša práca prerastie jediný vzorec – a prerastie – programovanie už máte po ruke a čaká na vás.</p>
+<p>Na prácu s touto knihou si nemusíte nič inštalovať, nepotrebujete výkonný počítač ani znalosť programovania. Stačí vám prehliadač, zmysel pre hľadanie pravidelností a chuť naučiť sa nové zručnosti využiteľné aj mimo fyziky.</p>
+<blockquote>
+<p><strong>Poznámka: kde spúšťať SageMath.</strong> Na jednoduché a rýchle výpočty je najpohodlnejšia SageMath bunka (<em>SageMath cell</em>): otvorte v prehliadači <a href="https://sagecell.sagemath.org/">https://sagecell.sagemath.org/</a>, napíšte príkaz a vyhodnoťte ho. Naše prostredie SageCell IDE na <a href="https://sage-sk.org/IDE/">https://sage-sk.org/IDE/</a> ponúka tie isté bunky v pokročilejšom režime. Keď sa riešenie problému rozrastie do súvislejšieho celku, do <em>výpočtovej eseje</em> spájajúcej text, kód a výsledky, prejdite na notebooky Jupyter. Ak uprednostňujete cloud, kde sa výpočty vykonávajú na webovom serveri, môžete použiť CoCalc (platený) alebo naše SageMath AI Notebooks (bezplatné, vhodné na menej náročnú prácu; práve v jednom z nich sa nachádzate; podrobnosti a aktualizácie nájdete na <a href="https://sage-sk.org/">https://sage-sk.org/</a>). Ak chcete SageMath nainštalovať na vlastný počítač, postupujte podľa návodu na <a href="https://www.sagemath.org/">https://www.sagemath.org/</a>. Vo Windowse si inštalácia SageMath (spolu s úplným prostredím Jupyter) vyžaduje drobné úpravy pomocou WSL (Windows Subsystem for Linux), pozrite <a href="https://doc.sagemath.org/html/en/installation/index.html">https://doc.sagemath.org/html/en/installation/index.html</a>. Vyskúšať to môžete neskôr, keď budete samostatne riešiť náročnejšie úlohy.</p>
+</blockquote>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://i.postimg.cc/FzYPJXLh/logo-sagemath.png" alt="logo-sagemath" width="70%"></p>
+<p style="text-align: center;"><em>Obr. 0.1: Logo SageMath (zdroj: <a href="https://www.sagemath.org/">sagemath.org</a>).</em></p>
+
+<p>V tejto knihe pracujeme v <em>notebookoch</em> (výpočtových zošitoch): sú to dokumenty, v ktorých spolu existuje vysvetľujúci text, matematické vzorce a spustiteľné bunky s kódom. Každý výsledok sa zobrazí priamo pod úsekom kódu, ktorý ho vytvoril. Hotový notebook je vedecký dokument, ktorý môžete uložiť, znovu otvoriť, upraviť, odovzdať ďalej a opäť spustiť. Nasledujúci oddiel je krátkou prehliadkou takého notebooku.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175096158-5" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **0.2 Stavba notebooku – bunky**
+
+Každý notebook sa skladá z postupnosti **buniek** – malých samostatných častí obsahu, ktoré sú buď vysvetľujúcim textom (ako táto), alebo kódom.
+
+* **Textové bunky** obsahujú slovný komentár k vašim výpočtom. Píšu sa v jednoduchom značkovacom jazyku *Markdown* a podporujú aj $\LaTeX$, ktorý umožňuje pekne vysádzať matematické vzorce, napríklad:
+    * Eulerova identita: $e^{i\pi} + 1 = 0$
+    * Schrödingerova rovnica:
+$$i\hbar \frac{\partial}{\partial t}\Psi(\vec{r},t)
+=
+\left[
+-\frac{\hbar^2}{2m}\nabla^2 + V(\vec{r},t)
+\right]\Psi(\vec{r},t)$$
+    * vzťah, s ktorým sa stretnete znova v kapitole 2 – trajektória šikmo vrhnutej lopty: $y = x\tan\alpha - \dfrac{g\,x^2}{2v_0^2\cos^2\alpha}$
+
+* **Bunky s kódom** obsahujú spustiteľné príkazy jazyka Sage. Najdôležitejšie, čo s nimi môžete robiť, je spúšťať ich:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175096158-5" class="markdown-preview" style="display: block;" data-original-markdown="## **0.2 Stavba notebooku – bunky**
+
+Každý notebook sa skladá z postupnosti **buniek** – malých samostatných častí obsahu, ktoré sú buď vysvetľujúcim textom (ako táto), alebo kódom.
+
+* **Textové bunky** obsahujú slovný komentár k vašim výpočtom. Píšu sa v jednoduchom značkovacom jazyku *Markdown* a podporujú aj $\LaTeX$, ktorý umožňuje pekne vysádzať matematické vzorce, napríklad:
+    * Eulerova identita: $e^{i\pi} + 1 = 0$
+    * Schrödingerova rovnica:
+$$i\hbar \frac{\partial}{\partial t}\Psi(\vec{r},t)
+=
+\left[
+-\frac{\hbar^2}{2m}\nabla^2 + V(\vec{r},t)
+\right]\Psi(\vec{r},t)$$
+    * vzťah, s ktorým sa stretnete znova v kapitole 2 – trajektória šikmo vrhnutej lopty: $y = x\tan\alpha - \dfrac{g\,x^2}{2v_0^2\cos^2\alpha}$
+
+* **Bunky s kódom** obsahujú spustiteľné príkazy jazyka Sage. Najdôležitejšie, čo s nimi môžete robiť, je spúšťať ich:"><h2 id="02-stavba-notebooku--bunky"><strong>0.2 Stavba notebooku – bunky</strong></h2>
+<p>Každý notebook sa skladá z postupnosti <strong>buniek</strong> – malých samostatných častí obsahu, ktoré sú buď vysvetľujúcim textom (ako táto), alebo kódom.</p>
+<ul>
+<li><p><strong>Textové bunky</strong> obsahujú slovný komentár k vašim výpočtom. Píšu sa v jednoduchom značkovacom jazyku <em>Markdown</em> a podporujú aj $\LaTeX$, ktorý umožňuje pekne vysádzať matematické vzorce, napríklad:</p>
+<ul>
+<li>Eulerova identita: $e^{i\pi} + 1 = 0$</li>
+<li>Schrödingerova rovnica:
+$$i\hbar \frac{\partial}{\partial t}\Psi(\vec{r},t)
+=
+\left[
+-\frac{\hbar^2}{2m}\nabla^2 + V(\vec{r},t)
+\right]\Psi(\vec{r},t)$$</li>
+<li>vzťah, s ktorým sa stretnete znova v kapitole 2 – trajektória šikmo vrhnutej lopty: $y = x\tan\alpha - \dfrac{g\,x^2}{2v_0^2\cos^2\alpha}$</li>
+</ul>
+</li>
+<li><p><strong>Bunky s kódom</strong> obsahujú spustiteľné príkazy jazyka Sage. Najdôležitejšie, čo s nimi môžete robiť, je spúšťať ich:</p>
+</li>
+</ul>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># riadok začínajúci znakom # je komentár, Sage ho ignoruje
+# uložíme pozdrav do premennej "greeting"
+greeting = "Hi there, this is Sage!"
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># zobrazíme hodnotu uloženú v predchádzajúcej bunke
+print(greeting)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175096159-6" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Bunku spustíte tlačidlom *Execute* alebo klávesovou skratkou `Ctrl + Enter` (`Shift + Enter` ju spustí a presunie sa na nasledujúcu bunku). Po spustení bunky s kódom sa príkazy vykonajú a buď sa pod bunkou **zobrazí výsledok**, alebo sa zadané údaje (napríklad premenné) **uložia do pamäte**.
+
+&gt; **Poznámka: Markdownu v notebooku.** Každá textová bunka má nad sebou malý panel nástrojov. Tlačidlo *Edit* zobrazí zdrojový text v Markdowne, ktorý stojí za vykresleným textom, takže môžete vidieť, ako bol napísaný ktorýkoľvek odsek tejto knihy. Malé tlačidlo so **žiarovkou** otvorí ťahák vzorových zápisov Markdownu: hotové kúsky textu, ktoré môžete skopírovať, vložiť do bunky a upraviť podľa seba. Vykreslený výsledok sa zobrazí okamžite pod bunkou, takže hneď vidíte, či zápis urobil to, čo ste zamýšľali. Ešte jedna rada pre pohodlné písanie: nastavte si klávesnicu na **americké anglické rozloženie (US English)**. Na ňom vznikli programovanie, Markdown aj $\LaTeX$ a znaky ako `/`, `[`, `]`, `\` alebo `~` sa na ňom nachádzajú presne tam, kde ich kód v tejto knihe očakáva, vďaka čomu sa kód aj Markdown píšu podstatne plynulejšie.
+
+Notebook si pamätá. Bunky s kódom je potrebné **spúšťať postupne**, od prvej, aby boli medzivýsledky z predchádzajúcich buniek k dispozícii v nasledujúcich. Ak bunku zmeníte, **spustite ju znova**: nové hodnoty prepíšu staré a výstupy sa aktualizujú.
+
+&gt; ***Vyskúšajte si:** Zmeňte text v premennej `greeting` (aby sa zmena uložila, bunku treba spustiť) a znova ho zobrazte pomocou `print()`. Môžete si vytvoriť aj vlastnú premennú a vypísať ju.*" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175096159-6" class="markdown-preview" style="display: block;" data-original-markdown="Bunku spustíte tlačidlom *Execute* alebo klávesovou skratkou `Ctrl + Enter` (`Shift + Enter` ju spustí a presunie sa na nasledujúcu bunku). Po spustení bunky s kódom sa príkazy vykonajú a buď sa pod bunkou **zobrazí výsledok**, alebo sa zadané údaje (napríklad premenné) **uložia do pamäte**.
+
+&gt; **Poznámka: Markdownu v notebooku.** Každá textová bunka má nad sebou malý panel nástrojov. Tlačidlo *Edit* zobrazí zdrojový text v Markdowne, ktorý stojí za vykresleným textom, takže môžete vidieť, ako bol napísaný ktorýkoľvek odsek tejto knihy. Malé tlačidlo so **žiarovkou** otvorí ťahák vzorových zápisov Markdownu: hotové kúsky textu, ktoré môžete skopírovať, vložiť do bunky a upraviť podľa seba. Vykreslený výsledok sa zobrazí okamžite pod bunkou, takže hneď vidíte, či zápis urobil to, čo ste zamýšľali. Ešte jedna rada pre pohodlné písanie: nastavte si klávesnicu na **americké anglické rozloženie (US English)**. Na ňom vznikli programovanie, Markdown aj $\LaTeX$ a znaky ako `/`, `[`, `]`, `\` alebo `~` sa na ňom nachádzajú presne tam, kde ich kód v tejto knihe očakáva, vďaka čomu sa kód aj Markdown píšu podstatne plynulejšie.
+
+Notebook si pamätá. Bunky s kódom je potrebné **spúšťať postupne**, od prvej, aby boli medzivýsledky z predchádzajúcich buniek k dispozícii v nasledujúcich. Ak bunku zmeníte, **spustite ju znova**: nové hodnoty prepíšu staré a výstupy sa aktualizujú.
+
+&gt; ***Vyskúšajte si:** Zmeňte text v premennej `greeting` (aby sa zmena uložila, bunku treba spustiť) a znova ho zobrazte pomocou `print()`. Môžete si vytvoriť aj vlastnú premennú a vypísať ju.*"><p>Bunku spustíte tlačidlom <em>Execute</em> alebo klávesovou skratkou <code>Ctrl + Enter</code> (<code>Shift + Enter</code> ju spustí a presunie sa na nasledujúcu bunku). Po spustení bunky s kódom sa príkazy vykonajú a buď sa pod bunkou <strong>zobrazí výsledok</strong>, alebo sa zadané údaje (napríklad premenné) <strong>uložia do pamäte</strong>.</p>
+<blockquote>
+<p><strong>Poznámka: Markdownu v notebooku.</strong> Každá textová bunka má nad sebou malý panel nástrojov. Tlačidlo <em>Edit</em> zobrazí zdrojový text v Markdowne, ktorý stojí za vykresleným textom, takže môžete vidieť, ako bol napísaný ktorýkoľvek odsek tejto knihy. Malé tlačidlo so <strong>žiarovkou</strong> otvorí ťahák vzorových zápisov Markdownu: hotové kúsky textu, ktoré môžete skopírovať, vložiť do bunky a upraviť podľa seba. Vykreslený výsledok sa zobrazí okamžite pod bunkou, takže hneď vidíte, či zápis urobil to, čo ste zamýšľali. Ešte jedna rada pre pohodlné písanie: nastavte si klávesnicu na <strong>americké anglické rozloženie (US English)</strong>. Na ňom vznikli programovanie, Markdown aj $\LaTeX$ a znaky ako <code>/</code>, <code>[</code>, <code>]</code>, <code>\</code> alebo <code>~</code> sa na ňom nachádzajú presne tam, kde ich kód v tejto knihe očakáva, vďaka čomu sa kód aj Markdown píšu podstatne plynulejšie.</p>
+</blockquote>
+<p>Notebook si pamätá. Bunky s kódom je potrebné <strong>spúšťať postupne</strong>, od prvej, aby boli medzivýsledky z predchádzajúcich buniek k dispozícii v nasledujúcich. Ak bunku zmeníte, <strong>spustite ju znova</strong>: nové hodnoty prepíšu staré a výstupy sa aktualizujú.</p>
+<blockquote>
+<p><em><strong>Vyskúšajte si:</strong> Zmeňte text v premennej <code>greeting</code> (aby sa zmena uložila, bunku treba spustiť) a znova ho zobrazte pomocou <code>print()</code>. Môžete si vytvoriť aj vlastnú premennú a vypísať ju.</em></p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175096159-7" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **0.3 Prvá ochutnávka: Sage ako asistent fyzika**
+
+&gt; ***Poznámka:** Nič sa nedeje, ak vám ešte nie je jasné všetko z tohto oddielu. So zmyslom pre pravidelnosti a vzorce (a trochou angličtiny) môžete odhaliť, čo jednotlivé príkazy robia. Skúšajte kód drobne upravovať a sledujte, čo sa zmení. Cieľom tejto kapitoly je ukázať, čo Sage dokáže; všetko podrobne si vysvetlíme v nasledujúcich kapitolách.*
+
+Najobľúbenejší trik systému Sage ho odlišuje od akejkoľvek vreckovej kalkulačky: so vzorcami zaobchádza tak ako papier. Uložme druhý Newtonov zákon – nie čísla, ale samotný *zákon*:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175096159-7" class="markdown-preview" style="display: block;" data-original-markdown="## **0.3 Prvá ochutnávka: Sage ako asistent fyzika**
+
+&gt; ***Poznámka:** Nič sa nedeje, ak vám ešte nie je jasné všetko z tohto oddielu. So zmyslom pre pravidelnosti a vzorce (a trochou angličtiny) môžete odhaliť, čo jednotlivé príkazy robia. Skúšajte kód drobne upravovať a sledujte, čo sa zmení. Cieľom tejto kapitoly je ukázať, čo Sage dokáže; všetko podrobne si vysvetlíme v nasledujúcich kapitolách.*
+
+Najobľúbenejší trik systému Sage ho odlišuje od akejkoľvek vreckovej kalkulačky: so vzorcami zaobchádza tak ako papier. Uložme druhý Newtonov zákon – nie čísla, ale samotný *zákon*:"><h2 id="03-prvá-ochutnávka-sage-ako-asistent-fyzika"><strong>0.3 Prvá ochutnávka: Sage ako asistent fyzika</strong></h2>
+<blockquote>
+<p><em><strong>Poznámka:</strong> Nič sa nedeje, ak vám ešte nie je jasné všetko z tohto oddielu. So zmyslom pre pravidelnosti a vzorce (a trochou angličtiny) môžete odhaliť, čo jednotlivé príkazy robia. Skúšajte kód drobne upravovať a sledujte, čo sa zmení. Cieľom tejto kapitoly je ukázať, čo Sage dokáže; všetko podrobne si vysvetlíme v nasledujúcich kapitolách.</em></p>
+</blockquote>
+<p>Najobľúbenejší trik systému Sage ho odlišuje od akejkoľvek vreckovej kalkulačky: so vzorcami zaobchádza tak ako papier. Uložme druhý Newtonov zákon – nie čísla, ale samotný <em>zákon</em>:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># typické úlohy v Sage: príklad druhého Newtonovho zákona
+var("F m a")                    # deklarácia symbolických premenných
+newtons_second_law = a == F/m  # uloženie zákona ako rovnice (dvojitý znak rovnosti)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># pekné zobrazenie uloženého zákona
+show(newtons_second_law)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># vyriešime rovnicu pre neznámu m (hmotnosť)
+show(solve(newtons_second_law, m))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175096160-8" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Jedna uložená rovnica, ľubovoľná neznáma – a postup sa dá bez námahy rozšíriť. Sústava troch lineárnych rovníc s tromi neznámymi $x, y, z$:
+
+$$\begin{aligned}
+2x + y - z = 3 \\
+-x + 3y + 2z = 7 \\
+4x - 2y + z = 1
+\end{aligned}$$" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175096160-8" class="markdown-preview" style="display: block;" data-original-markdown="Jedna uložená rovnica, ľubovoľná neznáma – a postup sa dá bez námahy rozšíriť. Sústava troch lineárnych rovníc s tromi neznámymi $x, y, z$:
+
+$$\begin{aligned}
+2x + y - z = 3 \\
+-x + 3y + 2z = 7 \\
+4x - 2y + z = 1
+\end{aligned}$$"><p>Jedna uložená rovnica, ľubovoľná neznáma – a postup sa dá bez námahy rozšíriť. Sústava troch lineárnych rovníc s tromi neznámymi $x, y, z$:</p>
+<p>$$\begin{aligned}
+2x + y - z = 3 \\
+-x + 3y + 2z = 7 \\
+4x - 2y + z = 1
+\end{aligned}$$</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># vyriešime sústavu, štyri riadky kódu
+var('x y z')
+eq1 = 2*x + y - z == 3
+eq2 = -x + 3*y + 2*z == 7
+eq3 = 4*x - 2*y + z == 1
+show(solve([eq1, eq2, eq3], x, y, z))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175096160-9" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Alebo sa vráťme k fyzike: pohybová rovnica telesa vrhnutého zvisle nahor z výšky $h_0$ začiatočnou rýchlosťou $v_0$,
+
+$$h = h_0 + v_0 t - \frac{1}{2}g t^2,$$
+
+a nechajme Sage nájsť všeobecný vzorec pre časy, v ktorých teleso dosiahne danú výšku $h$ – ručná úprava by zabrala pol strany:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175096160-9" class="markdown-preview" style="display: block;" data-original-markdown="Alebo sa vráťme k fyzike: pohybová rovnica telesa vrhnutého zvisle nahor z výšky $h_0$ začiatočnou rýchlosťou $v_0$,
+
+$$h = h_0 + v_0 t - \frac{1}{2}g t^2,$$
+
+a nechajme Sage nájsť všeobecný vzorec pre časy, v ktorých teleso dosiahne danú výšku $h$ – ručná úprava by zabrala pol strany:"><p>Alebo sa vráťme k fyzike: pohybová rovnica telesa vrhnutého zvisle nahor z výšky $h_0$ začiatočnou rýchlosťou $v_0$,</p>
+<p>$$h = h_0 + v_0 t - \frac{1}{2}g t^2,$$</p>
+<p>a nechajme Sage nájsť všeobecný vzorec pre časy, v ktorých teleso dosiahne danú výšku $h$ – ručná úprava by zabrala pol strany:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># zadáme pohybovú rovnicu
+var("h h0 v0 t g")
+equation = h == h0 + v0*t - 1/2*g*t^2
+show(equation)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># všeobecné riešenie pre čas t
+show(solve(equation, t))
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># dosadíme číselné hodnoty do druhého riešenia
+values = [h0==100, v0==10, g==9.81, h==0]
+show(solve(equation, t)[1])
+show(solve(equation, t)[1].subs(values))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175096161-10" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Sage vie aj upratať po vás, a to pri výrazoch, na ktoré by vreckové kalkulačky nestačili. Zjednodušme napríklad výraz $\sqrt{\dfrac{m^2 v^4}{m^2 v^2} \cdot x}$:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175096161-10" class="markdown-preview" style="display: block;" data-original-markdown="Sage vie aj upratať po vás, a to pri výrazoch, na ktoré by vreckové kalkulačky nestačili. Zjednodušme napríklad výraz $\sqrt{\dfrac{m^2 v^4}{m^2 v^2} \cdot x}$:"><p>Sage vie aj upratať po vás, a to pri výrazoch, na ktoré by vreckové kalkulačky nestačili. Zjednodušme napríklad výraz $\sqrt{\dfrac{m^2 v^4}{m^2 v^2} \cdot x}$:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># zadáme výraz
+var("m v x")
+expression = sqrt((m^2 * v^4)/(m^2 * v^2)*x)
+show(expression)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># výraz zjednodušený ešte viac
+show(expression.canonicalize_radical())
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175096161-11" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Nejde o nacvičovanie písania. Každý z týchto krokov – uložiť vzorec, vyjadriť hľadanú veličinu, dosadiť čísla, zjednodušiť – robí pracujúci fyzik denne. Na papieri by každý z nich zabral minúty a každá minúta by bola príležitosťou na chybu. V Sage tieto mechanické kroky prebehnú bezchybne a nie je potrebné ich znovu kontrolovať. Vám zostáva to podstatné – či fyzika, ktorú ste zadali, je tá, ktorú ste mali na mysli – a práve to si zaslúži vašu pozornosť." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175096161-11" class="markdown-preview" style="display: block;" data-original-markdown="Nejde o nacvičovanie písania. Každý z týchto krokov – uložiť vzorec, vyjadriť hľadanú veličinu, dosadiť čísla, zjednodušiť – robí pracujúci fyzik denne. Na papieri by každý z nich zabral minúty a každá minúta by bola príležitosťou na chybu. V Sage tieto mechanické kroky prebehnú bezchybne a nie je potrebné ich znovu kontrolovať. Vám zostáva to podstatné – či fyzika, ktorú ste zadali, je tá, ktorú ste mali na mysli – a práve to si zaslúži vašu pozornosť."><p>Nejde o nacvičovanie písania. Každý z týchto krokov – uložiť vzorec, vyjadriť hľadanú veličinu, dosadiť čísla, zjednodušiť – robí pracujúci fyzik denne. Na papieri by každý z nich zabral minúty a každá minúta by bola príležitosťou na chybu. V Sage tieto mechanické kroky prebehnú bezchybne a nie je potrebné ich znovu kontrolovať. Vám zostáva to podstatné – či fyzika, ktorú ste zadali, je tá, ktorú ste mali na mysli – a práve to si zaslúži vašu pozornosť.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175096161-12" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **0.4 Grafy ako plnohodnotný výstup**
+
+Zadajte funkciu a Sage ju presne a okamžite vykreslí:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175096161-12" class="markdown-preview" style="display: block;" data-original-markdown="## **0.4 Grafy ako plnohodnotný výstup**
+
+Zadajte funkciu a Sage ju presne a okamžite vykreslí:"><h2 id="04-grafy-ako-plnohodnotný-výstup"><strong>0.4 Grafy ako plnohodnotný výstup</strong></h2>
+<p>Zadajte funkciu a Sage ju presne a okamžite vykreslí:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># zadáme funkciu
+f(x) = 1/x*sin(x)
+show(f)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># jednoduchý graf funkcie f pre x od -30 do 30
+show(plot(f, (x,-30,30)))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175096162-13" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; ***Všimnite si:** Hoci sme formálne zadali $f(x) = \dfrac{1}{x} \cdot \sin x$, Sage ju automaticky zjednodušil na $f(x) = \dfrac{\sin x}{x}$. Dokáže to v oveľa väčšom rozsahu aj pri podstatne zložitejších výrazoch.*
+
+Rovnaký graf v „profesionálnej“ úprave, vhodný do laboratórneho protokolu alebo dokonca odborného vedeckého článku:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175096162-13" class="markdown-preview" style="display: block;" data-original-markdown="&gt; ***Všimnite si:** Hoci sme formálne zadali $f(x) = \dfrac{1}{x} \cdot \sin x$, Sage ju automaticky zjednodušil na $f(x) = \dfrac{\sin x}{x}$. Dokáže to v oveľa väčšom rozsahu aj pri podstatne zložitejších výrazoch.*
+
+Rovnaký graf v „profesionálnej“ úprave, vhodný do laboratórneho protokolu alebo dokonca odborného vedeckého článku:"><blockquote>
+<p><em><strong>Všimnite si:</strong> Hoci sme formálne zadali $f(x) = \dfrac{1}{x} \cdot \sin x$, Sage ju automaticky zjednodušil na $f(x) = \dfrac{\sin x}{x}$. Dokáže to v oveľa väčšom rozsahu aj pri podstatne zložitejších výrazoch.</em></p>
+</blockquote>
+<p>Rovnaký graf v „profesionálnej“ úprave, vhodný do laboratórneho protokolu alebo dokonca odborného vedeckého článku:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># predchádzajúci graf upravený ako obrázok do publikácie
+plot_f_formatted = plot(f, (x,-30,30), color="magenta")
+# farby sa zadávajú anglicky, napr. "magenta", "red", "green", ...
+show(plot_f_formatted,
+     title=r"Plot of the function f = \dfrac{\sin x}{x}",
+     frame=True, gridlines=True)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175096162-14" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Sage prestáva byť kalkulačkou a stáva sa nástrojom fyzika pri porovnávaní: viacero variantov jedného javu v jednom obrázku, s legendou. Tu je tlmený kmitavý pohyb, $x(t) = A\,e^{-bt}\cos(\omega t)$, pri štyroch rôznych nastaveniach amplitúdy, útlmu a frekvencie:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175096162-14" class="markdown-preview" style="display: block;" data-original-markdown="Sage prestáva byť kalkulačkou a stáva sa nástrojom fyzika pri porovnávaní: viacero variantov jedného javu v jednom obrázku, s legendou. Tu je tlmený kmitavý pohyb, $x(t) = A\,e^{-bt}\cos(\omega t)$, pri štyroch rôznych nastaveniach amplitúdy, útlmu a frekvencie:"><p>Sage prestáva byť kalkulačkou a stáva sa nástrojom fyzika pri porovnávaní: viacero variantov jedného javu v jednom obrázku, s legendou. Tu je tlmený kmitavý pohyb, $x(t) = A\,e^{-bt}\cos(\omega t)$, pri štyroch rôznych nastaveniach amplitúdy, útlmu a frekvencie:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># definícia tlmených kmitov v závislosti od času t
+# a od parametrov A, b, omega
+x(t, A, b, omega) = A * e^(-b*t) * cos(omega*t)
+show(x)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># krivka 1: základné parametre (A=1, b=1, omega=1)
+plot_1 = plot(x(t, 1, 1, 1), (t, 0, 10),
+              legend_label=r"$A, b, \omega$ = 1, 1, 1")
+
+# krivka 2: zvýšená frekvencia (omega=5)
+plot_2 = plot(x(t, 1, 1, 5), (t, 0, 10),
+              color="red",
+              legend_label=r"$A, b, \omega$ = 1, 1, 5")
+
+# krivka 3: znížený útlm (b=0.3)
+plot_3 = plot(x(t, 1, 0.3, 1), (t, 0, 10),
+              color="green",
+              legend_label=r"$A, b, \omega$ = 1, 0.3, 1")
+
+# krivka 4: zväčšená amplitúda (A=2)
+plot_4 = plot(x(t, 2, 1, 1), (t, 0, 10),
+              color="cyan",
+              legend_label=r"$A, b, \omega$ = 2, 1, 1",
+              frame=True, gridlines=True,
+              title="Damped oscillation for various parameters",
+              axes_labels=[r"$t$", r"$x(t)$"])
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># spojíme všetky grafy do jedného
+plot_final = plot_1 + plot_2 + plot_3 + plot_4
+
+# zobrazíme výsledný graf
+show(plot_final)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># uložíme graf vo vysokom rozlíšení (300 DPI) ako súbor PNG
+plot_final.save("damped_oscillations.png", dpi=300)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175096163-15" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Zmeňte parameter, znova spustite bunku a obrázok sa prekreslí. Tento rytmus – *vzorec, graf, úprava, porovnanie, uloženie* – je každodenným chlebom fyziky od študentského laboratória až po vedeckú publikáciu a v Sage na neho stačí niekoľko buniek. (Nasledujúce kapitoly fungujú rovnako: pohyb v kapitole 2, ďalšie grafy v kapitole 3, energia v kapitole 4.)" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175096163-15" class="markdown-preview" style="display: block;" data-original-markdown="Zmeňte parameter, znova spustite bunku a obrázok sa prekreslí. Tento rytmus – *vzorec, graf, úprava, porovnanie, uloženie* – je každodenným chlebom fyziky od študentského laboratória až po vedeckú publikáciu a v Sage na neho stačí niekoľko buniek. (Nasledujúce kapitoly fungujú rovnako: pohyb v kapitole 2, ďalšie grafy v kapitole 3, energia v kapitole 4.)"><p>Zmeňte parameter, znova spustite bunku a obrázok sa prekreslí. Tento rytmus – <em>vzorec, graf, úprava, porovnanie, uloženie</em> – je každodenným chlebom fyziky od študentského laboratória až po vedeckú publikáciu a v Sage na neho stačí niekoľko buniek. (Nasledujúce kapitoly fungujú rovnako: pohyb v kapitole 2, ďalšie grafy v kapitole 3, energia v kapitole 4.)</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175096163-16" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **0.5 Prečo Sage a prečo práve v tejto knihe?**
+
+Najprv úprimne o konkurencii. Papier, pero a kalkulačka si na kvadratickú rovnicu úplne postačia. Tabuľkový procesor (napr. MS Excel) nakreslí graf, ak si najprv ručne vypočítate tabuľku jeho bodov. GeoGebra kreslí pekné grafy, ale každá zmena parametra znamená ďalšie klikanie.
+
+Potom práca narastie. Dáta zo skutočného experimentu (kapitola 5) prídu ako tabuľka so stovkou meraní s priloženými neistotami a žiadna kalkulačka na to nemá tlačidlo. Načítať ich do tabuľky, skontrolovať, či v nich nechýbajú hodnoty a či neobsahujú preklepy, zobraziť ich s chybovými úsečkami, preložiť nimi model a z fitu vyčítať fyzikálny obsah – to všetko je náplňou kapitoly 5 a sú to úlohy, kde sa ceruzka už nevráti. Práve takéto výpočty vypĺňajú dni súčasnej fyziky a práve takéto výpočty počítače zvládajú výborne.
+
+SageMath je naším prostriedkom na túto cestu, pretože začiatočníka stretne tam, kde sa práve nachádza:
+
+* **číta sa ako matematika.** `sqrt(2*h/g)` je samotný vzorec, nie program, ktorý je okolo neho obalený.
+* **je presný, keď chcete presnosť,** a numerický, keď o to požiadate – a pozná medzi nimi rozdiel (venuje sa tomu kapitola 1).
+* **je otvorený a bezplatný:** spustíte ho v ktoromkoľvek prehliadači cez vyššie uvedené odkazy alebo si ho môžete nainštalovať bez akýchkoľvek poplatkov.
+* **neskrýva cestu pred vami.** Sage je postavený na Pythone, jazyku vedeckých výpočtov, takže to, čo začína ako superkalkulačka s triviálnym kódom, prerastie – bez zmeny nástroja – do zručností, na ktorých stojí skutočný výskum.
+
+Jedno úprimné varovanie ešte pred prvou kapitolou: Sage za vás myslieť nebude. Aritmetiku zvládne bezchybne, ale čo počítať a či je výsledok zmysluplný, zostáva na vás. Kapitola 1 začína presne tu: kameň, studňa a prečo je počet uvádzaných platných číslic fyzikálnym rozhodnutím, a nie záležitosťou kalkulačky." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175096163-16" class="markdown-preview" style="display: block;" data-original-markdown="## **0.5 Prečo Sage a prečo práve v tejto knihe?**
+
+Najprv úprimne o konkurencii. Papier, pero a kalkulačka si na kvadratickú rovnicu úplne postačia. Tabuľkový procesor (napr. MS Excel) nakreslí graf, ak si najprv ručne vypočítate tabuľku jeho bodov. GeoGebra kreslí pekné grafy, ale každá zmena parametra znamená ďalšie klikanie.
+
+Potom práca narastie. Dáta zo skutočného experimentu (kapitola 5) prídu ako tabuľka so stovkou meraní s priloženými neistotami a žiadna kalkulačka na to nemá tlačidlo. Načítať ich do tabuľky, skontrolovať, či v nich nechýbajú hodnoty a či neobsahujú preklepy, zobraziť ich s chybovými úsečkami, preložiť nimi model a z fitu vyčítať fyzikálny obsah – to všetko je náplňou kapitoly 5 a sú to úlohy, kde sa ceruzka už nevráti. Práve takéto výpočty vypĺňajú dni súčasnej fyziky a práve takéto výpočty počítače zvládajú výborne.
+
+SageMath je naším prostriedkom na túto cestu, pretože začiatočníka stretne tam, kde sa práve nachádza:
+
+* **číta sa ako matematika.** `sqrt(2*h/g)` je samotný vzorec, nie program, ktorý je okolo neho obalený.
+* **je presný, keď chcete presnosť,** a numerický, keď o to požiadate – a pozná medzi nimi rozdiel (venuje sa tomu kapitola 1).
+* **je otvorený a bezplatný:** spustíte ho v ktoromkoľvek prehliadači cez vyššie uvedené odkazy alebo si ho môžete nainštalovať bez akýchkoľvek poplatkov.
+* **neskrýva cestu pred vami.** Sage je postavený na Pythone, jazyku vedeckých výpočtov, takže to, čo začína ako superkalkulačka s triviálnym kódom, prerastie – bez zmeny nástroja – do zručností, na ktorých stojí skutočný výskum.
+
+Jedno úprimné varovanie ešte pred prvou kapitolou: Sage za vás myslieť nebude. Aritmetiku zvládne bezchybne, ale čo počítať a či je výsledok zmysluplný, zostáva na vás. Kapitola 1 začína presne tu: kameň, studňa a prečo je počet uvádzaných platných číslic fyzikálnym rozhodnutím, a nie záležitosťou kalkulačky."><h2 id="05-prečo-sage-a-prečo-práve-v-tejto-knihe"><strong>0.5 Prečo Sage a prečo práve v tejto knihe?</strong></h2>
+<p>Najprv úprimne o konkurencii. Papier, pero a kalkulačka si na kvadratickú rovnicu úplne postačia. Tabuľkový procesor (napr. MS Excel) nakreslí graf, ak si najprv ručne vypočítate tabuľku jeho bodov. GeoGebra kreslí pekné grafy, ale každá zmena parametra znamená ďalšie klikanie.</p>
+<p>Potom práca narastie. Dáta zo skutočného experimentu (kapitola 5) prídu ako tabuľka so stovkou meraní s priloženými neistotami a žiadna kalkulačka na to nemá tlačidlo. Načítať ich do tabuľky, skontrolovať, či v nich nechýbajú hodnoty a či neobsahujú preklepy, zobraziť ich s chybovými úsečkami, preložiť nimi model a z fitu vyčítať fyzikálny obsah – to všetko je náplňou kapitoly 5 a sú to úlohy, kde sa ceruzka už nevráti. Práve takéto výpočty vypĺňajú dni súčasnej fyziky a práve takéto výpočty počítače zvládajú výborne.</p>
+<p>SageMath je naším prostriedkom na túto cestu, pretože začiatočníka stretne tam, kde sa práve nachádza:</p>
+<ul>
+<li><strong>číta sa ako matematika.</strong> <code>sqrt(2*h/g)</code> je samotný vzorec, nie program, ktorý je okolo neho obalený.</li>
+<li><strong>je presný, keď chcete presnosť,</strong> a numerický, keď o to požiadate – a pozná medzi nimi rozdiel (venuje sa tomu kapitola 1).</li>
+<li><strong>je otvorený a bezplatný:</strong> spustíte ho v ktoromkoľvek prehliadači cez vyššie uvedené odkazy alebo si ho môžete nainštalovať bez akýchkoľvek poplatkov.</li>
+<li><strong>neskrýva cestu pred vami.</strong> Sage je postavený na Pythone, jazyku vedeckých výpočtov, takže to, čo začína ako superkalkulačka s triviálnym kódom, prerastie – bez zmeny nástroja – do zručností, na ktorých stojí skutočný výskum.</li>
+</ul>
+<p>Jedno úprimné varovanie ešte pred prvou kapitolou: Sage za vás myslieť nebude. Aritmetiku zvládne bezchybne, ale čo počítať a či je výsledok zmysluplný, zostáva na vás. Kapitola 1 začína presne tu: kameň, studňa a prečo je počet uvádzaných platných číslic fyzikálnym rozhodnutím, a nie záležitosťou kalkulačky.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175096163-17" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **Cvičenia**
+
+**Cvičenie 1.** Pomocou kódu z oddielu 0.3 ako vzoru vyriešte sústavu
+
+$$\begin{aligned}
+x + 2y - z = 0 \\
+2x - y + z = 5 \\
+3x + y + 2z = 7
+\end{aligned}$$
+
+pomocou funkcie `solve()`. *(Navyše: zmeňte pravé strany na vlastné čísla a skontrolujte, či Sage ohlási, že riešenie neexistuje – áno, aj to vie.)*
+
+**Cvičenie 2.** V príklade s tlmenými kmitmi zmeňte útlm krivky 3 na `b=0.1` a amplitúdu krivky 4 na `A=3`, znova spustite bunky a jednou vetou opíšte, čo sa v každom z týchto prípadov na výslednom obrázku zmenilo. Pridajte vlastnú krivku 5 s farbou podľa vlastného výberu a zodpovedajúcim popisom v legende.
+
+**Cvičenie 3.** *(Výzva)* Nakreslite *rezonančnú krivku* nútených kmitov, $A(\omega) = \dfrac{1}{\sqrt{(1-\omega^2)^2 + (0.2\,\omega)^2}}$ pre $\omega$ od 0 do 3, a zopakujte „profesionálnu“ úpravu grafu z časti 0.4: nadpis, rámik, mriežku a popisy osí $\omega$ a $A$. Čo vám maximum krivky prezrádza o dianí v okolí $\omega = 1$?" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175096163-17" class="markdown-preview" style="display: block;" data-original-markdown="## **Cvičenia**
+
+**Cvičenie 1.** Pomocou kódu z oddielu 0.3 ako vzoru vyriešte sústavu
+
+$$\begin{aligned}
+x + 2y - z = 0 \\
+2x - y + z = 5 \\
+3x + y + 2z = 7
+\end{aligned}$$
+
+pomocou funkcie `solve()`. *(Navyše: zmeňte pravé strany na vlastné čísla a skontrolujte, či Sage ohlási, že riešenie neexistuje – áno, aj to vie.)*
+
+**Cvičenie 2.** V príklade s tlmenými kmitmi zmeňte útlm krivky 3 na `b=0.1` a amplitúdu krivky 4 na `A=3`, znova spustite bunky a jednou vetou opíšte, čo sa v každom z týchto prípadov na výslednom obrázku zmenilo. Pridajte vlastnú krivku 5 s farbou podľa vlastného výberu a zodpovedajúcim popisom v legende.
+
+**Cvičenie 3.** *(Výzva)* Nakreslite *rezonančnú krivku* nútených kmitov, $A(\omega) = \dfrac{1}{\sqrt{(1-\omega^2)^2 + (0.2\,\omega)^2}}$ pre $\omega$ od 0 do 3, a zopakujte „profesionálnu“ úpravu grafu z časti 0.4: nadpis, rámik, mriežku a popisy osí $\omega$ a $A$. Čo vám maximum krivky prezrádza o dianí v okolí $\omega = 1$?"><h2 id="cvičenia"><strong>Cvičenia</strong></h2>
+<p><strong>Cvičenie 1.</strong> Pomocou kódu z oddielu 0.3 ako vzoru vyriešte sústavu</p>
+<p>$$\begin{aligned}
+x + 2y - z = 0 \\
+2x - y + z = 5 \\
+3x + y + 2z = 7
+\end{aligned}$$</p>
+<p>pomocou funkcie <code>solve()</code>. <em>(Navyše: zmeňte pravé strany na vlastné čísla a skontrolujte, či Sage ohlási, že riešenie neexistuje – áno, aj to vie.)</em></p>
+<p><strong>Cvičenie 2.</strong> V príklade s tlmenými kmitmi zmeňte útlm krivky 3 na <code>b=0.1</code> a amplitúdu krivky 4 na <code>A=3</code>, znova spustite bunky a jednou vetou opíšte, čo sa v každom z týchto prípadov na výslednom obrázku zmenilo. Pridajte vlastnú krivku 5 s farbou podľa vlastného výberu a zodpovedajúcim popisom v legende.</p>
+<p><strong>Cvičenie 3.</strong> <em>(Výzva)</em> Nakreslite <em>rezonančnú krivku</em> nútených kmitov, $A(\omega) = \dfrac{1}{\sqrt{(1-\omega^2)^2 + (0.2\,\omega)^2}}$ pre $\omega$ od 0 do 3, a zopakujte „profesionálnu“ úpravu grafu z časti 0.4: nadpis, rámik, mriežku a popisy osí $\omega$ a $A$. Čo vám maximum krivky prezrádza o dianí v okolí $\omega = 1$?</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># prázdne bunky na cvičenia/pokusy – nové bunky môžete pridať kdekoľvek tlačidlom "Add Bellow"
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">
+</script></div></div></div></div></div>
+            
+        </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/embedded_sagecell_backup.js"></script>
+<script src="https://sage-sk.org/embedded_sagecell.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/FileSaver.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/nbplayerConfig.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/comment/comment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/markdown-fold.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.css">
+<script>let RUN_DELAY = 1000;</script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/customthemes15.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbrunner24.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaiengine23.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaipriming22.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbautocompletion20.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://code.datagridxl.com/datagridxl2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fflate@0.8.3/umd/index.min.js"></script>
+<script>
+  playerConfig={"panes":"Exec","lang":"sage","linked":true,"eval":false,"hide":["fullScreen"],"execute":true,"showRead":false,"collapsable":false,"playerPath":"https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main","name":"SageMath"};
+  playerMode={"showSage":true,"showNotebookInput":true,"showSageInput":true};
+  let API_KEY="";
+  let API_URL="";
+  let CURRENT_MODEL="";
+  let CURRENT_LANGUAGE="";
+  let SAGECELL_URL="https://sage-sk.org/";
+  let toggleEvalBtnsState=false;
+  let isFullWidthState=true;
+  window.hideCodeInputState=false;
+  let PRELOAD="";
+  let SETTINGS_PATH_NAME="settings.js";
+  let aiEduMode=true;
+  let aiCompleteMode=true;
+  let aiLogs=false;
+  window.aiLogs=false;
+  window.aiSettingsVisible=true;
+  window.aiLogsHistory=[];
+  makeMenu();
+  localize();
+  createTableOfContents();
+  loadStatus();
+  restoreUIState();
+  makeSageCells(playerConfig);
+  launchPlayer();
+  addControlPanel();
+  setupRunAllCells();
+  addSageCellNumbering();
+  enhanceSageCellsWithGlobalAutocomplete();
+  window.onload = initializeMarkdownCells;
+  let CUSTOM_CONTEXT="";
+  let CUSTOM_CSS="";
+  if (CUSTOM_CSS) applyCustomCSS(CUSTOM_CSS);
+  addCommentShortcutToAllSageCells();
+  applyPreloadCells();
+  setupBulkCellObserver();
+</script>
+<script src="settings.js"></script>
+</body>
+</html>

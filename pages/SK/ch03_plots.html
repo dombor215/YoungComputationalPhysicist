@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;polygon points='50,6 88,28 88,72 50,94 12,72 12,28' fill='%234CAF50'/&gt;&lt;text x='50' y='68' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='%23fff' text-anchor='middle'&gt;S&lt;/text&gt;&lt;/svg&gt;">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/es5-shim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/ansi_up.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex-auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/notebook.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/prism.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/notebook.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/nbpreview.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/css/nbplayer24.css">
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/texme@1.2.2"></script>
+<div id="main">
+<div id="notebook-holder"><div class="nb-notebook"><div class="nb-worksheet"><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107369-1" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Autori:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Prírodovedecká fakulta, Univerzita Pavla Jozefa Šafárika v Košiciach, Slovensko&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt; &lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt; &lt;/p&gt;" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107369-1" class="markdown-preview" style="display: block;" data-original-markdown="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Autori:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Prírodovedecká fakulta, Univerzita Pavla Jozefa Šafárika v Košiciach, Slovensko&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt; &lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt; &lt;/p&gt;"><p><img style="float: right;" src="https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png" alt="" width="100" height="85"></p>
+<p><strong>Autori:</strong> Dominik Borovský<sup>1</sup> &amp; Jozef Hanč<sup>2</sup></p>
+<p><em>2026, Prírodovedecká fakulta, Univerzita Pavla Jozefa Šafárika v Košiciach, Slovensko</em></p>
+<p><sup>1</sup><a href="mailto:dominik.borovsky@student.upjs.sk">dominik.borovsky@student.upjs.sk,</a> <sup>2</sup><a href="mailto:jozef.hanc@upjs.sk">jozef.hanc@upjs.sk</a> </p></div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107369-2" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="# **Kapitola 3: Obrazy trajektórií**" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107369-2" class="markdown-preview" style="display: block;" data-original-markdown="# **Kapitola 3: Obrazy trajektórií**"><h1 id="kapitola-3-obrazy-trajektórií"><strong>Kapitola 3: Obrazy trajektórií</strong></h1>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107369-3" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="V tejto kapitole sa naučíte kresliť grafy funkcií a dát v SageMath: jednotlivé grafy, súbory kriviek a ich spájanie a úpravu. Graf nie je ozdoba; je to spôsob, ako rovnicu *vidieť*." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107369-3" class="markdown-preview" style="display: block;" data-original-markdown="V tejto kapitole sa naučíte kresliť grafy funkcií a dát v SageMath: jednotlivé grafy, súbory kriviek a ich spájanie a úpravu. Graf nie je ozdoba; je to spôsob, ako rovnicu *vidieť*."><p>V tejto kapitole sa naučíte kresliť grafy funkcií a dát v SageMath: jednotlivé grafy, súbory kriviek a ich spájanie a úpravu. Graf nie je ozdoba; je to spôsob, ako rovnicu <em>vidieť</em>.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107369-4" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **3.1 Zadanie**
+
+&gt; Brankár chce v jednom obrázku vidieť, kam lopta môže a kam nemôže dopadnúť, pre všetky uhly kopu naraz. Nakreslite to." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107369-4" class="markdown-preview" style="display: block;" data-original-markdown="## **3.1 Zadanie**
+
+&gt; Brankár chce v jednom obrázku vidieť, kam lopta môže a kam nemôže dopadnúť, pre všetky uhly kopu naraz. Nakreslite to."><h2 id="31-zadanie"><strong>3.1 Zadanie</strong></h2>
+<blockquote>
+<p>Brankár chce v jednom obrázku vidieť, kam lopta môže a kam nemôže dopadnúť, pre všetky uhly kopu naraz. Nakreslite to.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107369-5" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **3.2 Trajektória ako krivka**
+
+V kapitole 2 bola poloha lopty daná dvoma funkciami času: vzdialenosť $x(t) = v_0\cos\alpha \, t$, ktorá rovnomerne rastie, kým lopta letí, a výška $y(t) = v_0\sin\alpha \, t - \tfrac{1}{2}g t^2$, ktorá najprv stúpa a potom klesá. Pre obrázok chceme výšku $y$ v závislosti od vzdialenosti $x$, teda $y$ ako funkciu $x$: odložíme hodiny a ponecháme krivku. Postup je takýto: z rovnice pre vzdialenosť vyjadríme čas $t$ a dosadíme ho do výšky $y(t)$. Oba kroky sú presne to, na čo slúžilo `solve()` a dosadzovanie v kapitole 2, takže ich nerobíme ručne – znovu zostavíme obe funkcie letu a nechajme SageMath, aby $t$ eliminoval sám.
+
+Najprv jedno rozhodnutie o pomenovaní. Rovnica, ktorú treba riešiť, je *vzdialenosť $= x$*, kde $x$ je obyčajná neznáma – lenže písmeno $x$ už obsadila funkcia vzdialenosti a `solve(x(t) == x, t)` skončí chybou. Pre SageMath nie sú funkcia a neznáma to isté, a v matematike tiež nie: $x(t)$ je pravidlo, $x$ je číslo, na ktoré sa pýtame. Trik pri takýchto kolíziách je podčiarkovník na konci: funkcie sa volajú `x_` a `y_`, neznáma zostáva `x`. V kóde ich podčiarkovník rozlišuje; `show()` ho pri sadzbe vynechá a obe sa zobrazia ako obyčajné $x$." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107369-5" class="markdown-preview" style="display: block;" data-original-markdown="## **3.2 Trajektória ako krivka**
+
+V kapitole 2 bola poloha lopty daná dvoma funkciami času: vzdialenosť $x(t) = v_0\cos\alpha \, t$, ktorá rovnomerne rastie, kým lopta letí, a výška $y(t) = v_0\sin\alpha \, t - \tfrac{1}{2}g t^2$, ktorá najprv stúpa a potom klesá. Pre obrázok chceme výšku $y$ v závislosti od vzdialenosti $x$, teda $y$ ako funkciu $x$: odložíme hodiny a ponecháme krivku. Postup je takýto: z rovnice pre vzdialenosť vyjadríme čas $t$ a dosadíme ho do výšky $y(t)$. Oba kroky sú presne to, na čo slúžilo `solve()` a dosadzovanie v kapitole 2, takže ich nerobíme ručne – znovu zostavíme obe funkcie letu a nechajme SageMath, aby $t$ eliminoval sám.
+
+Najprv jedno rozhodnutie o pomenovaní. Rovnica, ktorú treba riešiť, je *vzdialenosť $= x$*, kde $x$ je obyčajná neznáma – lenže písmeno $x$ už obsadila funkcia vzdialenosti a `solve(x(t) == x, t)` skončí chybou. Pre SageMath nie sú funkcia a neznáma to isté, a v matematike tiež nie: $x(t)$ je pravidlo, $x$ je číslo, na ktoré sa pýtame. Trik pri takýchto kolíziách je podčiarkovník na konci: funkcie sa volajú `x_` a `y_`, neznáma zostáva `x`. V kóde ich podčiarkovník rozlišuje; `show()` ho pri sadzbe vynechá a obe sa zobrazia ako obyčajné $x$."><h2 id="32-trajektória-ako-krivka"><strong>3.2 Trajektória ako krivka</strong></h2>
+<p>V kapitole 2 bola poloha lopty daná dvoma funkciami času: vzdialenosť $x(t) = v_0\cos\alpha \, t$, ktorá rovnomerne rastie, kým lopta letí, a výška $y(t) = v_0\sin\alpha \, t - \tfrac{1}{2}g t^2$, ktorá najprv stúpa a potom klesá. Pre obrázok chceme výšku $y$ v závislosti od vzdialenosti $x$, teda $y$ ako funkciu $x$: odložíme hodiny a ponecháme krivku. Postup je takýto: z rovnice pre vzdialenosť vyjadríme čas $t$ a dosadíme ho do výšky $y(t)$. Oba kroky sú presne to, na čo slúžilo <code>solve()</code> a dosadzovanie v kapitole 2, takže ich nerobíme ručne – znovu zostavíme obe funkcie letu a nechajme SageMath, aby $t$ eliminoval sám.</p>
+<p>Najprv jedno rozhodnutie o pomenovaní. Rovnica, ktorú treba riešiť, je <em>vzdialenosť $= x$</em>, kde $x$ je obyčajná neznáma – lenže písmeno $x$ už obsadila funkcia vzdialenosti a <code>solve(x(t) == x, t)</code> skončí chybou. Pre SageMath nie sú funkcia a neznáma to isté, a v matematike tiež nie: $x(t)$ je pravidlo, $x$ je číslo, na ktoré sa pýtame. Trik pri takýchto kolíziách je podčiarkovník na konci: funkcie sa volajú <code>x_</code> a <code>y_</code>, neznáma zostáva <code>x</code>. V kóde ich podčiarkovník rozlišuje; <code>show()</code> ho pri sadzbe vynechá a obe sa zobrazia ako obyčajné $x$.</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">var('t alpha v0 g x')
+
+# funkcie letu: podčiarkovník v kóde, v show() obyčajné x a y
+x_(t) = v0*cos(alpha)*t
+y_(t) = v0*sin(alpha)*t - 1/2*g*t^2
+
+# vyriešime "vzdialenosť = x" vzhľadom na čas, ponecháme (jediné) riešenie
+t_hit = solve(x_(t) == x, t)[0].rhs()
+show(t_hit)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># dosadíme čas do výšky: y ako funkcia x
+y_traj(x) = y_(t).subs(t = t_hit).trig_simplify()
+show(y_traj(x))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107370-6" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Parabola, ako to sľubuje každý učiteľ fyziky. Najjednoduchší graf v SageMath sa kreslí príkazom `plot()`: jeho argumentmi sú to, čo kresliť, a rozsah vodorovnej osi, zapísaný ako `xmin` a `xmax`. Mená hovoria, čo robia – rovnakým štýlom ako `ymin` a `ymax`, ktoré uvidíme nižšie." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107370-6" class="markdown-preview" style="display: block;" data-original-markdown="Parabola, ako to sľubuje každý učiteľ fyziky. Najjednoduchší graf v SageMath sa kreslí príkazom `plot()`: jeho argumentmi sú to, čo kresliť, a rozsah vodorovnej osi, zapísaný ako `xmin` a `xmax`. Mená hovoria, čo robia – rovnakým štýlom ako `ymin` a `ymax`, ktoré uvidíme nižšie."><p>Parabola, ako to sľubuje každý učiteľ fyziky. Najjednoduchší graf v SageMath sa kreslí príkazom <code>plot()</code>: jeho argumentmi sú to, čo kresliť, a rozsah vodorovnej osi, zapísaný ako <code>xmin</code> a <code>xmax</code>. Mená hovoria, čo robia – rovnakým štýlom ako <code>ymin</code> a <code>ymax</code>, ktoré uvidíme nižšie.</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># jeden kop pod uhlom 45 stupňov rýchlosťou 15 m/s: najprv dosadíme čísla
+kappa45(x) = y_traj(x).subs(alpha = pi/4, v0 = 15, g = 9.81)
+plot(kappa45(x), xmin = 0, xmax = 25)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107370-7" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Osi sa škálujú automaticky a krivka tam je: hore, cez vrchol, dole.
+
+&gt; **Poznámka:** `plot()` musí vedieť, *kde funkciu vyhodnocovať*, takže interval nie je voliteľný. Ak sa SageMath sťažuje, že nevie, čo kresliť, takmer vždy to znamená, že ste zabudli na `xmin = ...` alebo `xmax = ...`." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107370-7" class="markdown-preview" style="display: block;" data-original-markdown="Osi sa škálujú automaticky a krivka tam je: hore, cez vrchol, dole.
+
+&gt; **Poznámka:** `plot()` musí vedieť, *kde funkciu vyhodnocovať*, takže interval nie je voliteľný. Ak sa SageMath sťažuje, že nevie, čo kresliť, takmer vždy to znamená, že ste zabudli na `xmin = ...` alebo `xmax = ...`."><p>Osi sa škálujú automaticky a krivka tam je: hore, cez vrchol, dole.</p>
+<blockquote>
+<p><strong>Poznámka:</strong> <code>plot()</code> musí vedieť, <em>kde funkciu vyhodnocovať</em>, takže interval nie je voliteľný. Ak sa SageMath sťažuje, že nevie, čo kresliť, takmer vždy to znamená, že ste zabudli na <code>xmin = ...</code> alebo <code>xmax = ...</code>.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107370-8" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **3.3 Všetky uhly naraz**
+
+Jedna krivka je jeden uhol. Brankár chce celý súbor: uhly od 20 do 70 stupňov. Nástrojom na opakovanie výpočtu s rôznymi hodnotami je list comprehension (zostavenie zoznamu), `[expression for item in list]`, s ktorým sa tu stretávame prvýkrát. Funguje aj pre grafy, pretože v SageMath je graf objekt ako každé iné číslo:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107370-8" class="markdown-preview" style="display: block;" data-original-markdown="## **3.3 Všetky uhly naraz**
+
+Jedna krivka je jeden uhol. Brankár chce celý súbor: uhly od 20 do 70 stupňov. Nástrojom na opakovanie výpočtu s rôznymi hodnotami je list comprehension (zostavenie zoznamu), `[expression for item in list]`, s ktorým sa tu stretávame prvýkrát. Funguje aj pre grafy, pretože v SageMath je graf objekt ako každé iné číslo:"><h2 id="33-všetky-uhly-naraz"><strong>3.3 Všetky uhly naraz</strong></h2>
+<p>Jedna krivka je jeden uhol. Brankár chce celý súbor: uhly od 20 do 70 stupňov. Nástrojom na opakovanie výpočtu s rôznymi hodnotami je list comprehension (zostavenie zoznamu), <code>[expression for item in list]</code>, s ktorým sa tu stretávame prvýkrát. Funguje aj pre grafy, pretože v SageMath je graf objekt ako každé iné číslo:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">angles = [20, 30, 40, 50, 60, 70]      # v stupňoch
+
+# jeden objekt grafu pre každý uhol, zozbieraný do zoznamu
+plots = [plot(y_traj(x).subs(alpha = a*pi/180, v0 = 15, g = 9.81),
+              xmin = 0, xmax = 25,
+              color = hue(a/90),
+              legend_label = str(a) + ' degrees')
+         for a in angles]
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107370-9" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Každý graf dostal `color` a `legend_label`, aby sme ich vedeli rozlíšiť. Grafy sa spájajú jednoduchým sčítaním a súčet sa zobrazí pomocou `show()`. Zvyk, ktorý stojí za to si osvojiť hneď tu: *súčet zostavte, pomenujte ho a až potom zobrazte*. Súčet je objekt grafu ako každý iný, a preto si zaslúži meno ako každý iný; nasledujúce oddiely budú k tomuto obrázku ďalej pridávať a nikto nechce kvôli tomu znovu písať list comprehension." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107370-9" class="markdown-preview" style="display: block;" data-original-markdown="Každý graf dostal `color` a `legend_label`, aby sme ich vedeli rozlíšiť. Grafy sa spájajú jednoduchým sčítaním a súčet sa zobrazí pomocou `show()`. Zvyk, ktorý stojí za to si osvojiť hneď tu: *súčet zostavte, pomenujte ho a až potom zobrazte*. Súčet je objekt grafu ako každý iný, a preto si zaslúži meno ako každý iný; nasledujúce oddiely budú k tomuto obrázku ďalej pridávať a nikto nechce kvôli tomu znovu písať list comprehension."><p>Každý graf dostal <code>color</code> a <code>legend_label</code>, aby sme ich vedeli rozlíšiť. Grafy sa spájajú jednoduchým sčítaním a súčet sa zobrazí pomocou <code>show()</code>. Zvyk, ktorý stojí za to si osvojiť hneď tu: <em>súčet zostavte, pomenujte ho a až potom zobrazte</em>. Súčet je objekt grafu ako každý iný, a preto si zaslúži meno ako každý iný; nasledujúce oddiely budú k tomuto obrázku ďalej pridávať a nikto nechce kvôli tomu znovu písať list comprehension.</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># operátor + prekrýva grafy; súčet uložíme pod menom
+family_plot = sum(plots)
+
+show(family_plot, ymin=0)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107371-10" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Šesť parabol s jasnou zákonitosťou: 20 a 70 stupňov dopadnú spolu, 30 a 60 spolu a 40 s 50 takmer spolu, presne podľa symetrie $\sin 2\alpha$ z kapitoly 2. Najvyšší oblúk nedopadne ďalej ako najplochejší." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107371-10" class="markdown-preview" style="display: block;" data-original-markdown="Šesť parabol s jasnou zákonitosťou: 20 a 70 stupňov dopadnú spolu, 30 a 60 spolu a 40 s 50 takmer spolu, presne podľa symetrie $\sin 2\alpha$ z kapitoly 2. Najvyšší oblúk nedopadne ďalej ako najplochejší."><p>Šesť parabol s jasnou zákonitosťou: 20 a 70 stupňov dopadnú spolu, 30 a 60 spolu a 40 s 50 takmer spolu, presne podľa symetrie $\sin 2\alpha$ z kapitoly 2. Najvyšší oblúk nedopadne ďalej ako najplochejší.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107371-11" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **3.4 Obálka: kam lopta nedopadne**
+
+Pozrite sa na súbor kriviek a uvidíte strop: vonkajšiu hranicu, ktorej sa lopty dotýkajú, ale nikdy ju nepretnú. Nazýva sa *obálka* a SageMath ju vie nielen nakresliť, ale aj vypočítať. Trik spočíva v substitúcii, vďaka ktorej je algebra príjemnejšia. Zapíšeme $u = \tan\alpha$ a použijeme vzťah $1/\cos^2\alpha = 1 + \tan^2\alpha$:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107371-11" class="markdown-preview" style="display: block;" data-original-markdown="## **3.4 Obálka: kam lopta nedopadne**
+
+Pozrite sa na súbor kriviek a uvidíte strop: vonkajšiu hranicu, ktorej sa lopty dotýkajú, ale nikdy ju nepretnú. Nazýva sa *obálka* a SageMath ju vie nielen nakresliť, ale aj vypočítať. Trik spočíva v substitúcii, vďaka ktorej je algebra príjemnejšia. Zapíšeme $u = \tan\alpha$ a použijeme vzťah $1/\cos^2\alpha = 1 + \tan^2\alpha$:"><h2 id="34-obálka-kam-lopta-nedopadne"><strong>3.4 Obálka: kam lopta nedopadne</strong></h2>
+<p>Pozrite sa na súbor kriviek a uvidíte strop: vonkajšiu hranicu, ktorej sa lopty dotýkajú, ale nikdy ju nepretnú. Nazýva sa <em>obálka</em> a SageMath ju vie nielen nakresliť, ale aj vypočítať. Trik spočíva v substitúcii, vďaka ktorej je algebra príjemnejšia. Zapíšeme $u = \tan\alpha$ a použijeme vzťah $1/\cos^2\alpha = 1 + \tan^2\alpha$:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">var('u')
+
+# tá istá trajektória, ale vyjadrená pomocou u = tan(alpha)
+y_u(x) = u*x - g*x^2/(2*v0^2)*(1 + u^2)
+show(y_u(x))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107371-12" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Pre pevne zvolenú vzdialenosť $x$ je najvyšší kop ten s najlepším $u$. Maximum funkcie $y_u$ vzhľadom na $u$ nastáva tam, kde je jej derivácia podľa $u$ nulová:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107371-12" class="markdown-preview" style="display: block;" data-original-markdown="Pre pevne zvolenú vzdialenosť $x$ je najvyšší kop ten s najlepším $u$. Maximum funkcie $y_u$ vzhľadom na $u$ nastáva tam, kde je jej derivácia podľa $u$ nulová:"><p>Pre pevne zvolenú vzdialenosť $x$ je najvyšší kop ten s najlepším $u$. Maximum funkcie $y_u$ vzhľadom na $u$ nastáva tam, kde je jej derivácia podľa $u$ nulová:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">u_best = solve(diff(y_u(x), u) == 0, u)[0].rhs()
+show(u_best)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107371-13" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Dosadením tohto optimálneho kopu späť do trajektórie dostaneme obálku:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107371-13" class="markdown-preview" style="display: block;" data-original-markdown="Dosadením tohto optimálneho kopu späť do trajektórie dostaneme obálku:"><p>Dosadením tohto optimálneho kopu späť do trajektórie dostaneme obálku:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">envelope(x) = y_u(x).subs(u = u_best)
+show(envelope(x))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107371-14" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="$$y_{env} = \dfrac{v_0^2}{2g} - \dfrac{g\,x^2}{2v_0^2}$$
+
+Opäť parabola, ale otočená dolu hlavou, ktorá leží nad všetkými ostatnými. Každý jej bod patrí jednej lopte, tej, ktorá bola kopnutá pod práve takým uhlom, aby sa tam dostala.
+
+Teraz nakreslime všetko spolu. Grafy majú možnosť `linestyle`; `'--'` znamená prerušovanú čiaru:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107371-14" class="markdown-preview" style="display: block;" data-original-markdown="$$y_{env} = \dfrac{v_0^2}{2g} - \dfrac{g\,x^2}{2v_0^2}$$
+
+Opäť parabola, ale otočená dolu hlavou, ktorá leží nad všetkými ostatnými. Každý jej bod patrí jednej lopte, tej, ktorá bola kopnutá pod práve takým uhlom, aby sa tam dostala.
+
+Teraz nakreslime všetko spolu. Grafy majú možnosť `linestyle`; `'--'` znamená prerušovanú čiaru:"><p>$$y_{env} = \dfrac{v_0^2}{2g} - \dfrac{g\,x^2}{2v_0^2}$$</p>
+<p>Opäť parabola, ale otočená dolu hlavou, ktorá leží nad všetkými ostatnými. Každý jej bod patrí jednej lopte, tej, ktorá bola kopnutá pod práve takým uhlom, aby sa tam dostala.</p>
+<p>Teraz nakreslime všetko spolu. Grafy majú možnosť <code>linestyle</code>; <code>'--'</code> znamená prerušovanú čiaru:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">env_plot = plot(envelope(x).subs(v0 = 15, g = 9.81), xmin = 0, xmax = 25,
+                color = 'black', linestyle = '--', legend_label = 'envelope')
+
+# predchádzajúci súbor kriviek plus obálka: jeden pomenovaný obrázok
+combined_plot = family_plot + env_plot
+
+show(combined_plot, figsize = 5, ymin = 0)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107371-15" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Tu je brankárov obrázok: všetko vo vnútri prerušovanej paraboly možno zasiahnuť pod nejakým uhlom, všetko nad ňou je v bezpečí. Vrchol obálky, $v_0^2/2g$ pri $x = 0$, je najvyšší bod, ktorého môže lopta rýchlosťou 15 m/s vôbec dosiahnuť – pri kope priamo nahor." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107371-15" class="markdown-preview" style="display: block;" data-original-markdown="Tu je brankárov obrázok: všetko vo vnútri prerušovanej paraboly možno zasiahnuť pod nejakým uhlom, všetko nad ňou je v bezpečí. Vrchol obálky, $v_0^2/2g$ pri $x = 0$, je najvyšší bod, ktorého môže lopta rýchlosťou 15 m/s vôbec dosiahnuť – pri kope priamo nahor."><p>Tu je brankárov obrázok: všetko vo vnútri prerušovanej paraboly možno zasiahnuť pod nejakým uhlom, všetko nad ňou je v bezpečí. Vrchol obálky, $v_0^2/2g$ pri $x = 0$, je najvyšší bod, ktorého môže lopta rýchlosťou 15 m/s vôbec dosiahnuť – pri kope priamo nahor.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107371-16" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **3.5 Ako graf urobiť čitateľným**
+
+Graf, ktorý sa nedá prečítať, je zbytočný výpočet. Tu sa zhodnotí zvyk pomenúvať: ten istý `combined_plot` z predchádzajúceho oddielu, lepšie upravený, bez opätovného zostavovania čo i len jednej krivky. Možnosti sú tie každodenné:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107371-16" class="markdown-preview" style="display: block;" data-original-markdown="## **3.5 Ako graf urobiť čitateľným**
+
+Graf, ktorý sa nedá prečítať, je zbytočný výpočet. Tu sa zhodnotí zvyk pomenúvať: ten istý `combined_plot` z predchádzajúceho oddielu, lepšie upravený, bez opätovného zostavovania čo i len jednej krivky. Možnosti sú tie každodenné:"><h2 id="35-ako-graf-urobiť-čitateľným"><strong>3.5 Ako graf urobiť čitateľným</strong></h2>
+<p>Graf, ktorý sa nedá prečítať, je zbytočný výpočet. Tu sa zhodnotí zvyk pomenúvať: ten istý <code>combined_plot</code> z predchádzajúceho oddielu, lepšie upravený, bez opätovného zostavovania čo i len jednej krivky. Možnosti sú tie každodenné:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">show(combined_plot,
+     figsize = 6,             # veľkosť obrázka
+     ymin = 0, ymax = 12,     # rozsah zvislej osi
+     frame = True,            # rámik okolo obrázka namiesto osí
+     axes_labels = ['$x$ [m]', '$y$ [m]'],   # popisy osí
+     gridlines = True)        # mriežka na pozadí
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107372-17" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Tri detaily stoja za to, aby sa z nich stal zvyk. Po prvé, `axes_labels` akceptujú LaTeX: popis napíšte medzi znaky dolára a `$x$ [m]` na osi vyjde vysádzané matematickým písmom, kurzívou, ktorú poznáte zo vzorcov. Po druhé, `axes_labels` je miesto, kde patria jednotky, podľa našej dohody z kapitoly 1: čísla v notebooku zostávajú holé, jednotky žijú v popisoch. Po tretie, `ymin = 0` nie je kozmetika: bez neho SageMath pokojne zobrazí loptu dopadajúcu pod úroveň zeme.
+
+&gt; **Poznámka:** Farby možno zadať ako `hue(number)` s číslom medzi 0 a 1, čo rozmiestni súbor kriviek rovnomerne po dúhe, alebo názvami ako `'red'`, `'black'`. `legend_label` je obyčajný text, takže ak má obsahovať číslo, zostavuje sa pomocou `str(a) + ' degrees'`.
+
+Krivky hovoria „niekde tam hore“; bodka hovorí „presne tu“. Stojí za to vyznačiť *vrcholy* kopov, teda body, v ktorých lopta prestáva stúpať. Ich čas poznáme z kapitoly 2: polovica času letu, $t_{\mathrm{apex}} = v_0\sin\alpha / g$. Pre obrázok potrebujeme *miesto* každého vrcholu, dvojicu (vzdialenosť, výška). Najčistejším nástrojom na to je `lambda`. Je súčasťou Pythonu, nie matematiky SageMath: pomocou nej možno jednoducho zapísať krátke postupy, ktoré prijmú jeden alebo viac vstupov, spracujú ich a vrátia výstup v ľubovoľnej podobe – tu jeden vstup (uhol v stupňoch) a jedno číslo na výstupe, pričom náš kop (`v0 = 15`, `g = 9.81`) a prevod stupňov na radiány sú zabudované vnútri:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107372-17" class="markdown-preview" style="display: block;" data-original-markdown="Tri detaily stoja za to, aby sa z nich stal zvyk. Po prvé, `axes_labels` akceptujú LaTeX: popis napíšte medzi znaky dolára a `$x$ [m]` na osi vyjde vysádzané matematickým písmom, kurzívou, ktorú poznáte zo vzorcov. Po druhé, `axes_labels` je miesto, kde patria jednotky, podľa našej dohody z kapitoly 1: čísla v notebooku zostávajú holé, jednotky žijú v popisoch. Po tretie, `ymin = 0` nie je kozmetika: bez neho SageMath pokojne zobrazí loptu dopadajúcu pod úroveň zeme.
+
+&gt; **Poznámka:** Farby možno zadať ako `hue(number)` s číslom medzi 0 a 1, čo rozmiestni súbor kriviek rovnomerne po dúhe, alebo názvami ako `'red'`, `'black'`. `legend_label` je obyčajný text, takže ak má obsahovať číslo, zostavuje sa pomocou `str(a) + ' degrees'`.
+
+Krivky hovoria „niekde tam hore“; bodka hovorí „presne tu“. Stojí za to vyznačiť *vrcholy* kopov, teda body, v ktorých lopta prestáva stúpať. Ich čas poznáme z kapitoly 2: polovica času letu, $t_{\mathrm{apex}} = v_0\sin\alpha / g$. Pre obrázok potrebujeme *miesto* každého vrcholu, dvojicu (vzdialenosť, výška). Najčistejším nástrojom na to je `lambda`. Je súčasťou Pythonu, nie matematiky SageMath: pomocou nej možno jednoducho zapísať krátke postupy, ktoré prijmú jeden alebo viac vstupov, spracujú ich a vrátia výstup v ľubovoľnej podobe – tu jeden vstup (uhol v stupňoch) a jedno číslo na výstupe, pričom náš kop (`v0 = 15`, `g = 9.81`) a prevod stupňov na radiány sú zabudované vnútri:"><p>Tri detaily stoja za to, aby sa z nich stal zvyk. Po prvé, <code>axes_labels</code> akceptujú LaTeX: popis napíšte medzi znaky dolára a <code>$x$ [m]</code> na osi vyjde vysádzané matematickým písmom, kurzívou, ktorú poznáte zo vzorcov. Po druhé, <code>axes_labels</code> je miesto, kde patria jednotky, podľa našej dohody z kapitoly 1: čísla v notebooku zostávajú holé, jednotky žijú v popisoch. Po tretie, <code>ymin = 0</code> nie je kozmetika: bez neho SageMath pokojne zobrazí loptu dopadajúcu pod úroveň zeme.</p>
+<blockquote>
+<p><strong>Poznámka:</strong> Farby možno zadať ako <code>hue(number)</code> s číslom medzi 0 a 1, čo rozmiestni súbor kriviek rovnomerne po dúhe, alebo názvami ako <code>'red'</code>, <code>'black'</code>. <code>legend_label</code> je obyčajný text, takže ak má obsahovať číslo, zostavuje sa pomocou <code>str(a) + ' degrees'</code>.</p>
+</blockquote>
+<p>Krivky hovoria „niekde tam hore“; bodka hovorí „presne tu“. Stojí za to vyznačiť <em>vrcholy</em> kopov, teda body, v ktorých lopta prestáva stúpať. Ich čas poznáme z kapitoly 2: polovica času letu, $t_{\mathrm{apex}} = v_0\sin\alpha / g$. Pre obrázok potrebujeme <em>miesto</em> každého vrcholu, dvojicu (vzdialenosť, výška). Najčistejším nástrojom na to je <code>lambda</code>. Je súčasťou Pythonu, nie matematiky SageMath: pomocou nej možno jednoducho zapísať krátke postupy, ktoré prijmú jeden alebo viac vstupov, spracujú ich a vrátia výstup v ľubovoľnej podobe – tu jeden vstup (uhol v stupňoch) a jedno číslo na výstupe, pričom náš kop (<code>v0 = 15</code>, <code>g = 9.81</code>) a prevod stupňov na radiány sú zabudované vnútri:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># čas vrcholu, zo symetrie v kapitole 2
+t_apex = v0*sin(alpha)/g
+
+# krátky postup pre každú súradnicu: na vstupe uhol v stupňoch, na výstupe miesto v metroch
+x_apex = lambda a: N(x_(t_apex).subs(alpha = a*pi/180, v0 = 15, g = 9.81))
+y_apex = lambda a: N(y_(t_apex).subs(alpha = a*pi/180, v0 = 15, g = 9.81))
+
+show(x_apex(45))
+show(y_apex(45))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107372-18" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Definíciu čítajte zľava: kľúčové slovo `lambda`, meno vstupu (`a`, uhol v stupňoch), dvojbodka a to, čo sa má vypočítať. Lambda *nie je* matematická funkcia ako `x_(t) = ...`: neobsahuje žiadnu rovnicu na riešenie, nič na derivovanie, žiadny vzorec na zobrazenie – je to čistý výpočet. Kop pod uhlom 45 stupňov má vrchol 11,5 m od miesta kopu a 5,7 m vysoko.
+
+&gt; **Poznámka:** Ak už trochu poznáte Python, možno ste sa stretli s príkazom `def`: `def f(a): return ...` funguje rovnako, s telom zapísaným na jednom alebo viacerých odsadených riadkoch. `lambda` je tá istá myšlienka stlačená do jedného výrazu – správny nástroj, keď sa postup zmestí na jeden riadok, a `def`, keď sa nezmestí.
+
+Odmena prichádza v zozname nižšie: keďže všetko dosadzovanie je ukryté vo vnútri postupov, zostáva zoznam tak plochý ako zoznam parabol v oddiele 3.3. A tentoraz posunieme uhly ďalej, až do 90 stupňov:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107372-18" class="markdown-preview" style="display: block;" data-original-markdown="Definíciu čítajte zľava: kľúčové slovo `lambda`, meno vstupu (`a`, uhol v stupňoch), dvojbodka a to, čo sa má vypočítať. Lambda *nie je* matematická funkcia ako `x_(t) = ...`: neobsahuje žiadnu rovnicu na riešenie, nič na derivovanie, žiadny vzorec na zobrazenie – je to čistý výpočet. Kop pod uhlom 45 stupňov má vrchol 11,5 m od miesta kopu a 5,7 m vysoko.
+
+&gt; **Poznámka:** Ak už trochu poznáte Python, možno ste sa stretli s príkazom `def`: `def f(a): return ...` funguje rovnako, s telom zapísaným na jednom alebo viacerých odsadených riadkoch. `lambda` je tá istá myšlienka stlačená do jedného výrazu – správny nástroj, keď sa postup zmestí na jeden riadok, a `def`, keď sa nezmestí.
+
+Odmena prichádza v zozname nižšie: keďže všetko dosadzovanie je ukryté vo vnútri postupov, zostáva zoznam tak plochý ako zoznam parabol v oddiele 3.3. A tentoraz posunieme uhly ďalej, až do 90 stupňov:"><p>Definíciu čítajte zľava: kľúčové slovo <code>lambda</code>, meno vstupu (<code>a</code>, uhol v stupňoch), dvojbodka a to, čo sa má vypočítať. Lambda <em>nie je</em> matematická funkcia ako <code>x_(t) = ...</code>: neobsahuje žiadnu rovnicu na riešenie, nič na derivovanie, žiadny vzorec na zobrazenie – je to čistý výpočet. Kop pod uhlom 45 stupňov má vrchol 11,5 m od miesta kopu a 5,7 m vysoko.</p>
+<blockquote>
+<p><strong>Poznámka:</strong> Ak už trochu poznáte Python, možno ste sa stretli s príkazom <code>def</code>: <code>def f(a): return ...</code> funguje rovnako, s telom zapísaným na jednom alebo viacerých odsadených riadkoch. <code>lambda</code> je tá istá myšlienka stlačená do jedného výrazu – správny nástroj, keď sa postup zmestí na jeden riadok, a <code>def</code>, keď sa nezmestí.</p>
+</blockquote>
+<p>Odmena prichádza v zozname nižšie: keďže všetko dosadzovanie je ukryté vo vnútri postupov, zostáva zoznam tak plochý ako zoznam parabol v oddiele 3.3. A tentoraz posunieme uhly ďalej, až do 90 stupňov:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># jedna dvojica (vzdialenosť, výška) pre každý uhol
+# uhly z predchádzajúceho plus kop priamo nahor
+apex_angles = angles + [80, 90]
+
+apexes = [(x_apex(a), y_apex(a)) for a in apex_angles]
+
+show(apexes)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107372-19" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Osem dvojíc, od `(7.4, 1.3)` pri 20 stupňoch až po `(0, 11.5)` pri 90 stupňoch. Kop pod 90 stupňami nemá v predchádzajúcom súbore žiadnu parabolu: lopta kopnutá priamo nahor nezíska žiadnu vzdialenosť a požiadavka na `y_traj` pre tento uhol by znamenala delenie hodnotou $\cos 90^\circ = 0$. Jeho vrchol je napriek tomu úplne dobrý bod – nulová vzdialenosť, plná výška. Takýto zoznam sa kreslí pomocou `point()`, ktorý chce presne tento tvar – zoznam dvojíc $(x, y)$ – a nič iné:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107372-19" class="markdown-preview" style="display: block;" data-original-markdown="Osem dvojíc, od `(7.4, 1.3)` pri 20 stupňoch až po `(0, 11.5)` pri 90 stupňoch. Kop pod 90 stupňami nemá v predchádzajúcom súbore žiadnu parabolu: lopta kopnutá priamo nahor nezíska žiadnu vzdialenosť a požiadavka na `y_traj` pre tento uhol by znamenala delenie hodnotou $\cos 90^\circ = 0$. Jeho vrchol je napriek tomu úplne dobrý bod – nulová vzdialenosť, plná výška. Takýto zoznam sa kreslí pomocou `point()`, ktorý chce presne tento tvar – zoznam dvojíc $(x, y)$ – a nič iné:"><p>Osem dvojíc, od <code>(7.4, 1.3)</code> pri 20 stupňoch až po <code>(0, 11.5)</code> pri 90 stupňoch. Kop pod 90 stupňami nemá v predchádzajúcom súbore žiadnu parabolu: lopta kopnutá priamo nahor nezíska žiadnu vzdialenosť a požiadavka na <code>y_traj</code> pre tento uhol by znamenala delenie hodnotou $\cos 90^\circ = 0$. Jeho vrchol je napriek tomu úplne dobrý bod – nulová vzdialenosť, plná výška. Takýto zoznam sa kreslí pomocou <code>point()</code>, ktorý chce presne tento tvar – zoznam dvojíc $(x, y)$ – a nič iné:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># jedna bodka pre každý vrchol, nad obrázkom
+apex_plot = point(apexes, size = 40, color = 'red')
+
+show(combined_plot + apex_plot, figsize = 5, ymin = 0)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107372-20" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Každá bodka leží na svojej vlastnej parabole a bodka pre 90 stupňov leží presne na vrchole obálky, $v_0^2/2g$: najvyšší bod obrázka patrí lopte kopnutej priamo nahor.
+
+Bodky označujú miesta; čiara rozpráva príbeh pozdĺž nich. `list_plot()` prijíma ten istý zoznam dvojíc a pridáva jeden parameter, ktorý stojí za to poznať: `plotjoined = True` vedie čiaru cez bodky:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107372-20" class="markdown-preview" style="display: block;" data-original-markdown="Každá bodka leží na svojej vlastnej parabole a bodka pre 90 stupňov leží presne na vrchole obálky, $v_0^2/2g$: najvyšší bod obrázka patrí lopte kopnutej priamo nahor.
+
+Bodky označujú miesta; čiara rozpráva príbeh pozdĺž nich. `list_plot()` prijíma ten istý zoznam dvojíc a pridáva jeden parameter, ktorý stojí za to poznať: `plotjoined = True` vedie čiaru cez bodky:"><p>Každá bodka leží na svojej vlastnej parabole a bodka pre 90 stupňov leží presne na vrchole obálky, $v_0^2/2g$: najvyšší bod obrázka patrí lopte kopnutej priamo nahor.</p>
+<p>Bodky označujú miesta; čiara rozpráva príbeh pozdĺž nich. <code>list_plot()</code> prijíma ten istý zoznam dvojíc a pridáva jeden parameter, ktorý stojí za to poznať: <code>plotjoined = True</code> vedie čiaru cez bodky:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># tie isté dvojice spojené do jednej čiary
+apex_line = list_plot(apexes, plotjoined = True, color = 'red')
+
+show(combined_plot + apex_plot + apex_line, figsize = 5, ymin = 0)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107372-21" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Čiara robí zákonitosť viditeľnou: vrcholy stúpajú po hladkom oblúku, ktorý končí na vrchole obálky. Tento oblúk je polovica elipsy – vrchol každého uhla kopu na ňom leží a jeho najvyšší bod je samotný strop.
+
+&gt; **Poznámka:** `point()` na hŕstku vyznačených bodov; `list_plot()` s `plotjoined = True`, keď body patria k jednému príbehu." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107372-21" class="markdown-preview" style="display: block;" data-original-markdown="Čiara robí zákonitosť viditeľnou: vrcholy stúpajú po hladkom oblúku, ktorý končí na vrchole obálky. Tento oblúk je polovica elipsy – vrchol každého uhla kopu na ňom leží a jeho najvyšší bod je samotný strop.
+
+&gt; **Poznámka:** `point()` na hŕstku vyznačených bodov; `list_plot()` s `plotjoined = True`, keď body patria k jednému príbehu."><p>Čiara robí zákonitosť viditeľnou: vrcholy stúpajú po hladkom oblúku, ktorý končí na vrchole obálky. Tento oblúk je polovica elipsy – vrchol každého uhla kopu na ňom leží a jeho najvyšší bod je samotný strop.</p>
+<blockquote>
+<p><strong>Poznámka:</strong> <code>point()</code> na hŕstku vyznačených bodov; <code>list_plot()</code> s <code>plotjoined = True</code>, keď body patria k jednému príbehu.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107372-22" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **Cvičenia**
+
+**Cvičenie 1.** Znovu zostavte súbor kriviek pre `v0 = 20` a `v0 = 10`, každý s vlastnou obálkou. Ako sa obálka mení? Overte svoj odhad pomocou vzorca $v_0^2/(2g)$ pre jej vrchol.
+
+**Cvičenie 2.** Vo vzdialenosti 18 m stojí plot vysoký 2 m. Nakreslite trajektóriu pod uhlom 45 stupňov spolu s vodorovnou čiarou vo výške 2 m (nápoveda: `plot(2, x, xmin = 0, xmax = 25)` nakreslí konštantu; samotné `x` zostáva, pretože holá konštanta SageMath nič nehovorí o premennej) a odhadom rozhodnite, či kop plot preletí. Potom to potvrďte pomocou `solve()` z kapitoly 2.
+
+**Cvičenie 3.** Nakreslite trajektórie lopty kopnutej z okraja 10 m vysokého útesu pre uhly od 0 do 60 stupňov. Kde sa porušuje symetria dopadu z kapitoly 2 (dvojice $\sin 2\alpha$) a prečo?
+
+**Cvičenie 4.** *Čas* letu tiež závisí od uhla. Nakreslite `t_land` z kapitoly 2 ako funkciu uhla od 0 do 90 stupňov s popismi osí pomocou `axes_labels`. Vyznačte uhol, pri ktorom je čas najdlhší, a jednou vetou vysvetlite, prečo to nie je 45 stupňov." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107372-22" class="markdown-preview" style="display: block;" data-original-markdown="## **Cvičenia**
+
+**Cvičenie 1.** Znovu zostavte súbor kriviek pre `v0 = 20` a `v0 = 10`, každý s vlastnou obálkou. Ako sa obálka mení? Overte svoj odhad pomocou vzorca $v_0^2/(2g)$ pre jej vrchol.
+
+**Cvičenie 2.** Vo vzdialenosti 18 m stojí plot vysoký 2 m. Nakreslite trajektóriu pod uhlom 45 stupňov spolu s vodorovnou čiarou vo výške 2 m (nápoveda: `plot(2, x, xmin = 0, xmax = 25)` nakreslí konštantu; samotné `x` zostáva, pretože holá konštanta SageMath nič nehovorí o premennej) a odhadom rozhodnite, či kop plot preletí. Potom to potvrďte pomocou `solve()` z kapitoly 2.
+
+**Cvičenie 3.** Nakreslite trajektórie lopty kopnutej z okraja 10 m vysokého útesu pre uhly od 0 do 60 stupňov. Kde sa porušuje symetria dopadu z kapitoly 2 (dvojice $\sin 2\alpha$) a prečo?
+
+**Cvičenie 4.** *Čas* letu tiež závisí od uhla. Nakreslite `t_land` z kapitoly 2 ako funkciu uhla od 0 do 90 stupňov s popismi osí pomocou `axes_labels`. Vyznačte uhol, pri ktorom je čas najdlhší, a jednou vetou vysvetlite, prečo to nie je 45 stupňov."><h2 id="cvičenia"><strong>Cvičenia</strong></h2>
+<p><strong>Cvičenie 1.</strong> Znovu zostavte súbor kriviek pre <code>v0 = 20</code> a <code>v0 = 10</code>, každý s vlastnou obálkou. Ako sa obálka mení? Overte svoj odhad pomocou vzorca $v_0^2/(2g)$ pre jej vrchol.</p>
+<p><strong>Cvičenie 2.</strong> Vo vzdialenosti 18 m stojí plot vysoký 2 m. Nakreslite trajektóriu pod uhlom 45 stupňov spolu s vodorovnou čiarou vo výške 2 m (nápoveda: <code>plot(2, x, xmin = 0, xmax = 25)</code> nakreslí konštantu; samotné <code>x</code> zostáva, pretože holá konštanta SageMath nič nehovorí o premennej) a odhadom rozhodnite, či kop plot preletí. Potom to potvrďte pomocou <code>solve()</code> z kapitoly 2.</p>
+<p><strong>Cvičenie 3.</strong> Nakreslite trajektórie lopty kopnutej z okraja 10 m vysokého útesu pre uhly od 0 do 60 stupňov. Kde sa porušuje symetria dopadu z kapitoly 2 (dvojice $\sin 2\alpha$) a prečo?</p>
+<p><strong>Cvičenie 4.</strong> <em>Čas</em> letu tiež závisí od uhla. Nakreslite <code>t_land</code> z kapitoly 2 ako funkciu uhla od 0 do 90 stupňov s popismi osí pomocou <code>axes_labels</code>. Vyznačte uhol, pri ktorom je čas najdlhší, a jednou vetou vysvetlite, prečo to nie je 45 stupňov.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175107372-23" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **3.6 Čo teraz viete**
+
+- **`plot(expr, xmin, xmax)`** kreslí funkciu jednej premennej; rozsah osi je povinný a jeho mená zodpovedajú `ymin` a `ymax`.
+- **Podčiarkovník na konci** (`x_`, `y_`) umožňuje funkcii a symbolu zdieľať písmeno; `show()` oba vysádza ako obyčajné $x$.
+- **Objekty grafov možno ukladať do zoznamov** (list comprehension) a **sčítať** pomocou `+`, čím sa prekryjú súbory kriviek; súčet pomenujte (`family_plot`, `combined_plot`) skôr než ho zobrazíte pomocou `show()`, aby sa dal znovu použiť a rozširovať.
+- **`point(pairs)`** vyznačí zoznam bodov $(x, y)$ na obrázku, tu vrcholy trajektórií; **`list_plot(pairs, plotjoined = True)`** spojí bodky do čiary.
+- **`lambda a: ...`** je jednoriadkový postup z Pythonu – na vstupe hodnoty, na výstupe spracovaný výsledok v ľubovoľnej podobe; nie je to matematická funkcia, takže nemá čo riešiť ani zobrazovať. Príkaz `def` funguje rovnako pre viacriadkové postupy.
+- **`color`, `linestyle`, `legend_label`, `axes_labels`, `figsize`, `gridlines`, `ymin`, `frame`** sú každodenné možnosti formátovania; `axes_labels` akceptujú LaTeX medzi znakmi dolára.
+- **Obálku súboru kriviek** nájdeme maximalizáciou podľa parametra súboru, tu pomocou substitúcie a `diff()` + `solve()`: symbolický výsledok, nakreslený až na konci.
+- **Jednotky patria do popisov osí**, nie do samotných čísel, podľa dohody z kapitoly 1." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175107372-23" class="markdown-preview" style="display: block;" data-original-markdown="## **3.6 Čo teraz viete**
+
+- **`plot(expr, xmin, xmax)`** kreslí funkciu jednej premennej; rozsah osi je povinný a jeho mená zodpovedajú `ymin` a `ymax`.
+- **Podčiarkovník na konci** (`x_`, `y_`) umožňuje funkcii a symbolu zdieľať písmeno; `show()` oba vysádza ako obyčajné $x$.
+- **Objekty grafov možno ukladať do zoznamov** (list comprehension) a **sčítať** pomocou `+`, čím sa prekryjú súbory kriviek; súčet pomenujte (`family_plot`, `combined_plot`) skôr než ho zobrazíte pomocou `show()`, aby sa dal znovu použiť a rozširovať.
+- **`point(pairs)`** vyznačí zoznam bodov $(x, y)$ na obrázku, tu vrcholy trajektórií; **`list_plot(pairs, plotjoined = True)`** spojí bodky do čiary.
+- **`lambda a: ...`** je jednoriadkový postup z Pythonu – na vstupe hodnoty, na výstupe spracovaný výsledok v ľubovoľnej podobe; nie je to matematická funkcia, takže nemá čo riešiť ani zobrazovať. Príkaz `def` funguje rovnako pre viacriadkové postupy.
+- **`color`, `linestyle`, `legend_label`, `axes_labels`, `figsize`, `gridlines`, `ymin`, `frame`** sú každodenné možnosti formátovania; `axes_labels` akceptujú LaTeX medzi znakmi dolára.
+- **Obálku súboru kriviek** nájdeme maximalizáciou podľa parametra súboru, tu pomocou substitúcie a `diff()` + `solve()`: symbolický výsledok, nakreslený až na konci.
+- **Jednotky patria do popisov osí**, nie do samotných čísel, podľa dohody z kapitoly 1."><h2 id="36-čo-teraz-viete"><strong>3.6 Čo teraz viete</strong></h2>
+<ul>
+<li><strong><code>plot(expr, xmin, xmax)</code></strong> kreslí funkciu jednej premennej; rozsah osi je povinný a jeho mená zodpovedajú <code>ymin</code> a <code>ymax</code>.</li>
+<li><strong>Podčiarkovník na konci</strong> (<code>x_</code>, <code>y_</code>) umožňuje funkcii a symbolu zdieľať písmeno; <code>show()</code> oba vysádza ako obyčajné $x$.</li>
+<li><strong>Objekty grafov možno ukladať do zoznamov</strong> (list comprehension) a <strong>sčítať</strong> pomocou <code>+</code>, čím sa prekryjú súbory kriviek; súčet pomenujte (<code>family_plot</code>, <code>combined_plot</code>) skôr než ho zobrazíte pomocou <code>show()</code>, aby sa dal znovu použiť a rozširovať.</li>
+<li><strong><code>point(pairs)</code></strong> vyznačí zoznam bodov $(x, y)$ na obrázku, tu vrcholy trajektórií; <strong><code>list_plot(pairs, plotjoined = True)</code></strong> spojí bodky do čiary.</li>
+<li><strong><code>lambda a: ...</code></strong> je jednoriadkový postup z Pythonu – na vstupe hodnoty, na výstupe spracovaný výsledok v ľubovoľnej podobe; nie je to matematická funkcia, takže nemá čo riešiť ani zobrazovať. Príkaz <code>def</code> funguje rovnako pre viacriadkové postupy.</li>
+<li><strong><code>color</code>, <code>linestyle</code>, <code>legend_label</code>, <code>axes_labels</code>, <code>figsize</code>, <code>gridlines</code>, <code>ymin</code>, <code>frame</code></strong> sú každodenné možnosti formátovania; <code>axes_labels</code> akceptujú LaTeX medzi znakmi dolára.</li>
+<li><strong>Obálku súboru kriviek</strong> nájdeme maximalizáciou podľa parametra súboru, tu pomocou substitúcie a <code>diff()</code> + <code>solve()</code>: symbolický výsledok, nakreslený až na konci.</li>
+<li><strong>Jednotky patria do popisov osí</strong>, nie do samotných čísel, podľa dohody z kapitoly 1.</li>
+</ul>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># prázdne bunky na cvičenia/pokusy – nové bunky môžete pridať kdekoľvek tlačidlom "Add Bellow"
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">
+</script></div></div></div></div></div>
+            
+        </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/embedded_sagecell_backup.js"></script>
+<script src="https://sage-sk.org/embedded_sagecell.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/FileSaver.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/nbplayerConfig.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/comment/comment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/markdown-fold.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.css">
+<script>let RUN_DELAY = 1000;</script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/customthemes15.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbrunner24.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaiengine23.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaipriming22.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbautocompletion20.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://code.datagridxl.com/datagridxl2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fflate@0.8.3/umd/index.min.js"></script>
+<script>
+  playerConfig={"panes":"Exec","lang":"sage","linked":true,"eval":false,"hide":["fullScreen"],"execute":true,"showRead":false,"collapsable":false,"playerPath":"https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main","name":"SageMath"};
+  playerMode={"showSage":true,"showNotebookInput":true,"showSageInput":true};
+  let API_KEY="";
+  let API_URL="";
+  let CURRENT_MODEL="";
+  let CURRENT_LANGUAGE="";
+  let SAGECELL_URL="https://sage-sk.org/";
+  let toggleEvalBtnsState=false;
+  let isFullWidthState=true;
+  window.hideCodeInputState=false;
+  let PRELOAD="";
+  let SETTINGS_PATH_NAME="settings.js";
+  let aiEduMode=true;
+  let aiCompleteMode=true;
+  let aiLogs=false;
+  window.aiLogs=false;
+  window.aiSettingsVisible=true;
+  window.aiLogsHistory=[];
+  makeMenu();
+  localize();
+  createTableOfContents();
+  loadStatus();
+  restoreUIState();
+  makeSageCells(playerConfig);
+  launchPlayer();
+  addControlPanel();
+  setupRunAllCells();
+  addSageCellNumbering();
+  enhanceSageCellsWithGlobalAutocomplete();
+  window.onload = initializeMarkdownCells;
+  let CUSTOM_CONTEXT="";
+  let CUSTOM_CSS="";
+  if (CUSTOM_CSS) applyCustomCSS(CUSTOM_CSS);
+  addCommentShortcutToAllSageCells();
+  applyPreloadCells();
+  setupBulkCellObserver();
+</script>
+<script src="settings.js"></script>
+</body>
+</html>

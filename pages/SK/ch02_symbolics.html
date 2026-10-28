@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;polygon points='50,6 88,28 88,72 50,94 12,72 12,28' fill='%234CAF50'/&gt;&lt;text x='50' y='68' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='%23fff' text-anchor='middle'&gt;S&lt;/text&gt;&lt;/svg&gt;">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/es5-shim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/ansi_up.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex-auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/notebook.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/prism.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/notebook.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/nbpreview.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/css/nbplayer24.css">
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/texme@1.2.2"></script>
+<div id="main">
+<div id="notebook-holder"><div class="nb-notebook"><div class="nb-worksheet"><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103617-1" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Autori:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Prírodovedecká fakulta, Univerzita Pavla Jozefa Šafárika v Košiciach, Slovensko&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt; &lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt; &lt;/p&gt;" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103617-1" class="markdown-preview" style="display: block;" data-original-markdown="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Autori:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Prírodovedecká fakulta, Univerzita Pavla Jozefa Šafárika v Košiciach, Slovensko&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt; &lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt; &lt;/p&gt;"><p><img style="float: right;" src="https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png" alt="" width="100" height="85"></p>
+<p><strong>Autori:</strong> Dominik Borovský<sup>1</sup> &amp; Jozef Hanč<sup>2</sup></p>
+<p><em>2026, Prírodovedecká fakulta, Univerzita Pavla Jozefa Šafárika v Košiciach, Slovensko</em></p>
+<p><sup>1</sup><a href="mailto:dominik.borovsky@student.upjs.sk">dominik.borovsky@student.upjs.sk,</a> <sup>2</sup><a href="mailto:jozef.hanc@upjs.sk">jozef.hanc@upjs.sk</a> </p></div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103617-2" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="# **Kapitola 2: Najdlhší kop**" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103617-2" class="markdown-preview" style="display: block;" data-original-markdown="# **Kapitola 2: Najdlhší kop**"><h1 id="kapitola-2-najdlhší-kop"><strong>Kapitola 2: Najdlhší kop</strong></h1>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103617-3" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="V tejto kapitole sa naučíte, ako SageMath pracuje so *vzorcami*, nielen s číslami: so symbolickými premennými, s vyjadrovaním neznámej z rovnice a s hľadaním maxím pomocou derivácií. Keďže pracujeme s premennými – symbolmi, a nie s presnými číselnými hodnotami, pôjde o **symbolické výpočty**. Na oplátku odpovieme na otázku, o ktorej sa háda každý futbalista." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103617-3" class="markdown-preview" style="display: block;" data-original-markdown="V tejto kapitole sa naučíte, ako SageMath pracuje so *vzorcami*, nielen s číslami: so symbolickými premennými, s vyjadrovaním neznámej z rovnice a s hľadaním maxím pomocou derivácií. Keďže pracujeme s premennými – symbolmi, a nie s presnými číselnými hodnotami, pôjde o **symbolické výpočty**. Na oplátku odpovieme na otázku, o ktorej sa háda každý futbalista."><p>V tejto kapitole sa naučíte, ako SageMath pracuje so <em>vzorcami</em>, nielen s číslami: so symbolickými premennými, s vyjadrovaním neznámej z rovnice a s hľadaním maxím pomocou derivácií. Keďže pracujeme s premennými – symbolmi, a nie s presnými číselnými hodnotami, pôjde o <strong>symbolické výpočty</strong>. Na oplátku odpovieme na otázku, o ktorej sa háda každý futbalista.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103617-4" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **2.1 Zadanie**
+
+&gt; Kopnete loptu po ihrisku rýchlosťou **15 m/s**. Pod akým uhlom ju máte kopnúť, aby dopadla čo najďalej? A ako ďaleko to bude?
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src='https://i.postimg.cc/sxbTYHYj/footbal-pitch-vector.png' width=&quot;500&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;Obr. 2.1: Východisková situácia sporu: lopta, ihrisko a otázka uhla (zdroj: vygenerované umelou inteligenciou).&lt;/em&gt;&lt;/p&gt;" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103617-4" class="markdown-preview" style="display: block;" data-original-markdown="## **2.1 Zadanie**
+
+&gt; Kopnete loptu po ihrisku rýchlosťou **15 m/s**. Pod akým uhlom ju máte kopnúť, aby dopadla čo najďalej? A ako ďaleko to bude?
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src='https://i.postimg.cc/sxbTYHYj/footbal-pitch-vector.png' width=&quot;500&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;Obr. 2.1: Východisková situácia sporu: lopta, ihrisko a otázka uhla (zdroj: vygenerované umelou inteligenciou).&lt;/em&gt;&lt;/p&gt;"><h2 id="21-zadanie"><strong>2.1 Zadanie</strong></h2>
+<blockquote>
+<p>Kopnete loptu po ihrisku rýchlosťou <strong>15 m/s</strong>. Pod akým uhlom ju máte kopnúť, aby dopadla čo najďalej? A ako ďaleko to bude?</p>
+</blockquote>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://i.postimg.cc/sxbTYHYj/footbal-pitch-vector.png" width="500"></p>
+<p style="text-align: center;"><em>Obr. 2.1: Východisková situácia sporu: lopta, ihrisko a otázka uhla (zdroj: vygenerované umelou inteligenciou).</em></p></div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103617-5" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **2.2 Fyzika letiacej lopty**
+
+Skôr než dáme SageMath niečo na spracovanie, uveďme slovami fyziku kopu, pretože každý vzorec v tejto kapitole vyrastá z jednej starej myšlienky.
+
+Kopnutá lopta je *teleso vrhnuté v gravitačnom poli* (projektil): teleso, ktoré dostalo jeden impulz a potom letí samo, bez toho, aby ho čokoľvek riadilo. Delové gule, basketbalové lopty aj voda z fontány sú takisto takéto telesá. Otázka, ako ďaleko sa také teleso dostane, je rovnako stará ako delo a Galileo okolo roku 1600 objavil myšlienku, ktorá ju rozlúskne: let nie je jeden pohyb, ale dva pohyby, ktoré prebiehajú súčasne.
+
+**Rozklad kopu.** Lopta opúšťa kopačku s rýchlosťou $\vec{v}$: veľkosť $v_0$ a smer pod uhlom $\alpha$ nad zemou. Jedna šípka – ale ihrisko sa pýta na vodorovnú vzdialenosť (ako ďaleko?) a brankár na zvislú (ako vysoko?). Šípku preto rozložíme na vodorovnú zložku $v_x$ a zvislú zložku $v_y$. Nakreslíme ich spolu a vznikne pravouhlý trojuholník: $v_0$ je prepona a uhol $\alpha$ leží medzi $v_0$ a $v_x$.
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src='https://i.postimg.cc/Vv2KqZqP/footbal-diagram.png' width=&quot;500&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;Obr. 2.2: Rozklad kopu: rýchlosť $v_0$ pod uhlom $\alpha$ sa rozloží na vodorovnú a zvislú zložku a spolu opisujú oblúk (zdroj: vygenerované umelou inteligenciou).&lt;/em&gt;&lt;/p&gt;
+
+
+Presne na takýto trojuholník boli sínus a kosínus vymyslené. V pravouhlom trojuholníku je kosínus uhla pomerom priľahlej odvesny a prepony a sínus pomerom protiľahlej odvesny a prepony. Vynásobením každého z nich preponou $v_0$ dostaneme samotné strany:
+
+$$v_x = v_0\cos\alpha, \qquad v_y = v_0\sin\alpha.$$
+
+Takže $\cos\alpha$ je podiel kopu, ktorý smeruje pozdĺž ihriska, a $\sin\alpha$ podiel, ktorý smeruje nahor. Plochý kop pod uhlom 10 stupňov vloží takmer všetko do $v_x$; lopta kopnutá priamo nahor pod uhlom 90 stupňov má $\cos(90^\circ) = 0$ a celú rýchlosť zvislú; pri 45 stupňoch sú oba podiely rovnaké.
+
+Nechajme SageMath vyčísliť zložky tohto trojuholníka pre kop rýchlosťou 15 m/s pod uhlom 30 stupňov:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103617-5" class="markdown-preview" style="display: block;" data-original-markdown="## **2.2 Fyzika letiacej lopty**
+
+Skôr než dáme SageMath niečo na spracovanie, uveďme slovami fyziku kopu, pretože každý vzorec v tejto kapitole vyrastá z jednej starej myšlienky.
+
+Kopnutá lopta je *teleso vrhnuté v gravitačnom poli* (projektil): teleso, ktoré dostalo jeden impulz a potom letí samo, bez toho, aby ho čokoľvek riadilo. Delové gule, basketbalové lopty aj voda z fontány sú takisto takéto telesá. Otázka, ako ďaleko sa také teleso dostane, je rovnako stará ako delo a Galileo okolo roku 1600 objavil myšlienku, ktorá ju rozlúskne: let nie je jeden pohyb, ale dva pohyby, ktoré prebiehajú súčasne.
+
+**Rozklad kopu.** Lopta opúšťa kopačku s rýchlosťou $\vec{v}$: veľkosť $v_0$ a smer pod uhlom $\alpha$ nad zemou. Jedna šípka – ale ihrisko sa pýta na vodorovnú vzdialenosť (ako ďaleko?) a brankár na zvislú (ako vysoko?). Šípku preto rozložíme na vodorovnú zložku $v_x$ a zvislú zložku $v_y$. Nakreslíme ich spolu a vznikne pravouhlý trojuholník: $v_0$ je prepona a uhol $\alpha$ leží medzi $v_0$ a $v_x$.
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src='https://i.postimg.cc/Vv2KqZqP/footbal-diagram.png' width=&quot;500&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;Obr. 2.2: Rozklad kopu: rýchlosť $v_0$ pod uhlom $\alpha$ sa rozloží na vodorovnú a zvislú zložku a spolu opisujú oblúk (zdroj: vygenerované umelou inteligenciou).&lt;/em&gt;&lt;/p&gt;
+
+
+Presne na takýto trojuholník boli sínus a kosínus vymyslené. V pravouhlom trojuholníku je kosínus uhla pomerom priľahlej odvesny a prepony a sínus pomerom protiľahlej odvesny a prepony. Vynásobením každého z nich preponou $v_0$ dostaneme samotné strany:
+
+$$v_x = v_0\cos\alpha, \qquad v_y = v_0\sin\alpha.$$
+
+Takže $\cos\alpha$ je podiel kopu, ktorý smeruje pozdĺž ihriska, a $\sin\alpha$ podiel, ktorý smeruje nahor. Plochý kop pod uhlom 10 stupňov vloží takmer všetko do $v_x$; lopta kopnutá priamo nahor pod uhlom 90 stupňov má $\cos(90^\circ) = 0$ a celú rýchlosť zvislú; pri 45 stupňoch sú oba podiely rovnaké.
+
+Nechajme SageMath vyčísliť zložky tohto trojuholníka pre kop rýchlosťou 15 m/s pod uhlom 30 stupňov:"><h2 id="22-fyzika-letiacej-lopty"><strong>2.2 Fyzika letiacej lopty</strong></h2>
+<p>Skôr než dáme SageMath niečo na spracovanie, uveďme slovami fyziku kopu, pretože každý vzorec v tejto kapitole vyrastá z jednej starej myšlienky.</p>
+<p>Kopnutá lopta je <em>teleso vrhnuté v gravitačnom poli</em> (projektil): teleso, ktoré dostalo jeden impulz a potom letí samo, bez toho, aby ho čokoľvek riadilo. Delové gule, basketbalové lopty aj voda z fontány sú takisto takéto telesá. Otázka, ako ďaleko sa také teleso dostane, je rovnako stará ako delo a Galileo okolo roku 1600 objavil myšlienku, ktorá ju rozlúskne: let nie je jeden pohyb, ale dva pohyby, ktoré prebiehajú súčasne.</p>
+<p><strong>Rozklad kopu.</strong> Lopta opúšťa kopačku s rýchlosťou $\vec{v}$: veľkosť $v_0$ a smer pod uhlom $\alpha$ nad zemou. Jedna šípka – ale ihrisko sa pýta na vodorovnú vzdialenosť (ako ďaleko?) a brankár na zvislú (ako vysoko?). Šípku preto rozložíme na vodorovnú zložku $v_x$ a zvislú zložku $v_y$. Nakreslíme ich spolu a vznikne pravouhlý trojuholník: $v_0$ je prepona a uhol $\alpha$ leží medzi $v_0$ a $v_x$.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://i.postimg.cc/Vv2KqZqP/footbal-diagram.png" width="500"></p>
+<p style="text-align: center;"><em>Obr. 2.2: Rozklad kopu: rýchlosť $v_0$ pod uhlom $\alpha$ sa rozloží na vodorovnú a zvislú zložku a spolu opisujú oblúk (zdroj: vygenerované umelou inteligenciou).</em></p>
+
+
+<p>Presne na takýto trojuholník boli sínus a kosínus vymyslené. V pravouhlom trojuholníku je kosínus uhla pomerom priľahlej odvesny a prepony a sínus pomerom protiľahlej odvesny a prepony. Vynásobením každého z nich preponou $v_0$ dostaneme samotné strany:</p>
+<p>$$v_x = v_0\cos\alpha, \qquad v_y = v_0\sin\alpha.$$</p>
+<p>Takže $\cos\alpha$ je podiel kopu, ktorý smeruje pozdĺž ihriska, a $\sin\alpha$ podiel, ktorý smeruje nahor. Plochý kop pod uhlom 10 stupňov vloží takmer všetko do $v_x$; lopta kopnutá priamo nahor pod uhlom 90 stupňov má $\cos(90^\circ) = 0$ a celú rýchlosť zvislú; pri 45 stupňoch sú oba podiely rovnaké.</p>
+<p>Nechajme SageMath vyčísliť zložky tohto trojuholníka pre kop rýchlosťou 15 m/s pod uhlom 30 stupňov:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># dve zložky kopu rýchlosťou 15 m/s pod uhlom 30 stupňov
+N(15*cos(pi/6))
+N(15*sin(pi/6))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103617-6" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Poznámka: uhly sa v SageMath zadávajú v radiánoch.** Uhlomer ukazuje stupne, ale `sin()`, `cos()` a ostatné goniometrické funkcie v Sage očakávajú radiány. Celý obrat má veľkosť $2\pi$ namiesto 360, takže 180 stupňov je `pi` a 30 stupňov je `pi/6`. Na ručný prevod si stačí zapamätať jednu rovnosť: $\pi\ \mathrm{rad} = 180^\circ$. Vydelením oboch strán číslom 180 dostaneme prevod stupňov na radiány, vydelením číslom $\pi$ prevod radiánov späť na stupne. SageMath vie násobiť prevodnými činiteľmi za vás, práve preto, že $\pi$ zostáva presné:
+&gt;
+&gt; ```sage
+&gt; # stupne -&gt; radiány: násobíme pi/180
+&gt; N(30*pi/180)                     # 30 stupňov v radiánoch, 0.524
+&gt;
+&gt; # radiány -&gt; stupne: násobíme 180/pi
+&gt; N(pi/6*180/pi)                   # pi/6 v stupňoch, 30.0
+&gt; ```
+&gt;
+&gt; Rovnaké činitele fungujú aj vo vnútri goniometrických funkcií, čo je lepšie než pamätať si hodnoty pre špeciálne uhly: `cos(45*pi/180)` je kosínus 45 stupňov, aj keď neviete, že 45 stupňov je `pi/4`.
+
+
+Dostaneme 13,0 m/s pozdĺž ihriska a 7,5 m/s nahor. A keďže zložky sú odvesny trojuholníka s preponou $v_0$, Pytagorova veta ich musí zložiť späť na rýchlosť kopu:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103617-6" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Poznámka: uhly sa v SageMath zadávajú v radiánoch.** Uhlomer ukazuje stupne, ale `sin()`, `cos()` a ostatné goniometrické funkcie v Sage očakávajú radiány. Celý obrat má veľkosť $2\pi$ namiesto 360, takže 180 stupňov je `pi` a 30 stupňov je `pi/6`. Na ručný prevod si stačí zapamätať jednu rovnosť: $\pi\ \mathrm{rad} = 180^\circ$. Vydelením oboch strán číslom 180 dostaneme prevod stupňov na radiány, vydelením číslom $\pi$ prevod radiánov späť na stupne. SageMath vie násobiť prevodnými činiteľmi za vás, práve preto, že $\pi$ zostáva presné:
+&gt;
+&gt; ```sage
+&gt; # stupne -&gt; radiány: násobíme pi/180
+&gt; N(30*pi/180)                     # 30 stupňov v radiánoch, 0.524
+&gt;
+&gt; # radiány -&gt; stupne: násobíme 180/pi
+&gt; N(pi/6*180/pi)                   # pi/6 v stupňoch, 30.0
+&gt; ```
+&gt;
+&gt; Rovnaké činitele fungujú aj vo vnútri goniometrických funkcií, čo je lepšie než pamätať si hodnoty pre špeciálne uhly: `cos(45*pi/180)` je kosínus 45 stupňov, aj keď neviete, že 45 stupňov je `pi/4`.
+
+
+Dostaneme 13,0 m/s pozdĺž ihriska a 7,5 m/s nahor. A keďže zložky sú odvesny trojuholníka s preponou $v_0$, Pytagorova veta ich musí zložiť späť na rýchlosť kopu:"><blockquote>
+<p><strong>Poznámka: uhly sa v SageMath zadávajú v radiánoch.</strong> Uhlomer ukazuje stupne, ale <code>sin()</code>, <code>cos()</code> a ostatné goniometrické funkcie v Sage očakávajú radiány. Celý obrat má veľkosť $2\pi$ namiesto 360, takže 180 stupňov je <code>pi</code> a 30 stupňov je <code>pi/6</code>. Na ručný prevod si stačí zapamätať jednu rovnosť: $\pi\ \mathrm{rad} = 180^\circ$. Vydelením oboch strán číslom 180 dostaneme prevod stupňov na radiány, vydelením číslom $\pi$ prevod radiánov späť na stupne. SageMath vie násobiť prevodnými činiteľmi za vás, práve preto, že $\pi$ zostáva presné:</p>
+<pre><code class="language-sage"># stupne -&gt; radiány: násobíme pi/180
+N(30*pi/180)                     # 30 stupňov v radiánoch, 0.524
+
+# radiány -&gt; stupne: násobíme 180/pi
+N(pi/6*180/pi)                   # pi/6 v stupňoch, 30.0
+</code></pre>
+<p>Rovnaké činitele fungujú aj vo vnútri goniometrických funkcií, čo je lepšie než pamätať si hodnoty pre špeciálne uhly: <code>cos(45*pi/180)</code> je kosínus 45 stupňov, aj keď neviete, že 45 stupňov je <code>pi/4</code>.</p>
+</blockquote>
+<p>Dostaneme 13,0 m/s pozdĺž ihriska a 7,5 m/s nahor. A keďže zložky sú odvesny trojuholníka s preponou $v_0$, Pytagorova veta ich musí zložiť späť na rýchlosť kopu:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># obe zložky sa zložia späť na pôvodnú rýchlosť
+N(sqrt(15*cos(pi/6)^2 + 15*sin(pi/6)^2))   # pozor: 15*cos(...)^2 znamená (15*cos(...))^2
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103617-7" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Pätnásť, teda rýchlosť, ktorou lopta opustila kopačku.
+
+**Dva pohyby, ktoré si navzájom neprekážajú.** Rozklad sa oplatí len preto, že príroda nám vychádza v ústrety: oba smery sa navzájom neovplyvňujú. Pohyb vo vodorovnom smere nemení spôsob, akým lopta padá, a pád ju neposúva do strany. Každý smer je preto samostatná malá úloha a každú z nich ste už riešili:
+
+- *Vodorovný smer:* ak zanedbáme vzduch, v tomto smere nepôsobí žiadna sila, takže lopta sa pohybuje stálou rýchlosťou $v_x$. Dráha je rýchlosť krát čas: $x = v_x\,t$.
+- *Zvislý smer:* lopta stúpa rýchlosťou $v_y$, zatiaľ čo gravitácia ju ťahá nadol stálym zrýchlením $g$ známym zo studne v kapitole 1. Kameň pustený z pokoja tam za čas $t$ prepadol o $\tfrac{1}{2}gt^2$; tu sa ten istý pád odpočíta od stúpania.
+
+Dosadením zložiek dostaneme celý let ako dve funkcie času:
+
+$$x(t) = v_0\cos\alpha\, t, \qquad y(t) = v_0\sin\alpha\, t - \tfrac{1}{2}g t^2.$$
+
+Uhol $\alpha$ rozhoduje o tom, ako sa kop rozdelí, $v_0$ o tom, aký je silný, a $g$ o tom, ako silno planéta ťahá loptu späť. Každá úloha o šikmom vrhu v tejto knihe vychádza z tejto dvojice." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103617-7" class="markdown-preview" style="display: block;" data-original-markdown="Pätnásť, teda rýchlosť, ktorou lopta opustila kopačku.
+
+**Dva pohyby, ktoré si navzájom neprekážajú.** Rozklad sa oplatí len preto, že príroda nám vychádza v ústrety: oba smery sa navzájom neovplyvňujú. Pohyb vo vodorovnom smere nemení spôsob, akým lopta padá, a pád ju neposúva do strany. Každý smer je preto samostatná malá úloha a každú z nich ste už riešili:
+
+- *Vodorovný smer:* ak zanedbáme vzduch, v tomto smere nepôsobí žiadna sila, takže lopta sa pohybuje stálou rýchlosťou $v_x$. Dráha je rýchlosť krát čas: $x = v_x\,t$.
+- *Zvislý smer:* lopta stúpa rýchlosťou $v_y$, zatiaľ čo gravitácia ju ťahá nadol stálym zrýchlením $g$ známym zo studne v kapitole 1. Kameň pustený z pokoja tam za čas $t$ prepadol o $\tfrac{1}{2}gt^2$; tu sa ten istý pád odpočíta od stúpania.
+
+Dosadením zložiek dostaneme celý let ako dve funkcie času:
+
+$$x(t) = v_0\cos\alpha\, t, \qquad y(t) = v_0\sin\alpha\, t - \tfrac{1}{2}g t^2.$$
+
+Uhol $\alpha$ rozhoduje o tom, ako sa kop rozdelí, $v_0$ o tom, aký je silný, a $g$ o tom, ako silno planéta ťahá loptu späť. Každá úloha o šikmom vrhu v tejto knihe vychádza z tejto dvojice."><p>Pätnásť, teda rýchlosť, ktorou lopta opustila kopačku.</p>
+<p><strong>Dva pohyby, ktoré si navzájom neprekážajú.</strong> Rozklad sa oplatí len preto, že príroda nám vychádza v ústrety: oba smery sa navzájom neovplyvňujú. Pohyb vo vodorovnom smere nemení spôsob, akým lopta padá, a pád ju neposúva do strany. Každý smer je preto samostatná malá úloha a každú z nich ste už riešili:</p>
+<ul>
+<li><em>Vodorovný smer:</em> ak zanedbáme vzduch, v tomto smere nepôsobí žiadna sila, takže lopta sa pohybuje stálou rýchlosťou $v_x$. Dráha je rýchlosť krát čas: $x = v_x\,t$.</li>
+<li><em>Zvislý smer:</em> lopta stúpa rýchlosťou $v_y$, zatiaľ čo gravitácia ju ťahá nadol stálym zrýchlením $g$ známym zo studne v kapitole 1. Kameň pustený z pokoja tam za čas $t$ prepadol o $\tfrac{1}{2}gt^2$; tu sa ten istý pád odpočíta od stúpania.</li>
+</ul>
+<p>Dosadením zložiek dostaneme celý let ako dve funkcie času:</p>
+<p>$$x(t) = v_0\cos\alpha\, t, \qquad y(t) = v_0\sin\alpha\, t - \tfrac{1}{2}g t^2.$$</p>
+<p>Uhol $\alpha$ rozhoduje o tom, ako sa kop rozdelí, $v_0$ o tom, aký je silný, a $g$ o tom, ako silno planéta ťahá loptu späť. Každá úloha o šikmom vrhu v tejto knihe vychádza z tejto dvojice.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103617-8" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **2.3 Symbolické premenné**
+
+Doteraz sme pod menami ukladali *čísla*. SageMath dokáže uložiť aj písmená. Príkaz `var()` zavádza symbolické premenné:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103617-8" class="markdown-preview" style="display: block;" data-original-markdown="## **2.3 Symbolické premenné**
+
+Doteraz sme pod menami ukladali *čísla*. SageMath dokáže uložiť aj písmená. Príkaz `var()` zavádza symbolické premenné:"><h2 id="23-symbolické-premenné"><strong>2.3 Symbolické premenné</strong></h2>
+<p>Doteraz sme pod menami ukladali <em>čísla</em>. SageMath dokáže uložiť aj písmená. Príkaz <code>var()</code> zavádza symbolické premenné:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># symbolické premenné zatiaľ nemajú hodnotu; sú to písmená, s ktorými môžeme počítať
+var('t alpha v0 g')
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103617-9" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Tu `t` je čas, `alpha` uhol kopu, `v0` začiatočná rýchlosť a `g` gravitačné zrýchlenie. Zatiaľ ide o prázdne miesta. Každý vzorec z nich zostavený zostane vzorcom.
+
+Teraz fyzika z oddielu 2.2 vstúpi do SageMath. Teleso vrhnuté pod uhlom $\alpha$ rýchlosťou $v_0$ sa pri zanedbaní odporu vzduchu pohybuje takto:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103617-9" class="markdown-preview" style="display: block;" data-original-markdown="Tu `t` je čas, `alpha` uhol kopu, `v0` začiatočná rýchlosť a `g` gravitačné zrýchlenie. Zatiaľ ide o prázdne miesta. Každý vzorec z nich zostavený zostane vzorcom.
+
+Teraz fyzika z oddielu 2.2 vstúpi do SageMath. Teleso vrhnuté pod uhlom $\alpha$ rýchlosťou $v_0$ sa pri zanedbaní odporu vzduchu pohybuje takto:"><p>Tu <code>t</code> je čas, <code>alpha</code> uhol kopu, <code>v0</code> začiatočná rýchlosť a <code>g</code> gravitačné zrýchlenie. Zatiaľ ide o prázdne miesta. Každý vzorec z nich zostavený zostane vzorcom.</p>
+<p>Teraz fyzika z oddielu 2.2 vstúpi do SageMath. Teleso vrhnuté pod uhlom $\alpha$ rýchlosťou $v_0$ sa pri zanedbaní odporu vzduchu pohybuje takto:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">x(t) = v0*cos(alpha)*t
+y(t) = v0*sin(alpha)*t - 1/2*g*t^2
+
+show(x(t))
+show(y(t))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103618-10" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Dve funkcie, definované presne ako pomenované čísla v kapitole 1, len teraz je každá veličina symbolická. Zátvorky v `x(t)` hovoria: funkcia závisí od `t`. Písmená `alpha`, `v0` a `g` v nej vystupujú ako parametre." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103618-10" class="markdown-preview" style="display: block;" data-original-markdown="Dve funkcie, definované presne ako pomenované čísla v kapitole 1, len teraz je každá veličina symbolická. Zátvorky v `x(t)` hovoria: funkcia závisí od `t`. Písmená `alpha`, `v0` a `g` v nej vystupujú ako parametre."><p>Dve funkcie, definované presne ako pomenované čísla v kapitole 1, len teraz je každá veličina symbolická. Zátvorky v <code>x(t)</code> hovoria: funkcia závisí od <code>t</code>. Písmená <code>alpha</code>, <code>v0</code> a <code>g</code> v nej vystupujú ako parametre.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103618-11" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **2.4 Kedy lopta dopadne?**
+
+Lopta dopadne, keď jej výška klesne späť na nulu. To je rovnica a SageMath rieši rovnice symbolicky pomocou `solve()`:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103618-11" class="markdown-preview" style="display: block;" data-original-markdown="## **2.4 Kedy lopta dopadne?**
+
+Lopta dopadne, keď jej výška klesne späť na nulu. To je rovnica a SageMath rieši rovnice symbolicky pomocou `solve()`:"><h2 id="24-kedy-lopta-dopadne"><strong>2.4 Kedy lopta dopadne?</strong></h2>
+<p>Lopta dopadne, keď jej výška klesne späť na nulu. To je rovnica a SageMath rieši rovnice symbolicky pomocou <code>solve()</code>:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">solutions = solve(y(t) == 0, t)
+solutions
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># ponecháme prvé riešenie (index 0) a odrežeme jeho pravú stranu
+t_land = solutions[0].rhs()
+show(t_land)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103618-12" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Dve odpovede: `t == 0` (samotný kop, samozrejme platí, ale nie je užitočné) a tá zaujímavá. Riešenia sa vrátia ako zoznam, takže druhé môžeme vybrať pomocou indexu a `.rhs()` ponechá iba hodnotu: lopta je vo vzduchu $2v_0\sin\alpha / g$. Teda dvojnásobok času do najvyššieho bodu, ako sa dá z symetrie očakávať.
+
+&gt; **Poznámka:** `solve()` vracia zoznam *rovníc*, nie hodnôt. Indexovanie pomocou `[0]` vyberie prvú rovnicu a `.rhs()` odreže jej pravú stranu (*right-hand side*). Ak sa vám niekedy vypíše `t == ...` tam, kde ste chceli samotný výraz, zabudli ste na `.rhs()`." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103618-12" class="markdown-preview" style="display: block;" data-original-markdown="Dve odpovede: `t == 0` (samotný kop, samozrejme platí, ale nie je užitočné) a tá zaujímavá. Riešenia sa vrátia ako zoznam, takže druhé môžeme vybrať pomocou indexu a `.rhs()` ponechá iba hodnotu: lopta je vo vzduchu $2v_0\sin\alpha / g$. Teda dvojnásobok času do najvyššieho bodu, ako sa dá z symetrie očakávať.
+
+&gt; **Poznámka:** `solve()` vracia zoznam *rovníc*, nie hodnôt. Indexovanie pomocou `[0]` vyberie prvú rovnicu a `.rhs()` odreže jej pravú stranu (*right-hand side*). Ak sa vám niekedy vypíše `t == ...` tam, kde ste chceli samotný výraz, zabudli ste na `.rhs()`."><p>Dve odpovede: <code>t == 0</code> (samotný kop, samozrejme platí, ale nie je užitočné) a tá zaujímavá. Riešenia sa vrátia ako zoznam, takže druhé môžeme vybrať pomocou indexu a <code>.rhs()</code> ponechá iba hodnotu: lopta je vo vzduchu $2v_0\sin\alpha / g$. Teda dvojnásobok času do najvyššieho bodu, ako sa dá z symetrie očakávať.</p>
+<blockquote>
+<p><strong>Poznámka:</strong> <code>solve()</code> vracia zoznam <em>rovníc</em>, nie hodnôt. Indexovanie pomocou <code>[0]</code> vyberie prvú rovnicu a <code>.rhs()</code> odreže jej pravú stranu (<em>right-hand side</em>). Ak sa vám niekedy vypíše <code>t == ...</code> tam, kde ste chceli samotný výraz, zabudli ste na <code>.rhs()</code>.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103618-13" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **2.5 Dostrel**
+
+Lopta dopadne vo vodorovnej vzdialenosti $x(t_{\mathrm{land}})$. Nechajme SageMath, nech dosadí čas dopadu do funkcie letu sám:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103618-13" class="markdown-preview" style="display: block;" data-original-markdown="## **2.5 Dostrel**
+
+Lopta dopadne vo vodorovnej vzdialenosti $x(t_{\mathrm{land}})$. Nechajme SageMath, nech dosadí čas dopadu do funkcie letu sám:"><h2 id="25-dostrel"><strong>2.5 Dostrel</strong></h2>
+<p>Lopta dopadne vo vodorovnej vzdialenosti $x(t_{\mathrm{land}})$. Nechajme SageMath, nech dosadí čas dopadu do funkcie letu sám:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">R(alpha) = x(t_land)
+show(R(alpha))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103618-14" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Funguje to, ale výsledok vyzerá nedokončene: sínusy a kosínusy sa navzájom bijú. Na to slúži `simplify()` a jeho ostrejší príbuzný `trig_reduce()`:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103618-14" class="markdown-preview" style="display: block;" data-original-markdown="Funguje to, ale výsledok vyzerá nedokončene: sínusy a kosínusy sa navzájom bijú. Na to slúži `simplify()` a jeho ostrejší príbuzný `trig_reduce()`:"><p>Funguje to, ale výsledok vyzerá nedokončene: sínusy a kosínusy sa navzájom bijú. Na to slúži <code>simplify()</code> a jeho ostrejší príbuzný <code>trig_reduce()</code>:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">show(R(alpha).trig_reduce())
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103618-15" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Je tu slávny výsledok aj so $\sin(2\alpha)$. Dostrel šikmo vrhnutého telesa je
+
+$$R = \dfrac{v_0^2 \sin 2\alpha}{g}.$$
+
+`trig_reduce()` je len jeden kľúč z celej súpravy. SageMath má celú poličku príkazov na zjednodušovanie, pretože „jednoduchý“ znamená v rôznych situáciách rôzne veci: niekedy chcete súčin, inokedy súčet, inokedy jednu goniometrickú funkciu namiesto troch. Krátka prehliadka na malých príkladoch:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103618-15" class="markdown-preview" style="display: block;" data-original-markdown="Je tu slávny výsledok aj so $\sin(2\alpha)$. Dostrel šikmo vrhnutého telesa je
+
+$$R = \dfrac{v_0^2 \sin 2\alpha}{g}.$$
+
+`trig_reduce()` je len jeden kľúč z celej súpravy. SageMath má celú poličku príkazov na zjednodušovanie, pretože „jednoduchý“ znamená v rôznych situáciách rôzne veci: niekedy chcete súčin, inokedy súčet, inokedy jednu goniometrickú funkciu namiesto troch. Krátka prehliadka na malých príkladoch:"><p>Je tu slávny výsledok aj so $\sin(2\alpha)$. Dostrel šikmo vrhnutého telesa je</p>
+<p>$$R = \dfrac{v_0^2 \sin 2\alpha}{g}.$$</p>
+<p><code>trig_reduce()</code> je len jeden kľúč z celej súpravy. SageMath má celú poličku príkazov na zjednodušovanie, pretože „jednoduchý“ znamená v rôznych situáciách rôzne veci: niekedy chcete súčin, inokedy súčet, inokedy jednu goniometrickú funkciu namiesto troch. Krátka prehliadka na malých príkladoch:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">var('x')
+
+show((x^2 - 4).factor())                       # rozklad na súčin: (x + 2)*(x - 2)
+show(((x + 1)^2 - x^2).expand())               # opak: roznásobenie, 2*x + 1
+show((sin(x)^2 + cos(x)^2).trig_simplify())    # zlúči goniometrické funkcie: 1
+show(((x - 1)/(x^2 - 1)).simplify_rational())  # skrátenie zlomkov: 1/(x + 1)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103619-16" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="`factor()` rozloží polynóm na súčin a `expand()` ho znova roznásobí na súčet, `trig_simplify()` zlučuje goniometrické funkcie (opak `trig_reduce()`, ktorý ich rozkladá) a `simplify_rational()` krátí zlomky. Ak nechcete rozmýšľať, ktorý z nich sa hodí, `simplify_full()` ich zreťazí naraz a často, ale nie vždy, dospeje k čitateľnému tvaru.
+
+&gt; **Poznámka:** Neexistuje jediný príkaz, ktorý by vzorec urobil „jednoduchým“, pretože SageMath nemôže vedieť, čo za jednoduché považujete *vy*: `(x + 2)*(x - 2)` aj `x^2 - 4` sú správne a každý je lepší na iný účel. Postupujte tak ako my: pozrite sa na výsledok, rozhodnite sa, čo vám na ňom vadí, a vyberte nástroj práve na to." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103619-16" class="markdown-preview" style="display: block;" data-original-markdown="`factor()` rozloží polynóm na súčin a `expand()` ho znova roznásobí na súčet, `trig_simplify()` zlučuje goniometrické funkcie (opak `trig_reduce()`, ktorý ich rozkladá) a `simplify_rational()` krátí zlomky. Ak nechcete rozmýšľať, ktorý z nich sa hodí, `simplify_full()` ich zreťazí naraz a často, ale nie vždy, dospeje k čitateľnému tvaru.
+
+&gt; **Poznámka:** Neexistuje jediný príkaz, ktorý by vzorec urobil „jednoduchým“, pretože SageMath nemôže vedieť, čo za jednoduché považujete *vy*: `(x + 2)*(x - 2)` aj `x^2 - 4` sú správne a každý je lepší na iný účel. Postupujte tak ako my: pozrite sa na výsledok, rozhodnite sa, čo vám na ňom vadí, a vyberte nástroj práve na to."><p><code>factor()</code> rozloží polynóm na súčin a <code>expand()</code> ho znova roznásobí na súčet, <code>trig_simplify()</code> zlučuje goniometrické funkcie (opak <code>trig_reduce()</code>, ktorý ich rozkladá) a <code>simplify_rational()</code> krátí zlomky. Ak nechcete rozmýšľať, ktorý z nich sa hodí, <code>simplify_full()</code> ich zreťazí naraz a často, ale nie vždy, dospeje k čitateľnému tvaru.</p>
+<blockquote>
+<p><strong>Poznámka:</strong> Neexistuje jediný príkaz, ktorý by vzorec urobil „jednoduchým“, pretože SageMath nemôže vedieť, čo za jednoduché považujete <em>vy</em>: <code>(x + 2)*(x - 2)</code> aj <code>x^2 - 4</code> sú správne a každý je lepší na iný účel. Postupujte tak ako my: pozrite sa na výsledok, rozhodnite sa, čo vám na ňom vadí, a vyberte nástroj práve na to.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103619-17" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **2.6 Optimálny uhol**
+
+
+Teraz skutočná otázka: pri ktorom $\alpha$ je $R$ najväčšie?
+
+Nástrojom na to je *derivácia*, a preto o nej niekoľko slov skôr než sa pustíme do výpočtov, pretože príkaz, ktorý ju počíta, nehovorí, čo derivácia *je*. Derivácia krivky v bode je smernica jej dotyčnice v tomto bode: priložte k krivke rovné pravítko tak, aby sa jej dotýkalo v jedinom bode a bolo naklonené presne tak ako krivka v tomto bode; pomer zvislého prírastku k vodorovnému posunu pravítka je hodnotou derivácie. Kladná derivácia znamená, že krivka stúpa, záporná, že klesá, a čím strmšia dotyčnica, tým rýchlejšie.
+
+Tu je spôsob, ako to *vidieť* na ľubovoľnej krivke, nielen na našom vzorci pre dostrel. Funkciu `plot()` si požičiavame z kapitoly 3 vopred; zatiaľ čítajte kód ako „nakresli tieto krivky“. Sínus je dobrý testovací prípad, pretože postupne robí všetky tri veci, ktoré krivka môže robiť:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103619-17" class="markdown-preview" style="display: block;" data-original-markdown="## **2.6 Optimálny uhol**
+
+
+Teraz skutočná otázka: pri ktorom $\alpha$ je $R$ najväčšie?
+
+Nástrojom na to je *derivácia*, a preto o nej niekoľko slov skôr než sa pustíme do výpočtov, pretože príkaz, ktorý ju počíta, nehovorí, čo derivácia *je*. Derivácia krivky v bode je smernica jej dotyčnice v tomto bode: priložte k krivke rovné pravítko tak, aby sa jej dotýkalo v jedinom bode a bolo naklonené presne tak ako krivka v tomto bode; pomer zvislého prírastku k vodorovnému posunu pravítka je hodnotou derivácie. Kladná derivácia znamená, že krivka stúpa, záporná, že klesá, a čím strmšia dotyčnica, tým rýchlejšie.
+
+Tu je spôsob, ako to *vidieť* na ľubovoľnej krivke, nielen na našom vzorci pre dostrel. Funkciu `plot()` si požičiavame z kapitoly 3 vopred; zatiaľ čítajte kód ako „nakresli tieto krivky“. Sínus je dobrý testovací prípad, pretože postupne robí všetky tri veci, ktoré krivka môže robiť:"><h2 id="26-optimálny-uhol"><strong>2.6 Optimálny uhol</strong></h2>
+<p>Teraz skutočná otázka: pri ktorom $\alpha$ je $R$ najväčšie?</p>
+<p>Nástrojom na to je <em>derivácia</em>, a preto o nej niekoľko slov skôr než sa pustíme do výpočtov, pretože príkaz, ktorý ju počíta, nehovorí, čo derivácia <em>je</em>. Derivácia krivky v bode je smernica jej dotyčnice v tomto bode: priložte k krivke rovné pravítko tak, aby sa jej dotýkalo v jedinom bode a bolo naklonené presne tak ako krivka v tomto bode; pomer zvislého prírastku k vodorovnému posunu pravítka je hodnotou derivácie. Kladná derivácia znamená, že krivka stúpa, záporná, že klesá, a čím strmšia dotyčnica, tým rýchlejšie.</p>
+<p>Tu je spôsob, ako to <em>vidieť</em> na ľubovoľnej krivke, nielen na našom vzorci pre dostrel. Funkciu <code>plot()</code> si požičiavame z kapitoly 3 vopred; zatiaľ čítajte kód ako „nakresli tieto krivky“. Sínus je dobrý testovací prípad, pretože postupne robí všetky tri veci, ktoré krivka môže robiť:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">var('x')
+
+f(x) = sin(x)
+
+# dotyčnica v ľubovoľnom bode x0: hodnota plus smernica krát posun
+tangent(x, x0) = f(x0) + diff(f(x), x).subs(x = x0)*(x - x0)
+
+# tri body: stúpanie, maximum, minimum
+tan_rise  = tangent(x, pi/3)     # derivácia cos(pi/3) = 1/2, kladná
+tan_max   = tangent(x, pi/2)      # derivácia cos(pi/2) = 0, vodorovná
+tan_min   = tangent(x, 3*pi/2)    # derivácia cos(3*pi/2) = 0, vodorovná
+
+# tri dotyčnice
+sine_plot = plot(f(x), xmin=0, xmax=2*pi, color = 'blue', legend_label = '$\\sin(x)$')
+tan_rise_plot = plot(tan_rise, xmin=pi/3-0.7, xmax=pi/3+0.7, color = 'red', legend_label = 'tangent at x = $\\pi/3$', linestyle='--')
+tan_max_plot = plot(tan_max, xmin=pi/2-1, xmax=pi/2+1, color = 'green', legend_label = 'tangent at x = $\\pi/2$ (max)', linestyle='--')
+tan_min_plot = plot(tan_min, xmin=3*pi/2-1, xmax=3*pi/2+1, color = 'purple', legend_label = 'tangent at x = $3\\pi/2$ (min)', linestyle='--')
+
+combined_plot = sine_plot + tan_rise_plot + tan_max_plot + tan_min_plot
+
+combined_plot.show(frame=True)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103619-18" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Všimnite si smernice. V bode $x = \pi/3$ dotyčnica stúpa spolu so sínusoidou: krivka ide nahor a sklon dotyčnice je tam hodnotou derivácie, teda kladnej. V bode $x = \pi/2$ dosahuje sínusoida vrchol a jej dotyčnica je celkom vodorovná: derivácia je nulová. V bode $x = 3\pi/2$ sínusoida dosahuje dno a dotyčnica je opäť vodorovná: aj tam je derivácia nulová. Nulová derivácia teda nevypovedá „maximum“ – vrchol aj dno ju majú. Rozdiel je v tom, čo krivka v okolí bodu *robí*:
+
+- v **maxime** krivka stúpa, vyrovná sa a potom klesá: derivácia mení znamienko z kladného na záporné;
+- v **minime** krivka klesá, vyrovná sa a potom stúpa: derivácia mení znamienko zo záporného na kladné.
+
+To je metóda tohto oddielu na jednom obrázku: **nájdite body, v ktorých je dotyčnica vodorovná, a potom zistite, o aký druh bodu ide.**
+
+Rovnaká hra na krivke, ktorá nás naozaj zaujíma, tentoraz s dotyčnicou pritlačenou k maximu. Dostrel kopu rýchlosťou 15 m/s na Zemi, vykreslený v závislosti od uhla:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103619-18" class="markdown-preview" style="display: block;" data-original-markdown="Všimnite si smernice. V bode $x = \pi/3$ dotyčnica stúpa spolu so sínusoidou: krivka ide nahor a sklon dotyčnice je tam hodnotou derivácie, teda kladnej. V bode $x = \pi/2$ dosahuje sínusoida vrchol a jej dotyčnica je celkom vodorovná: derivácia je nulová. V bode $x = 3\pi/2$ sínusoida dosahuje dno a dotyčnica je opäť vodorovná: aj tam je derivácia nulová. Nulová derivácia teda nevypovedá „maximum“ – vrchol aj dno ju majú. Rozdiel je v tom, čo krivka v okolí bodu *robí*:
+
+- v **maxime** krivka stúpa, vyrovná sa a potom klesá: derivácia mení znamienko z kladného na záporné;
+- v **minime** krivka klesá, vyrovná sa a potom stúpa: derivácia mení znamienko zo záporného na kladné.
+
+To je metóda tohto oddielu na jednom obrázku: **nájdite body, v ktorých je dotyčnica vodorovná, a potom zistite, o aký druh bodu ide.**
+
+Rovnaká hra na krivke, ktorá nás naozaj zaujíma, tentoraz s dotyčnicou pritlačenou k maximu. Dostrel kopu rýchlosťou 15 m/s na Zemi, vykreslený v závislosti od uhla:"><p>Všimnite si smernice. V bode $x = \pi/3$ dotyčnica stúpa spolu so sínusoidou: krivka ide nahor a sklon dotyčnice je tam hodnotou derivácie, teda kladnej. V bode $x = \pi/2$ dosahuje sínusoida vrchol a jej dotyčnica je celkom vodorovná: derivácia je nulová. V bode $x = 3\pi/2$ sínusoida dosahuje dno a dotyčnica je opäť vodorovná: aj tam je derivácia nulová. Nulová derivácia teda nevypovedá „maximum“ – vrchol aj dno ju majú. Rozdiel je v tom, čo krivka v okolí bodu <em>robí</em>:</p>
+<ul>
+<li>v <strong>maxime</strong> krivka stúpa, vyrovná sa a potom klesá: derivácia mení znamienko z kladného na záporné;</li>
+<li>v <strong>minime</strong> krivka klesá, vyrovná sa a potom stúpa: derivácia mení znamienko zo záporného na kladné.</li>
+</ul>
+<p>To je metóda tohto oddielu na jednom obrázku: <strong>nájdite body, v ktorých je dotyčnica vodorovná, a potom zistite, o aký druh bodu ide.</strong></p>
+<p>Rovnaká hra na krivke, ktorá nás naozaj zaujíma, tentoraz s dotyčnicou pritlačenou k maximu. Dostrel kopu rýchlosťou 15 m/s na Zemi, vykreslený v závislosti od uhla:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">var('a')
+
+R_curve(a) = R(a).subs(v0 = 15, g = 9.81)
+
+# smernica krivky dostrelu pri 30 stupňoch
+slope30 = diff(R_curve(a), a).subs(a = pi/6)
+tangent30(a) = R_curve(pi/6) + slope30*(a - pi/6)
+
+# a dotyčnica v predpokladanom maxime, pri 45 stupňoch
+slope45 = diff(R_curve(a), a).subs(a = pi/4)
+tangent45(a) = R_curve(pi/4) + slope45*(a - pi/4)
+
+range_plot   = plot(R_curve(a), xmin = 0, xmax = pi/2, color = 'blue', legend_label = 'range R')
+tan30_plot  = plot(tangent30(a), xmin = 0, xmax = pi/2, color = 'red', legend_label = f'tangent at 30 degrees or {round(30*pi/180, 2)} radians', linestyle = '--')
+tan45_plot  = plot(tangent45(a), xmin = 0, xmax = pi/2, color = 'green', legend_label = f'tangent at 45 degrees or {round(45*pi/180, 2)} radians', linestyle = '--')
+
+combined_plot = range_plot + tan30_plot + tan45_plot
+
+combined_plot.show(frame = True, axes_labels = ['angle [rad]', 'R [m]'])
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103619-19" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Červená priamka sa dotýka modrej krivky pri 30 stupňoch a preberá jej sklon: dostrel tam ešte rastie. Zelená priamka leží vodorovne na vrchole kopca pri 45 stupňoch: derivácia je nulová presne v maxime. Posúvajte dotyčnicu rukou po krivke a pocítite, ako metóda funguje – stúpanie, vyrovnanie, prevrátenie.
+
+
+SageMath vypočíta smernicu dotyčnice za nás pomocou `diff()` („differentiate“, teda „derivovať“, čiže nájsť deriváciu):" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103619-19" class="markdown-preview" style="display: block;" data-original-markdown="Červená priamka sa dotýka modrej krivky pri 30 stupňoch a preberá jej sklon: dostrel tam ešte rastie. Zelená priamka leží vodorovne na vrchole kopca pri 45 stupňoch: derivácia je nulová presne v maxime. Posúvajte dotyčnicu rukou po krivke a pocítite, ako metóda funguje – stúpanie, vyrovnanie, prevrátenie.
+
+
+SageMath vypočíta smernicu dotyčnice za nás pomocou `diff()` („differentiate“, teda „derivovať“, čiže nájsť deriváciu):"><p>Červená priamka sa dotýka modrej krivky pri 30 stupňoch a preberá jej sklon: dostrel tam ešte rastie. Zelená priamka leží vodorovne na vrchole kopca pri 45 stupňoch: derivácia je nulová presne v maxime. Posúvajte dotyčnicu rukou po krivke a pocítite, ako metóda funguje – stúpanie, vyrovnanie, prevrátenie.</p>
+<p>SageMath vypočíta smernicu dotyčnice za nás pomocou <code>diff()</code> („differentiate“, teda „derivovať“, čiže nájsť deriváciu):</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">show(diff(R(alpha), alpha))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103619-20" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Poznámka:** Ručné derivovanie sa riadi malým súborom pravidiel: pri mocninách sa exponent presunie dopredu a zníži o jednotku, $\sin$ sa zmení na $\cos$ a súčiny či zložené funkcie majú vlastné postupy (pravidlo o derivácii súčinu a zloženej funkcie). Náš vzorec pre dostrel už vyžaduje pravidlo o derivácii zloženej funkcie, pretože obsahuje $\sin 2\alpha$. Praktická výhoda `diff()` je, že SageMath pozná všetky pravidlá a uplatňuje ich za nás: na nájdenie maxima si nemusíte pamätať ani jedno a vzorce sú niekedy aj tak príliš dlhé na ručné derivovanie.
+
+Deriváciu položíme rovnú nule a riešime, tentoraz vzhľadom na `alpha`:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103619-20" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Poznámka:** Ručné derivovanie sa riadi malým súborom pravidiel: pri mocninách sa exponent presunie dopredu a zníži o jednotku, $\sin$ sa zmení na $\cos$ a súčiny či zložené funkcie majú vlastné postupy (pravidlo o derivácii súčinu a zloženej funkcie). Náš vzorec pre dostrel už vyžaduje pravidlo o derivácii zloženej funkcie, pretože obsahuje $\sin 2\alpha$. Praktická výhoda `diff()` je, že SageMath pozná všetky pravidlá a uplatňuje ich za nás: na nájdenie maxima si nemusíte pamätať ani jedno a vzorce sú niekedy aj tak príliš dlhé na ručné derivovanie.
+
+Deriváciu položíme rovnú nule a riešime, tentoraz vzhľadom na `alpha`:"><blockquote>
+<p><strong>Poznámka:</strong> Ručné derivovanie sa riadi malým súborom pravidiel: pri mocninách sa exponent presunie dopredu a zníži o jednotku, $\sin$ sa zmení na $\cos$ a súčiny či zložené funkcie majú vlastné postupy (pravidlo o derivácii súčinu a zloženej funkcie). Náš vzorec pre dostrel už vyžaduje pravidlo o derivácii zloženej funkcie, pretože obsahuje $\sin 2\alpha$. Praktická výhoda <code>diff()</code> je, že SageMath pozná všetky pravidlá a uplatňuje ich za nás: na nájdenie maxima si nemusíte pamätať ani jedno a vzorce sú niekedy aj tak príliš dlhé na ručné derivovanie.</p>
+</blockquote>
+<p>Deriváciu položíme rovnú nule a riešime, tentoraz vzhľadom na <code>alpha</code>:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">optimal = solve(diff(R(alpha), alpha) == 0, alpha)
+optimal
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103619-21" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Jedna množina riešení: $\alpha = \pi/4$, teda **45 stupňov** (plus celé obraty a zrkadlové kopy, ktoré dopadnú dozadu). Všimnite si, čo v odpovedi *nie je*: ani $v_0$, ani $g$. Optimálny uhol nezávisí od toho, ako silno kopnete, ani od toho, na ktorej planéte stojíte.
+
+Nulová derivácia však hovorí iba to, že *dotyčnica je tam vodorovná*, a obrázok so sínusoidou už ukázal, čo to znamená: vrchol kopca aj dno doliny majú vodorovnú dotyčnicu. Skôr než začneme oslavovať, overme, o aký druh bodu ide. Nástrojom je *znamienko* derivácie na oboch stranách bodu, presne tá zmena znamienka, ktorú sme odčítali zo sínusoidy. Pozrime sa na smernicu krivky dostrelu pod a nad 45 stupňami, v dvoch malých krokoch namiesto jedného dlhého riadku:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103619-21" class="markdown-preview" style="display: block;" data-original-markdown="Jedna množina riešení: $\alpha = \pi/4$, teda **45 stupňov** (plus celé obraty a zrkadlové kopy, ktoré dopadnú dozadu). Všimnite si, čo v odpovedi *nie je*: ani $v_0$, ani $g$. Optimálny uhol nezávisí od toho, ako silno kopnete, ani od toho, na ktorej planéte stojíte.
+
+Nulová derivácia však hovorí iba to, že *dotyčnica je tam vodorovná*, a obrázok so sínusoidou už ukázal, čo to znamená: vrchol kopca aj dno doliny majú vodorovnú dotyčnicu. Skôr než začneme oslavovať, overme, o aký druh bodu ide. Nástrojom je *znamienko* derivácie na oboch stranách bodu, presne tá zmena znamienka, ktorú sme odčítali zo sínusoidy. Pozrime sa na smernicu krivky dostrelu pod a nad 45 stupňami, v dvoch malých krokoch namiesto jedného dlhého riadku:"><p>Jedna množina riešení: $\alpha = \pi/4$, teda <strong>45 stupňov</strong> (plus celé obraty a zrkadlové kopy, ktoré dopadnú dozadu). Všimnite si, čo v odpovedi <em>nie je</em>: ani $v_0$, ani $g$. Optimálny uhol nezávisí od toho, ako silno kopnete, ani od toho, na ktorej planéte stojíte.</p>
+<p>Nulová derivácia však hovorí iba to, že <em>dotyčnica je tam vodorovná</em>, a obrázok so sínusoidou už ukázal, čo to znamená: vrchol kopca aj dno doliny majú vodorovnú dotyčnicu. Skôr než začneme oslavovať, overme, o aký druh bodu ide. Nástrojom je <em>znamienko</em> derivácie na oboch stranách bodu, presne tá zmena znamienka, ktorú sme odčítali zo sínusoidy. Pozrime sa na smernicu krivky dostrelu pod a nad 45 stupňami, v dvoch malých krokoch namiesto jedného dlhého riadku:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># derivujeme raz a deriváciu uchováme ako samostatný vzorec
+dR = diff(R(alpha), alpha)
+show(dR)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># smernica krivky dostrelu pri 30 a pri 60 stupňoch
+show(dR.subs(alpha = pi/6))    # kladná: dostrel pri 30 stupňoch ešte rastie
+show(dR.subs(alpha = pi/3))    # záporná: dostrel pri 60 stupňoch už klesá
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103620-22" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Pod 45 stupňami kladná, nad nimi záporná: derivácia mení znamienko z plus na mínus pri 45 stupňoch a táto zmena znamienka je znakom **maxima**.
+
+Druhá kontrola nepotrebuje derivácie vôbec: vypočítame dostrel trochu vľavo a trochu vpravo od predpokladaného vrcholu a porovnáme (na chvíľu si požičiame čísla z oddielu 2.7):" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103620-22" class="markdown-preview" style="display: block;" data-original-markdown="Pod 45 stupňami kladná, nad nimi záporná: derivácia mení znamienko z plus na mínus pri 45 stupňoch a táto zmena znamienka je znakom **maxima**.
+
+Druhá kontrola nepotrebuje derivácie vôbec: vypočítame dostrel trochu vľavo a trochu vpravo od predpokladaného vrcholu a porovnáme (na chvíľu si požičiame čísla z oddielu 2.7):"><p>Pod 45 stupňami kladná, nad nimi záporná: derivácia mení znamienko z plus na mínus pri 45 stupňoch a táto zmena znamienka je znakom <strong>maxima</strong>.</p>
+<p>Druhá kontrola nepotrebuje derivácie vôbec: vypočítame dostrel trochu vľavo a trochu vpravo od predpokladaného vrcholu a porovnáme (na chvíľu si požičiame čísla z oddielu 2.7):</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># oba susedné uhly od 45 stupňov by mali dopadnúť kratšie ako samotných 45 stupňov
+R_values = R.subs(v0 = 15, g = 9.81)
+N(R_values(40*pi/180))    # plochší kop, 40 stupňov
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">N(R_values(45*pi/180))    # kandidát na maximum
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">N(R_values(50*pi/180))    # vyšší kop, 50 stupňov
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103620-23" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="22,6 m, 22,9 m, 22,6 m: obaja susedia prehrávajú s kandidátom uprostred.
+
+A pre tých, ktorí uprednostňujú jeden výpočet namiesto dvoch kontrol znamienka, diferenciálny počet zhrnie kontrolu do jediného čísla: **druhej derivácie**. Ak je prvá derivácia smernicou krivky, druhá je smernica *smernice*; maximum je tam, kde smernica klesá cez nulu, takže druhá derivácia je tam záporná:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103620-23" class="markdown-preview" style="display: block;" data-original-markdown="22,6 m, 22,9 m, 22,6 m: obaja susedia prehrávajú s kandidátom uprostred.
+
+A pre tých, ktorí uprednostňujú jeden výpočet namiesto dvoch kontrol znamienka, diferenciálny počet zhrnie kontrolu do jediného čísla: **druhej derivácie**. Ak je prvá derivácia smernicou krivky, druhá je smernica *smernice*; maximum je tam, kde smernica klesá cez nulu, takže druhá derivácia je tam záporná:"><p>22,6 m, 22,9 m, 22,6 m: obaja susedia prehrávajú s kandidátom uprostred.</p>
+<p>A pre tých, ktorí uprednostňujú jeden výpočet namiesto dvoch kontrol znamienka, diferenciálny počet zhrnie kontrolu do jediného čísla: <strong>druhej derivácie</strong>. Ak je prvá derivácia smernicou krivky, druhá je smernica <em>smernice</em>; maximum je tam, kde smernica klesá cez nulu, takže druhá derivácia je tam záporná:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># derivujeme R dvakrát, uchováme vzorec a dosadíme 45 stupňov
+d2R = diff(R(alpha), alpha, 2)
+show(d2R.subs(alpha = pi/4))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103620-24" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Pre náš vzorec je to $-4v_0^2/g$, čo je záporné pre ľubovoľný kop na ľubovoľnej planéte, takže krivka je zakrivená nadol: $\pi/4$ je vrchol. A všimnite si symetriu okolo neho:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103620-24" class="markdown-preview" style="display: block;" data-original-markdown="Pre náš vzorec je to $-4v_0^2/g$, čo je záporné pre ľubovoľný kop na ľubovoľnej planéte, takže krivka je zakrivená nadol: $\pi/4$ je vrchol. A všimnite si symetriu okolo neho:"><p>Pre náš vzorec je to $-4v_0^2/g$, čo je záporné pre ľubovoľný kop na ľubovoľnej planéte, takže krivka je zakrivená nadol: $\pi/4$ je vrchol. A všimnite si symetriu okolo neho:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># kop pod 30 stupňami dosiahne presne tak ďaleko ako kop pod 60 stupňami
+simplify(R(pi/6) - R(pi/3))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103621-25" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Nula. Dva uhly, ktorých súčet je 90 stupňov, majú rovnaký dostrel – jeden plochý a rýchly, druhý vysoký a pomalý. Osamotený zostáva len kop pod 45 stupňami." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103621-25" class="markdown-preview" style="display: block;" data-original-markdown="Nula. Dva uhly, ktorých súčet je 90 stupňov, majú rovnaký dostrel – jeden plochý a rýchly, druhý vysoký a pomalý. Osamotený zostáva len kop pod 45 stupňami."><p>Nula. Dva uhly, ktorých súčet je 90 stupňov, majú rovnaký dostrel – jeden plochý a rýchly, druhý vysoký a pomalý. Osamotený zostáva len kop pod 45 stupňami.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103621-26" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **2.7 Čísla pre našu futbalovú loptu**
+
+Vzorce sú pekné, ale na futbalovom ihrisku sú metre. Hodnoty dosadíme pomocou `subs()` a aritmetiku prenecháme `N()`:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103621-26" class="markdown-preview" style="display: block;" data-original-markdown="## **2.7 Čísla pre našu futbalovú loptu**
+
+Vzorce sú pekné, ale na futbalovom ihrisku sú metre. Hodnoty dosadíme pomocou `subs()` a aritmetiku prenecháme `N()`:"><h2 id="27-čísla-pre-našu-futbalovú-loptu"><strong>2.7 Čísla pre našu futbalovú loptu</strong></h2>
+<p>Vzorce sú pekné, ale na futbalovom ihrisku sú metre. Hodnoty dosadíme pomocou <code>subs()</code> a aritmetiku prenecháme <code>N()</code>:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># kop rýchlosťou 15 m/s, pozemská gravitácia, 45 stupňov
+N(R(pi/4).subs(v0 = 15, g = 9.81))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103621-27" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Približne `22.9` m. A keď už sme tu, vypočítajme čas letu a maximálnu výšku toho istého kopu:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103621-27" class="markdown-preview" style="display: block;" data-original-markdown="Približne `22.9` m. A keď už sme tu, vypočítajme čas letu a maximálnu výšku toho istého kopu:"><p>Približne <code>22.9</code> m. A keď už sme tu, vypočítajme čas letu a maximálnu výšku toho istého kopu:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># ako dlho je lopta vo vzduchu
+N(t_land.subs(v0 = 15, alpha = pi/4, g = 9.81))
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># symetria: najvyšší bod nastáva v polovici času letu
+t_apex = t_land/2
+N(t_apex.subs(v0 = 15, alpha = pi/4, g = 9.81))
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># výška lopty v tomto okamihu
+N(y(t_apex).subs(v0 = 15, alpha = pi/4, g = 9.81))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103621-28" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Ten istý výsledok získame aj pomocou derivácie z oddielu 2.6, len tentoraz s dosadenými číslami. Najvyšší bod je tam, kde je dotyčnica ku krivke výšky vodorovná, preto najprv zapíšme túto podmienku pre náš kop a pozrime sa na ňu skôr, než ju vyriešime:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103621-28" class="markdown-preview" style="display: block;" data-original-markdown="Ten istý výsledok získame aj pomocou derivácie z oddielu 2.6, len tentoraz s dosadenými číslami. Najvyšší bod je tam, kde je dotyčnica ku krivke výšky vodorovná, preto najprv zapíšme túto podmienku pre náš kop a pozrime sa na ňu skôr, než ju vyriešime:"><p>Ten istý výsledok získame aj pomocou derivácie z oddielu 2.6, len tentoraz s dosadenými číslami. Najvyšší bod je tam, kde je dotyčnica ku krivke výšky vodorovná, preto najprv zapíšme túto podmienku pre náš kop a pozrime sa na ňu skôr, než ju vyriešime:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># podmienka vodorovnej dotyčnice ku krivke výšky, s dosadenými číslami
+apex_eq = diff(y(t), t).subs(v0 = 15, alpha = pi/4, g = 9.81) == 0
+show(apex_eq)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103621-29" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Klesajúca priamka položená rovná nule a jej jediný koreň je najvyšší bod. Teraz ju vyriešme:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103621-29" class="markdown-preview" style="display: block;" data-original-markdown="Klesajúca priamka položená rovná nule a jej jediný koreň je najvyšší bod. Teraz ju vyriešme:"><p>Klesajúca priamka položená rovná nule a jej jediný koreň je najvyšší bod. Teraz ju vyriešme:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># najvyšší bod z derivácie: jedna rovnica, jeden koreň
+t_apex_d = solve(apex_eq, t)[0].rhs()
+N(t_apex_d)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># ten istý najvyšší bod, teda aj tá istá výška
+N(y(t_apex_d).subs(v0 = 15, alpha = pi/4, g = 9.81))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103622-30" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Rovnakých 1,08 s a rovnakých 5,7 m: skratka cez symetriu a derivácia sa zhodujú. Skutočný brankár by poznamenal, že odpor vzduchu to všetko skracuje; vzduch vrátime do výpočtov v niektorej z neskorších kapitol.
+
+&gt; **Poznámka:** Všimnite si poradie krokov, ktoré sme použili, pretože je to štandardný postup pri symbolických výpočtoch vo fyzike: *sformulovať model* (dve funkcie), *vyriešiť jednu podmienku* (dopad), *dosadiť do druhej* (dostrel), *derivovať kvôli optimalizácii*, *čísla dosadiť až úplne na konci*. Čísla vstúpili práve raz, na konci. Porovnajte to s kalkulačkou, kde sa k číslam musíte zaviazať hneď v prvom riadku a každý ďalší krok dedí zaokrúhlenie." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103622-30" class="markdown-preview" style="display: block;" data-original-markdown="Rovnakých 1,08 s a rovnakých 5,7 m: skratka cez symetriu a derivácia sa zhodujú. Skutočný brankár by poznamenal, že odpor vzduchu to všetko skracuje; vzduch vrátime do výpočtov v niektorej z neskorších kapitol.
+
+&gt; **Poznámka:** Všimnite si poradie krokov, ktoré sme použili, pretože je to štandardný postup pri symbolických výpočtoch vo fyzike: *sformulovať model* (dve funkcie), *vyriešiť jednu podmienku* (dopad), *dosadiť do druhej* (dostrel), *derivovať kvôli optimalizácii*, *čísla dosadiť až úplne na konci*. Čísla vstúpili práve raz, na konci. Porovnajte to s kalkulačkou, kde sa k číslam musíte zaviazať hneď v prvom riadku a každý ďalší krok dedí zaokrúhlenie."><p>Rovnakých 1,08 s a rovnakých 5,7 m: skratka cez symetriu a derivácia sa zhodujú. Skutočný brankár by poznamenal, že odpor vzduchu to všetko skracuje; vzduch vrátime do výpočtov v niektorej z neskorších kapitol.</p>
+<blockquote>
+<p><strong>Poznámka:</strong> Všimnite si poradie krokov, ktoré sme použili, pretože je to štandardný postup pri symbolických výpočtoch vo fyzike: <em>sformulovať model</em> (dve funkcie), <em>vyriešiť jednu podmienku</em> (dopad), <em>dosadiť do druhej</em> (dostrel), <em>derivovať kvôli optimalizácii</em>, <em>čísla dosadiť až úplne na konci</em>. Čísla vstúpili práve raz, na konci. Porovnajte to s kalkulačkou, kde sa k číslam musíte zaviazať hneď v prvom riadku a každý ďalší krok dedí zaokrúhlenie.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103622-31" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **Cvičenia**
+
+**Cvičenie 1.** Kopnete z okraja útesu vysokého **10 m** rýchlosťou 15 m/s. Podmienka dopadu je teraz $y(t) = -10$, nie $y(t) = 0$. Vyriešte ju pomocou `solve()`, vyberte kladný koreň a nájdite dostrel ako funkciu uhla. Je 45 stupňov stále optimálny uhol? Vypočítajte dostrely pre 35, 45 a 55 stupňov a porovnajte ich.
+
+**Cvičenie 2.** Pre plochý kop rýchlosťou 15 m/s použite `solve()` na rovnicu $y(t) = 2{,}44~\mathrm{m}$ (brvno) a zistite, v akej vzdialenosti od bránkovej čiary by kop pod uhlom 45 stupňov ešte preletel nad brvnom.
+
+**Cvičenie 3.** Pri trestnom hode v basketbale je vzdialenosť od koša 4,6 m, kôš je vo výške 3,05 m a lopta opúšťa ruky vo výške 2,0 m. Skúste rôzne uhly pri odhodovej rýchlosti 7 m/s: vyriešte $x(t) = 4{,}6$ vzhľadom na $t$, dosaďte do $y(t)$ a zistite, ktoré uhly privedú loptu do výšky 3,05 m. Mali by ste nájsť dva: nízky tvrdý hod a vysoký oblúk. Ktorý by ste radšej volili?
+
+**Cvičenie 4.** Dokážte symbolicky, že maximálna výška kopu je $h_{max} = v_0^2 \sin^2\alpha / (2g)$: vyriešte $\mathrm{d}y/\mathrm{d}t = 0$ vzhľadom na $t$, dosaďte do $y(t)$ a použite `simplify()`." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103622-31" class="markdown-preview" style="display: block;" data-original-markdown="## **Cvičenia**
+
+**Cvičenie 1.** Kopnete z okraja útesu vysokého **10 m** rýchlosťou 15 m/s. Podmienka dopadu je teraz $y(t) = -10$, nie $y(t) = 0$. Vyriešte ju pomocou `solve()`, vyberte kladný koreň a nájdite dostrel ako funkciu uhla. Je 45 stupňov stále optimálny uhol? Vypočítajte dostrely pre 35, 45 a 55 stupňov a porovnajte ich.
+
+**Cvičenie 2.** Pre plochý kop rýchlosťou 15 m/s použite `solve()` na rovnicu $y(t) = 2{,}44~\mathrm{m}$ (brvno) a zistite, v akej vzdialenosti od bránkovej čiary by kop pod uhlom 45 stupňov ešte preletel nad brvnom.
+
+**Cvičenie 3.** Pri trestnom hode v basketbale je vzdialenosť od koša 4,6 m, kôš je vo výške 3,05 m a lopta opúšťa ruky vo výške 2,0 m. Skúste rôzne uhly pri odhodovej rýchlosti 7 m/s: vyriešte $x(t) = 4{,}6$ vzhľadom na $t$, dosaďte do $y(t)$ a zistite, ktoré uhly privedú loptu do výšky 3,05 m. Mali by ste nájsť dva: nízky tvrdý hod a vysoký oblúk. Ktorý by ste radšej volili?
+
+**Cvičenie 4.** Dokážte symbolicky, že maximálna výška kopu je $h_{max} = v_0^2 \sin^2\alpha / (2g)$: vyriešte $\mathrm{d}y/\mathrm{d}t = 0$ vzhľadom na $t$, dosaďte do $y(t)$ a použite `simplify()`."><h2 id="cvičenia"><strong>Cvičenia</strong></h2>
+<p><strong>Cvičenie 1.</strong> Kopnete z okraja útesu vysokého <strong>10 m</strong> rýchlosťou 15 m/s. Podmienka dopadu je teraz $y(t) = -10$, nie $y(t) = 0$. Vyriešte ju pomocou <code>solve()</code>, vyberte kladný koreň a nájdite dostrel ako funkciu uhla. Je 45 stupňov stále optimálny uhol? Vypočítajte dostrely pre 35, 45 a 55 stupňov a porovnajte ich.</p>
+<p><strong>Cvičenie 2.</strong> Pre plochý kop rýchlosťou 15 m/s použite <code>solve()</code> na rovnicu $y(t) = 2{,}44~\mathrm{m}$ (brvno) a zistite, v akej vzdialenosti od bránkovej čiary by kop pod uhlom 45 stupňov ešte preletel nad brvnom.</p>
+<p><strong>Cvičenie 3.</strong> Pri trestnom hode v basketbale je vzdialenosť od koša 4,6 m, kôš je vo výške 3,05 m a lopta opúšťa ruky vo výške 2,0 m. Skúste rôzne uhly pri odhodovej rýchlosti 7 m/s: vyriešte $x(t) = 4{,}6$ vzhľadom na $t$, dosaďte do $y(t)$ a zistite, ktoré uhly privedú loptu do výšky 3,05 m. Mali by ste nájsť dva: nízky tvrdý hod a vysoký oblúk. Ktorý by ste radšej volili?</p>
+<p><strong>Cvičenie 4.</strong> Dokážte symbolicky, že maximálna výška kopu je $h_{max} = v_0^2 \sin^2\alpha / (2g)$: vyriešte $\mathrm{d}y/\mathrm{d}t = 0$ vzhľadom na $t$, dosaďte do $y(t)$ a použite <code>simplify()</code>.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175103622-32" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **2.8 Čo teraz viete**
+
+- **Teleso vrhnuté šikmo sa rozkladá na zložky**: $v_x = v_0\cos\alpha$ pozdĺž ihriska, $v_y = v_0\sin\alpha$ nahor – odvesny pravouhlého trojuholníka s preponou $v_0$ (rýchlosť kopu); oba smery sa potom vyvíjajú nezávisle, jeden rovnomerným pohybom, druhý pádom.
+
+- **`var()`** zavádza symbolické premenné; vzorce z nich zostavené zostávajú vzorcami a možno s nimi presne manipulovať.
+- **`solve(equation, unknown)`** vráti zoznam riešení vo forme rovníc; jedno vyberiete pomocou `[i]` a pravú stranu odrežete pomocou `.rhs()`.
+- **`simplify()`, `trig_reduce()`, `factor()`, `expand()`, `trig_simplify()`, `simplify_rational()`, `simplify_full()`** upravujú vzorce, každý po svojom; upravený vzorec sa ľahšie porovnáva s učebnicou.
+- **`diff(expr, x)`** derivuje; derivácia je smernica dotyčnice, obrázok so sínusoidou ukázal všetky tri prípady naraz (stúpajúca dotyčnica, vodorovná v maxime, vodorovná v minime) a maximá a minimá sa nachádzajú tam, kde je derivácia nulová, čo potvrdí zmena znamienka derivácie v okolí bodu alebo znamienko druhej derivácie.
+- **`.subs(name = value)`** dosadzuje čísla do vzorcov; dosadzujte raz, na konci, a nechajte `N()` dokončiť prácu." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175103622-32" class="markdown-preview" style="display: block;" data-original-markdown="## **2.8 Čo teraz viete**
+
+- **Teleso vrhnuté šikmo sa rozkladá na zložky**: $v_x = v_0\cos\alpha$ pozdĺž ihriska, $v_y = v_0\sin\alpha$ nahor – odvesny pravouhlého trojuholníka s preponou $v_0$ (rýchlosť kopu); oba smery sa potom vyvíjajú nezávisle, jeden rovnomerným pohybom, druhý pádom.
+
+- **`var()`** zavádza symbolické premenné; vzorce z nich zostavené zostávajú vzorcami a možno s nimi presne manipulovať.
+- **`solve(equation, unknown)`** vráti zoznam riešení vo forme rovníc; jedno vyberiete pomocou `[i]` a pravú stranu odrežete pomocou `.rhs()`.
+- **`simplify()`, `trig_reduce()`, `factor()`, `expand()`, `trig_simplify()`, `simplify_rational()`, `simplify_full()`** upravujú vzorce, každý po svojom; upravený vzorec sa ľahšie porovnáva s učebnicou.
+- **`diff(expr, x)`** derivuje; derivácia je smernica dotyčnice, obrázok so sínusoidou ukázal všetky tri prípady naraz (stúpajúca dotyčnica, vodorovná v maxime, vodorovná v minime) a maximá a minimá sa nachádzajú tam, kde je derivácia nulová, čo potvrdí zmena znamienka derivácie v okolí bodu alebo znamienko druhej derivácie.
+- **`.subs(name = value)`** dosadzuje čísla do vzorcov; dosadzujte raz, na konci, a nechajte `N()` dokončiť prácu."><h2 id="28-čo-teraz-viete"><strong>2.8 Čo teraz viete</strong></h2>
+<ul>
+<li><p><strong>Teleso vrhnuté šikmo sa rozkladá na zložky</strong>: $v_x = v_0\cos\alpha$ pozdĺž ihriska, $v_y = v_0\sin\alpha$ nahor – odvesny pravouhlého trojuholníka s preponou $v_0$ (rýchlosť kopu); oba smery sa potom vyvíjajú nezávisle, jeden rovnomerným pohybom, druhý pádom.</p>
+</li>
+<li><p><strong><code>var()</code></strong> zavádza symbolické premenné; vzorce z nich zostavené zostávajú vzorcami a možno s nimi presne manipulovať.</p>
+</li>
+<li><p><strong><code>solve(equation, unknown)</code></strong> vráti zoznam riešení vo forme rovníc; jedno vyberiete pomocou <code>[i]</code> a pravú stranu odrežete pomocou <code>.rhs()</code>.</p>
+</li>
+<li><p><strong><code>simplify()</code>, <code>trig_reduce()</code>, <code>factor()</code>, <code>expand()</code>, <code>trig_simplify()</code>, <code>simplify_rational()</code>, <code>simplify_full()</code></strong> upravujú vzorce, každý po svojom; upravený vzorec sa ľahšie porovnáva s učebnicou.</p>
+</li>
+<li><p><strong><code>diff(expr, x)</code></strong> derivuje; derivácia je smernica dotyčnice, obrázok so sínusoidou ukázal všetky tri prípady naraz (stúpajúca dotyčnica, vodorovná v maxime, vodorovná v minime) a maximá a minimá sa nachádzajú tam, kde je derivácia nulová, čo potvrdí zmena znamienka derivácie v okolí bodu alebo znamienko druhej derivácie.</p>
+</li>
+<li><p><strong><code>.subs(name = value)</code></strong> dosadzuje čísla do vzorcov; dosadzujte raz, na konci, a nechajte <code>N()</code> dokončiť prácu.</p>
+</li>
+</ul>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># prázdne bunky na cvičenia/pokusy – nové bunky môžete pridať kdekoľvek tlačidlom "Add Bellow"
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">
+</script></div></div></div></div></div>
+            
+        </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/embedded_sagecell_backup.js"></script>
+<script src="https://sage-sk.org/embedded_sagecell.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/FileSaver.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/nbplayerConfig.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/comment/comment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/markdown-fold.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.css">
+<script>let RUN_DELAY = 1000;</script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/customthemes15.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbrunner24.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaiengine23.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaipriming22.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbautocompletion20.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://code.datagridxl.com/datagridxl2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fflate@0.8.3/umd/index.min.js"></script>
+<script>
+  playerConfig={"panes":"Exec","lang":"sage","linked":true,"eval":false,"hide":["fullScreen"],"execute":true,"showRead":false,"collapsable":false,"playerPath":"https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main","name":"SageMath"};
+  playerMode={"showSage":true,"showNotebookInput":true,"showSageInput":true};
+  let API_KEY="";
+  let API_URL="";
+  let CURRENT_MODEL="";
+  let CURRENT_LANGUAGE="";
+  let SAGECELL_URL="https://sage-sk.org/";
+  let toggleEvalBtnsState=false;
+  let isFullWidthState=true;
+  window.hideCodeInputState=false;
+  let PRELOAD="";
+  let SETTINGS_PATH_NAME="settings.js";
+  let aiEduMode=true;
+  let aiCompleteMode=true;
+  let aiLogs=false;
+  window.aiLogs=false;
+  window.aiSettingsVisible=true;
+  window.aiLogsHistory=[];
+  makeMenu();
+  localize();
+  createTableOfContents();
+  loadStatus();
+  restoreUIState();
+  makeSageCells(playerConfig);
+  launchPlayer();
+  addControlPanel();
+  setupRunAllCells();
+  addSageCellNumbering();
+  enhanceSageCellsWithGlobalAutocomplete();
+  window.onload = initializeMarkdownCells;
+  let CUSTOM_CONTEXT="";
+  let CUSTOM_CSS="";
+  if (CUSTOM_CSS) applyCustomCSS(CUSTOM_CSS);
+  addCommentShortcutToAllSageCells();
+  applyPreloadCells();
+  setupBulkCellObserver();
+</script>
+<script src="settings.js"></script>
+</body>
+</html>

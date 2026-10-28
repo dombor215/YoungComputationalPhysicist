@@ -1,0 +1,12 @@
+:root {
+  --toc-width: 320px;        /* default width (px) before the reader drags it */
+  --toc-min-width: 200px;    /* px only for min/max */
+  --toc-max-width: 700px;
+
+  --accent: #1976d2;
+  --accent-hover: #1565c0;
+  --section-bg: #0d2b45;
+  --section-hover-bg: #153a5c;
+  --toc-bg: #eef3f8;
+  --font: "Segoe UI", system-ui, sans-serif;
+}

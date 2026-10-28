@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;polygon points='50,6 88,28 88,72 50,94 12,72 12,28' fill='%234CAF50'/&gt;&lt;text x='50' y='68' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='%23fff' text-anchor='middle'&gt;S&lt;/text&gt;&lt;/svg&gt;">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/es5-shim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/ansi_up.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex-auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/notebook.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/prism.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/notebook.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/nbpreview.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/css/nbplayer24.css">
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/texme@1.2.2"></script>
+<div id="main">
+<div id="notebook-holder"><div class="nb-notebook"><div class="nb-worksheet"><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114833-1" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Autori:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Prírodovedecká fakulta, Univerzita Pavla Jozefa Šafárika v Košiciach, Slovensko&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt; &lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt; &lt;/p&gt;" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114833-1" class="markdown-preview" style="display: block;" data-original-markdown="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Autori:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Prírodovedecká fakulta, Univerzita Pavla Jozefa Šafárika v Košiciach, Slovensko&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt; &lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt; &lt;/p&gt;"><p><img style="float: right;" src="https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png" alt="" width="100" height="85"></p>
+<p><strong>Autori:</strong> Dominik Borovský<sup>1</sup> &amp; Jozef Hanč<sup>2</sup></p>
+<p><em>2026, Prírodovedecká fakulta, Univerzita Pavla Jozefa Šafárika v Košiciach, Slovensko</em></p>
+<p><sup>1</sup><a href="mailto:dominik.borovsky@student.upjs.sk">dominik.borovsky@student.upjs.sk,</a> <sup>2</sup><a href="mailto:jozef.hanc@upjs.sk">jozef.hanc@upjs.sk</a> </p></div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114833-2" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="# **Kapitola 5: Tuhosť pružiny**
+
+V tejto kapitole ustúpia vzorce do úzadia a prevezmú slovo *dáta*. Sto meraní jednej natiahnutej pružiny vstúpi do SageMath ako tabuľka, skontrolujeme, či v nej nechýbajú hodnoty a či neobsahuje preklepy, spriemerujeme ju, nakreslíme s chybovými úsečkami a preložíme ňou model, kým z nej nevypadne tuhosť pružiny $k$. Nástrojom, ktorý to všetko nesie, je `DataFrame` z knižnice `pandas`, tabuľkový nástroj, ktorý je súčasťou SageMath." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114833-2" class="markdown-preview" style="display: block;" data-original-markdown="# **Kapitola 5: Tuhosť pružiny**
+
+V tejto kapitole ustúpia vzorce do úzadia a prevezmú slovo *dáta*. Sto meraní jednej natiahnutej pružiny vstúpi do SageMath ako tabuľka, skontrolujeme, či v nej nechýbajú hodnoty a či neobsahuje preklepy, spriemerujeme ju, nakreslíme s chybovými úsečkami a preložíme ňou model, kým z nej nevypadne tuhosť pružiny $k$. Nástrojom, ktorý to všetko nesie, je `DataFrame` z knižnice `pandas`, tabuľkový nástroj, ktorý je súčasťou SageMath."><h1 id="kapitola-5-tuhosť-pružiny"><strong>Kapitola 5: Tuhosť pružiny</strong></h1>
+<p>V tejto kapitole ustúpia vzorce do úzadia a prevezmú slovo <em>dáta</em>. Sto meraní jednej natiahnutej pružiny vstúpi do SageMath ako tabuľka, skontrolujeme, či v nej nechýbajú hodnoty a či neobsahuje preklepy, spriemerujeme ju, nakreslíme s chybovými úsečkami a preložíme ňou model, kým z nej nevypadne tuhosť pružiny $k$. Nástrojom, ktorý to všetko nesie, je <code>DataFrame</code> z knižnice <code>pandas</code>, tabuľkový nástroj, ktorý je súčasťou SageMath.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114833-3" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.1 Zadanie**
+
+&gt; Pružina sa ručne naťahuje na dĺžky $1, 2, \ldots, 10~\mathrm{cm}$ a pri každej dĺžke sa silomerom desaťkrát odčíta ťahová sila. Vznikne tak $10\times10=100$ údajov, dvojíc $(x, F)$. Rastie sila lineárne s predĺžením a aká tuhosť pružiny $k$ sa ukrýva v číslach?
+
+Fyzika je na jeden riadok, Hookov zákon: sila $F$ potrebná na natiahnutie pružiny o $x$ je
+
+$$F = kx,$$
+
+kde $F$ je sila v $\mathrm{N}$, $k$ tuhosť pružiny v $\mathrm{N/m}$ a $x$ predĺženie v $\mathrm{m}$. Samotné meranie je poctivé, ale hrubé: ruka ťahá, silomer sa chvejí, oko zaokrúhľuje a každý zo sto údajov nesie svoju dávku neistoty. Tá neistota tu nie je na obtiaž, je to materiál. Táto kapitola ju zadá do počítača, skontroluje, vyčistí, nakreslí a nakoniec spriemeruje.
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;https://i.postimg.cc/rwv68XJ7/suspension-spring-car.webp&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;Obr. 5.1: Tlmič nárazov, ktorý nie je ničím iným než veľkou pružinou – jeho $k$ rozhoduje o tom, ako sa jazda cíti (zdroj: &lt;a href=&quot;https://www.airedalesprings.co.uk/blog/choosing-the-best-materials-for-springs/&quot;&gt;airedalesprings.co.uk&lt;/a&gt;).&lt;/em&gt;&lt;/p&gt;
+
+A $k$ stojí za to poznať. Tlmič auta je pružina v prestrojení a jej tuhosť rozhoduje, či sa výmoľ dostane k cestujúcim ako úder alebo len ako pokrčenie ramien. Príliš tuhá pružina trestá, príliš mäkká nedovolí kolesu sledovať cestu. Niekde v sto údajoch nižšie sa skrýva číslo, ktoré by inžinier potreboval." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114833-3" class="markdown-preview" style="display: block;" data-original-markdown="## **5.1 Zadanie**
+
+&gt; Pružina sa ručne naťahuje na dĺžky $1, 2, \ldots, 10~\mathrm{cm}$ a pri každej dĺžke sa silomerom desaťkrát odčíta ťahová sila. Vznikne tak $10\times10=100$ údajov, dvojíc $(x, F)$. Rastie sila lineárne s predĺžením a aká tuhosť pružiny $k$ sa ukrýva v číslach?
+
+Fyzika je na jeden riadok, Hookov zákon: sila $F$ potrebná na natiahnutie pružiny o $x$ je
+
+$$F = kx,$$
+
+kde $F$ je sila v $\mathrm{N}$, $k$ tuhosť pružiny v $\mathrm{N/m}$ a $x$ predĺženie v $\mathrm{m}$. Samotné meranie je poctivé, ale hrubé: ruka ťahá, silomer sa chvejí, oko zaokrúhľuje a každý zo sto údajov nesie svoju dávku neistoty. Tá neistota tu nie je na obtiaž, je to materiál. Táto kapitola ju zadá do počítača, skontroluje, vyčistí, nakreslí a nakoniec spriemeruje.
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;https://i.postimg.cc/rwv68XJ7/suspension-spring-car.webp&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;Obr. 5.1: Tlmič nárazov, ktorý nie je ničím iným než veľkou pružinou – jeho $k$ rozhoduje o tom, ako sa jazda cíti (zdroj: &lt;a href=&quot;https://www.airedalesprings.co.uk/blog/choosing-the-best-materials-for-springs/&quot;&gt;airedalesprings.co.uk&lt;/a&gt;).&lt;/em&gt;&lt;/p&gt;
+
+A $k$ stojí za to poznať. Tlmič auta je pružina v prestrojení a jej tuhosť rozhoduje, či sa výmoľ dostane k cestujúcim ako úder alebo len ako pokrčenie ramien. Príliš tuhá pružina trestá, príliš mäkká nedovolí kolesu sledovať cestu. Niekde v sto údajoch nižšie sa skrýva číslo, ktoré by inžinier potreboval."><h2 id="51-zadanie"><strong>5.1 Zadanie</strong></h2>
+<blockquote>
+<p>Pružina sa ručne naťahuje na dĺžky $1, 2, \ldots, 10~\mathrm{cm}$ a pri každej dĺžke sa silomerom desaťkrát odčíta ťahová sila. Vznikne tak $10\times10=100$ údajov, dvojíc $(x, F)$. Rastie sila lineárne s predĺžením a aká tuhosť pružiny $k$ sa ukrýva v číslach?</p>
+</blockquote>
+<p>Fyzika je na jeden riadok, Hookov zákon: sila $F$ potrebná na natiahnutie pružiny o $x$ je</p>
+<p>$$F = kx,$$</p>
+<p>kde $F$ je sila v $\mathrm{N}$, $k$ tuhosť pružiny v $\mathrm{N/m}$ a $x$ predĺženie v $\mathrm{m}$. Samotné meranie je poctivé, ale hrubé: ruka ťahá, silomer sa chvejí, oko zaokrúhľuje a každý zo sto údajov nesie svoju dávku neistoty. Tá neistota tu nie je na obtiaž, je to materiál. Táto kapitola ju zadá do počítača, skontroluje, vyčistí, nakreslí a nakoniec spriemeruje.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://i.postimg.cc/rwv68XJ7/suspension-spring-car.webp" width="500"></p>
+<p style="text-align: center;"><em>Obr. 5.1: Tlmič nárazov, ktorý nie je ničím iným než veľkou pružinou – jeho $k$ rozhoduje o tom, ako sa jazda cíti (zdroj: <a href="https://www.airedalesprings.co.uk/blog/choosing-the-best-materials-for-springs/">airedalesprings.co.uk</a>).</em></p>
+
+<p>A $k$ stojí za to poznať. Tlmič auta je pružina v prestrojení a jej tuhosť rozhoduje, či sa výmoľ dostane k cestujúcim ako úder alebo len ako pokrčenie ramien. Príliš tuhá pružina trestá, príliš mäkká nedovolí kolesu sledovať cestu. Niekde v sto údajoch nižšie sa skrýva číslo, ktoré by inžinier potreboval.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114833-4" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.2 Od tabuľky k DataFrame**
+
+Namerané dáta len zriedka prichádzajú ako ručne napísaný zoznam. Prichádzajú ako tabuľka a prvou otázkou tejto kapitoly je, ako sa tabuľka dostane do SageMath. Odpoveď závisí od toho, kde pracujete.
+
+**V našom HTML notebooku.** Každá bunka s kódom má malé tlačidlo s ikonou mriežky s názvom **Import/Export Excel**. Kliknite naň, vyberte súbor `.xlsx` a notebook za vás napíše celú načítavaciu bunku: tabuľka sa zmení na text a vloží sa do bunky spolu s niekoľkými riadkami, ktoré ju znova zostavia. Jediné, o čom rozhodujete, je meno, pod ktorým bude tabuľka známa.
+
+**V lokálnom Jupyteri.** `pandas` číta súbor priamo z disku:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114833-4" class="markdown-preview" style="display: block;" data-original-markdown="## **5.2 Od tabuľky k DataFrame**
+
+Namerané dáta len zriedka prichádzajú ako ručne napísaný zoznam. Prichádzajú ako tabuľka a prvou otázkou tejto kapitoly je, ako sa tabuľka dostane do SageMath. Odpoveď závisí od toho, kde pracujete.
+
+**V našom HTML notebooku.** Každá bunka s kódom má malé tlačidlo s ikonou mriežky s názvom **Import/Export Excel**. Kliknite naň, vyberte súbor `.xlsx` a notebook za vás napíše celú načítavaciu bunku: tabuľka sa zmení na text a vloží sa do bunky spolu s niekoľkými riadkami, ktoré ju znova zostavia. Jediné, o čom rozhodujete, je meno, pod ktorým bude tabuľka známa.
+
+**V lokálnom Jupyteri.** `pandas` číta súbor priamo z disku:"><h2 id="52-od-tabuľky-k-dataframe"><strong>5.2 Od tabuľky k DataFrame</strong></h2>
+<p>Namerané dáta len zriedka prichádzajú ako ručne napísaný zoznam. Prichádzajú ako tabuľka a prvou otázkou tejto kapitoly je, ako sa tabuľka dostane do SageMath. Odpoveď závisí od toho, kde pracujete.</p>
+<p><strong>V našom HTML notebooku.</strong> Každá bunka s kódom má malé tlačidlo s ikonou mriežky s názvom <strong>Import/Export Excel</strong>. Kliknite naň, vyberte súbor <code>.xlsx</code> a notebook za vás napíše celú načítavaciu bunku: tabuľka sa zmení na text a vloží sa do bunky spolu s niekoľkými riadkami, ktoré ju znova zostavia. Jediné, o čom rozhodujete, je meno, pod ktorým bude tabuľka známa.</p>
+<p><strong>V lokálnom Jupyteri.</strong> <code>pandas</code> číta súbor priamo z disku:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># načítanie knižnice pandas
+import pandas as pd
+
+# načítanie dát zo súboru Excel – odkomentujte, ak máte súbor k dispozícii
+# data = pd.read_excel("hooks_law_data.xlsx")
+
+# načítanie dát zo súboru csv – odkomentujte, ak máte súbor k dispozícii
+# data = pd.read_csv("hooks_law_data.csv")
+# data
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114833-5" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Poznámka:** Argumentom `read_excel` alebo `read_csv` je názov súboru alebo úplná cesta v tvare `path/to/folder/file_name.csv`. Pre `read_excel` musí byť okrem `pandas` nainštalovaná aj knižnica `openpyxl` (priamo v bunke príkazom `!pip install openpyxl`). A ako všade v Sage, čísla používajú **desatinnú bodku**, nikdy nie čiarku.
+
+Tu je bunka, ktorú tlačidlo napísalo pre naše dáta o pružine. Nenechajte sa odradiť jej dĺžkou: celá tabuľka je v nej uložená ako jeden dlhý textový reťazec a posledné dva riadky zmenia tento text späť na tabuľku. Meniť sa má len `dataframe_name`; zvyšok je najlepšie nechať tak." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114833-5" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Poznámka:** Argumentom `read_excel` alebo `read_csv` je názov súboru alebo úplná cesta v tvare `path/to/folder/file_name.csv`. Pre `read_excel` musí byť okrem `pandas` nainštalovaná aj knižnica `openpyxl` (priamo v bunke príkazom `!pip install openpyxl`). A ako všade v Sage, čísla používajú **desatinnú bodku**, nikdy nie čiarku.
+
+Tu je bunka, ktorú tlačidlo napísalo pre naše dáta o pružine. Nenechajte sa odradiť jej dĺžkou: celá tabuľka je v nej uložená ako jeden dlhý textový reťazec a posledné dva riadky zmenia tento text späť na tabuľku. Meniť sa má len `dataframe_name`; zvyšok je najlepšie nechať tak."><blockquote>
+<p><strong>Poznámka:</strong> Argumentom <code>read_excel</code> alebo <code>read_csv</code> je názov súboru alebo úplná cesta v tvare <code>path/to/folder/file_name.csv</code>. Pre <code>read_excel</code> musí byť okrem <code>pandas</code> nainštalovaná aj knižnica <code>openpyxl</code> (priamo v bunke príkazom <code>!pip install openpyxl</code>). A ako všade v Sage, čísla používajú <strong>desatinnú bodku</strong>, nikdy nie čiarku.</p>
+</blockquote>
+<p>Tu je bunka, ktorú tlačidlo napísalo pre naše dáta o pružine. Nenechajte sa odradiť jej dĺžkou: celá tabuľka je v nej uložená ako jeden dlhý textový reťazec a posledné dva riadky zmenia tento text späť na tabuľku. Meniť sa má len <code>dataframe_name</code>; zvyšok je najlepšie nechať tak.</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># Podľa potreby zmeňte dataframe_name. Okrem dataframe_name sa NEODPORÚČA upravovať iné časti tohto kódu.
+dataframe_name = "data"
+import pandas as pd, json
+data_raw = r'[["x [cm]","F [N]"],[1,4.19052570380035],[1,2.03406262945916],[1,2.53282016367858],[1,2.9075162829965],[1,1.71107697137426],[1,2.50206557290594],[1,2.49910961414206],[1,0.745275693654579],[1,3.51765800566349],[1,3.10049851591954],[2,4.37457102603324],[2,4.82845173880427],[2,5.50529937419675],[2,4.73864358480835],[2,4.75725092132745],[2,3.5467585875092],[2,5.55458031189188],[2,5.12388090528703],[2,5.27445992375996],[2,3.47347546813016],[3,9.15069969118647],[3,7.65433553545635],[3,7.11286005671361],[3,9.52907222076111],[3,7.45461397013935],[3,6.04932130085342],[3,7.09477214457231],[3,5.21168489802827],[3,8.54939654934325],[3,7.08352568147998],[4,9.25744647479543],[4,11.0724701315754],[4,8.34892441059416],[4,10.535429356326],[4,7.93558519687882],[4,9.33784066033319],[4,8.79578015440026],[4,11.4619756272135],[4,11.7661608779293],[4,9.67058624808693],[5,13.3407332421435],[5,12.3200135987476],[5,13.0680618873279],[5,11.7471628035785],[5,10.7916607968329],[5,10.6969013415202],[5,12.8831218517575],[5,14.7475950528077],[5,12.7694116305078],[5,11.9753953805991],[6,16.9120188623319],[6,15.2373018466371],[6,15.1014339852116],[6,15.2525777355553],[6,14.8676228024331],[6,14.6905236594111],[6,13.5650365339644],[6,15.501624123181],[6,14.9052245495601],[6,16.193085922344],[7,17.1311815315521],[7,15.5936301214695],[7,17.4003893681051],[7,19.1995372967466],[7,17.1165768770684],[7,16.6101431389792],[7,16.3064080777418],[7,16.4499831889246],[7,17.1998062631998],[7,16.3200179065417],[8,21.4976391155975],[8,19.7173647639246],[8,20.1086483714947],[8,21.4382395207337],[8,21.5033185204169],[8,19.7872670329824],[8,20.3319742154884],[8,20.7350265843773],[8,19.8071445396502],[8,18.2219871470414],[9,23.1547057037031],[9,23.3943523048205],[9,22.915502614298],[9,21.5764553432867],[9,22.303972687692],[9,21.9092301811368],[9,22.2002887626721],[9,23.7968851927266],[9,24.0295796333931],[9,23.1694181934096],[10,25.5487451197783],[10,25.6766289895558],[10,24.9877578133935],[10,24.9243365385129],[10,24.3263548126239],[10,24.9441325499499],[10,27.2599469866262],[10,25.8690393292538],[10,24.6578829765731],[10,24.5280733478664]]'
+data_json = json.loads(data_raw)
+globals()[dataframe_name] = pd.DataFrame(data_json[1:], columns=data_json[0]); print(f"DataFrame '{dataframe_name}' created | Shape: {globals()[dataframe_name].shape} | Columns: {list(globals()[dataframe_name].columns)}")
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114834-6" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Čo bunka robí, po jednotlivých častiach:
+
+1. `data_raw = r'...'` ukladá tabuľku ako text. Náš notebook počíta v cloude: vstup putuje na server a text je jediná batožina, ktorú dáta môžu niesť. Znak `r` pred úvodzovkami zachová reťazec presne tak, ako je napísaný.
+2. `json.loads(data_raw)` zmení text na zoznam zoznamov, jeden vnútorný zoznam na riadok tabuľky, pričom prvý je hlavička `[&quot;x [cm]&quot;, &quot;F [N]&quot;]`.
+3. `pd.DataFrame(data_json[1:], columns=data_json[0])` zostaví tabuľku zo všetkých riadkov po hlavičke a pomenuje stĺpce.
+4. `globals()[dataframe_name]` uloží výsledok pod zvoleným menom, takže každá neskoršia bunka môže jednoducho napísať `data`." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114834-6" class="markdown-preview" style="display: block;" data-original-markdown="Čo bunka robí, po jednotlivých častiach:
+
+1. `data_raw = r'...'` ukladá tabuľku ako text. Náš notebook počíta v cloude: vstup putuje na server a text je jediná batožina, ktorú dáta môžu niesť. Znak `r` pred úvodzovkami zachová reťazec presne tak, ako je napísaný.
+2. `json.loads(data_raw)` zmení text na zoznam zoznamov, jeden vnútorný zoznam na riadok tabuľky, pričom prvý je hlavička `[&quot;x [cm]&quot;, &quot;F [N]&quot;]`.
+3. `pd.DataFrame(data_json[1:], columns=data_json[0])` zostaví tabuľku zo všetkých riadkov po hlavičke a pomenuje stĺpce.
+4. `globals()[dataframe_name]` uloží výsledok pod zvoleným menom, takže každá neskoršia bunka môže jednoducho napísať `data`."><p>Čo bunka robí, po jednotlivých častiach:</p>
+<ol>
+<li><code>data_raw = r'...'</code> ukladá tabuľku ako text. Náš notebook počíta v cloude: vstup putuje na server a text je jediná batožina, ktorú dáta môžu niesť. Znak <code>r</code> pred úvodzovkami zachová reťazec presne tak, ako je napísaný.</li>
+<li><code>json.loads(data_raw)</code> zmení text na zoznam zoznamov, jeden vnútorný zoznam na riadok tabuľky, pričom prvý je hlavička <code>["x [cm]", "F [N]"]</code>.</li>
+<li><code>pd.DataFrame(data_json[1:], columns=data_json[0])</code> zostaví tabuľku zo všetkých riadkov po hlavičke a pomenuje stĺpce.</li>
+<li><code>globals()[dataframe_name]</code> uloží výsledok pod zvoleným menom, takže každá neskoršia bunka môže jednoducho napísať <code>data</code>.</li>
+</ol>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># zobrazenie časti tabuľky
+data
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114834-7" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Poznámka:** Tlačidlo je pohodlie, nie mágia. Ručne vedie k tomu istému cesta: uložte dáta ako tabuľku csv, otvorte súbor csv v textovom editore (pravé tlačidlo, Otvoriť v programe, Poznámkový blok alebo [Notepad++](https://notepad-plus-plus.org/)), označte všetko pomocou `Ctrl+A`, skopírujte pomocou `Ctrl+C` a vložte do bunky ako text. Tlačidlo za vás robí len to „sploštenie“ do textu.
+
+Po načítaní sú údaje `DataFrame`, pandasovská verzia tabuľky z Excelu:
+
+- má riadky a pomenované stĺpce,
+- každý stĺpec nesie jeden typ dát (celé čísla, desatinné čísla, text),
+- a prichádza s príkazmi na výber, filtrovanie a výpočty nad dátami.
+
+Každý riadok je jedno meranie, jedna dvojica $(x, F)$, a dĺžky sa zámerne opakujú: desať riadkov nesie hodnotu 1, desať hodnotu 2 a tak ďalej. Dĺžka je údaj o jednom meraní, nie nadpis tabuľky. Jeden riadok na meranie, vrátane opakovaní, sa nazýva *dlhý formát* (*long format*) a je to tvar, ktorým sa živí každý nástroj zvyšku knihy.
+
+V dátovej vede má všetko, čo táto kapitola robí pred fyzikou, svoje meno: *čistenie dát* (*data cleaning*, hľadanie dier a preklepov) a *predspracovanie dát* (*data preprocessing*, uvedenie hodnôt do tvaru – prevod jednotiek, spriemerovanie opakovaní). Názvy znejú priemyselne, práca je opačná: malé starostlivé kroky medzi surovým údajom a číslom, ktorému sa oplatí veriť.
+
+`DataFrame` je programový náprotivok Excelu alebo Tabuliek Google: mriežka riadkov a pomenovaných stĺpcov, ktorú ovládame príkazmi namiesto klikania myšou. A má rád upravený hárok rovnako ako každý používateľ tabuľkového procesora. Keď pripravujete súbor `.xlsx`, aby sa stal `DataFrame`, buďte prísni na jeho štruktúru:
+
+- **jedna tabuľka na súbor**, nie niekoľko tabuliek na jednom hárku,
+- **prvý riadok nesie názvy stĺpcov**, presne tie, ktoré bude kód používať na prístup,
+- **žiadne prázdne stĺpce ani ozdobné riadky hlavičky** nad dátami,
+- dáta sa čítajú **zhora nadol, jeden záznam na riadok** – nie zľava doprava v blokoch cez hárok, ako sa niekedy píšu ručne.
+
+Súbor takto usporiadaný sa načíta jedným riadkom. Súbor usporiadaný akokoľvek inak sa tiež načíta a potom stojí celé popoludnie opráv." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114834-7" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Poznámka:** Tlačidlo je pohodlie, nie mágia. Ručne vedie k tomu istému cesta: uložte dáta ako tabuľku csv, otvorte súbor csv v textovom editore (pravé tlačidlo, Otvoriť v programe, Poznámkový blok alebo [Notepad++](https://notepad-plus-plus.org/)), označte všetko pomocou `Ctrl+A`, skopírujte pomocou `Ctrl+C` a vložte do bunky ako text. Tlačidlo za vás robí len to „sploštenie“ do textu.
+
+Po načítaní sú údaje `DataFrame`, pandasovská verzia tabuľky z Excelu:
+
+- má riadky a pomenované stĺpce,
+- každý stĺpec nesie jeden typ dát (celé čísla, desatinné čísla, text),
+- a prichádza s príkazmi na výber, filtrovanie a výpočty nad dátami.
+
+Každý riadok je jedno meranie, jedna dvojica $(x, F)$, a dĺžky sa zámerne opakujú: desať riadkov nesie hodnotu 1, desať hodnotu 2 a tak ďalej. Dĺžka je údaj o jednom meraní, nie nadpis tabuľky. Jeden riadok na meranie, vrátane opakovaní, sa nazýva *dlhý formát* (*long format*) a je to tvar, ktorým sa živí každý nástroj zvyšku knihy.
+
+V dátovej vede má všetko, čo táto kapitola robí pred fyzikou, svoje meno: *čistenie dát* (*data cleaning*, hľadanie dier a preklepov) a *predspracovanie dát* (*data preprocessing*, uvedenie hodnôt do tvaru – prevod jednotiek, spriemerovanie opakovaní). Názvy znejú priemyselne, práca je opačná: malé starostlivé kroky medzi surovým údajom a číslom, ktorému sa oplatí veriť.
+
+`DataFrame` je programový náprotivok Excelu alebo Tabuliek Google: mriežka riadkov a pomenovaných stĺpcov, ktorú ovládame príkazmi namiesto klikania myšou. A má rád upravený hárok rovnako ako každý používateľ tabuľkového procesora. Keď pripravujete súbor `.xlsx`, aby sa stal `DataFrame`, buďte prísni na jeho štruktúru:
+
+- **jedna tabuľka na súbor**, nie niekoľko tabuliek na jednom hárku,
+- **prvý riadok nesie názvy stĺpcov**, presne tie, ktoré bude kód používať na prístup,
+- **žiadne prázdne stĺpce ani ozdobné riadky hlavičky** nad dátami,
+- dáta sa čítajú **zhora nadol, jeden záznam na riadok** – nie zľava doprava v blokoch cez hárok, ako sa niekedy píšu ručne.
+
+Súbor takto usporiadaný sa načíta jedným riadkom. Súbor usporiadaný akokoľvek inak sa tiež načíta a potom stojí celé popoludnie opráv."><blockquote>
+<p><strong>Poznámka:</strong> Tlačidlo je pohodlie, nie mágia. Ručne vedie k tomu istému cesta: uložte dáta ako tabuľku csv, otvorte súbor csv v textovom editore (pravé tlačidlo, Otvoriť v programe, Poznámkový blok alebo <a href="https://notepad-plus-plus.org/">Notepad++</a>), označte všetko pomocou <code>Ctrl+A</code>, skopírujte pomocou <code>Ctrl+C</code> a vložte do bunky ako text. Tlačidlo za vás robí len to „sploštenie“ do textu.</p>
+</blockquote>
+<p>Po načítaní sú údaje <code>DataFrame</code>, pandasovská verzia tabuľky z Excelu:</p>
+<ul>
+<li>má riadky a pomenované stĺpce,</li>
+<li>každý stĺpec nesie jeden typ dát (celé čísla, desatinné čísla, text),</li>
+<li>a prichádza s príkazmi na výber, filtrovanie a výpočty nad dátami.</li>
+</ul>
+<p>Každý riadok je jedno meranie, jedna dvojica $(x, F)$, a dĺžky sa zámerne opakujú: desať riadkov nesie hodnotu 1, desať hodnotu 2 a tak ďalej. Dĺžka je údaj o jednom meraní, nie nadpis tabuľky. Jeden riadok na meranie, vrátane opakovaní, sa nazýva <em>dlhý formát</em> (<em>long format</em>) a je to tvar, ktorým sa živí každý nástroj zvyšku knihy.</p>
+<p>V dátovej vede má všetko, čo táto kapitola robí pred fyzikou, svoje meno: <em>čistenie dát</em> (<em>data cleaning</em>, hľadanie dier a preklepov) a <em>predspracovanie dát</em> (<em>data preprocessing</em>, uvedenie hodnôt do tvaru – prevod jednotiek, spriemerovanie opakovaní). Názvy znejú priemyselne, práca je opačná: malé starostlivé kroky medzi surovým údajom a číslom, ktorému sa oplatí veriť.</p>
+<p><code>DataFrame</code> je programový náprotivok Excelu alebo Tabuliek Google: mriežka riadkov a pomenovaných stĺpcov, ktorú ovládame príkazmi namiesto klikania myšou. A má rád upravený hárok rovnako ako každý používateľ tabuľkového procesora. Keď pripravujete súbor <code>.xlsx</code>, aby sa stal <code>DataFrame</code>, buďte prísni na jeho štruktúru:</p>
+<ul>
+<li><strong>jedna tabuľka na súbor</strong>, nie niekoľko tabuliek na jednom hárku,</li>
+<li><strong>prvý riadok nesie názvy stĺpcov</strong>, presne tie, ktoré bude kód používať na prístup,</li>
+<li><strong>žiadne prázdne stĺpce ani ozdobné riadky hlavičky</strong> nad dátami,</li>
+<li>dáta sa čítajú <strong>zhora nadol, jeden záznam na riadok</strong> – nie zľava doprava v blokoch cez hárok, ako sa niekedy píšu ručne.</li>
+</ul>
+<p>Súbor takto usporiadaný sa načíta jedným riadkom. Súbor usporiadaný akokoľvek inak sa tiež načíta a potom stojí celé popoludnie opráv.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114834-8" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.3 Prvá kontrola: `.info()`**
+
+Nech tabuľka prišla akokoľvek, nikdy jej pri príchode neverte. Jeden príkaz dá prvú správu o zdravotnom stave:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114834-8" class="markdown-preview" style="display: block;" data-original-markdown="## **5.3 Prvá kontrola: `.info()`**
+
+Nech tabuľka prišla akokoľvek, nikdy jej pri príchode neverte. Jeden príkaz dá prvú správu o zdravotnom stave:"><h2 id="53-prvá-kontrola-info"><strong>5.3 Prvá kontrola: <code>.info()</code></strong></h2>
+<p>Nech tabuľka prišla akokoľvek, nikdy jej pri príchode neverte. Jeden príkaz dá prvú správu o zdravotnom stave:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># jednoduchá kontrola dát
+data.info()
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114834-9" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Zo správy vidíme, že:
+
+- tabuľka má dva stĺpce s názvami `x [cm]` a `F [N]`,
+- každý stĺpec obsahuje 100 hodnôt *„non-null“* (nenulových). To neznamená, že medzi údajmi nie sú nuly, ale že žiadna bunka nezostala prázdna. Prázdna bunka by sa zobrazila ako `NaN` (*Not a Number*, v pandas označenie chýbajúcej hodnoty),
+- stĺpec `x [cm]` je typu `int64`, celé čísla, a `F [N]` je `float64`, desatinné čísla (*floating-point*, číslo s „plávajúcou“ desatinnou bodkou).
+
+V tejto kópii dáta prišli kompletné. Zvyčajne to tak nie je. Ďalší oddiel ukazuje, ako vyzerajú špinavé dáta a ako nájsť špinu." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114834-9" class="markdown-preview" style="display: block;" data-original-markdown="Zo správy vidíme, že:
+
+- tabuľka má dva stĺpce s názvami `x [cm]` a `F [N]`,
+- každý stĺpec obsahuje 100 hodnôt *„non-null“* (nenulových). To neznamená, že medzi údajmi nie sú nuly, ale že žiadna bunka nezostala prázdna. Prázdna bunka by sa zobrazila ako `NaN` (*Not a Number*, v pandas označenie chýbajúcej hodnoty),
+- stĺpec `x [cm]` je typu `int64`, celé čísla, a `F [N]` je `float64`, desatinné čísla (*floating-point*, číslo s „plávajúcou“ desatinnou bodkou).
+
+V tejto kópii dáta prišli kompletné. Zvyčajne to tak nie je. Ďalší oddiel ukazuje, ako vyzerajú špinavé dáta a ako nájsť špinu."><p>Zo správy vidíme, že:</p>
+<ul>
+<li>tabuľka má dva stĺpce s názvami <code>x [cm]</code> a <code>F [N]</code>,</li>
+<li>každý stĺpec obsahuje 100 hodnôt <em>„non-null“</em> (nenulových). To neznamená, že medzi údajmi nie sú nuly, ale že žiadna bunka nezostala prázdna. Prázdna bunka by sa zobrazila ako <code>NaN</code> (<em>Not a Number</em>, v pandas označenie chýbajúcej hodnoty),</li>
+<li>stĺpec <code>x [cm]</code> je typu <code>int64</code>, celé čísla, a <code>F [N]</code> je <code>float64</code>, desatinné čísla (<em>floating-point</em>, číslo s „plávajúcou“ desatinnou bodkou).</li>
+</ul>
+<p>V tejto kópii dáta prišli kompletné. Zvyčajne to tak nie je. Ďalší oddiel ukazuje, ako vyzerajú špinavé dáta a ako nájsť špinu.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114834-10" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.4 Skutočné dáta prichádzajú špinavé**
+
+Tu je to isté meranie tak, ako častejšie vyjde zo skutočného merania: dve bunky sa nikdy nevyplnili a tri prsty sa pošmykli na klávesnici. Prišlo cez to isté tlačidlo **Import/Export Excel**, tentoraz pod iným menom:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114834-10" class="markdown-preview" style="display: block;" data-original-markdown="## **5.4 Skutočné dáta prichádzajú špinavé**
+
+Tu je to isté meranie tak, ako častejšie vyjde zo skutočného merania: dve bunky sa nikdy nevyplnili a tri prsty sa pošmykli na klávesnici. Prišlo cez to isté tlačidlo **Import/Export Excel**, tentoraz pod iným menom:"><h2 id="54-skutočné-dáta-prichádzajú-špinavé"><strong>5.4 Skutočné dáta prichádzajú špinavé</strong></h2>
+<p>Tu je to isté meranie tak, ako častejšie vyjde zo skutočného merania: dve bunky sa nikdy nevyplnili a tri prsty sa pošmykli na klávesnici. Prišlo cez to isté tlačidlo <strong>Import/Export Excel</strong>, tentoraz pod iným menom:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># Podľa potreby zmeňte dataframe_name. Okrem dataframe_name sa NEODPORÚČA upravovať iné časti tohto kódu.
+dataframe_name = "data_corrupted"
+import pandas as pd, json
+data_raw = r'[["x [cm]","F [N]"],[1,4.19052570380035],[1,2.03406262945916],[1,2.53282016367858],[1,2.9075162829965],[1,1.71107697137426],[1,2.50206557290594],[1,2.49910961414206],[1,0.745275693654579],[1,3.51765800566349],[1,3.10049851591954],[2,4.37457102603324],[2,48.2845173880427],[2,5.50529937419675],[2,4.73864358480835],[2,4.75725092132745],[2,3.5467585875092],[2,5.55458031189188],[2,5.12388090528703],[2,5.27445992375996],[2,3.47347546813016],[3,9.15069969118647],[null,7.65433553545635],[3,7.11286005671361],[3,9.52907222076111],[3,7.45461397013935],[3,6.04932130085342],[3,7.09477214457231],[3,5.21168489802827],[3,8.54939654934325],[3,7.08352568147998],[4,9.25744647479543],[4,11.0724701315754],[4,8.34892441059416],[4,10.535429356326],[4,7.93558519687882],[4,9.33784066033319],[4,8.79578015440026],[4,11.4619756272135],[4,11.7661608779293],[4,9.67058624808693],[5,13.3407332421435],[5,12.3200135987476],[5,13.0680618873279],[5,11.7471628035785],[5,10.7916607968329],[5,10.6969013415202],[5,12.8831218517575],[5,14.7475950528077],[5,12.7694116305078],[5,11.9753953805991],[6,16.9120188623319],[6,151.2373018466371],[6,15.1014339852116],[6,15.2525777355553],[6,14.8676228024331],[6,14.6905236594111],[6,13.5650365339644],[6,15.501624123181],[6,14.9052245495601],[6,16.193085922344],[7,17.1311815315521],[7,15.5936301214695],[null,17.4003893681051],[7,19.1995372967466],[7,17.1165768770684],[7,16.6101431389792],[7,16.3064080777418],[7,16.4499831889246],[7,17.1998062631998],[7,16.3200179065417],[8,21.4976391155975],[8,19.7173647639246],[8,20.1086483714947],[8,21.4382395207337],[8,21.5033185204169],[8,19.7872670329824],[8,20.3319742154884],[8,20.7350265843773],[8,19.8071445396502],[8,18.2219871470414],[9,23.1547057037031],[9,23.3943523048205],[9,22.915502614298],[9,21.5764553432867],[9,22.303972687692],[9,21.9092301811368],[9,22.2002887626721],[9,237.968851927266],[9,24.0295796333931],[9,23.1694181934096],[10,25.5487451197783],[10,25.6766289895558],[10,24.9877578133935],[10,24.9243365385129],[10,24.3263548126239],[10,24.9441325499499],[10,27.2599469866262],[10,25.8690393292538],[10,24.6578829765731],[10,24.5280733478664]]'
+data_json = json.loads(data_raw)
+globals()[dataframe_name] = pd.DataFrame(data_json[1:], columns=data_json[0]); print(f"DataFrame '{dataframe_name}' created | Shape: {globals()[dataframe_name].shape} | Columns: {list(globals()[dataframe_name].columns)}")
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># správa o zdravotnom stave poškodených dát
+data_corrupted.info()
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114835-11" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Zo správy vidíme, že:
+
+- stĺpec `x [cm]` teraz počíta 98 hodnôt *„non-null“*, takže dve merania stratili dĺžku,
+- typ stĺpca sa zmenil z `int64` na `float64`: stĺpec obsahujúci `NaN` už nemôže byť stĺpcom celých čísel,
+- stĺpec `F [N]` stále počíta 100 hodnôt a správa je s ním dokonale spokojná. Nemala by byť.
+
+**Kde sú diery?** Nájdu ich dva príkazy:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114835-11" class="markdown-preview" style="display: block;" data-original-markdown="Zo správy vidíme, že:
+
+- stĺpec `x [cm]` teraz počíta 98 hodnôt *„non-null“*, takže dve merania stratili dĺžku,
+- typ stĺpca sa zmenil z `int64` na `float64`: stĺpec obsahujúci `NaN` už nemôže byť stĺpcom celých čísel,
+- stĺpec `F [N]` stále počíta 100 hodnôt a správa je s ním dokonale spokojná. Nemala by byť.
+
+**Kde sú diery?** Nájdu ich dva príkazy:"><p>Zo správy vidíme, že:</p>
+<ul>
+<li>stĺpec <code>x [cm]</code> teraz počíta 98 hodnôt <em>„non-null“</em>, takže dve merania stratili dĺžku,</li>
+<li>typ stĺpca sa zmenil z <code>int64</code> na <code>float64</code>: stĺpec obsahujúci <code>NaN</code> už nemôže byť stĺpcom celých čísel,</li>
+<li>stĺpec <code>F [N]</code> stále počíta 100 hodnôt a správa je s ním dokonale spokojná. Nemala by byť.</li>
+</ul>
+<p><strong>Kde sú diery?</strong> Nájdu ich dva príkazy:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># počet hodnôt NaN v stĺpci 'x [cm]'
+data_corrupted['x [cm]'].isna().value_counts()
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># riadky s hodnotami NaN
+data_corrupted.loc[data_corrupted['x [cm]'].isna(), :]
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114835-12" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Druhú bunku treba rozobrať:
+
+1. `data_corrupted` – `DataFrame`, s ktorým pracujeme, definovaný v bunke vyššie.
+2. `.loc[]` – metóda na prístup k riadkom a stĺpcom `DataFrame` podľa mien alebo logických podmienok.
+3. `data_corrupted['x [cm]'].isna()` – táto časť vytvorí stĺpec odpovedí `True`/`False`: vyberie stĺpec s názvom `&quot;x [cm]&quot;` a `.isna()` sa pýta o každom riadku, či jeho hodnota chýba.
+4. `:` – dvojbodka za čiarkou znamená, že chceme vidieť všetky stĺpce. Stačil by aj jeden stĺpec, `'x [cm]'`, alebo ich zoznam, `['x [cm]', 'F [N]']`.
+
+&gt; **Poznámka:** Rovnako ako číslovanie v Pythone začína od nuly, aj riadky `DataFrame` sa číslujú od nuly: riadok s indexom 21 je 22. riadok. A na rozdiel od rezu v Pythone zahŕňa rez v `.loc` oba konce, takže `data.loc[17:22, :]` zobrazí šesť riadkov, nie päť.
+
+**Čo `.info()` nevidí.** Diera sa v správe ohlási sama. Preklep nie: sila 151 N zapísaná tam, kde patrilo 15,1 N, je z pohľadu `.info()` celkom dobré desatinné číslo. Chybné hodnoty zachytí oko a oko potrebuje obrázok:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114835-12" class="markdown-preview" style="display: block;" data-original-markdown="Druhú bunku treba rozobrať:
+
+1. `data_corrupted` – `DataFrame`, s ktorým pracujeme, definovaný v bunke vyššie.
+2. `.loc[]` – metóda na prístup k riadkom a stĺpcom `DataFrame` podľa mien alebo logických podmienok.
+3. `data_corrupted['x [cm]'].isna()` – táto časť vytvorí stĺpec odpovedí `True`/`False`: vyberie stĺpec s názvom `&quot;x [cm]&quot;` a `.isna()` sa pýta o každom riadku, či jeho hodnota chýba.
+4. `:` – dvojbodka za čiarkou znamená, že chceme vidieť všetky stĺpce. Stačil by aj jeden stĺpec, `'x [cm]'`, alebo ich zoznam, `['x [cm]', 'F [N]']`.
+
+&gt; **Poznámka:** Rovnako ako číslovanie v Pythone začína od nuly, aj riadky `DataFrame` sa číslujú od nuly: riadok s indexom 21 je 22. riadok. A na rozdiel od rezu v Pythone zahŕňa rez v `.loc` oba konce, takže `data.loc[17:22, :]` zobrazí šesť riadkov, nie päť.
+
+**Čo `.info()` nevidí.** Diera sa v správe ohlási sama. Preklep nie: sila 151 N zapísaná tam, kde patrilo 15,1 N, je z pohľadu `.info()` celkom dobré desatinné číslo. Chybné hodnoty zachytí oko a oko potrebuje obrázok:"><p>Druhú bunku treba rozobrať:</p>
+<ol>
+<li><code>data_corrupted</code> – <code>DataFrame</code>, s ktorým pracujeme, definovaný v bunke vyššie.</li>
+<li><code>.loc[]</code> – metóda na prístup k riadkom a stĺpcom <code>DataFrame</code> podľa mien alebo logických podmienok.</li>
+<li><code>data_corrupted['x [cm]'].isna()</code> – táto časť vytvorí stĺpec odpovedí <code>True</code>/<code>False</code>: vyberie stĺpec s názvom <code>"x [cm]"</code> a <code>.isna()</code> sa pýta o každom riadku, či jeho hodnota chýba.</li>
+<li><code>:</code> – dvojbodka za čiarkou znamená, že chceme vidieť všetky stĺpce. Stačil by aj jeden stĺpec, <code>'x [cm]'</code>, alebo ich zoznam, <code>['x [cm]', 'F [N]']</code>.</li>
+</ol>
+<blockquote>
+<p><strong>Poznámka:</strong> Rovnako ako číslovanie v Pythone začína od nuly, aj riadky <code>DataFrame</code> sa číslujú od nuly: riadok s indexom 21 je 22. riadok. A na rozdiel od rezu v Pythone zahŕňa rez v <code>.loc</code> oba konce, takže <code>data.loc[17:22, :]</code> zobrazí šesť riadkov, nie päť.</p>
+</blockquote>
+<p><strong>Čo <code>.info()</code> nevidí.</strong> Diera sa v správe ohlási sama. Preklep nie: sila 151 N zapísaná tam, kde patrilo 15,1 N, je z pohľadu <code>.info()</code> celkom dobré desatinné číslo. Chybné hodnoty zachytí oko a oko potrebuje obrázok:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># riadky s chýbajúcim x nemajú polohu, preto ich z obrázka vynechajme
+data_corrupted_dropped = data_corrupted.dropna()
+
+scatter_corrupted = points(list(zip(data_corrupted_dropped['x [cm]'], data_corrupted_dropped['F [N]'])),
+                           axes_labels = [r'$x$ [cm]', r'$F$ [N]'], frame=True, gridlines=True)
+scatter_corrupted
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114835-13" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Pružina sa ťahala rukou a najsilnejšie ťahanie celej série ostalo pri 30 N. Údaje 48, 151 a 238 N nie sú merania, sú to údery do klávesnice. Hranice určuje fyzika, takže filter môže napísať fyzika, a nástrojom je *logická maska* (*boolean mask*): stĺpec odpovedí `True` a `False`, jedna na riadok, vytvorený tak, že sa každého údaju opýtame na tie isté otázky naraz:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114835-13" class="markdown-preview" style="display: block;" data-original-markdown="Pružina sa ťahala rukou a najsilnejšie ťahanie celej série ostalo pri 30 N. Údaje 48, 151 a 238 N nie sú merania, sú to údery do klávesnice. Hranice určuje fyzika, takže filter môže napísať fyzika, a nástrojom je *logická maska* (*boolean mask*): stĺpec odpovedí `True` a `False`, jedna na riadok, vytvorený tak, že sa každého údaju opýtame na tie isté otázky naraz:"><p>Pružina sa ťahala rukou a najsilnejšie ťahanie celej série ostalo pri 30 N. Údaje 48, 151 a 238 N nie sú merania, sú to údery do klávesnice. Hranice určuje fyzika, takže filter môže napísať fyzika, a nástrojom je <em>logická maska</em> (<em>boolean mask</em>): stĺpec odpovedí <code>True</code> a <code>False</code>, jedna na riadok, vytvorený tak, že sa každého údaju opýtame na tie isté otázky naraz:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># maska, ktorá ponechá len hodnoverné údaje: sila kladná, sila menšia ako 40 N, dĺžka prítomná
+mask_plausible = (data_corrupted['F [N]'] > 0) & (data_corrupted['F [N]'] < 40) & data_corrupted['x [cm]'].notna()
+
+data_corrupted_clean = data_corrupted[mask_plausible]
+len(data_corrupted_clean)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114835-14" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Každé porovnanie kladie svoju otázku všetkým riadkom naraz a vráti stĺpec odpovedí, a `&amp;` spája otázky dohromady: riadok prežije, iba ak prejde všetkými tromi. Indexovanie tabuľky odpoveďami ponechá prežívajúce riadky celé, $x$ aj $F$ spolu, a ostatné vyhodí. Päť riadkov odchádza: dve diery, tri preklepy.
+
+&gt; **Poznámka:** `dropna()` je vstavaná metla: `data_corrupted.dropna()` odstráni každý riadok, ktorý obsahuje `NaN`, v ktoromkoľvek stĺpci. Dieru vymetie jedným riadkom, ale preklepy nevidí, pretože preklep nechýba, je chybný. Masky kladú otázky, ktoré si zvolíte. Metla vymetá len diery.
+
+Zvyšok kapitoly pracuje s čistou tabuľkou `data` z oddielu 5.2. V skutočný deň príde najprv čistenie vyššie a všetko po ňom beží na `data_corrupted_clean`." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114835-14" class="markdown-preview" style="display: block;" data-original-markdown="Každé porovnanie kladie svoju otázku všetkým riadkom naraz a vráti stĺpec odpovedí, a `&amp;` spája otázky dohromady: riadok prežije, iba ak prejde všetkými tromi. Indexovanie tabuľky odpoveďami ponechá prežívajúce riadky celé, $x$ aj $F$ spolu, a ostatné vyhodí. Päť riadkov odchádza: dve diery, tri preklepy.
+
+&gt; **Poznámka:** `dropna()` je vstavaná metla: `data_corrupted.dropna()` odstráni každý riadok, ktorý obsahuje `NaN`, v ktoromkoľvek stĺpci. Dieru vymetie jedným riadkom, ale preklepy nevidí, pretože preklep nechýba, je chybný. Masky kladú otázky, ktoré si zvolíte. Metla vymetá len diery.
+
+Zvyšok kapitoly pracuje s čistou tabuľkou `data` z oddielu 5.2. V skutočný deň príde najprv čistenie vyššie a všetko po ňom beží na `data_corrupted_clean`."><p>Každé porovnanie kladie svoju otázku všetkým riadkom naraz a vráti stĺpec odpovedí, a <code>&amp;</code> spája otázky dohromady: riadok prežije, iba ak prejde všetkými tromi. Indexovanie tabuľky odpoveďami ponechá prežívajúce riadky celé, $x$ aj $F$ spolu, a ostatné vyhodí. Päť riadkov odchádza: dve diery, tri preklepy.</p>
+<blockquote>
+<p><strong>Poznámka:</strong> <code>dropna()</code> je vstavaná metla: <code>data_corrupted.dropna()</code> odstráni každý riadok, ktorý obsahuje <code>NaN</code>, v ktoromkoľvek stĺpci. Dieru vymetie jedným riadkom, ale preklepy nevidí, pretože preklep nechýba, je chybný. Masky kladú otázky, ktoré si zvolíte. Metla vymetá len diery.</p>
+</blockquote>
+<p>Zvyšok kapitoly pracuje s čistou tabuľkou <code>data</code> z oddielu 5.2. V skutočný deň príde najprv čistenie vyššie a všetko po ňom beží na <code>data_corrupted_clean</code>.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114835-15" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.5 Úprava dát**
+
+Malé opravy patria priamo do tabuľky. Dĺžky sa merali v centimetroch, ale model $F = kx$ chce metre, takže prevod sa stane novým stĺpcom:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114835-15" class="markdown-preview" style="display: block;" data-original-markdown="## **5.5 Úprava dát**
+
+Malé opravy patria priamo do tabuľky. Dĺžky sa merali v centimetroch, ale model $F = kx$ chce metre, takže prevod sa stane novým stĺpcom:"><h2 id="55-úprava-dát"><strong>5.5 Úprava dát</strong></h2>
+<p>Malé opravy patria priamo do tabuľky. Dĺžky sa merali v centimetroch, ale model $F = kx$ chce metre, takže prevod sa stane novým stĺpcom:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># predspracovanie dát – prevod z cm na m
+data["x [m]"] = data["x [cm]"]/100
+
+# zobrazenie náhodnej vzorky dát
+data.sample(n=10)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114836-16" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Jeden riadok a tabuľka má tretí stĺpec: názov v zátvorkách vľavo sa vytvorí (alebo prepíše) tým, čo stojí vpravo. V dátovej vede sa tento krok nazýva *predspracovanie dát* (*data preprocessing*) alebo *tvorba príznakov* (*feature engineering*): pretvorenie surovej tabuľky tak, aby ju akákoľvek analýza na ďalšom stupni našla pripravenú. Prevod jednotiek by sa dal urobiť aj neskôr ručne, na každej hodnote, ale potom by si každé použitie dĺžky muselo pamätať prevodný činiteľ. Nový stĺpec urobí prácu raz, tam, kde dáta žijú. `sample(n=10)` zobrazí desať náhodných riadkov, pri každom spustení iných. Tabuľka ostáva, mení sa len pohľad." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114836-16" class="markdown-preview" style="display: block;" data-original-markdown="Jeden riadok a tabuľka má tretí stĺpec: názov v zátvorkách vľavo sa vytvorí (alebo prepíše) tým, čo stojí vpravo. V dátovej vede sa tento krok nazýva *predspracovanie dát* (*data preprocessing*) alebo *tvorba príznakov* (*feature engineering*): pretvorenie surovej tabuľky tak, aby ju akákoľvek analýza na ďalšom stupni našla pripravenú. Prevod jednotiek by sa dal urobiť aj neskôr ručne, na každej hodnote, ale potom by si každé použitie dĺžky muselo pamätať prevodný činiteľ. Nový stĺpec urobí prácu raz, tam, kde dáta žijú. `sample(n=10)` zobrazí desať náhodných riadkov, pri každom spustení iných. Tabuľka ostáva, mení sa len pohľad."><p>Jeden riadok a tabuľka má tretí stĺpec: názov v zátvorkách vľavo sa vytvorí (alebo prepíše) tým, čo stojí vpravo. V dátovej vede sa tento krok nazýva <em>predspracovanie dát</em> (<em>data preprocessing</em>) alebo <em>tvorba príznakov</em> (<em>feature engineering</em>): pretvorenie surovej tabuľky tak, aby ju akákoľvek analýza na ďalšom stupni našla pripravenú. Prevod jednotiek by sa dal urobiť aj neskôr ručne, na každej hodnote, ale potom by si každé použitie dĺžky muselo pamätať prevodný činiteľ. Nový stĺpec urobí prácu raz, tam, kde dáta žijú. <code>sample(n=10)</code> zobrazí desať náhodných riadkov, pri každom spustení iných. Tabuľka ostáva, mení sa len pohľad.</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># zobrazenie riadkov v určitom rozsahu
+data.loc[17:22, :]
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114836-17" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.6 Prvý graf**
+
+Sage kreslí body ako dvojice $[x_i, F_i]$, takže oba stĺpce sa najprv „zazipsujú“ dohromady:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114836-17" class="markdown-preview" style="display: block;" data-original-markdown="## **5.6 Prvý graf**
+
+Sage kreslí body ako dvojice $[x_i, F_i]$, takže oba stĺpce sa najprv „zazipsujú“ dohromady:"><h2 id="56-prvý-graf"><strong>5.6 Prvý graf</strong></h2>
+<p>Sage kreslí body ako dvojice $[x_i, F_i]$, takže oba stĺpce sa najprv „zazipsujú“ dohromady:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># vytvorenie zoznamu dvojíc v tvare (x_1, F_1), (x_2, F_2), ...
+data_points = list(zip(data["x [m]"], data["F [N]"]))
+
+# vzorka bodov
+data_points[17:22]
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114836-18" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Poznámka:** Funkcia `zip()` spája zodpovedajúce hodnoty do dvojíc ako zips a `list()` zmení výsledok na obyčajný zoznam Pythonu. Taký zoznam možno napísať aj ručne, napr. `[[0.01, 4.19], [0.01, 2.03], ...]`. Zoznam dvojíc je presne tvar, ktorý príkaz `points()` akceptuje. Na spojenie bodov čiarou slúži `line()`.
+
+Najprv formátovanie, potom dáta. Rámik nesie prázdny graf:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114836-18" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Poznámka:** Funkcia `zip()` spája zodpovedajúce hodnoty do dvojíc ako zips a `list()` zmení výsledok na obyčajný zoznam Pythonu. Taký zoznam možno napísať aj ručne, napr. `[[0.01, 4.19], [0.01, 2.03], ...]`. Zoznam dvojíc je presne tvar, ktorý príkaz `points()` akceptuje. Na spojenie bodov čiarou slúži `line()`.
+
+Najprv formátovanie, potom dáta. Rámik nesie prázdny graf:"><blockquote>
+<p><strong>Poznámka:</strong> Funkcia <code>zip()</code> spája zodpovedajúce hodnoty do dvojíc ako zips a <code>list()</code> zmení výsledok na obyčajný zoznam Pythonu. Taký zoznam možno napísať aj ručne, napr. <code>[[0.01, 4.19], [0.01, 2.03], ...]</code>. Zoznam dvojíc je presne tvar, ktorý príkaz <code>points()</code> akceptuje. Na spojenie bodov čiarou slúži <code>line()</code>.</p>
+</blockquote>
+<p>Najprv formátovanie, potom dáta. Rámik nesie prázdny graf:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># prázdny graf nesúci formátovanie: názov a popisy osí v LaTeXu
+plot_format = plot([], title="Measurement of the dependence $F(x)$",
+                   axes_labels = [r"$x\;\mathrm{[m]}$", r"$F\;\mathrm{[N]}$"],
+                   frame=True, gridlines=True)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114836-19" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Poznámka:** `plot([])` nakreslí prázdny zoznam kriviek, takže nekreslí nič, ale stále akceptuje všetky možnosti formátovania ako skutočný graf. Keď sa grafy spájajú pomocou `+`, možnosti všetkých sčítancov sa zlúčia, takže prázdny graf prenesie názov, rámik, mriežku a popisy osí do výsledného obrázka a ušetrí prepisovanie do toho grafu, ktorý v kombinácii práve zostal." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114836-19" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Poznámka:** `plot([])` nakreslí prázdny zoznam kriviek, takže nekreslí nič, ale stále akceptuje všetky možnosti formátovania ako skutočný graf. Keď sa grafy spájajú pomocou `+`, možnosti všetkých sčítancov sa zlúčia, takže prázdny graf prenesie názov, rámik, mriežku a popisy osí do výsledného obrázka a ušetrí prepisovanie do toho grafu, ktorý v kombinácii práve zostal."><blockquote>
+<p><strong>Poznámka:</strong> <code>plot([])</code> nakreslí prázdny zoznam kriviek, takže nekreslí nič, ale stále akceptuje všetky možnosti formátovania ako skutočný graf. Keď sa grafy spájajú pomocou <code>+</code>, možnosti všetkých sčítancov sa zlúčia, takže prázdny graf prenesie názov, rámik, mriežku a popisy osí do výsledného obrázka a ušetrí prepisovanie do toho grafu, ktorý v kombinácii práve zostal.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># namerané dáta ako body
+measurement_plot = points(data_points, xmin=0, color='gray')
+
+# výsledný graf „sčítaním“ grafov
+final_plot = measurement_plot + plot_format
+final_plot
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># uloženie výsledného grafu ako png, dpi určuje kvalitu obrázka
+final_plot.save("measurement_plot.png", dpi=300)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114837-20" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Za zmienku stojí, že SageMath exportuje každý graf ako grafiku v publikačnej kvalite pomocou `.save()`: formát určuje prípona súboru (`png`, `pdf`, `svg`, ...) a rozlíšenie bodového formátu, akým je `png`, riadi `dpi` (*dots per inch*, počet pixelov, ktoré exportér zbalí do jedného palca obrázka). Predvolené `dpi=100` stačí na obrazovku; `dpi=300` je štandard pre tlač a necháva priestor na zväčšovanie v záverečnej práci. Vektorové formáty ako `pdf` `dpi` nepotrebujú vôbec: ukladajú samotnú geometriu, takže zostávajú ostré pri ľubovoľnom zväčšení." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114837-20" class="markdown-preview" style="display: block;" data-original-markdown="Za zmienku stojí, že SageMath exportuje každý graf ako grafiku v publikačnej kvalite pomocou `.save()`: formát určuje prípona súboru (`png`, `pdf`, `svg`, ...) a rozlíšenie bodového formátu, akým je `png`, riadi `dpi` (*dots per inch*, počet pixelov, ktoré exportér zbalí do jedného palca obrázka). Predvolené `dpi=100` stačí na obrazovku; `dpi=300` je štandard pre tlač a necháva priestor na zväčšovanie v záverečnej práci. Vektorové formáty ako `pdf` `dpi` nepotrebujú vôbec: ukladajú samotnú geometriu, takže zostávajú ostré pri ľubovoľnom zväčšení."><p>Za zmienku stojí, že SageMath exportuje každý graf ako grafiku v publikačnej kvalite pomocou <code>.save()</code>: formát určuje prípona súboru (<code>png</code>, <code>pdf</code>, <code>svg</code>, ...) a rozlíšenie bodového formátu, akým je <code>png</code>, riadi <code>dpi</code> (<em>dots per inch</em>, počet pixelov, ktoré exportér zbalí do jedného palca obrázka). Predvolené <code>dpi=100</code> stačí na obrazovku; <code>dpi=300</code> je štandard pre tlač a necháva priestor na zväčšovanie v záverečnej práci. Vektorové formáty ako <code>pdf</code> <code>dpi</code> nepotrebujú vôbec: ukladajú samotnú geometriu, takže zostávajú ostré pri ľubovoľnom zväčšení.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114837-21" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.7 Spriemerovanie opakovaní**
+
+Desať údajov pri jednej dĺžke je desať pohľadov na to isté ťahanie. Rozptyl medzi nimi je ruka a silomer, nie pružina. Aby sme videli pružinu, údaje každej dĺžky sa zhustia do priemeru a rozptylu:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114837-21" class="markdown-preview" style="display: block;" data-original-markdown="## **5.7 Spriemerovanie opakovaní**
+
+Desať údajov pri jednej dĺžke je desať pohľadov na to isté ťahanie. Rozptyl medzi nimi je ruka a silomer, nie pružina. Aby sme videli pružinu, údaje každej dĺžky sa zhustia do priemeru a rozptylu:"><h2 id="57-spriemerovanie-opakovaní"><strong>5.7 Spriemerovanie opakovaní</strong></h2>
+<p>Desať údajov pri jednej dĺžke je desať pohľadov na to isté ťahanie. Rozptyl medzi nimi je ruka a silomer, nie pružina. Aby sme videli pružinu, údaje každej dĺžky sa zhustia do priemeru a rozptylu:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># štatistiky z dát – priemery a smerodajná odchýlka (std)
+stats = data.groupby("x [m]")["F [N]"].agg(["mean", "std"]).reset_index()
+stats
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114837-22" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Riadok robí štyri úlohy, jednu po druhej:
+
+1. `data.groupby(&quot;x [m]&quot;)` rozdelí sto riadkov do desiatich skupín, jednej na dĺžku.
+2. `[&quot;F [N]&quot;]` vyberie stĺpec, nad ktorým sa počíta.
+3. `.agg([&quot;mean&quot;, &quot;std&quot;])` žiada dve čísla na skupinu: priemer a smerodajnú odchýlku jej síl.
+4. `.reset_index()` zmení výsledok späť na obyčajnú tabuľku, v ktorej je `x [m]` bežným stĺpcom.
+
+Výsledkom je nový `DataFrame`, `stats`, jeden riadok na dĺžku: kde sa údaje danej dĺžky v priemere nachádzajú a ako ďaleko sa typický údaj od tohto priemeru odchyľuje, v newtonoch. To isté sa dá urobiť aj v Exceli. Urobiť to jedným riadkom, ktorý prežije zmenu dát, je dôvod, prečo táto kapitola existuje." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114837-22" class="markdown-preview" style="display: block;" data-original-markdown="Riadok robí štyri úlohy, jednu po druhej:
+
+1. `data.groupby(&quot;x [m]&quot;)` rozdelí sto riadkov do desiatich skupín, jednej na dĺžku.
+2. `[&quot;F [N]&quot;]` vyberie stĺpec, nad ktorým sa počíta.
+3. `.agg([&quot;mean&quot;, &quot;std&quot;])` žiada dve čísla na skupinu: priemer a smerodajnú odchýlku jej síl.
+4. `.reset_index()` zmení výsledok späť na obyčajnú tabuľku, v ktorej je `x [m]` bežným stĺpcom.
+
+Výsledkom je nový `DataFrame`, `stats`, jeden riadok na dĺžku: kde sa údaje danej dĺžky v priemere nachádzajú a ako ďaleko sa typický údaj od tohto priemeru odchyľuje, v newtonoch. To isté sa dá urobiť aj v Exceli. Urobiť to jedným riadkom, ktorý prežije zmenu dát, je dôvod, prečo táto kapitola existuje."><p>Riadok robí štyri úlohy, jednu po druhej:</p>
+<ol>
+<li><code>data.groupby("x [m]")</code> rozdelí sto riadkov do desiatich skupín, jednej na dĺžku.</li>
+<li><code>["F [N]"]</code> vyberie stĺpec, nad ktorým sa počíta.</li>
+<li><code>.agg(["mean", "std"])</code> žiada dve čísla na skupinu: priemer a smerodajnú odchýlku jej síl.</li>
+<li><code>.reset_index()</code> zmení výsledok späť na obyčajnú tabuľku, v ktorej je <code>x [m]</code> bežným stĺpcom.</li>
+</ol>
+<p>Výsledkom je nový <code>DataFrame</code>, <code>stats</code>, jeden riadok na dĺžku: kde sa údaje danej dĺžky v priemere nachádzajú a ako ďaleko sa typický údaj od tohto priemeru odchyľuje, v newtonoch. To isté sa dá urobiť aj v Exceli. Urobiť to jedným riadkom, ktorý prežije zmenu dát, je dôvod, prečo táto kapitola existuje.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114837-23" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.8 Chybové úsečky vlastnej výroby**
+
+Priemer bez rozptylu je pol čísla. Rozptyl patrí do grafu ako *chybová úsečka* (*error bar*): malá čiara cez bod, ktorá ide od hodnoty mínus jej neistota po hodnotu plus jej neistota. Sage na to nemá hotový príkaz, čo robí z chybovej úsečky dobrú zámienku zoznámiť sa s vlastnou funkciou: receptom s menom, parametrami na vstupe a jednou hodnotou na výstupe. Jedna funkcia na jednu os:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114837-23" class="markdown-preview" style="display: block;" data-original-markdown="## **5.8 Chybové úsečky vlastnej výroby**
+
+Priemer bez rozptylu je pol čísla. Rozptyl patrí do grafu ako *chybová úsečka* (*error bar*): malá čiara cez bod, ktorá ide od hodnoty mínus jej neistota po hodnotu plus jej neistota. Sage na to nemá hotový príkaz, čo robí z chybovej úsečky dobrú zámienku zoznámiť sa s vlastnou funkciou: receptom s menom, parametrami na vstupe a jednou hodnotou na výstupe. Jedna funkcia na jednu os:"><h2 id="58-chybové-úsečky-vlastnej-výroby"><strong>5.8 Chybové úsečky vlastnej výroby</strong></h2>
+<p>Priemer bez rozptylu je pol čísla. Rozptyl patrí do grafu ako <em>chybová úsečka</em> (<em>error bar</em>): malá čiara cez bod, ktorá ide od hodnoty mínus jej neistota po hodnotu plus jej neistota. Sage na to nemá hotový príkaz, čo robí z chybovej úsečky dobrú zámienku zoznámiť sa s vlastnou funkciou: receptom s menom, parametrami na vstupe a jednou hodnotou na výstupe. Jedna funkcia na jednu os:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># vodorovná úsečka: x ide od x - dx do x + dx, vo výške y
+def x_errorbar(x, y, dx):
+    return line([(x - dx, y), (x + dx, y)], color='lime', thickness=1.5)
+
+# zvislá úsečka: y ide od y - dy do y + dy, v polohe x
+def y_errorbar(x, y, dy):
+    return line([(x, y - dy), (x, y + dy)], color='lime', thickness=1.5)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114837-24" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="`def` dá receptu meno, zátvorky vymenúvajú, čo recept potrebuje vedieť, a odsadené telo sa vykoná, až keď sa funkcia zavolá. Volanie ako `y_errorbar(0.06, 15.2, 1.2)` vypočíta jednu čiaru a vráti ju. To je práca príkazu `return`: odpoveď funkcie je hodnota ako každá iná, pripravená na uloženie, zaradenie do zoznamu alebo sčítanie. Tri čísla vo volaní vyplnia tri parametre v poradí: poloha, výška, polovičná dĺžka úsečky.
+
+Neistoty sú vlastné tejto kapitole. Dĺžky sa značili metrovou latou s presnosťou na pol milimetra: $\Delta x = 0{,}0005~\mathrm{m}$. Rozptyl sily je už vypočítaný, je v stĺpci `std` tabuľky `stats`. Funkciám dáme desať priemerov, jedno zostavenie zoznamu (*list comprehension*) na os:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114837-24" class="markdown-preview" style="display: block;" data-original-markdown="`def` dá receptu meno, zátvorky vymenúvajú, čo recept potrebuje vedieť, a odsadené telo sa vykoná, až keď sa funkcia zavolá. Volanie ako `y_errorbar(0.06, 15.2, 1.2)` vypočíta jednu čiaru a vráti ju. To je práca príkazu `return`: odpoveď funkcie je hodnota ako každá iná, pripravená na uloženie, zaradenie do zoznamu alebo sčítanie. Tri čísla vo volaní vyplnia tri parametre v poradí: poloha, výška, polovičná dĺžka úsečky.
+
+Neistoty sú vlastné tejto kapitole. Dĺžky sa značili metrovou latou s presnosťou na pol milimetra: $\Delta x = 0{,}0005~\mathrm{m}$. Rozptyl sily je už vypočítaný, je v stĺpci `std` tabuľky `stats`. Funkciám dáme desať priemerov, jedno zostavenie zoznamu (*list comprehension*) na os:"><p><code>def</code> dá receptu meno, zátvorky vymenúvajú, čo recept potrebuje vedieť, a odsadené telo sa vykoná, až keď sa funkcia zavolá. Volanie ako <code>y_errorbar(0.06, 15.2, 1.2)</code> vypočíta jednu čiaru a vráti ju. To je práca príkazu <code>return</code>: odpoveď funkcie je hodnota ako každá iná, pripravená na uloženie, zaradenie do zoznamu alebo sčítanie. Tri čísla vo volaní vyplnia tri parametre v poradí: poloha, výška, polovičná dĺžka úsečky.</p>
+<p>Neistoty sú vlastné tejto kapitole. Dĺžky sa značili metrovou latou s presnosťou na pol milimetra: $\Delta x = 0{,}0005~\mathrm{m}$. Rozptyl sily je už vypočítaný, je v stĺpci <code>std</code> tabuľky <code>stats</code>. Funkciám dáme desať priemerov, jedno zostavenie zoznamu (<em>list comprehension</em>) na os:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># chybové úsečky na priemeroch: x s presnosťou na pol milimetra, y na jednu smerodajnú odchýlku
+x_bars = [x_errorbar(xm, m, 0.0005) for xm, m in zip(stats['x [m]'], stats['mean'])]
+y_bars = [y_errorbar(xm, m, s) for xm, m, s in zip(stats['x [m]'], stats['mean'], stats['std'])]
+
+# priemery ako veľké červené body nad surovými dátami
+plot_means = points(list(zip(stats['x [m]'], stats['mean'])), size=40, color='red', zorder=-200)
+
+err_plot = plot_means + measurement_plot + sum(x_bars + y_bars)
+err_plot.show(figsize=12)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114837-25" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Volanie `.show()` sa končí parametrom `figsize` a toto slovo je nové, takže si zaslúži pozornosť. `figsize` nastavuje fyzickú veľkosť obrázka v palcoch: dvojica ako `figsize=[12, 6]` znamená dvanásť palcov na šírku a šesť na výšku. Jediné číslo, ako tu, znamená štvorec, `figsize=12` stojí za `[12, 12]`. Samotná scéna sa neroztiahne: SageMath zachováva pomer strán grafu a kreslí rámik vo vnútri obrázka, takže dáta sa nikdy nedeformujú, rastie len plátno.
+
+Plátno tu rásť musí, pretože obrázok je hustý: sto sivých bodov, desať červených priemerov a dvadsať tenkých úsečiek zdieľa jeden rámik. Na malom predvolenom plátne by sa vodorovné úsečky, dlhé sotva milimeter, stratili. Zväčšenie obrázka zväčšuje s ním každý popis, značku aj úsečku, takže pri `figsize=12` sú chybové úsečky jasne viditeľné. `figsize` funguje rovnako všade, kde sa graf objaví: v `show()`, v `save()` alebo priamo v `plot()` a `points()`.
+
+&gt; **Poznámka:** Časti sa spájajú sčítaním: v SageMath jedna grafika plus druhá nakreslí obe do toho istého obrázka. `sum(bars, start)` je obyčajný Python, ktorý toto sčítanie robí v cykle, počnúc hodnotou `start`, tu surovým rozptylom s červenými priemermi, a pripája k nemu každú úsečku. Funkcie sú teraz majetkom kapitoly: ktorýkoľvek graf, ktorý potrebuje pripojiť neistotu, ich môže zavolať.
+
+&gt; **Poznámka:** Zvislá úsečka tu nakreslená je jedna smerodajná odchýlka *údajov*. *Priemer* z desiatich je stabilnejší než ktorýkoľvek jednotlivý údaj, jeho vlastná neistota je $\mathrm{std}/\sqrt{10}$, štandardná chyba priemeru. Cvičenie 5.4 sa pýta, čo obrázok hovorí, keď sa nakreslí táto úsečka." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114837-25" class="markdown-preview" style="display: block;" data-original-markdown="Volanie `.show()` sa končí parametrom `figsize` a toto slovo je nové, takže si zaslúži pozornosť. `figsize` nastavuje fyzickú veľkosť obrázka v palcoch: dvojica ako `figsize=[12, 6]` znamená dvanásť palcov na šírku a šesť na výšku. Jediné číslo, ako tu, znamená štvorec, `figsize=12` stojí za `[12, 12]`. Samotná scéna sa neroztiahne: SageMath zachováva pomer strán grafu a kreslí rámik vo vnútri obrázka, takže dáta sa nikdy nedeformujú, rastie len plátno.
+
+Plátno tu rásť musí, pretože obrázok je hustý: sto sivých bodov, desať červených priemerov a dvadsať tenkých úsečiek zdieľa jeden rámik. Na malom predvolenom plátne by sa vodorovné úsečky, dlhé sotva milimeter, stratili. Zväčšenie obrázka zväčšuje s ním každý popis, značku aj úsečku, takže pri `figsize=12` sú chybové úsečky jasne viditeľné. `figsize` funguje rovnako všade, kde sa graf objaví: v `show()`, v `save()` alebo priamo v `plot()` a `points()`.
+
+&gt; **Poznámka:** Časti sa spájajú sčítaním: v SageMath jedna grafika plus druhá nakreslí obe do toho istého obrázka. `sum(bars, start)` je obyčajný Python, ktorý toto sčítanie robí v cykle, počnúc hodnotou `start`, tu surovým rozptylom s červenými priemermi, a pripája k nemu každú úsečku. Funkcie sú teraz majetkom kapitoly: ktorýkoľvek graf, ktorý potrebuje pripojiť neistotu, ich môže zavolať.
+
+&gt; **Poznámka:** Zvislá úsečka tu nakreslená je jedna smerodajná odchýlka *údajov*. *Priemer* z desiatich je stabilnejší než ktorýkoľvek jednotlivý údaj, jeho vlastná neistota je $\mathrm{std}/\sqrt{10}$, štandardná chyba priemeru. Cvičenie 5.4 sa pýta, čo obrázok hovorí, keď sa nakreslí táto úsečka."><p>Volanie <code>.show()</code> sa končí parametrom <code>figsize</code> a toto slovo je nové, takže si zaslúži pozornosť. <code>figsize</code> nastavuje fyzickú veľkosť obrázka v palcoch: dvojica ako <code>figsize=[12, 6]</code> znamená dvanásť palcov na šírku a šesť na výšku. Jediné číslo, ako tu, znamená štvorec, <code>figsize=12</code> stojí za <code>[12, 12]</code>. Samotná scéna sa neroztiahne: SageMath zachováva pomer strán grafu a kreslí rámik vo vnútri obrázka, takže dáta sa nikdy nedeformujú, rastie len plátno.</p>
+<p>Plátno tu rásť musí, pretože obrázok je hustý: sto sivých bodov, desať červených priemerov a dvadsať tenkých úsečiek zdieľa jeden rámik. Na malom predvolenom plátne by sa vodorovné úsečky, dlhé sotva milimeter, stratili. Zväčšenie obrázka zväčšuje s ním každý popis, značku aj úsečku, takže pri <code>figsize=12</code> sú chybové úsečky jasne viditeľné. <code>figsize</code> funguje rovnako všade, kde sa graf objaví: v <code>show()</code>, v <code>save()</code> alebo priamo v <code>plot()</code> a <code>points()</code>.</p>
+<blockquote>
+<p><strong>Poznámka:</strong> Časti sa spájajú sčítaním: v SageMath jedna grafika plus druhá nakreslí obe do toho istého obrázka. <code>sum(bars, start)</code> je obyčajný Python, ktorý toto sčítanie robí v cykle, počnúc hodnotou <code>start</code>, tu surovým rozptylom s červenými priemermi, a pripája k nemu každú úsečku. Funkcie sú teraz majetkom kapitoly: ktorýkoľvek graf, ktorý potrebuje pripojiť neistotu, ich môže zavolať.</p>
+</blockquote>
+<blockquote>
+<p><strong>Poznámka:</strong> Zvislá úsečka tu nakreslená je jedna smerodajná odchýlka <em>údajov</em>. <em>Priemer</em> z desiatich je stabilnejší než ktorýkoľvek jednotlivý údaj, jeho vlastná neistota je $\mathrm{std}/\sqrt{10}$, štandardná chyba priemeru. Cvičenie 5.4 sa pýta, čo obrázok hovorí, keď sa nakreslí táto úsečka.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114837-26" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.9 Preloženie modelu**
+
+Teraz k samotnej tuhosti pružiny. Model je $F = kx$ s neznámym $k$ a v Sage sa model napíše skôr, než sa použije:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114837-26" class="markdown-preview" style="display: block;" data-original-markdown="## **5.9 Preloženie modelu**
+
+Teraz k samotnej tuhosti pružiny. Model je $F = kx$ s neznámym $k$ a v Sage sa model napíše skôr, než sa použije:"><h2 id="59-preloženie-modelu"><strong>5.9 Preloženie modelu</strong></h2>
+<p>Teraz k samotnej tuhosti pružiny. Model je $F = kx$ s neznámym $k$ a v Sage sa model napíše skôr, než sa použije:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># premenné vystupujúce v modeli – tuhosť pružiny k a predĺženie x
+k = var("k")
+x = var("x")
+
+# definovanie modelu
+F(x) = k*x
+
+# zobrazenie na kontrolu
+show(F)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114837-27" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Čo vstupuje do preloženia? Môže to byť všetkých sto surových bodov z `data_points`. Pokojnejšou voľbou je desať priemerov, jeden na dĺžku: opakovania sú už spriemerované a preloženie kladie desať otázok namiesto sto. Preložené body teda sú:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114837-27" class="markdown-preview" style="display: block;" data-original-markdown="Čo vstupuje do preloženia? Môže to byť všetkých sto surových bodov z `data_points`. Pokojnejšou voľbou je desať priemerov, jeden na dĺžku: opakovania sú už spriemerované a preloženie kladie desať otázok namiesto sto. Preložené body teda sú:"><p>Čo vstupuje do preloženia? Môže to byť všetkých sto surových bodov z <code>data_points</code>. Pokojnejšou voľbou je desať priemerov, jeden na dĺžku: opakovania sú už spriemerované a preloženie kladie desať otázok namiesto sto. Preložené body teda sú:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># preložené dáta: jedna dvojica (x, priemer F) na dĺžku
+x_F_means = list(zip(stats['x [m]'], stats['mean']))
+x_F_means
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114838-28" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Samotné preloženie je jeden príkaz. `find_fit()` berie ako prvý zoznam bodov a ako druhý model a hľadá hodnoty parametrov, ktoré model čo najviac priblížia k bodom:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114838-28" class="markdown-preview" style="display: block;" data-original-markdown="Samotné preloženie je jeden príkaz. `find_fit()` berie ako prvý zoznam bodov a ako druhý model a hľadá hodnoty parametrov, ktoré model čo najviac priblížia k bodom:"><p>Samotné preloženie je jeden príkaz. <code>find_fit()</code> berie ako prvý zoznam bodov a ako druhý model a hľadá hodnoty parametrov, ktoré model čo najviac priblížia k bodom:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># nájdenie parametra k, výstup vo forme slovníka Pythonu
+fit = find_fit(x_F_means, F, solution_dict=True)
+fit
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114838-29" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Poznámka:** S `solution_dict=True` sa odpoveď vráti ako slovník Pythonu, dvojica `kľúč: hodnota`, ktorú neskorší kód číta podľa mena, ako v `fit[k]`. Ako vyzerá výstup bez neho alebo so `solution_dict=False`? Vyskúšajte a uvidíte." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114838-29" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Poznámka:** S `solution_dict=True` sa odpoveď vráti ako slovník Pythonu, dvojica `kľúč: hodnota`, ktorú neskorší kód číta podľa mena, ako v `fit[k]`. Ako vyzerá výstup bez neho alebo so `solution_dict=False`? Vyskúšajte a uvidíte."><blockquote>
+<p><strong>Poznámka:</strong> S <code>solution_dict=True</code> sa odpoveď vráti ako slovník Pythonu, dvojica <code>kľúč: hodnota</code>, ktorú neskorší kód číta podľa mena, ako v <code>fit[k]</code>. Ako vyzerá výstup bez neho alebo so <code>solution_dict=False</code>? Vyskúšajte a uvidíte.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114838-30" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.10 Výsledok**
+
+Preloženie udáva tuhosť pružiny zhruba $k \doteq 250~\mathrm{N/m}$. Či toto číslo opisuje dáta, je otázka pre oči, takže preložená priamka ide do grafu. Najprv sa nájdená hodnota dosadí do symbolického modelu:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114838-30" class="markdown-preview" style="display: block;" data-original-markdown="## **5.10 Výsledok**
+
+Preloženie udáva tuhosť pružiny zhruba $k \doteq 250~\mathrm{N/m}$. Či toto číslo opisuje dáta, je otázka pre oči, takže preložená priamka ide do grafu. Najprv sa nájdená hodnota dosadí do symbolického modelu:"><h2 id="510-výsledok"><strong>5.10 Výsledok</strong></h2>
+<p>Preloženie udáva tuhosť pružiny zhruba $k \doteq 250~\mathrm{N/m}$. Či toto číslo opisuje dáta, je otázka pre oči, takže preložená priamka ide do grafu. Najprv sa nájdená hodnota dosadí do symbolického modelu:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># dosadenie číselnej hodnoty parametra k do pôvodného modelu
+F_fit(x) = F(x).subs(fit)
+
+# kontrola
+F_fit
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># graf modelu s nájdenou preloženou hodnotou parametra k
+fit_label = rf"Fit, $k = $ {round(fit[k], 2)} N/m"
+plot_fit = plot(F_fit, xmin=0, xmax=0.1, legend_label=fit_label, color='orange', linestyle='--') # preloženie bude prerušovaná oranžová čiara
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114838-31" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Poznámka:** Popis je zostavený formátovaním reťazca. Znak `f` pred úvodzovkami umožňuje kódu vkladať hodnoty do textu medzi zloženými zátvorkami, tu preloženú hodnotu `k`, prečítanú zo slovníka ako `fit[k]` a zaokrúhlenú na dve desatinné miesta pomocou `round(fit[k], 2)`. Znak `r` pred úvodzovkami, ako inde, ponechá reťazec surový, takže príkazy $\LaTeX$u v ňom prejdú nedotknuté. Preto je zostavenie popisu zo slovníka lepšie než napísanie čísla do úvodzoviek: keď sa dáta zmenia, nové preloženie zmení `fit[k]` a popis – aj legenda – sa pri ďalšom spustení aktualizujú samy. Ručne napísaný popis povie pravdu raz; formátovaný ju hovorí stále." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114838-31" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Poznámka:** Popis je zostavený formátovaním reťazca. Znak `f` pred úvodzovkami umožňuje kódu vkladať hodnoty do textu medzi zloženými zátvorkami, tu preloženú hodnotu `k`, prečítanú zo slovníka ako `fit[k]` a zaokrúhlenú na dve desatinné miesta pomocou `round(fit[k], 2)`. Znak `r` pred úvodzovkami, ako inde, ponechá reťazec surový, takže príkazy $\LaTeX$u v ňom prejdú nedotknuté. Preto je zostavenie popisu zo slovníka lepšie než napísanie čísla do úvodzoviek: keď sa dáta zmenia, nové preloženie zmení `fit[k]` a popis – aj legenda – sa pri ďalšom spustení aktualizujú samy. Ručne napísaný popis povie pravdu raz; formátovaný ju hovorí stále."><blockquote>
+<p><strong>Poznámka:</strong> Popis je zostavený formátovaním reťazca. Znak <code>f</code> pred úvodzovkami umožňuje kódu vkladať hodnoty do textu medzi zloženými zátvorkami, tu preloženú hodnotu <code>k</code>, prečítanú zo slovníka ako <code>fit[k]</code> a zaokrúhlenú na dve desatinné miesta pomocou <code>round(fit[k], 2)</code>. Znak <code>r</code> pred úvodzovkami, ako inde, ponechá reťazec surový, takže príkazy $\LaTeX$u v ňom prejdú nedotknuté. Preto je zostavenie popisu zo slovníka lepšie než napísanie čísla do úvodzoviek: keď sa dáta zmenia, nové preloženie zmení <code>fit[k]</code> a popis – aj legenda – sa pri ďalšom spustení aktualizujú samy. Ručne napísaný popis povie pravdu raz; formátovaný ju hovorí stále.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">final_plot_fit = plot_fit + err_plot + plot_format
+final_plot_fit.show(figsize=12)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># uloženie výsledného grafu
+final_plot_fit.save("final_plot_fit.png", figsize=12, dpi=300)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114839-32" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="To je celá práca so spracovaním dát hotová: sto pochybných údajov dnu, jedno číslo s obrázkom von. Priamka začína tam, kde ju Hookov zákon žiada začať, nulová sila pri nulovom predĺžení, a pretína rozptyl pri každej dĺžke, takže hodnote $k$, ktorú nesie, možno veriť približne na šírku týchto úsečiek.
+
+**Za hranicou priamok.** Priamka prechádzajúca počiatkom je najzhovievavejší model vo fyzike a jej preloženie je rutinná práca: zvládne ju každý tabuľkový procesor, každý nástroj typu „klikni a vyber“. Sila SageMath sa ukazuje inde. Predpokladajme, že fyzika nie je Hookov zákon, ale príťažlivosť medzi dvoma zväzkami magnetov, ktoré sa od seba odťahujú: príťažlivosť je najsilnejšia pri dotyku a so vzdialenosťou slabne a experimentálny vzorec pre ňu znie
+
+$$F(x) = F_0\left(1 - \tanh\frac{x}{a}\right)\, e^{-x/a},$$
+
+hyperbolický tangens tlmený exponenciálou, s dvoma parametrami: mierkou sily $F_0$ a dosahom $a$. Zapísaný v Sage je to len ďalší model:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114839-32" class="markdown-preview" style="display: block;" data-original-markdown="To je celá práca so spracovaním dát hotová: sto pochybných údajov dnu, jedno číslo s obrázkom von. Priamka začína tam, kde ju Hookov zákon žiada začať, nulová sila pri nulovom predĺžení, a pretína rozptyl pri každej dĺžke, takže hodnote $k$, ktorú nesie, možno veriť približne na šírku týchto úsečiek.
+
+**Za hranicou priamok.** Priamka prechádzajúca počiatkom je najzhovievavejší model vo fyzike a jej preloženie je rutinná práca: zvládne ju každý tabuľkový procesor, každý nástroj typu „klikni a vyber“. Sila SageMath sa ukazuje inde. Predpokladajme, že fyzika nie je Hookov zákon, ale príťažlivosť medzi dvoma zväzkami magnetov, ktoré sa od seba odťahujú: príťažlivosť je najsilnejšia pri dotyku a so vzdialenosťou slabne a experimentálny vzorec pre ňu znie
+
+$$F(x) = F_0\left(1 - \tanh\frac{x}{a}\right)\, e^{-x/a},$$
+
+hyperbolický tangens tlmený exponenciálou, s dvoma parametrami: mierkou sily $F_0$ a dosahom $a$. Zapísaný v Sage je to len ďalší model:"><p>To je celá práca so spracovaním dát hotová: sto pochybných údajov dnu, jedno číslo s obrázkom von. Priamka začína tam, kde ju Hookov zákon žiada začať, nulová sila pri nulovom predĺžení, a pretína rozptyl pri každej dĺžke, takže hodnote $k$, ktorú nesie, možno veriť približne na šírku týchto úsečiek.</p>
+<p><strong>Za hranicou priamok.</strong> Priamka prechádzajúca počiatkom je najzhovievavejší model vo fyzike a jej preloženie je rutinná práca: zvládne ju každý tabuľkový procesor, každý nástroj typu „klikni a vyber“. Sila SageMath sa ukazuje inde. Predpokladajme, že fyzika nie je Hookov zákon, ale príťažlivosť medzi dvoma zväzkami magnetov, ktoré sa od seba odťahujú: príťažlivosť je najsilnejšia pri dotyku a so vzdialenosťou slabne a experimentálny vzorec pre ňu znie</p>
+<p>$$F(x) = F_0\left(1 - \tanh\frac{x}{a}\right)\, e^{-x/a},$$</p>
+<p>hyperbolický tangens tlmený exponenciálou, s dvoma parametrami: mierkou sily $F_0$ a dosahom $a$. Zapísaný v Sage je to len ďalší model:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># premenné modelu magnetov
+F0, a, x = var("F0 a x")
+
+# definovanie modelu
+F_magnet(x) = F0 * (1 - tanh(x/a)) * exp(-x/a)
+
+# rýchly pohľad na tvar modelu s vzorovými hodnotami F0 = 3.5 N, a = 1 cm
+plot(F_magnet.subs(F0=3.5, a=0.01), xmin=0, xmax=0.05, axes_labels=[r"$x$ [m]", r"$F$ [N]"], frame=True, gridlines=True)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114839-33" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Krivka začína vo svojom maxime $F_0$ a hladko klesá k nule tempom, ktoré riadia dva parametre. Taký model nemá položku v rozbaľovacej ponuke nástroja typu „klikni a vyber“, kde bývajú „lineárny“, „polynomický“ a „exponenciálny“ – samotný $\tanh$ je zostavený z exponenciál, $\tanh u = (e^{2u} - 1)/(e^{2u} + 1)$, a preto sa vzorce tohto tvaru často nazývajú *netriviálne*. Presne tu sa symbolický nástroj osvedčí: SageMath preloží takmer každý vzorec, ktorý možno zapísať. Napíšte model, odovzdajte ho funkcii `find_fit` a parametre vypadnú. Rovnaký recept ako pri pružine, len model je ťažší.
+
+&gt; **Poznámka:** Dáta v tejto kapitole boli vygenerované náhodne a slúžia iba na ukážku, ako sa spracúvajú opakované merania tohto druhu. Skutočné pružiny, skutočné diery a skutočné preklepy sa správajú presne rovnako." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114839-33" class="markdown-preview" style="display: block;" data-original-markdown="Krivka začína vo svojom maxime $F_0$ a hladko klesá k nule tempom, ktoré riadia dva parametre. Taký model nemá položku v rozbaľovacej ponuke nástroja typu „klikni a vyber“, kde bývajú „lineárny“, „polynomický“ a „exponenciálny“ – samotný $\tanh$ je zostavený z exponenciál, $\tanh u = (e^{2u} - 1)/(e^{2u} + 1)$, a preto sa vzorce tohto tvaru často nazývajú *netriviálne*. Presne tu sa symbolický nástroj osvedčí: SageMath preloží takmer každý vzorec, ktorý možno zapísať. Napíšte model, odovzdajte ho funkcii `find_fit` a parametre vypadnú. Rovnaký recept ako pri pružine, len model je ťažší.
+
+&gt; **Poznámka:** Dáta v tejto kapitole boli vygenerované náhodne a slúžia iba na ukážku, ako sa spracúvajú opakované merania tohto druhu. Skutočné pružiny, skutočné diery a skutočné preklepy sa správajú presne rovnako."><p>Krivka začína vo svojom maxime $F_0$ a hladko klesá k nule tempom, ktoré riadia dva parametre. Taký model nemá položku v rozbaľovacej ponuke nástroja typu „klikni a vyber“, kde bývajú „lineárny“, „polynomický“ a „exponenciálny“ – samotný $\tanh$ je zostavený z exponenciál, $\tanh u = (e^{2u} - 1)/(e^{2u} + 1)$, a preto sa vzorce tohto tvaru často nazývajú <em>netriviálne</em>. Presne tu sa symbolický nástroj osvedčí: SageMath preloží takmer každý vzorec, ktorý možno zapísať. Napíšte model, odovzdajte ho funkcii <code>find_fit</code> a parametre vypadnú. Rovnaký recept ako pri pružine, len model je ťažší.</p>
+<blockquote>
+<p><strong>Poznámka:</strong> Dáta v tejto kapitole boli vygenerované náhodne a slúžia iba na ukážku, ako sa spracúvajú opakované merania tohto druhu. Skutočné pružiny, skutočné diery a skutočné preklepy sa správajú presne rovnako.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114839-34" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.11 Cvičenia**
+
+**5.1 Dve metly.** Vyčistite `data_corrupted` samotným `dropna()` a spočítajte prežívajúce riadky pomocou `len()`. Prečo sa počet líši od `len(data_corrupted_clean)`? Potom kombinujte nástroje: najprv masku hodnovernosti, potom `dropna()`, a vysvetlite, prečo na poradí tu nezáleží.
+
+**5.2 Škoda od preklepu.** Pred čistením prepočítajte priemer a smerodajnú odchýlku skupiny 6 cm v `data_corrupted` dvakrát: raz s údajom 151 N, raz s ním vymaskovaným. Ktoré číslo preklep poškodí viac, priemer alebo std? Čo by urobil s preloženým $k$, keby prežil do `x_F_means`?
+
+**5.3 Vlastný súbor.** Uložte dáta o pružine ako súbor csv na svoj počítač a načítajte ho v lokálnom Jupyteri pomocou `read_csv`. Porovnajte načítanie s bunkou z tlačidla v oddiele 5.2: čo tam cestovalo do cloudu ako text a čo tu nikdy neopustí disk? Skontrolujte príchod pomocou `.info()`.
+
+**5.4 Úsečka pre priemer.** Prekreslite graf z oddielu 5.8 so zvislými úsečkami štandardnej chyby priemeru, `std/sqrt(10)`, namiesto std. Ktorá z týchto dvoch úsečiek opisuje červený bod a ktorá patrí sivým? Po jednej vete.
+
+**5.5 Všetkých sto bodov.** Spustite `find_fit` na surových `data_points` namiesto desiatich priemerov. Pohne sa preložené $k$? Uveďte jeden dôvod, prečo sa obe preloženia tak dobre zhodujú, a jednu situáciu, v ktorej by sa nezhodovali (pomôcka: preklep, ktorý prežije čistenie)." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114839-34" class="markdown-preview" style="display: block;" data-original-markdown="## **5.11 Cvičenia**
+
+**5.1 Dve metly.** Vyčistite `data_corrupted` samotným `dropna()` a spočítajte prežívajúce riadky pomocou `len()`. Prečo sa počet líši od `len(data_corrupted_clean)`? Potom kombinujte nástroje: najprv masku hodnovernosti, potom `dropna()`, a vysvetlite, prečo na poradí tu nezáleží.
+
+**5.2 Škoda od preklepu.** Pred čistením prepočítajte priemer a smerodajnú odchýlku skupiny 6 cm v `data_corrupted` dvakrát: raz s údajom 151 N, raz s ním vymaskovaným. Ktoré číslo preklep poškodí viac, priemer alebo std? Čo by urobil s preloženým $k$, keby prežil do `x_F_means`?
+
+**5.3 Vlastný súbor.** Uložte dáta o pružine ako súbor csv na svoj počítač a načítajte ho v lokálnom Jupyteri pomocou `read_csv`. Porovnajte načítanie s bunkou z tlačidla v oddiele 5.2: čo tam cestovalo do cloudu ako text a čo tu nikdy neopustí disk? Skontrolujte príchod pomocou `.info()`.
+
+**5.4 Úsečka pre priemer.** Prekreslite graf z oddielu 5.8 so zvislými úsečkami štandardnej chyby priemeru, `std/sqrt(10)`, namiesto std. Ktorá z týchto dvoch úsečiek opisuje červený bod a ktorá patrí sivým? Po jednej vete.
+
+**5.5 Všetkých sto bodov.** Spustite `find_fit` na surových `data_points` namiesto desiatich priemerov. Pohne sa preložené $k$? Uveďte jeden dôvod, prečo sa obe preloženia tak dobre zhodujú, a jednu situáciu, v ktorej by sa nezhodovali (pomôcka: preklep, ktorý prežije čistenie)."><h2 id="511-cvičenia"><strong>5.11 Cvičenia</strong></h2>
+<p><strong>5.1 Dve metly.</strong> Vyčistite <code>data_corrupted</code> samotným <code>dropna()</code> a spočítajte prežívajúce riadky pomocou <code>len()</code>. Prečo sa počet líši od <code>len(data_corrupted_clean)</code>? Potom kombinujte nástroje: najprv masku hodnovernosti, potom <code>dropna()</code>, a vysvetlite, prečo na poradí tu nezáleží.</p>
+<p><strong>5.2 Škoda od preklepu.</strong> Pred čistením prepočítajte priemer a smerodajnú odchýlku skupiny 6 cm v <code>data_corrupted</code> dvakrát: raz s údajom 151 N, raz s ním vymaskovaným. Ktoré číslo preklep poškodí viac, priemer alebo std? Čo by urobil s preloženým $k$, keby prežil do <code>x_F_means</code>?</p>
+<p><strong>5.3 Vlastný súbor.</strong> Uložte dáta o pružine ako súbor csv na svoj počítač a načítajte ho v lokálnom Jupyteri pomocou <code>read_csv</code>. Porovnajte načítanie s bunkou z tlačidla v oddiele 5.2: čo tam cestovalo do cloudu ako text a čo tu nikdy neopustí disk? Skontrolujte príchod pomocou <code>.info()</code>.</p>
+<p><strong>5.4 Úsečka pre priemer.</strong> Prekreslite graf z oddielu 5.8 so zvislými úsečkami štandardnej chyby priemeru, <code>std/sqrt(10)</code>, namiesto std. Ktorá z týchto dvoch úsečiek opisuje červený bod a ktorá patrí sivým? Po jednej vete.</p>
+<p><strong>5.5 Všetkých sto bodov.</strong> Spustite <code>find_fit</code> na surových <code>data_points</code> namiesto desiatich priemerov. Pohne sa preložené $k$? Uveďte jeden dôvod, prečo sa obe preloženia tak dobre zhodujú, a jednu situáciu, v ktorej by sa nezhodovali (pomôcka: preklep, ktorý prežije čistenie).</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175114839-35" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.12 Zhrnutie**
+
+* **DataFrame.** Tabuľka z `pandas`: riadky, pomenované stĺpce, jeden riadok na meranie s dĺžkou opakovanou vo vlastnom stĺpci (*dlhý formát*). Upravená tabuľka – jedna tabuľka na súbor, názvy stĺpcov v prvom riadku, dáta zhora nadol – sa načíta jedným riadkom. Každý nástroj v tejto kapitole sa živí týmto tvarom.
+* **Import/Export Excel.** V našom notebooku tlačidlo s ikonou mriežky zmení `.xlsx` na text a napíše za vás načítavaciu bunku. V lokálnom Jupyteri `read_excel` a `read_csv` čítajú súbor z disku. Čísla používajú desatinné bodky, nikdy čiarky.
+* **`.info()` a `.isna()`.** Správa o zdravotnom stave počíta diery (`NaN`) a pomenúva typy stĺpcov. Chybné hodnoty nevidí. Na tie slúži oko a graf.
+* **Čistenie dát.** Diery odstráni `dropna()`, chybné hodnoty *logická maska*: porovnanie kladie svoju otázku všetkým riadkom naraz, `&amp;` spája otázky a indexovanie odpoveďami ponechá prechádzajúce riadky celé.
+* **Predspracovanie dát.** `data[&quot;x [m]&quot;] = data[&quot;x [cm]&quot;]/100` pridá prevod jednotiek tam, kde dáta žijú; `sample()` a `.loc` dávajú pohľad dovnútra.
+* **`groupby` a `agg`.** Desať opakovaní na dĺžku sa zhustí do priemeru a std, jedným riadkom, ktorý prežije zmenu dát.
+* **Vlastné funkcie.** `def` zabalí recept do mena, parametre dnu, `return` vydá jednu hodnotu: `x_errorbar` a `y_errorbar` menia chýbajúci príkaz na trojriadkový nástroj, ktorý môže zavolať ktorýkoľvek graf. `figsize` zväčší plátno, aby tenké úsečky ostali čitateľné.
+* **`find_fit`.** Body dnu, model dnu, parameter von. S `solution_dict=True` je odpoveď slovník, ktorý nasledujúca bunka číta podľa mena. Priamky sú rutina pre každý nástroj; pri netriviálnom modeli ako $F_0(1-\tanh(x/a))e^{-x/a}$, vzorci, ktorý SageMath preloží a rozbaľovacia ponuka ho ani nezobrazí, sa symbolický nástroj osvedčí." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175114839-35" class="markdown-preview" style="display: block;" data-original-markdown="## **5.12 Zhrnutie**
+
+* **DataFrame.** Tabuľka z `pandas`: riadky, pomenované stĺpce, jeden riadok na meranie s dĺžkou opakovanou vo vlastnom stĺpci (*dlhý formát*). Upravená tabuľka – jedna tabuľka na súbor, názvy stĺpcov v prvom riadku, dáta zhora nadol – sa načíta jedným riadkom. Každý nástroj v tejto kapitole sa živí týmto tvarom.
+* **Import/Export Excel.** V našom notebooku tlačidlo s ikonou mriežky zmení `.xlsx` na text a napíše za vás načítavaciu bunku. V lokálnom Jupyteri `read_excel` a `read_csv` čítajú súbor z disku. Čísla používajú desatinné bodky, nikdy čiarky.
+* **`.info()` a `.isna()`.** Správa o zdravotnom stave počíta diery (`NaN`) a pomenúva typy stĺpcov. Chybné hodnoty nevidí. Na tie slúži oko a graf.
+* **Čistenie dát.** Diery odstráni `dropna()`, chybné hodnoty *logická maska*: porovnanie kladie svoju otázku všetkým riadkom naraz, `&amp;` spája otázky a indexovanie odpoveďami ponechá prechádzajúce riadky celé.
+* **Predspracovanie dát.** `data[&quot;x [m]&quot;] = data[&quot;x [cm]&quot;]/100` pridá prevod jednotiek tam, kde dáta žijú; `sample()` a `.loc` dávajú pohľad dovnútra.
+* **`groupby` a `agg`.** Desať opakovaní na dĺžku sa zhustí do priemeru a std, jedným riadkom, ktorý prežije zmenu dát.
+* **Vlastné funkcie.** `def` zabalí recept do mena, parametre dnu, `return` vydá jednu hodnotu: `x_errorbar` a `y_errorbar` menia chýbajúci príkaz na trojriadkový nástroj, ktorý môže zavolať ktorýkoľvek graf. `figsize` zväčší plátno, aby tenké úsečky ostali čitateľné.
+* **`find_fit`.** Body dnu, model dnu, parameter von. S `solution_dict=True` je odpoveď slovník, ktorý nasledujúca bunka číta podľa mena. Priamky sú rutina pre každý nástroj; pri netriviálnom modeli ako $F_0(1-\tanh(x/a))e^{-x/a}$, vzorci, ktorý SageMath preloží a rozbaľovacia ponuka ho ani nezobrazí, sa symbolický nástroj osvedčí."><h2 id="512-zhrnutie"><strong>5.12 Zhrnutie</strong></h2>
+<ul>
+<li><strong>DataFrame.</strong> Tabuľka z <code>pandas</code>: riadky, pomenované stĺpce, jeden riadok na meranie s dĺžkou opakovanou vo vlastnom stĺpci (<em>dlhý formát</em>). Upravená tabuľka – jedna tabuľka na súbor, názvy stĺpcov v prvom riadku, dáta zhora nadol – sa načíta jedným riadkom. Každý nástroj v tejto kapitole sa živí týmto tvarom.</li>
+<li><strong>Import/Export Excel.</strong> V našom notebooku tlačidlo s ikonou mriežky zmení <code>.xlsx</code> na text a napíše za vás načítavaciu bunku. V lokálnom Jupyteri <code>read_excel</code> a <code>read_csv</code> čítajú súbor z disku. Čísla používajú desatinné bodky, nikdy čiarky.</li>
+<li><strong><code>.info()</code> a <code>.isna()</code>.</strong> Správa o zdravotnom stave počíta diery (<code>NaN</code>) a pomenúva typy stĺpcov. Chybné hodnoty nevidí. Na tie slúži oko a graf.</li>
+<li><strong>Čistenie dát.</strong> Diery odstráni <code>dropna()</code>, chybné hodnoty <em>logická maska</em>: porovnanie kladie svoju otázku všetkým riadkom naraz, <code>&amp;</code> spája otázky a indexovanie odpoveďami ponechá prechádzajúce riadky celé.</li>
+<li><strong>Predspracovanie dát.</strong> <code>data["x [m]"] = data["x [cm]"]/100</code> pridá prevod jednotiek tam, kde dáta žijú; <code>sample()</code> a <code>.loc</code> dávajú pohľad dovnútra.</li>
+<li><strong><code>groupby</code> a <code>agg</code>.</strong> Desať opakovaní na dĺžku sa zhustí do priemeru a std, jedným riadkom, ktorý prežije zmenu dát.</li>
+<li><strong>Vlastné funkcie.</strong> <code>def</code> zabalí recept do mena, parametre dnu, <code>return</code> vydá jednu hodnotu: <code>x_errorbar</code> a <code>y_errorbar</code> menia chýbajúci príkaz na trojriadkový nástroj, ktorý môže zavolať ktorýkoľvek graf. <code>figsize</code> zväčší plátno, aby tenké úsečky ostali čitateľné.</li>
+<li><strong><code>find_fit</code>.</strong> Body dnu, model dnu, parameter von. S <code>solution_dict=True</code> je odpoveď slovník, ktorý nasledujúca bunka číta podľa mena. Priamky sú rutina pre každý nástroj; pri netriviálnom modeli ako $F_0(1-\tanh(x/a))e^{-x/a}$, vzorci, ktorý SageMath preloží a rozbaľovacia ponuka ho ani nezobrazí, sa symbolický nástroj osvedčí.</li>
+</ul>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># prázdne bunky na cvičenia/pokusy – nové bunky môžete pridať kdekoľvek tlačidlom "Add Below"
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">
+</script></div></div></div></div></div>
+            
+        </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/embedded_sagecell_backup.js"></script>
+<script src="https://sage-sk.org/embedded_sagecell.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/FileSaver.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/nbplayerConfig.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/comment/comment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/markdown-fold.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.css">
+<script>let RUN_DELAY = 1000;</script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/customthemes15.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbrunner24.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaiengine23.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaipriming22.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbautocompletion20.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://code.datagridxl.com/datagridxl2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fflate@0.8.3/umd/index.min.js"></script>
+<script>
+  playerConfig={"panes":"Exec","lang":"sage","linked":true,"eval":false,"hide":["fullScreen"],"execute":true,"showRead":false,"collapsable":false,"playerPath":"https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main","name":"SageMath"};
+  playerMode={"showSage":true,"showNotebookInput":true,"showSageInput":true};
+  let API_KEY="";
+  let API_URL="";
+  let CURRENT_MODEL="";
+  let CURRENT_LANGUAGE="";
+  let SAGECELL_URL="https://sage-sk.org/";
+  let toggleEvalBtnsState=false;
+  let isFullWidthState=true;
+  window.hideCodeInputState=false;
+  let PRELOAD="";
+  let SETTINGS_PATH_NAME="settings.js";
+  let aiEduMode=true;
+  let aiCompleteMode=true;
+  let aiLogs=false;
+  window.aiLogs=false;
+  window.aiSettingsVisible=true;
+  window.aiLogsHistory=[];
+  makeMenu();
+  localize();
+  createTableOfContents();
+  loadStatus();
+  restoreUIState();
+  makeSageCells(playerConfig);
+  launchPlayer();
+  addControlPanel();
+  setupRunAllCells();
+  addSageCellNumbering();
+  enhanceSageCellsWithGlobalAutocomplete();
+  window.onload = initializeMarkdownCells;
+  let CUSTOM_CONTEXT="";
+  let CUSTOM_CSS="";
+  if (CUSTOM_CSS) applyCustomCSS(CUSTOM_CSS);
+  addCommentShortcutToAllSageCells();
+  applyPreloadCells();
+  setupBulkCellObserver();
+</script>
+<script src="settings.js"></script>
+</body>
+</html>

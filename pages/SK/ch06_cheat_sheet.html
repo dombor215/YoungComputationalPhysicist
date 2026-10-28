@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;polygon points='50,6 88,28 88,72 50,94 12,72 12,28' fill='%234CAF50'/&gt;&lt;text x='50' y='68' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='%23fff' text-anchor='middle'&gt;S&lt;/text&gt;&lt;/svg&gt;">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/es5-shim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/ansi_up.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex-auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/notebook.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/prism.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/notebook.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/nbpreview.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/css/nbplayer24.css">
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/texme@1.2.2"></script>
+<div id="main">
+<div id="notebook-holder"><div class="nb-notebook"><div class="nb-worksheet"><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118573-1" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Autori:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Prírodovedecká fakulta, Univerzita Pavla Jozefa Šafárika v Košiciach, Slovensko&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt; &lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt; &lt;/p&gt;" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118573-1" class="markdown-preview" style="display: block;" data-original-markdown="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Autori:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Prírodovedecká fakulta, Univerzita Pavla Jozefa Šafárika v Košiciach, Slovensko&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt; &lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt; &lt;/p&gt;"><p><img style="float: right;" src="https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png" alt="" width="100" height="85"></p>
+<p><strong>Autori:</strong> Dominik Borovský<sup>1</sup> &amp; Jozef Hanč<sup>2</sup></p>
+<p><em>2026, Prírodovedecká fakulta, Univerzita Pavla Jozefa Šafárika v Košiciach, Slovensko</em></p>
+<p><sup>1</sup><a href="mailto:dominik.borovsky@student.upjs.sk">dominik.borovsky@student.upjs.sk,</a> <sup>2</sup><a href="mailto:jozef.hanc@upjs.sk">jozef.hanc@upjs.sk</a> </p></div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118574-2" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="# **Kapitola 6: Ťahák**" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118574-2" class="markdown-preview" style="display: block;" data-original-markdown="# **Kapitola 6: Ťahák**"><h1 id="kapitola-6-ťahák"><strong>Kapitola 6: Ťahák</strong></h1>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118574-3" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Všetko, čo vám prvých päť kapitol dalo do rúk, na jednej strane pre každú tému: každý príkaz v presnom zápise použitom v tejto knihe, zoskupený podľa úlohy, ktorú plní. Majte túto kapitolu otvorenú vedľa notebooku; keď vám príkaz vypadne z pamäti, nájdete ho tu. Tam, kde si príkaz vo svojej pôvodnej kapitole vyslúžil varovanie, varovanie putuje s ním." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118574-3" class="markdown-preview" style="display: block;" data-original-markdown="Všetko, čo vám prvých päť kapitol dalo do rúk, na jednej strane pre každú tému: každý príkaz v presnom zápise použitom v tejto knihe, zoskupený podľa úlohy, ktorú plní. Majte túto kapitolu otvorenú vedľa notebooku; keď vám príkaz vypadne z pamäti, nájdete ho tu. Tam, kde si príkaz vo svojej pôvodnej kapitole vyslúžil varovanie, varovanie putuje s ním."><p>Všetko, čo vám prvých päť kapitol dalo do rúk, na jednej strane pre každú tému: každý príkaz v presnom zápise použitom v tejto knihe, zoskupený podľa úlohy, ktorú plní. Majte túto kapitolu otvorenú vedľa notebooku; keď vám príkaz vypadne z pamäti, nájdete ho tu. Tam, kde si príkaz vo svojej pôvodnej kapitole vyslúžil varovanie, varovanie putuje s ním.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118574-4" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.1 Základy notebooku**" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118574-4" class="markdown-preview" style="display: block;" data-original-markdown="## **6.1 Základy notebooku**"><h2 id="61-základy-notebooku"><strong>6.1 Základy notebooku</strong></h2>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># riadok začínajúci znakom mriežky je komentár, Sage ho ignoruje
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118574-5" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="| Kód | Čo robí |
+|---|---|
+| `Ctrl + Enter` | spustí aktuálnu bunku |
+| `Shift + Enter` | spustí bunku a presunie sa na ďalšiu |
+| `# comment` | komentár, ktorý Sage ignoruje |
+| `print(x)` | zobrazí hodnotu uloženú pod menom `x` |
+| `show(expr)` | typografická sadzba ako v učebnici: zlomky nad sebou, odmocniny, $\pi$ |
+
+Bunky spúšťajte **po poradí od prvej**, aby neskoršie bunky videli to, čo uložili predchádzajúce. Keď bunku zmeníte, **spustite ju znova**. Mená sa prepisujú bez upozornenia: keď veličina zmení druh (číslo na funkciu), dajte jej nové meno (`t` ako číslo, `t_h(h)` ako funkcia)." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118574-5" class="markdown-preview" style="display: block;" data-original-markdown="| Kód | Čo robí |
+|---|---|
+| `Ctrl + Enter` | spustí aktuálnu bunku |
+| `Shift + Enter` | spustí bunku a presunie sa na ďalšiu |
+| `# comment` | komentár, ktorý Sage ignoruje |
+| `print(x)` | zobrazí hodnotu uloženú pod menom `x` |
+| `show(expr)` | typografická sadzba ako v učebnici: zlomky nad sebou, odmocniny, $\pi$ |
+
+Bunky spúšťajte **po poradí od prvej**, aby neskoršie bunky videli to, čo uložili predchádzajúce. Keď bunku zmeníte, **spustite ju znova**. Mená sa prepisujú bez upozornenia: keď veličina zmení druh (číslo na funkciu), dajte jej nové meno (`t` ako číslo, `t_h(h)` ako funkcia)."><table>
+<thead>
+<tr>
+<th>Kód</th>
+<th>Čo robí</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Ctrl + Enter</code></td>
+<td>spustí aktuálnu bunku</td>
+</tr>
+<tr>
+<td><code>Shift + Enter</code></td>
+<td>spustí bunku a presunie sa na ďalšiu</td>
+</tr>
+<tr>
+<td><code># comment</code></td>
+<td>komentár, ktorý Sage ignoruje</td>
+</tr>
+<tr>
+<td><code>print(x)</code></td>
+<td>zobrazí hodnotu uloženú pod menom <code>x</code></td>
+</tr>
+<tr>
+<td><code>show(expr)</code></td>
+<td>typografická sadzba ako v učebnici: zlomky nad sebou, odmocniny, $\pi$</td>
+</tr>
+</tbody></table>
+<p>Bunky spúšťajte <strong>po poradí od prvej</strong>, aby neskoršie bunky videli to, čo uložili predchádzajúce. Keď bunku zmeníte, <strong>spustite ju znova</strong>. Mená sa prepisujú bez upozornenia: keď veličina zmení druh (číslo na funkciu), dajte jej nové meno (<code>t</code> ako číslo, <code>t_h(h)</code> ako funkcia).</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118574-6" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.2 Čísla a aritmetika**
+
+| Kód | Čo robí |
+|---|---|
+| `2 - 1 + 3*4` | aritmetika; `*` a `/` viažu silnejšie ako `+` a `-` |
+| `(2 + 3)*4` | zátvorky zoskupujú; len okrúhle, vždy uzavreté |
+| `2^10` alebo `2**10` | mocniny, oba zápisy sú rovnocenné |
+| `sqrt(8)` | presná odmocnina, zjednodušená: `2*sqrt(2)` |
+| `1/3 + 1/6` | presné zlomky: `1/2`, nie `0.5` |
+| `N(sqrt(2))` | zmení presnú hodnotu na desatinné číslo |
+| `N(pi, digits=100)` | desatinné číslo so zvoleným počtom cifier |
+| `sqrt(2).n()` | to isté ako `N()`, zapísané za výrazom |
+| `round(x, 4)` | zaokrúhli desatinné číslo `x` na 4 desatinné miesta |" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118574-6" class="markdown-preview" style="display: block;" data-original-markdown="## **6.2 Čísla a aritmetika**
+
+| Kód | Čo robí |
+|---|---|
+| `2 - 1 + 3*4` | aritmetika; `*` a `/` viažu silnejšie ako `+` a `-` |
+| `(2 + 3)*4` | zátvorky zoskupujú; len okrúhle, vždy uzavreté |
+| `2^10` alebo `2**10` | mocniny, oba zápisy sú rovnocenné |
+| `sqrt(8)` | presná odmocnina, zjednodušená: `2*sqrt(2)` |
+| `1/3 + 1/6` | presné zlomky: `1/2`, nie `0.5` |
+| `N(sqrt(2))` | zmení presnú hodnotu na desatinné číslo |
+| `N(pi, digits=100)` | desatinné číslo so zvoleným počtom cifier |
+| `sqrt(2).n()` | to isté ako `N()`, zapísané za výrazom |
+| `round(x, 4)` | zaokrúhli desatinné číslo `x` na 4 desatinné miesta |"><h2 id="62-čísla-a-aritmetika"><strong>6.2 Čísla a aritmetika</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Kód</th>
+<th>Čo robí</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>2 - 1 + 3*4</code></td>
+<td>aritmetika; <code>*</code> a <code>/</code> viažu silnejšie ako <code>+</code> a <code>-</code></td>
+</tr>
+<tr>
+<td><code>(2 + 3)*4</code></td>
+<td>zátvorky zoskupujú; len okrúhle, vždy uzavreté</td>
+</tr>
+<tr>
+<td><code>2^10</code> alebo <code>2**10</code></td>
+<td>mocniny, oba zápisy sú rovnocenné</td>
+</tr>
+<tr>
+<td><code>sqrt(8)</code></td>
+<td>presná odmocnina, zjednodušená: <code>2*sqrt(2)</code></td>
+</tr>
+<tr>
+<td><code>1/3 + 1/6</code></td>
+<td>presné zlomky: <code>1/2</code>, nie <code>0.5</code></td>
+</tr>
+<tr>
+<td><code>N(sqrt(2))</code></td>
+<td>zmení presnú hodnotu na desatinné číslo</td>
+</tr>
+<tr>
+<td><code>N(pi, digits=100)</code></td>
+<td>desatinné číslo so zvoleným počtom cifier</td>
+</tr>
+<tr>
+<td><code>sqrt(2).n()</code></td>
+<td>to isté ako <code>N()</code>, zapísané za výrazom</td>
+</tr>
+<tr>
+<td><code>round(x, 4)</code></td>
+<td>zaokrúhli desatinné číslo <code>x</code> na 4 desatinné miesta</td>
+</tr>
+</tbody></table>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># pravidlá presnosti, každé v jednej bunke
+1/3 + 1/6      # presne: 1/2
+0.33 + 0.17    # približne: jedna desatinná bodka pokazí celý výsledok
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118574-7" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Poznámka: vynútenie presného alebo približného výsledku.** Ak chcete desatinný výsledok bez písania `N()`, zapíšte jeden vstup ako desatinné číslo: `10.0` namiesto `10`. Ak chcete presnú aritmetiku z prirodzene desatinných hodnôt, zapíšte ich ako zlomky: `981/100` namiesto `9.81` – a trik musí pokryť *všetky* desatinné čísla vstupujúce do výpočtu, jediné desatinné číslo kdekoľvek pokazí presnosť. Čísla používajú **desatinnú bodku, nikdy nie čiarku**. Zostaňte pri presných hodnotách čo najdlhšie, na desatinné prejdite na konci a zaokrúhľujte až na úplnom konci, nikdy v strede výpočtu." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118574-7" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Poznámka: vynútenie presného alebo približného výsledku.** Ak chcete desatinný výsledok bez písania `N()`, zapíšte jeden vstup ako desatinné číslo: `10.0` namiesto `10`. Ak chcete presnú aritmetiku z prirodzene desatinných hodnôt, zapíšte ich ako zlomky: `981/100` namiesto `9.81` – a trik musí pokryť *všetky* desatinné čísla vstupujúce do výpočtu, jediné desatinné číslo kdekoľvek pokazí presnosť. Čísla používajú **desatinnú bodku, nikdy nie čiarku**. Zostaňte pri presných hodnotách čo najdlhšie, na desatinné prejdite na konci a zaokrúhľujte až na úplnom konci, nikdy v strede výpočtu."><blockquote>
+<p><strong>Poznámka: vynútenie presného alebo približného výsledku.</strong> Ak chcete desatinný výsledok bez písania <code>N()</code>, zapíšte jeden vstup ako desatinné číslo: <code>10.0</code> namiesto <code>10</code>. Ak chcete presnú aritmetiku z prirodzene desatinných hodnôt, zapíšte ich ako zlomky: <code>981/100</code> namiesto <code>9.81</code> – a trik musí pokryť <em>všetky</em> desatinné čísla vstupujúce do výpočtu, jediné desatinné číslo kdekoľvek pokazí presnosť. Čísla používajú <strong>desatinnú bodku, nikdy nie čiarku</strong>. Zostaňte pri presných hodnotách čo najdlhšie, na desatinné prejdite na konci a zaokrúhľujte až na úplnom konci, nikdy v strede výpočtu.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118574-8" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.3 Premenné a funkcie**
+
+| Kód | Čo robí |
+|---|---|
+| `g = 9.81` | uloží číslo pod meno; jednotka ide do komentára: `# m/s^2` |
+| `var('t alpha v0 g')` | deklaruje symbolické premenné: písmená, prázdne miesta |
+| `t_h(h) = sqrt(2*h/g)` | uloží vzorec ako symbolickú funkciu premennej `h` |
+| `t_hg(h, g) = sqrt(2*h/g)` | funkcia viacerých premenných |
+| `t_minutes = t_h/60` | funkcie sú hodnoty: možno ich násobiť, sčítať, kombinovať |
+| `show(t_h)` | vysádza vzorec |" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118574-8" class="markdown-preview" style="display: block;" data-original-markdown="## **6.3 Premenné a funkcie**
+
+| Kód | Čo robí |
+|---|---|
+| `g = 9.81` | uloží číslo pod meno; jednotka ide do komentára: `# m/s^2` |
+| `var('t alpha v0 g')` | deklaruje symbolické premenné: písmená, prázdne miesta |
+| `t_h(h) = sqrt(2*h/g)` | uloží vzorec ako symbolickú funkciu premennej `h` |
+| `t_hg(h, g) = sqrt(2*h/g)` | funkcia viacerých premenných |
+| `t_minutes = t_h/60` | funkcie sú hodnoty: možno ich násobiť, sčítať, kombinovať |
+| `show(t_h)` | vysádza vzorec |"><h2 id="63-premenné-a-funkcie"><strong>6.3 Premenné a funkcie</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Kód</th>
+<th>Čo robí</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>g = 9.81</code></td>
+<td>uloží číslo pod meno; jednotka ide do komentára: <code># m/s^2</code></td>
+</tr>
+<tr>
+<td><code>var('t alpha v0 g')</code></td>
+<td>deklaruje symbolické premenné: písmená, prázdne miesta</td>
+</tr>
+<tr>
+<td><code>t_h(h) = sqrt(2*h/g)</code></td>
+<td>uloží vzorec ako symbolickú funkciu premennej <code>h</code></td>
+</tr>
+<tr>
+<td><code>t_hg(h, g) = sqrt(2*h/g)</code></td>
+<td>funkcia viacerých premenných</td>
+</tr>
+<tr>
+<td><code>t_minutes = t_h/60</code></td>
+<td>funkcie sú hodnoty: možno ich násobiť, sčítať, kombinovať</td>
+</tr>
+<tr>
+<td><code>show(t_h)</code></td>
+<td>vysádza vzorec</td>
+</tr>
+</tbody></table>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># postup z kapitoly 2: sformulovať model, vyriešiť, dosadiť, čísla nakoniec
+var('t alpha v0 g')
+
+x(t) = v0*cos(alpha)*t
+y(t) = v0*sin(alpha)*t - 1/2*g*t^2     # model, dve funkcie času
+
+solutions = solve(y(t) == 0, t)        # rovnica vyriešená vzhľadom na t
+t_land = solutions[1].rhs()            # výber podľa indexu, odstránenie ľavej strany
+show(t_land)
+
+R(alpha) = x(t_land)                   # dosadenie jedného vzorca do druhého
+show(R(alpha).trig_reduce())
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118574-9" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Poznámka:** `==` (dve znaky rovnosti) vytvára rovnicu, `=` (jeden) ukladá hodnotu. `solve()` vracia zoznam *rovníc*, nie hodnôt: indexujte pomocou `[i]` a hodnotu získate pomocou `.rhs()`. Funkcia a symbol nemôžu zdieľať písmeno (`x(t)` a `x` kolidujú); náprava je podčiarkovník na konci v kóde, `x_(t) = ...`, ktorý `show()` aj tak vysádza ako obyčajné $x$." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118574-9" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Poznámka:** `==` (dve znaky rovnosti) vytvára rovnicu, `=` (jeden) ukladá hodnotu. `solve()` vracia zoznam *rovníc*, nie hodnôt: indexujte pomocou `[i]` a hodnotu získate pomocou `.rhs()`. Funkcia a symbol nemôžu zdieľať písmeno (`x(t)` a `x` kolidujú); náprava je podčiarkovník na konci v kóde, `x_(t) = ...`, ktorý `show()` aj tak vysádza ako obyčajné $x$."><blockquote>
+<p><strong>Poznámka:</strong> <code>==</code> (dve znaky rovnosti) vytvára rovnicu, <code>=</code> (jeden) ukladá hodnotu. <code>solve()</code> vracia zoznam <em>rovníc</em>, nie hodnôt: indexujte pomocou <code>[i]</code> a hodnotu získate pomocou <code>.rhs()</code>. Funkcia a symbol nemôžu zdieľať písmeno (<code>x(t)</code> a <code>x</code> kolidujú); náprava je podčiarkovník na konci v kóde, <code>x_(t) = ...</code>, ktorý <code>show()</code> aj tak vysádza ako obyčajné $x$.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118574-10" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.4 Dosadzovanie**
+
+| Kód | Čo robí |
+|---|---|
+| `expr.subs(alpha = pi/4)` | dosadí podľa kľúčového slova, jedno alebo viac naraz |
+| `values = [y0 == 20, g == 9.81]` | zhromaždí hodnoty parametrov ako zoznam rovníc |
+| `expr.subs(values)` | dosadí celý zoznam naraz |
+| `values += [m == 500]` | rozšíri zoznam na mieste; možno pridať aj viac rovníc naraz |
+| `values_updated = values + [r == 15]` | to isté, ale starý zoznam ostane nedotknutý |
+
+Rovnice sú objekty ako každé iné, takže môžu žiť v zoznamoch a `.subs()` spracuje celý zoznam jedným volaním. Každá rovnica nesie svoju jednotku v komentári, takže `values` slúži zároveň ako tabuľka fyzikálnych vstupov." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118574-10" class="markdown-preview" style="display: block;" data-original-markdown="## **6.4 Dosadzovanie**
+
+| Kód | Čo robí |
+|---|---|
+| `expr.subs(alpha = pi/4)` | dosadí podľa kľúčového slova, jedno alebo viac naraz |
+| `values = [y0 == 20, g == 9.81]` | zhromaždí hodnoty parametrov ako zoznam rovníc |
+| `expr.subs(values)` | dosadí celý zoznam naraz |
+| `values += [m == 500]` | rozšíri zoznam na mieste; možno pridať aj viac rovníc naraz |
+| `values_updated = values + [r == 15]` | to isté, ale starý zoznam ostane nedotknutý |
+
+Rovnice sú objekty ako každé iné, takže môžu žiť v zoznamoch a `.subs()` spracuje celý zoznam jedným volaním. Každá rovnica nesie svoju jednotku v komentári, takže `values` slúži zároveň ako tabuľka fyzikálnych vstupov."><h2 id="64-dosadzovanie"><strong>6.4 Dosadzovanie</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Kód</th>
+<th>Čo robí</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>expr.subs(alpha = pi/4)</code></td>
+<td>dosadí podľa kľúčového slova, jedno alebo viac naraz</td>
+</tr>
+<tr>
+<td><code>values = [y0 == 20, g == 9.81]</code></td>
+<td>zhromaždí hodnoty parametrov ako zoznam rovníc</td>
+</tr>
+<tr>
+<td><code>expr.subs(values)</code></td>
+<td>dosadí celý zoznam naraz</td>
+</tr>
+<tr>
+<td><code>values += [m == 500]</code></td>
+<td>rozšíri zoznam na mieste; možno pridať aj viac rovníc naraz</td>
+</tr>
+<tr>
+<td><code>values_updated = values + [r == 15]</code></td>
+<td>to isté, ale starý zoznam ostane nedotknutý</td>
+</tr>
+</tbody></table>
+<p>Rovnice sú objekty ako každé iné, takže môžu žiť v zoznamoch a <code>.subs()</code> spracuje celý zoznam jedným volaním. Každá rovnica nesie svoju jednotku v komentári, takže <code>values</code> slúži zároveň ako tabuľka fyzikálnych vstupov.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118574-11" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.5 Riešenie rovníc a analýza**
+
+| Kód | Čo robí |
+|---|---|
+| `solve(equation, unknown)` | symbolické riešenie; vracia zoznam rovníc |
+| `solve([eq1, eq2, eq3], x, y, z)` | celá sústava rovníc |
+| `solutions[1].rhs()` | vyberie druhé riešenie, ponechá jeho pravú stranu |
+| `find_root(T(h) == 3.2, 1, 100)` | numerický „lovec“: koreň v danom intervale |
+| `diff(expr, x)` | derivácia výrazu `expr` podľa `x` |
+| `diff(expr, x, 2)` | druhá derivácia |
+| `solve(diff(R(a), a) == 0, a)` | kandidáti na maximum: kde je dotyčnica vodorovná |" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118574-11" class="markdown-preview" style="display: block;" data-original-markdown="## **6.5 Riešenie rovníc a analýza**
+
+| Kód | Čo robí |
+|---|---|
+| `solve(equation, unknown)` | symbolické riešenie; vracia zoznam rovníc |
+| `solve([eq1, eq2, eq3], x, y, z)` | celá sústava rovníc |
+| `solutions[1].rhs()` | vyberie druhé riešenie, ponechá jeho pravú stranu |
+| `find_root(T(h) == 3.2, 1, 100)` | numerický „lovec“: koreň v danom intervale |
+| `diff(expr, x)` | derivácia výrazu `expr` podľa `x` |
+| `diff(expr, x, 2)` | druhá derivácia |
+| `solve(diff(R(a), a) == 0, a)` | kandidáti na maximum: kde je dotyčnica vodorovná |"><h2 id="65-riešenie-rovníc-a-analýza"><strong>6.5 Riešenie rovníc a analýza</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Kód</th>
+<th>Čo robí</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>solve(equation, unknown)</code></td>
+<td>symbolické riešenie; vracia zoznam rovníc</td>
+</tr>
+<tr>
+<td><code>solve([eq1, eq2, eq3], x, y, z)</code></td>
+<td>celá sústava rovníc</td>
+</tr>
+<tr>
+<td><code>solutions[1].rhs()</code></td>
+<td>vyberie druhé riešenie, ponechá jeho pravú stranu</td>
+</tr>
+<tr>
+<td><code>find_root(T(h) == 3.2, 1, 100)</code></td>
+<td>numerický „lovec“: koreň v danom intervale</td>
+</tr>
+<tr>
+<td><code>diff(expr, x)</code></td>
+<td>derivácia výrazu <code>expr</code> podľa <code>x</code></td>
+</tr>
+<tr>
+<td><code>diff(expr, x, 2)</code></td>
+<td>druhá derivácia</td>
+</tr>
+<tr>
+<td><code>solve(diff(R(a), a) == 0, a)</code></td>
+<td>kandidáti na maximum: kde je dotyčnica vodorovná</td>
+</tr>
+</tbody></table>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># optimalizácia, recept z kapitoly 2
+dR = diff(R(alpha), alpha)             # derivácia ako samostatný vzorec
+optimal = solve(dR == 0, alpha)        # vodorovné dotyčnice
+
+show(dR.subs(alpha = pi/6))           # kladná pod kandidátom: ešte rastie
+show(dR.subs(alpha = pi/3))           # záporná nad ním: už klesá – maximum
+show(diff(R(alpha), alpha, 2).subs(alpha = pi/4))   # druhá derivácia < 0 hovorí to isté
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118575-12" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Poznámka:** Nulová derivácia znamená *vodorovnú dotyčnicu*, nie *maximum*: vrcholy aj doliny ju majú. Druh bodu potvrďte zmenou znamienka derivácie v jeho okolí, znamienkom druhej derivácie alebo vyhodnotením susedných hodnôt (`N(R(40*pi/180))` oproti `N(R(45*pi/180))` oproti `N(R(50*pi/180))`). Použite `find_root`, keď `solve` vzdá, napr. pri zmesi odmocniny a lineárneho člena; chce rovnicu zapísanú pomocou `==`." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118575-12" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Poznámka:** Nulová derivácia znamená *vodorovnú dotyčnicu*, nie *maximum*: vrcholy aj doliny ju majú. Druh bodu potvrďte zmenou znamienka derivácie v jeho okolí, znamienkom druhej derivácie alebo vyhodnotením susedných hodnôt (`N(R(40*pi/180))` oproti `N(R(45*pi/180))` oproti `N(R(50*pi/180))`). Použite `find_root`, keď `solve` vzdá, napr. pri zmesi odmocniny a lineárneho člena; chce rovnicu zapísanú pomocou `==`."><blockquote>
+<p><strong>Poznámka:</strong> Nulová derivácia znamená <em>vodorovnú dotyčnicu</em>, nie <em>maximum</em>: vrcholy aj doliny ju majú. Druh bodu potvrďte zmenou znamienka derivácie v jeho okolí, znamienkom druhej derivácie alebo vyhodnotením susedných hodnôt (<code>N(R(40*pi/180))</code> oproti <code>N(R(45*pi/180))</code> oproti <code>N(R(50*pi/180))</code>). Použite <code>find_root</code>, keď <code>solve</code> vzdá, napr. pri zmesi odmocniny a lineárneho člena; chce rovnicu zapísanú pomocou <code>==</code>.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118575-13" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.6 Zjednodušovanie**
+
+| Kód | Čo robí |
+|---|---|
+| `simplify(expr)` | všeobecný čistič |
+| `expr.factor()` | rozloží polynóm na súčin |
+| `expr.expand()` | opak: roznásobí na súčet |
+| `expr.trig_reduce()` | prepíše súčiny goniometrických funkcií na jediný sínus, napr. $\sin(2\alpha)$ |
+| `expr.trig_simplify()` | opak: zbalí goniometrické funkcie dohromady |
+| `expr.simplify_rational()` | skráti zlomky |
+| `expr.simplify_full()` | niekoľko z uvedených zreťazených naraz |
+| `expr.canonicalize_radical()` | upraví odmocniny a radikály |
+
+Neexistuje príkaz, ktorý by vzorec „zjednodušil“, pretože Sage nemôže vedieť, čo považujete za jednoduché *vy*. Postupujte ako v kapitole 2: pozrite sa na výsledok, rozhodnite sa, čo vás ruší, a vyberte nástroj presne na to." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118575-13" class="markdown-preview" style="display: block;" data-original-markdown="## **6.6 Zjednodušovanie**
+
+| Kód | Čo robí |
+|---|---|
+| `simplify(expr)` | všeobecný čistič |
+| `expr.factor()` | rozloží polynóm na súčin |
+| `expr.expand()` | opak: roznásobí na súčet |
+| `expr.trig_reduce()` | prepíše súčiny goniometrických funkcií na jediný sínus, napr. $\sin(2\alpha)$ |
+| `expr.trig_simplify()` | opak: zbalí goniometrické funkcie dohromady |
+| `expr.simplify_rational()` | skráti zlomky |
+| `expr.simplify_full()` | niekoľko z uvedených zreťazených naraz |
+| `expr.canonicalize_radical()` | upraví odmocniny a radikály |
+
+Neexistuje príkaz, ktorý by vzorec „zjednodušil“, pretože Sage nemôže vedieť, čo považujete za jednoduché *vy*. Postupujte ako v kapitole 2: pozrite sa na výsledok, rozhodnite sa, čo vás ruší, a vyberte nástroj presne na to."><h2 id="66-zjednodušovanie"><strong>6.6 Zjednodušovanie</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Kód</th>
+<th>Čo robí</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>simplify(expr)</code></td>
+<td>všeobecný čistič</td>
+</tr>
+<tr>
+<td><code>expr.factor()</code></td>
+<td>rozloží polynóm na súčin</td>
+</tr>
+<tr>
+<td><code>expr.expand()</code></td>
+<td>opak: roznásobí na súčet</td>
+</tr>
+<tr>
+<td><code>expr.trig_reduce()</code></td>
+<td>prepíše súčiny goniometrických funkcií na jediný sínus, napr. $\sin(2\alpha)$</td>
+</tr>
+<tr>
+<td><code>expr.trig_simplify()</code></td>
+<td>opak: zbalí goniometrické funkcie dohromady</td>
+</tr>
+<tr>
+<td><code>expr.simplify_rational()</code></td>
+<td>skráti zlomky</td>
+</tr>
+<tr>
+<td><code>expr.simplify_full()</code></td>
+<td>niekoľko z uvedených zreťazených naraz</td>
+</tr>
+<tr>
+<td><code>expr.canonicalize_radical()</code></td>
+<td>upraví odmocniny a radikály</td>
+</tr>
+</tbody></table>
+<p>Neexistuje príkaz, ktorý by vzorec „zjednodušil“, pretože Sage nemôže vedieť, čo považujete za jednoduché <em>vy</em>. Postupujte ako v kapitole 2: pozrite sa na výsledok, rozhodnite sa, čo vás ruší, a vyberte nástroj presne na to.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118575-14" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.7 Goniometria a uhly**
+
+| Kód | Čo robí |
+|---|---|
+| `sin(x)`, `cos(x)`, `tan(x)` | goniometrické funkcie, **radiány dnu, radiány von** |
+| `30*pi/180` | stupne na radiány: vynásobte $\pi/180$ |
+| `pi/6*180/pi` | radiány na stupne: vynásobte $180/\pi$ |
+| `cos(45*pi/180)` | kosínus 45 stupňov, netreba si pamätať `pi/4` |
+
+Plný obrat je $2\pi$, takže 180 stupňov je `pi` a 30 stupňov je `pi/6`. Jedno pravidlo prevodu nesie oba smery: $\pi\ \mathrm{rad} = 180^\circ$." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118575-14" class="markdown-preview" style="display: block;" data-original-markdown="## **6.7 Goniometria a uhly**
+
+| Kód | Čo robí |
+|---|---|
+| `sin(x)`, `cos(x)`, `tan(x)` | goniometrické funkcie, **radiány dnu, radiány von** |
+| `30*pi/180` | stupne na radiány: vynásobte $\pi/180$ |
+| `pi/6*180/pi` | radiány na stupne: vynásobte $180/\pi$ |
+| `cos(45*pi/180)` | kosínus 45 stupňov, netreba si pamätať `pi/4` |
+
+Plný obrat je $2\pi$, takže 180 stupňov je `pi` a 30 stupňov je `pi/6`. Jedno pravidlo prevodu nesie oba smery: $\pi\ \mathrm{rad} = 180^\circ$."><h2 id="67-goniometria-a-uhly"><strong>6.7 Goniometria a uhly</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Kód</th>
+<th>Čo robí</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>sin(x)</code>, <code>cos(x)</code>, <code>tan(x)</code></td>
+<td>goniometrické funkcie, <strong>radiány dnu, radiány von</strong></td>
+</tr>
+<tr>
+<td><code>30*pi/180</code></td>
+<td>stupne na radiány: vynásobte $\pi/180$</td>
+</tr>
+<tr>
+<td><code>pi/6*180/pi</code></td>
+<td>radiány na stupne: vynásobte $180/\pi$</td>
+</tr>
+<tr>
+<td><code>cos(45*pi/180)</code></td>
+<td>kosínus 45 stupňov, netreba si pamätať <code>pi/4</code></td>
+</tr>
+</tbody></table>
+<p>Plný obrat je $2\pi$, takže 180 stupňov je <code>pi</code> a 30 stupňov je <code>pi/6</code>. Jedno pravidlo prevodu nesie oba smery: $\pi\ \mathrm{rad} = 180^\circ$.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118575-15" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.8 Zoznamy**
+
+| Kód | Čo robí |
+|---|---|
+| `[5, 10, 15, 20]` | zoznam: hranaté zátvorky, položky oddelené čiarkami |
+| `[5, 6 .. 30]` | rozsah: od 5 do 30, krok sa určí z prvej medzery |
+| `results[0]` | prvá položka; **počítanie začína od 0** |
+| `results[-1]`, `results[-2]` | posledná položka, predposledná položka |
+| `results[5:10]` | rez: položky 5 až 9, **pravý index sa nezahŕňa** |
+| `results.append(value)` | pripojí jednu hodnotu na koniec |
+| `list1 + list2` | zlepí dva zoznamy do jedného dlhšieho |" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118575-15" class="markdown-preview" style="display: block;" data-original-markdown="## **6.8 Zoznamy**
+
+| Kód | Čo robí |
+|---|---|
+| `[5, 10, 15, 20]` | zoznam: hranaté zátvorky, položky oddelené čiarkami |
+| `[5, 6 .. 30]` | rozsah: od 5 do 30, krok sa určí z prvej medzery |
+| `results[0]` | prvá položka; **počítanie začína od 0** |
+| `results[-1]`, `results[-2]` | posledná položka, predposledná položka |
+| `results[5:10]` | rez: položky 5 až 9, **pravý index sa nezahŕňa** |
+| `results.append(value)` | pripojí jednu hodnotu na koniec |
+| `list1 + list2` | zlepí dva zoznamy do jedného dlhšieho |"><h2 id="68-zoznamy"><strong>6.8 Zoznamy</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Kód</th>
+<th>Čo robí</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[5, 10, 15, 20]</code></td>
+<td>zoznam: hranaté zátvorky, položky oddelené čiarkami</td>
+</tr>
+<tr>
+<td><code>[5, 6 .. 30]</code></td>
+<td>rozsah: od 5 do 30, krok sa určí z prvej medzery</td>
+</tr>
+<tr>
+<td><code>results[0]</code></td>
+<td>prvá položka; <strong>počítanie začína od 0</strong></td>
+</tr>
+<tr>
+<td><code>results[-1]</code>, <code>results[-2]</code></td>
+<td>posledná položka, predposledná položka</td>
+</tr>
+<tr>
+<td><code>results[5:10]</code></td>
+<td>rez: položky 5 až 9, <strong>pravý index sa nezahŕňa</strong></td>
+</tr>
+<tr>
+<td><code>results.append(value)</code></td>
+<td>pripojí jednu hodnotu na koniec</td>
+</tr>
+<tr>
+<td><code>list1 + list2</code></td>
+<td>zlepí dva zoznamy do jedného dlhšieho</td>
+</tr>
+</tbody></table>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># zostavenie zoznamu (list comprehension): jeden vzorec, mnoho vstupov
+depths = [5, 10, 15, 20, 25, 30]
+results = [t_h(h).n() for h in depths]     # pre každé h v depths vypočítaj a zozbieraj
+results
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># ten istý výpočet ako tradičný cyklus for
+results = []                        # pripravený prázdny zoznam
+for h in depths:                    # dvojbodka a odsadenie nesú telo cyklu
+    value = t_h(h).n()
+    results.append(value)           # .append() pripojí hodnotu do zoznamu
+results
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118575-16" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.9 Python na jednom mieste**
+
+| Kód | Čo robí |
+|---|---|
+| `def f(x, y): return x + y` | pomenuje recept: parametre dnu, jedna hodnota von |
+| `f(2, 3)` | zavolá ho; argumenty vypĺňajú parametre v poradí |
+| `lambda a: N(...)` | to isté, stlačené do jedného riadka; žiadna rovnica, žiadne `show()` |
+| `zip(xs, ys)` | spojí dva zoznamy do dvojíc ako zips |
+| `list(zip(xs, ys))` | zmení dvojice na obyčajný zoznam |
+| `str(a) + ' degrees'` | vytvorí text zreťazením |
+| `f&quot;Fit, $k = $ {round(fit[k], 2)}&quot;` | f-reťazec: hodnoty vložené do textu medzi zloženými zátvorkami |
+| `rf&quot;...&quot;` | surový reťazec: spätné lomky a $\LaTeX$ prejdú nedotknuté |
+| `&quot;text&quot;` alebo `'text'` | reťazec; Python (aj SageMath) akceptuje oba druhy úvodzoviek, ale reťazec sa musí začínať a končiť tou istou |
+| `sum(bars, start)` | sčíta všetky položky `bars`, počnúc hodnotou `start` |
+| `fit[k]` | prečíta hodnotu zo slovníka podľa mena |" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118575-16" class="markdown-preview" style="display: block;" data-original-markdown="## **6.9 Python na jednom mieste**
+
+| Kód | Čo robí |
+|---|---|
+| `def f(x, y): return x + y` | pomenuje recept: parametre dnu, jedna hodnota von |
+| `f(2, 3)` | zavolá ho; argumenty vypĺňajú parametre v poradí |
+| `lambda a: N(...)` | to isté, stlačené do jedného riadka; žiadna rovnica, žiadne `show()` |
+| `zip(xs, ys)` | spojí dva zoznamy do dvojíc ako zips |
+| `list(zip(xs, ys))` | zmení dvojice na obyčajný zoznam |
+| `str(a) + ' degrees'` | vytvorí text zreťazením |
+| `f&quot;Fit, $k = $ {round(fit[k], 2)}&quot;` | f-reťazec: hodnoty vložené do textu medzi zloženými zátvorkami |
+| `rf&quot;...&quot;` | surový reťazec: spätné lomky a $\LaTeX$ prejdú nedotknuté |
+| `&quot;text&quot;` alebo `'text'` | reťazec; Python (aj SageMath) akceptuje oba druhy úvodzoviek, ale reťazec sa musí začínať a končiť tou istou |
+| `sum(bars, start)` | sčíta všetky položky `bars`, počnúc hodnotou `start` |
+| `fit[k]` | prečíta hodnotu zo slovníka podľa mena |"><h2 id="69-python-na-jednom-mieste"><strong>6.9 Python na jednom mieste</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Kód</th>
+<th>Čo robí</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>def f(x, y): return x + y</code></td>
+<td>pomenuje recept: parametre dnu, jedna hodnota von</td>
+</tr>
+<tr>
+<td><code>f(2, 3)</code></td>
+<td>zavolá ho; argumenty vypĺňajú parametre v poradí</td>
+</tr>
+<tr>
+<td><code>lambda a: N(...)</code></td>
+<td>to isté, stlačené do jedného riadka; žiadna rovnica, žiadne <code>show()</code></td>
+</tr>
+<tr>
+<td><code>zip(xs, ys)</code></td>
+<td>spojí dva zoznamy do dvojíc ako zips</td>
+</tr>
+<tr>
+<td><code>list(zip(xs, ys))</code></td>
+<td>zmení dvojice na obyčajný zoznam</td>
+</tr>
+<tr>
+<td><code>str(a) + ' degrees'</code></td>
+<td>vytvorí text zreťazením</td>
+</tr>
+<tr>
+<td><code>f"Fit, $k = $ {round(fit[k], 2)}"</code></td>
+<td>f-reťazec: hodnoty vložené do textu medzi zloženými zátvorkami</td>
+</tr>
+<tr>
+<td><code>rf"..."</code></td>
+<td>surový reťazec: spätné lomky a $\LaTeX$ prejdú nedotknuté</td>
+</tr>
+<tr>
+<td><code>"text"</code> alebo <code>'text'</code></td>
+<td>reťazec; Python (aj SageMath) akceptuje oba druhy úvodzoviek, ale reťazec sa musí začínať a končiť tou istou</td>
+</tr>
+<tr>
+<td><code>sum(bars, start)</code></td>
+<td>sčíta všetky položky <code>bars</code>, počnúc hodnotou <code>start</code></td>
+</tr>
+<tr>
+<td><code>fit[k]</code></td>
+<td>prečíta hodnotu zo slovníka podľa mena</td>
+</tr>
+</tbody></table>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># vlastné funkcie, vzor z kapitoly 5
+def y_errorbar(x, y, dy):
+    return line([(x, y - dy), (x, y + dy)], color='lime', thickness=1.5)
+
+y_errorbar(0.06, 15.2, 1.2)     # volanie vypočíta čiaru a vráti ju
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118575-17" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Poznámka:** `def` použite pre telo z jedného alebo viacerých odsadených riadkov, `lambda`, keď sa zmestí na jeden riadok. `return` robí z odpovede hodnotu: uloženú, zaraditeľnú do zoznamu, sčítateľnú. `lambda` je čistý výpočet – nič sa s ňou nedá riešiť ani derivovať – kým symbolická funkcia ako `t_h(h) = ...` je vzorec, ktorý Sage vie riešiť, dosadzovať do neho a derivovať ho." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118575-17" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Poznámka:** `def` použite pre telo z jedného alebo viacerých odsadených riadkov, `lambda`, keď sa zmestí na jeden riadok. `return` robí z odpovede hodnotu: uloženú, zaraditeľnú do zoznamu, sčítateľnú. `lambda` je čistý výpočet – nič sa s ňou nedá riešiť ani derivovať – kým symbolická funkcia ako `t_h(h) = ...` je vzorec, ktorý Sage vie riešiť, dosadzovať do neho a derivovať ho."><blockquote>
+<p><strong>Poznámka:</strong> <code>def</code> použite pre telo z jedného alebo viacerých odsadených riadkov, <code>lambda</code>, keď sa zmestí na jeden riadok. <code>return</code> robí z odpovede hodnotu: uloženú, zaraditeľnú do zoznamu, sčítateľnú. <code>lambda</code> je čistý výpočet – nič sa s ňou nedá riešiť ani derivovať – kým symbolická funkcia ako <code>t_h(h) = ...</code> je vzorec, ktorý Sage vie riešiť, dosadzovať do neho a derivovať ho.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118575-18" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.10 Kreslenie grafov**
+
+| Kód | Čo robí |
+|---|---|
+| `plot(f, (x, -30, 30))` | nakreslí funkciu na danom rozsahu |
+| `plot(f, xmin = 0, xmax = 25)` | to isté, s rozpísanými možnosťami; **rozsah je povinný** |
+| `plot(2, x, xmin = 0, xmax = 25)` | konštanta; samotné `x` musí ostať |
+| `points(pairs)` | zoznam dvojíc $(x, y)$ ako bodky |
+| `list_plot(pairs, plotjoined = True)` | tie isté dvojice spojené do čiary |
+| `line([(x1, y1), (x2, y2)])` | čiara cez zadané body |
+| `plot(p1 + p2 + p3)` | prekrytie: sčítanie grafov ich nakreslí do jedného obrázka |
+| `sum(list_of_plots)` | prekryje celý zoznam naraz |
+| `graphics_array([[p1], [p2]]).show(figsize=[10, 7])` | niekoľko obrázkov nad sebou |
+| `piecewise([((0, 20), f1), ((20, 80), f2)])` | rôzne vzorce na rôznych intervaloch |" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118575-18" class="markdown-preview" style="display: block;" data-original-markdown="## **6.10 Kreslenie grafov**
+
+| Kód | Čo robí |
+|---|---|
+| `plot(f, (x, -30, 30))` | nakreslí funkciu na danom rozsahu |
+| `plot(f, xmin = 0, xmax = 25)` | to isté, s rozpísanými možnosťami; **rozsah je povinný** |
+| `plot(2, x, xmin = 0, xmax = 25)` | konštanta; samotné `x` musí ostať |
+| `points(pairs)` | zoznam dvojíc $(x, y)$ ako bodky |
+| `list_plot(pairs, plotjoined = True)` | tie isté dvojice spojené do čiary |
+| `line([(x1, y1), (x2, y2)])` | čiara cez zadané body |
+| `plot(p1 + p2 + p3)` | prekrytie: sčítanie grafov ich nakreslí do jedného obrázka |
+| `sum(list_of_plots)` | prekryje celý zoznam naraz |
+| `graphics_array([[p1], [p2]]).show(figsize=[10, 7])` | niekoľko obrázkov nad sebou |
+| `piecewise([((0, 20), f1), ((20, 80), f2)])` | rôzne vzorce na rôznych intervaloch |"><h2 id="610-kreslenie-grafov"><strong>6.10 Kreslenie grafov</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Kód</th>
+<th>Čo robí</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>plot(f, (x, -30, 30))</code></td>
+<td>nakreslí funkciu na danom rozsahu</td>
+</tr>
+<tr>
+<td><code>plot(f, xmin = 0, xmax = 25)</code></td>
+<td>to isté, s rozpísanými možnosťami; <strong>rozsah je povinný</strong></td>
+</tr>
+<tr>
+<td><code>plot(2, x, xmin = 0, xmax = 25)</code></td>
+<td>konštanta; samotné <code>x</code> musí ostať</td>
+</tr>
+<tr>
+<td><code>points(pairs)</code></td>
+<td>zoznam dvojíc $(x, y)$ ako bodky</td>
+</tr>
+<tr>
+<td><code>list_plot(pairs, plotjoined = True)</code></td>
+<td>tie isté dvojice spojené do čiary</td>
+</tr>
+<tr>
+<td><code>line([(x1, y1), (x2, y2)])</code></td>
+<td>čiara cez zadané body</td>
+</tr>
+<tr>
+<td><code>plot(p1 + p2 + p3)</code></td>
+<td>prekrytie: sčítanie grafov ich nakreslí do jedného obrázka</td>
+</tr>
+<tr>
+<td><code>sum(list_of_plots)</code></td>
+<td>prekryje celý zoznam naraz</td>
+</tr>
+<tr>
+<td><code>graphics_array([[p1], [p2]]).show(figsize=[10, 7])</code></td>
+<td>niekoľko obrázkov nad sebou</td>
+</tr>
+<tr>
+<td><code>piecewise([((0, 20), f1), ((20, 80), f2)])</code></td>
+<td>rôzne vzorce na rôznych intervaloch</td>
+</tr>
+</tbody></table>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># rodina kriviek, jedno zostavenie zoznamu
+plots = [plot(y_traj(x).subs(alpha = a*pi/180, v0 = 15, g = 9.81),
+              xmin = 0, xmax = 25,
+              color = hue(a/90),
+              legend_label = str(a) + ' degrees')
+         for a in [20, 30, 40, 50, 60, 70]]
+
+family_plot = sum(plots)     # zostav súčet, daj mu meno, potom ho zobraz
+show(family_plot, ymin = 0)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># prázdny graf, ktorý prenáša formátovanie do každej kombinácie
+plot_format = plot([], title="Measurement of the dependence $F(x)$",
+                   axes_labels = [r"$x\;\mathrm{[m]}$", r"$F\;\mathrm{[N]}$"],
+                   frame=True, gridlines=True)
+
+final_plot = points(data_points, xmin=0) + plot_format
+final_plot
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118576-19" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Poznámka:** `plot([])` nekreslí nič, ale akceptuje všetky možnosti formátovania, takže prázdny graf prenáša názov, rámik, mriežku a popisy osí do každého súčtu, ku ktorému sa pripojí – bez prepisovania do toho grafu, ktorý v kombinácii práve zostal.
+
+**Možnosti formátovania** (fungujú v `plot()`, `show()`, `save()` aj `points()`):
+
+| Možnosť | Čo robí |
+|---|---|
+| `color='red'`, `'magenta'`, ... alebo `hue(0.3)` | farba krivky; `hue` rozprestrie rodinu kriviek po dúhe |
+| `linestyle='--'` | prerušovaná krivka |
+| `legend_label='...'` | položka legendy; LaTeX funguje medzi znakmi dolára |
+| `axes_labels=['$x$ [m]', '$y$ [m]']` | popisy osí, LaTeX v `$...$`, jednotky tu |
+| `title=r&quot;...&quot;` | názov obrázka |
+| `frame=True` | rámik okolo obrázka namiesto obyčajných osí |
+| `gridlines=True` | mriežka na pozadí |
+| `xmin, xmax, ymin, ymax` | rozsahy osí; `ymin = 0` je fyzika, nie kozmetika |
+| `figsize=6` alebo `figsize=[12, 6]` | veľkosť plátna v palcoch; jedno číslo znamená štvorec |
+| `size=40` | veľkosť bodky v `points()` |
+| `thickness=1.5` | hrúbka čiary |" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118576-19" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Poznámka:** `plot([])` nekreslí nič, ale akceptuje všetky možnosti formátovania, takže prázdny graf prenáša názov, rámik, mriežku a popisy osí do každého súčtu, ku ktorému sa pripojí – bez prepisovania do toho grafu, ktorý v kombinácii práve zostal.
+
+**Možnosti formátovania** (fungujú v `plot()`, `show()`, `save()` aj `points()`):
+
+| Možnosť | Čo robí |
+|---|---|
+| `color='red'`, `'magenta'`, ... alebo `hue(0.3)` | farba krivky; `hue` rozprestrie rodinu kriviek po dúhe |
+| `linestyle='--'` | prerušovaná krivka |
+| `legend_label='...'` | položka legendy; LaTeX funguje medzi znakmi dolára |
+| `axes_labels=['$x$ [m]', '$y$ [m]']` | popisy osí, LaTeX v `$...$`, jednotky tu |
+| `title=r&quot;...&quot;` | názov obrázka |
+| `frame=True` | rámik okolo obrázka namiesto obyčajných osí |
+| `gridlines=True` | mriežka na pozadí |
+| `xmin, xmax, ymin, ymax` | rozsahy osí; `ymin = 0` je fyzika, nie kozmetika |
+| `figsize=6` alebo `figsize=[12, 6]` | veľkosť plátna v palcoch; jedno číslo znamená štvorec |
+| `size=40` | veľkosť bodky v `points()` |
+| `thickness=1.5` | hrúbka čiary |"><blockquote>
+<p><strong>Poznámka:</strong> <code>plot([])</code> nekreslí nič, ale akceptuje všetky možnosti formátovania, takže prázdny graf prenáša názov, rámik, mriežku a popisy osí do každého súčtu, ku ktorému sa pripojí – bez prepisovania do toho grafu, ktorý v kombinácii práve zostal.</p>
+</blockquote>
+<p><strong>Možnosti formátovania</strong> (fungujú v <code>plot()</code>, <code>show()</code>, <code>save()</code> aj <code>points()</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Možnosť</th>
+<th>Čo robí</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>color='red'</code>, <code>'magenta'</code>, ... alebo <code>hue(0.3)</code></td>
+<td>farba krivky; <code>hue</code> rozprestrie rodinu kriviek po dúhe</td>
+</tr>
+<tr>
+<td><code>linestyle='--'</code></td>
+<td>prerušovaná krivka</td>
+</tr>
+<tr>
+<td><code>legend_label='...'</code></td>
+<td>položka legendy; LaTeX funguje medzi znakmi dolára</td>
+</tr>
+<tr>
+<td><code>axes_labels=['$x$ [m]', '$y$ [m]']</code></td>
+<td>popisy osí, LaTeX v <code>$...$</code>, jednotky tu</td>
+</tr>
+<tr>
+<td><code>title=r"..."</code></td>
+<td>názov obrázka</td>
+</tr>
+<tr>
+<td><code>frame=True</code></td>
+<td>rámik okolo obrázka namiesto obyčajných osí</td>
+</tr>
+<tr>
+<td><code>gridlines=True</code></td>
+<td>mriežka na pozadí</td>
+</tr>
+<tr>
+<td><code>xmin, xmax, ymin, ymax</code></td>
+<td>rozsahy osí; <code>ymin = 0</code> je fyzika, nie kozmetika</td>
+</tr>
+<tr>
+<td><code>figsize=6</code> alebo <code>figsize=[12, 6]</code></td>
+<td>veľkosť plátna v palcoch; jedno číslo znamená štvorec</td>
+</tr>
+<tr>
+<td><code>size=40</code></td>
+<td>veľkosť bodky v <code>points()</code></td>
+</tr>
+<tr>
+<td><code>thickness=1.5</code></td>
+<td>hrúbka čiary</td>
+</tr>
+</tbody></table>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># ukladanie: formát určuje prípona, dpi nastavuje hustotu pixelov
+final_plot.save("measurement_plot.png", dpi=300)     # dpi=300 na tlač, 100 na obrazovku
+final_plot.save("final_plot_fit.pdf")               # vektorový: ostrý pri každom zväčšení, bez dpi
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118576-20" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.11 Dáta s knižnicou pandas**
+
+| Kód | Čo robí |
+|---|---|
+| `import pandas as pd` | načíta knižnicu pandas |
+| `pd.read_excel(&quot;file.xlsx&quot;)` | prečíta súbor Excel z disku |
+| `pd.read_csv(&quot;file.csv&quot;)` | prečíta súbor csv z disku |
+| `dataframe_name = &quot;data&quot;` | jediné meno, ktoré treba zmeniť v načítavacej bunke napísanej tlačidlom |
+| `data` | zobrazí tabuľku |
+| `data.info()` | správa o stave: názvy stĺpcov, počty nenulových hodnôt, typy |
+| `data.sample(n=10)` | desať náhodných riadkov, pri každom spustení iné |
+| `data.loc[17:22, :]` | riadky podľa indexu, **oba konce zahrnuté**: šesť riadkov |
+| `data[&quot;x [m]&quot;] = data[&quot;x [cm]&quot;]/100` | vytvorí alebo prepíše stĺpec |
+| `data.groupby(&quot;x [m]&quot;)[&quot;F [N]&quot;].agg([&quot;mean&quot;, &quot;std&quot;]).reset_index()` | priemery a std podľa skupín |" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118576-20" class="markdown-preview" style="display: block;" data-original-markdown="## **6.11 Dáta s knižnicou pandas**
+
+| Kód | Čo robí |
+|---|---|
+| `import pandas as pd` | načíta knižnicu pandas |
+| `pd.read_excel(&quot;file.xlsx&quot;)` | prečíta súbor Excel z disku |
+| `pd.read_csv(&quot;file.csv&quot;)` | prečíta súbor csv z disku |
+| `dataframe_name = &quot;data&quot;` | jediné meno, ktoré treba zmeniť v načítavacej bunke napísanej tlačidlom |
+| `data` | zobrazí tabuľku |
+| `data.info()` | správa o stave: názvy stĺpcov, počty nenulových hodnôt, typy |
+| `data.sample(n=10)` | desať náhodných riadkov, pri každom spustení iné |
+| `data.loc[17:22, :]` | riadky podľa indexu, **oba konce zahrnuté**: šesť riadkov |
+| `data[&quot;x [m]&quot;] = data[&quot;x [cm]&quot;]/100` | vytvorí alebo prepíše stĺpec |
+| `data.groupby(&quot;x [m]&quot;)[&quot;F [N]&quot;].agg([&quot;mean&quot;, &quot;std&quot;]).reset_index()` | priemery a std podľa skupín |"><h2 id="611-dáta-s-knižnicou-pandas"><strong>6.11 Dáta s knižnicou pandas</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Kód</th>
+<th>Čo robí</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>import pandas as pd</code></td>
+<td>načíta knižnicu pandas</td>
+</tr>
+<tr>
+<td><code>pd.read_excel("file.xlsx")</code></td>
+<td>prečíta súbor Excel z disku</td>
+</tr>
+<tr>
+<td><code>pd.read_csv("file.csv")</code></td>
+<td>prečíta súbor csv z disku</td>
+</tr>
+<tr>
+<td><code>dataframe_name = "data"</code></td>
+<td>jediné meno, ktoré treba zmeniť v načítavacej bunke napísanej tlačidlom</td>
+</tr>
+<tr>
+<td><code>data</code></td>
+<td>zobrazí tabuľku</td>
+</tr>
+<tr>
+<td><code>data.info()</code></td>
+<td>správa o stave: názvy stĺpcov, počty nenulových hodnôt, typy</td>
+</tr>
+<tr>
+<td><code>data.sample(n=10)</code></td>
+<td>desať náhodných riadkov, pri každom spustení iné</td>
+</tr>
+<tr>
+<td><code>data.loc[17:22, :]</code></td>
+<td>riadky podľa indexu, <strong>oba konce zahrnuté</strong>: šesť riadkov</td>
+</tr>
+<tr>
+<td><code>data["x [m]"] = data["x [cm]"]/100</code></td>
+<td>vytvorí alebo prepíše stĺpec</td>
+</tr>
+<tr>
+<td><code>data.groupby("x [m]")["F [N]"].agg(["mean", "std"]).reset_index()</code></td>
+<td>priemery a std podľa skupín</td>
+</tr>
+</tbody></table>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># načítavacia bunka, ktorú píše tlačidlo Import/Export (text tabuľky skrátený)
+dataframe_name = "data"
+import pandas as pd, json
+data_raw = r'[["x [cm]","F [N]"],[1,4.19],...]'     # tabuľka zmenená na text
+data_json = json.loads(data_raw)                    # text -> zoznam riadkov, hlavička prvá
+globals()[dataframe_name] = pd.DataFrame(data_json[1:], columns=data_json[0])
+# DataFrame je teraz uložený pod zvoleným menom, napr. data
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118576-21" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="**Čistenie.**
+
+| Kód | Čo robí |
+|---|---|
+| `data['x [cm]'].isna()` | odpoveď True/False na riadok: chýba hodnota? |
+| `data['x [cm]'].isna().value_counts()` | spočíta diery |
+| `data.loc[data['x [cm]'].isna(), :]` | zobrazí riadky s dierami, všetky stĺpce |
+| `data.dropna()` | metla: odstráni každý riadok obsahujúci `NaN`, v ľubovoľnom stĺpci |
+| `mask = (data['F [N]'] &gt; 0) &amp; (data['F [N]'] &lt; 40) &amp; data['x [cm]'].notna()` | logická maska: otázky spojené znakom `&amp;` |
+| `data[mask]` | ponechá riadky s odpoveďou True, celé |
+| `len(data)` | spočíta riadky |
+
+&gt; **Poznámka:** `dropna()` vymetie diery, ale nevidí preklepy – preklep nechýba, je chybný. Hranice určuje fyzika (najsilnejšie ťahanie bolo pri 30 N), takže masku píše fyzika. Upravená tabuľka – jedna tabuľka na súbor, názvy stĺpcov v prvom riadku, dáta zhora nadol – sa načíta jedným riadkom; čokoľvek iné stojí celé popoludnie opráv. Pre `read_excel` musí byť nainštalovaná knižnica `openpyxl` (`!pip install openpyxl`)." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118576-21" class="markdown-preview" style="display: block;" data-original-markdown="**Čistenie.**
+
+| Kód | Čo robí |
+|---|---|
+| `data['x [cm]'].isna()` | odpoveď True/False na riadok: chýba hodnota? |
+| `data['x [cm]'].isna().value_counts()` | spočíta diery |
+| `data.loc[data['x [cm]'].isna(), :]` | zobrazí riadky s dierami, všetky stĺpce |
+| `data.dropna()` | metla: odstráni každý riadok obsahujúci `NaN`, v ľubovoľnom stĺpci |
+| `mask = (data['F [N]'] &gt; 0) &amp; (data['F [N]'] &lt; 40) &amp; data['x [cm]'].notna()` | logická maska: otázky spojené znakom `&amp;` |
+| `data[mask]` | ponechá riadky s odpoveďou True, celé |
+| `len(data)` | spočíta riadky |
+
+&gt; **Poznámka:** `dropna()` vymetie diery, ale nevidí preklepy – preklep nechýba, je chybný. Hranice určuje fyzika (najsilnejšie ťahanie bolo pri 30 N), takže masku píše fyzika. Upravená tabuľka – jedna tabuľka na súbor, názvy stĺpcov v prvom riadku, dáta zhora nadol – sa načíta jedným riadkom; čokoľvek iné stojí celé popoludnie opráv. Pre `read_excel` musí byť nainštalovaná knižnica `openpyxl` (`!pip install openpyxl`)."><p><strong>Čistenie.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Kód</th>
+<th>Čo robí</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>data['x [cm]'].isna()</code></td>
+<td>odpoveď True/False na riadok: chýba hodnota?</td>
+</tr>
+<tr>
+<td><code>data['x [cm]'].isna().value_counts()</code></td>
+<td>spočíta diery</td>
+</tr>
+<tr>
+<td><code>data.loc[data['x [cm]'].isna(), :]</code></td>
+<td>zobrazí riadky s dierami, všetky stĺpce</td>
+</tr>
+<tr>
+<td><code>data.dropna()</code></td>
+<td>metla: odstráni každý riadok obsahujúci <code>NaN</code>, v ľubovoľnom stĺpci</td>
+</tr>
+<tr>
+<td><code>mask = (data['F [N]'] &gt; 0) &amp; (data['F [N]'] &lt; 40) &amp; data['x [cm]'].notna()</code></td>
+<td>logická maska: otázky spojené znakom <code>&amp;</code></td>
+</tr>
+<tr>
+<td><code>data[mask]</code></td>
+<td>ponechá riadky s odpoveďou True, celé</td>
+</tr>
+<tr>
+<td><code>len(data)</code></td>
+<td>spočíta riadky</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Poznámka:</strong> <code>dropna()</code> vymetie diery, ale nevidí preklepy – preklep nechýba, je chybný. Hranice určuje fyzika (najsilnejšie ťahanie bolo pri 30 N), takže masku píše fyzika. Upravená tabuľka – jedna tabuľka na súbor, názvy stĺpcov v prvom riadku, dáta zhora nadol – sa načíta jedným riadkom; čokoľvek iné stojí celé popoludnie opráv. Pre <code>read_excel</code> musí byť nainštalovaná knižnica <code>openpyxl</code> (<code>!pip install openpyxl</code>).</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118576-22" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.12 Preloženie modelu**
+
+| Kód | Čo robí |
+|---|---|
+| `k = var(&quot;k&quot;)` | neznámy parameter modelu, symbol |
+| `F(x) = k*x` | zapíše model skôr, než sa použije |
+| `find_fit(points, F, solution_dict=True)` | hľadá parametre, ktoré model čo najviac priblížia k bodom |
+| `fit[k]` | prečíta preloženú hodnotu zo slovníka podľa mena |
+| `F_fit(x) = F(x).subs(fit)` | dosadí preložené parametre do modelu |
+| `list(zip(xs, ys))` | dáta ako dvojice $(x, y)$, tvar, ktorý chce `find_fit` |" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118576-22" class="markdown-preview" style="display: block;" data-original-markdown="## **6.12 Preloženie modelu**
+
+| Kód | Čo robí |
+|---|---|
+| `k = var(&quot;k&quot;)` | neznámy parameter modelu, symbol |
+| `F(x) = k*x` | zapíše model skôr, než sa použije |
+| `find_fit(points, F, solution_dict=True)` | hľadá parametre, ktoré model čo najviac priblížia k bodom |
+| `fit[k]` | prečíta preloženú hodnotu zo slovníka podľa mena |
+| `F_fit(x) = F(x).subs(fit)` | dosadí preložené parametre do modelu |
+| `list(zip(xs, ys))` | dáta ako dvojice $(x, y)$, tvar, ktorý chce `find_fit` |"><h2 id="612-preloženie-modelu"><strong>6.12 Preloženie modelu</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Kód</th>
+<th>Čo robí</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>k = var("k")</code></td>
+<td>neznámy parameter modelu, symbol</td>
+</tr>
+<tr>
+<td><code>F(x) = k*x</code></td>
+<td>zapíše model skôr, než sa použije</td>
+</tr>
+<tr>
+<td><code>find_fit(points, F, solution_dict=True)</code></td>
+<td>hľadá parametre, ktoré model čo najviac priblížia k bodom</td>
+</tr>
+<tr>
+<td><code>fit[k]</code></td>
+<td>prečíta preloženú hodnotu zo slovníka podľa mena</td>
+</tr>
+<tr>
+<td><code>F_fit(x) = F(x).subs(fit)</code></td>
+<td>dosadí preložené parametre do modelu</td>
+</tr>
+<tr>
+<td><code>list(zip(xs, ys))</code></td>
+<td>dáta ako dvojice $(x, y)$, tvar, ktorý chce <code>find_fit</code></td>
+</tr>
+</tbody></table>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># celý recept, kapitola 5
+data_points = list(zip(data["x [m]"], data["F [N]"]))   # všetky surové body
+x_F_means = list(zip(stats['x [m]'], stats['mean']))    # alebo pokojnejšie priemery
+
+fit = find_fit(x_F_means, F, solution_dict=True)
+fit_label = rf"Fit, $k = $ {round(fit[k], 2)} N/m"
+plot_fit = plot(F_fit, xmin=0, xmax=0.1, legend_label=fit_label,
+                color='orange', linestyle='--')
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># netriviálny model je len ďalší model
+F0, a, x = var("F0 a x")
+F_magnet(x) = F0 * (1 - tanh(x/a)) * exp(-x/a)     # napíš ho, prelož ho, rovnaký recept
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118577-23" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Poznámka:** Priamky sú rutina pre každý nástroj; sila `find_fit` je v tom, že preložiť sa dá takmer každý vzorec, ktorý možno zapísať – bez rozbaľovacej ponuky. Popis vytvorený f-reťazcom je lepší než ručne napísaný: keď sa dáta zmenia a nové preloženie zmení `fit[k]`, popis hovorí stále pravdu." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118577-23" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Poznámka:** Priamky sú rutina pre každý nástroj; sila `find_fit` je v tom, že preložiť sa dá takmer každý vzorec, ktorý možno zapísať – bez rozbaľovacej ponuky. Popis vytvorený f-reťazcom je lepší než ručne napísaný: keď sa dáta zmenia a nové preloženie zmení `fit[k]`, popis hovorí stále pravdu."><blockquote>
+<p><strong>Poznámka:</strong> Priamky sú rutina pre každý nástroj; sila <code>find_fit</code> je v tom, že preložiť sa dá takmer každý vzorec, ktorý možno zapísať – bez rozbaľovacej ponuky. Popis vytvorený f-reťazcom je lepší než ručne napísaný: keď sa dáta zmenia a nové preloženie zmení <code>fit[k]</code>, popis hovorí stále pravdu.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118577-24" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.13 Konštanty, jednotky, typy**
+
+| Kód | Čo robí |
+|---|---|
+| `pi` | $\pi$, presné, kým sa nezavolá `N()` |
+| `e` | Eulerovo číslo |
+| `sqrt`, `abs`, `exp`, `log`, `arcsin`, `arctan` | každodenné funkcie |
+
+**Konvencia jednotiek.** Čísla v notebooku ostávajú holé, jednotky žijú v komentároch pri názvoch premenných a v popisoch osí: `h = 45  # m`, `axes_labels = ['$x$ [m]', '$y$ [m]']`. Vynásobenie m/s číslom `3.6` prevedie na km/h. Uhly sú v radiánoch; stupne treba previesť. `NaN` je v pandas označenie chýbajúcej hodnoty, `int64` znamená celé čísla, `float64` desatinné čísla." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118577-24" class="markdown-preview" style="display: block;" data-original-markdown="## **6.13 Konštanty, jednotky, typy**
+
+| Kód | Čo robí |
+|---|---|
+| `pi` | $\pi$, presné, kým sa nezavolá `N()` |
+| `e` | Eulerovo číslo |
+| `sqrt`, `abs`, `exp`, `log`, `arcsin`, `arctan` | každodenné funkcie |
+
+**Konvencia jednotiek.** Čísla v notebooku ostávajú holé, jednotky žijú v komentároch pri názvoch premenných a v popisoch osí: `h = 45  # m`, `axes_labels = ['$x$ [m]', '$y$ [m]']`. Vynásobenie m/s číslom `3.6` prevedie na km/h. Uhly sú v radiánoch; stupne treba previesť. `NaN` je v pandas označenie chýbajúcej hodnoty, `int64` znamená celé čísla, `float64` desatinné čísla."><h2 id="613-konštanty-jednotky-typy"><strong>6.13 Konštanty, jednotky, typy</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Kód</th>
+<th>Čo robí</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>pi</code></td>
+<td>$\pi$, presné, kým sa nezavolá <code>N()</code></td>
+</tr>
+<tr>
+<td><code>e</code></td>
+<td>Eulerovo číslo</td>
+</tr>
+<tr>
+<td><code>sqrt</code>, <code>abs</code>, <code>exp</code>, <code>log</code>, <code>arcsin</code>, <code>arctan</code></td>
+<td>každodenné funkcie</td>
+</tr>
+</tbody></table>
+<p><strong>Konvencia jednotiek.</strong> Čísla v notebooku ostávajú holé, jednotky žijú v komentároch pri názvoch premenných a v popisoch osí: <code>h = 45  # m</code>, <code>axes_labels = ['$x$ [m]', '$y$ [m]']</code>. Vynásobenie m/s číslom <code>3.6</code> prevedie na km/h. Uhly sú v radiánoch; stupne treba previesť. <code>NaN</code> je v pandas označenie chýbajúcej hodnoty, <code>int64</code> znamená celé čísla, <code>float64</code> desatinné čísla.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793175118577-25" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **6.14 Štandardný postup**
+
+1. **Uložte, čo je známe.** `g = 9.81  # m/s^2`
+2. **Deklarujte symboly.** `var('t alpha v0 g')`
+3. **Sformulujte model.** `y(t) = v0*sin(alpha)*t - 1/2*g*t^2`
+4. **Podmienky riešte symbolicky.** `solve(y(t) == 0, t)`, výber pomocou `[i]`, odstránenie ľavej strany pomocou `.rhs()`
+5. **Dosaďte vzorce do seba.** `R(alpha) = x(t_land)`
+6. **Upravte.** `.trig_reduce()`, `.factor()`, `simplify_full()`
+7. **Optimalizujte.** `solve(diff(R, alpha) == 0, alpha)`, potvrďte zmenou znamienka
+8. **Čísla nakoniec, v jednom zozname.** `values = [v0 == 15, g == 9.81]`, potom `.subs(values)`
+9. **Prejdite na desatinné čísla.** `N(...)`, `round(..., 2)`
+10. **Nakreslite a uložte.** `plot(...) + plot_format`, `.save(&quot;name.png&quot;, dpi=300)`
+
+Nikdy nepíšte dlhý vzorec, nespúšťajte ho a nedúfajte: jeden malý krok, kontrola výsledku, ďalší krok. Sage nesie aritmetiku bezchybne; čo počítať a či je odpoveď rozumná, ostáva vašou prácou." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793175118577-25" class="markdown-preview" style="display: block;" data-original-markdown="## **6.14 Štandardný postup**
+
+1. **Uložte, čo je známe.** `g = 9.81  # m/s^2`
+2. **Deklarujte symboly.** `var('t alpha v0 g')`
+3. **Sformulujte model.** `y(t) = v0*sin(alpha)*t - 1/2*g*t^2`
+4. **Podmienky riešte symbolicky.** `solve(y(t) == 0, t)`, výber pomocou `[i]`, odstránenie ľavej strany pomocou `.rhs()`
+5. **Dosaďte vzorce do seba.** `R(alpha) = x(t_land)`
+6. **Upravte.** `.trig_reduce()`, `.factor()`, `simplify_full()`
+7. **Optimalizujte.** `solve(diff(R, alpha) == 0, alpha)`, potvrďte zmenou znamienka
+8. **Čísla nakoniec, v jednom zozname.** `values = [v0 == 15, g == 9.81]`, potom `.subs(values)`
+9. **Prejdite na desatinné čísla.** `N(...)`, `round(..., 2)`
+10. **Nakreslite a uložte.** `plot(...) + plot_format`, `.save(&quot;name.png&quot;, dpi=300)`
+
+Nikdy nepíšte dlhý vzorec, nespúšťajte ho a nedúfajte: jeden malý krok, kontrola výsledku, ďalší krok. Sage nesie aritmetiku bezchybne; čo počítať a či je odpoveď rozumná, ostáva vašou prácou."><h2 id="614-štandardný-postup"><strong>6.14 Štandardný postup</strong></h2>
+<ol>
+<li><strong>Uložte, čo je známe.</strong> <code>g = 9.81  # m/s^2</code></li>
+<li><strong>Deklarujte symboly.</strong> <code>var('t alpha v0 g')</code></li>
+<li><strong>Sformulujte model.</strong> <code>y(t) = v0*sin(alpha)*t - 1/2*g*t^2</code></li>
+<li><strong>Podmienky riešte symbolicky.</strong> <code>solve(y(t) == 0, t)</code>, výber pomocou <code>[i]</code>, odstránenie ľavej strany pomocou <code>.rhs()</code></li>
+<li><strong>Dosaďte vzorce do seba.</strong> <code>R(alpha) = x(t_land)</code></li>
+<li><strong>Upravte.</strong> <code>.trig_reduce()</code>, <code>.factor()</code>, <code>simplify_full()</code></li>
+<li><strong>Optimalizujte.</strong> <code>solve(diff(R, alpha) == 0, alpha)</code>, potvrďte zmenou znamienka</li>
+<li><strong>Čísla nakoniec, v jednom zozname.</strong> <code>values = [v0 == 15, g == 9.81]</code>, potom <code>.subs(values)</code></li>
+<li><strong>Prejdite na desatinné čísla.</strong> <code>N(...)</code>, <code>round(..., 2)</code></li>
+<li><strong>Nakreslite a uložte.</strong> <code>plot(...) + plot_format</code>, <code>.save("name.png", dpi=300)</code></li>
+</ol>
+<p>Nikdy nepíšte dlhý vzorec, nespúšťajte ho a nedúfajte: jeden malý krok, kontrola výsledku, ďalší krok. Sage nesie aritmetiku bezchybne; čo počítať a či je odpoveď rozumná, ostáva vašou prácou.</p>
+</div>
+    </div></div></div></div>
+            
+        </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/embedded_sagecell_backup.js"></script>
+<script src="https://sage-sk.org/embedded_sagecell.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/FileSaver.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/nbplayerConfig.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/comment/comment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/markdown-fold.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.css">
+<script>let RUN_DELAY = 1000;</script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/customthemes15.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbrunner24.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaiengine23.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaipriming22.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbautocompletion20.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://code.datagridxl.com/datagridxl2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fflate@0.8.3/umd/index.min.js"></script>
+<script>
+  playerConfig={"panes":"Exec","lang":"sage","linked":true,"eval":false,"hide":["fullScreen"],"execute":true,"showRead":false,"collapsable":false,"playerPath":"https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main","name":"SageMath"};
+  playerMode={"showSage":true,"showNotebookInput":true,"showSageInput":true};
+  let API_KEY="";
+  let API_URL="";
+  let CURRENT_MODEL="";
+  let CURRENT_LANGUAGE="";
+  let SAGECELL_URL="https://sage-sk.org/";
+  let toggleEvalBtnsState=false;
+  let isFullWidthState=true;
+  window.hideCodeInputState=false;
+  let PRELOAD="";
+  let SETTINGS_PATH_NAME="settings.js";
+  let aiEduMode=true;
+  let aiCompleteMode=true;
+  let aiLogs=false;
+  window.aiLogs=false;
+  window.aiSettingsVisible=true;
+  window.aiLogsHistory=[];
+  makeMenu();
+  localize();
+  createTableOfContents();
+  loadStatus();
+  restoreUIState();
+  makeSageCells(playerConfig);
+  launchPlayer();
+  addControlPanel();
+  setupRunAllCells();
+  addSageCellNumbering();
+  enhanceSageCellsWithGlobalAutocomplete();
+  window.onload = initializeMarkdownCells;
+  let CUSTOM_CONTEXT="";
+  let CUSTOM_CSS="";
+  if (CUSTOM_CSS) applyCustomCSS(CUSTOM_CSS);
+  addCommentShortcutToAllSageCells();
+  applyPreloadCells();
+  setupBulkCellObserver();
+</script>
+<script src="settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;polygon points='50,6 88,28 88,72 50,94 12,72 12,28' fill='%234CAF50'/&gt;&lt;text x='50' y='68' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='%23fff' text-anchor='middle'&gt;S&lt;/text&gt;&lt;/svg&gt;">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/es5-shim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/ansi_up.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex-auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/notebook.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/prism.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/notebook.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/nbpreview.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/css/nbplayer24.css">
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/texme@1.2.2"></script>
+<div id="main">
+<div id="notebook-holder"><div class="nb-notebook"><div class="nb-worksheet"><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329025-1" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Faculty of Science, Pavol Jozef Šafárik University in Košice, Slovakia&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt;&nbsp;&lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt;&nbsp;&lt;/p&gt;" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329025-1" class="markdown-preview" style="display: block;" data-original-markdown="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Faculty of Science, Pavol Jozef Šafárik University in Košice, Slovakia&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt;&nbsp;&lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt;&nbsp;&lt;/p&gt;"><p><img style="float: right;" src="https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png" alt="" width="100" height="85"></p>
+<p><strong>Authors:</strong> Dominik Borovský<sup>1</sup> &amp; Jozef Hanč<sup>2</sup></p>
+<p><em>2026, Faculty of Science, Pavol Jozef Šafárik University in Košice, Slovakia</em></p>
+<p><sup>1</sup><a href="mailto:dominik.borovsky@student.upjs.sk">dominik.borovsky@student.upjs.sk,</a>&nbsp;<sup>2</sup><a href="mailto:jozef.hanc@upjs.sk">jozef.hanc@upjs.sk</a>&nbsp;</p></div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329026-2" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="# **Chapter 3: Pictures of Trajectories**" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329026-2" class="markdown-preview" style="display: block;" data-original-markdown="# **Chapter 3: Pictures of Trajectories**"><h1 id="chapter-3-pictures-of-trajectories"><strong>Chapter 3: Pictures of Trajectories</strong></h1>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329026-3" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="In this chapter you will learn to plot functions and data in SageMath: single plots, families of curves, and how to combine and decorate them. A plot is not decoration; it is how you *see* an equation." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329026-3" class="markdown-preview" style="display: block;" data-original-markdown="In this chapter you will learn to plot functions and data in SageMath: single plots, families of curves, and how to combine and decorate them. A plot is not decoration; it is how you *see* an equation."><p>In this chapter you will learn to plot functions and data in SageMath: single plots, families of curves, and how to combine and decorate them. A plot is not decoration; it is how you <em>see</em> an equation.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329026-4" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **3.1 The task**
+
+&gt; The goalkeeper wants to see, in one picture, where the ball can and cannot land, for every kick angle at once. Draw it." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329026-4" class="markdown-preview" style="display: block;" data-original-markdown="## **3.1 The task**
+
+&gt; The goalkeeper wants to see, in one picture, where the ball can and cannot land, for every kick angle at once. Draw it."><h2 id="31-the-task"><strong>3.1 The task</strong></h2>
+<blockquote>
+<p>The goalkeeper wants to see, in one picture, where the ball can and cannot land, for every kick angle at once. Draw it.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329026-5" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **3.2 The trajectory as a curve**
+
+In Chapter 2 the ball's position was given by two functions of time: the distance $x(t) = v_0\cos\alpha \, t$, growing evenly for as long as the ball flies, and the height $y(t) = v_0\sin\alpha \, t - \tfrac{1}{2}g t^2$, rising and then falling. For a picture we want height $y$ against distance $x$, $y$ as a function of $x$: drop the clock and keep the curve. The procedure is: solve the distance equation for the time $t$, and substitute that time into the height $y(t)$. Both steps are exactly what `solve()` and substitution were for in Chapter 2, so we do not do them by hand - we rebuild the two flight functions and let SageMath eliminate $t$ itself.
+
+One naming decision comes first. The equation to solve is *distance $= x$*, with $x$ a plain unknown - but the letter $x$ is already taken by the distance function, and `solve(x(t) == x, t)` ends in an error. For SageMath the function and the unknown are not the same thing, and they are not the same thing in mathematics either: $x(t)$ is a rule, $x$ is the number we are asking for. The trick for such collisions is a trailing underscore: the functions are called `x_` and `y_`, the unknown stays `x`. In code the underscore keeps the two apart; `show()` drops it when typesetting, and both display as plain $x$." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329026-5" class="markdown-preview" style="display: block;" data-original-markdown="## **3.2 The trajectory as a curve**
+
+In Chapter 2 the ball's position was given by two functions of time: the distance $x(t) = v_0\cos\alpha \, t$, growing evenly for as long as the ball flies, and the height $y(t) = v_0\sin\alpha \, t - \tfrac{1}{2}g t^2$, rising and then falling. For a picture we want height $y$ against distance $x$, $y$ as a function of $x$: drop the clock and keep the curve. The procedure is: solve the distance equation for the time $t$, and substitute that time into the height $y(t)$. Both steps are exactly what `solve()` and substitution were for in Chapter 2, so we do not do them by hand - we rebuild the two flight functions and let SageMath eliminate $t$ itself.
+
+One naming decision comes first. The equation to solve is *distance $= x$*, with $x$ a plain unknown - but the letter $x$ is already taken by the distance function, and `solve(x(t) == x, t)` ends in an error. For SageMath the function and the unknown are not the same thing, and they are not the same thing in mathematics either: $x(t)$ is a rule, $x$ is the number we are asking for. The trick for such collisions is a trailing underscore: the functions are called `x_` and `y_`, the unknown stays `x`. In code the underscore keeps the two apart; `show()` drops it when typesetting, and both display as plain $x$."><h2 id="32-the-trajectory-as-a-curve"><strong>3.2 The trajectory as a curve</strong></h2>
+<p>In Chapter 2 the ball's position was given by two functions of time: the distance $x(t) = v_0\cos\alpha \, t$, growing evenly for as long as the ball flies, and the height $y(t) = v_0\sin\alpha \, t - \tfrac{1}{2}g t^2$, rising and then falling. For a picture we want height $y$ against distance $x$, $y$ as a function of $x$: drop the clock and keep the curve. The procedure is: solve the distance equation for the time $t$, and substitute that time into the height $y(t)$. Both steps are exactly what <code>solve()</code> and substitution were for in Chapter 2, so we do not do them by hand - we rebuild the two flight functions and let SageMath eliminate $t$ itself.</p>
+<p>One naming decision comes first. The equation to solve is <em>distance $= x$</em>, with $x$ a plain unknown - but the letter $x$ is already taken by the distance function, and <code>solve(x(t) == x, t)</code> ends in an error. For SageMath the function and the unknown are not the same thing, and they are not the same thing in mathematics either: $x(t)$ is a rule, $x$ is the number we are asking for. The trick for such collisions is a trailing underscore: the functions are called <code>x_</code> and <code>y_</code>, the unknown stays <code>x</code>. In code the underscore keeps the two apart; <code>show()</code> drops it when typesetting, and both display as plain $x$.</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">var('t alpha v0 g x')
+
+# flight functions: underscore in the code, plain x and y in show()
+x_(t) = v0*cos(alpha)*t
+y_(t) = v0*sin(alpha)*t - 1/2*g*t^2
+
+# solve "distance = x" for the time, keep the (only) solution
+t_hit = solve(x_(t) == x, t)[0].rhs()
+show(t_hit)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># substitute the time into the height: y as a function of x
+y_traj(x) = y_(t).subs(t = t_hit).trig_simplify()
+show(y_traj(x))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329028-6" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="A parabola, as promised by every physics teacher. The simplest plot in SageMath is `plot()`: its arguments are what to plot and the range of the horizontal axis, written as `xmin` and `xmax`. The names say what they do - the same style as the `ymin` and `ymax` we will meet below." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329028-6" class="markdown-preview" style="display: block;" data-original-markdown="A parabola, as promised by every physics teacher. The simplest plot in SageMath is `plot()`: its arguments are what to plot and the range of the horizontal axis, written as `xmin` and `xmax`. The names say what they do - the same style as the `ymin` and `ymax` we will meet below."><p>A parabola, as promised by every physics teacher. The simplest plot in SageMath is <code>plot()</code>: its arguments are what to plot and the range of the horizontal axis, written as <code>xmin</code> and <code>xmax</code>. The names say what they do - the same style as the <code>ymin</code> and <code>ymax</code> we will meet below.</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># a single 45 degree kick at 15 m/s: substitute numbers first
+kappa45(x) = y_traj(x).subs(alpha = pi/4, v0 = 15, g = 9.81)
+plot(kappa45(x), xmin = 0, xmax = 25)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329029-7" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="The axes scale automatically, and the curve is there: up, over, down.
+
+&gt; **Note:** `plot()` needs to know *where to evaluate*, so the interval is not optional. If SageMath complains about not knowing what to plot, it almost always means you forgot `xmin = ...` or `xmax = ...`." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329029-7" class="markdown-preview" style="display: block;" data-original-markdown="The axes scale automatically, and the curve is there: up, over, down.
+
+&gt; **Note:** `plot()` needs to know *where to evaluate*, so the interval is not optional. If SageMath complains about not knowing what to plot, it almost always means you forgot `xmin = ...` or `xmax = ...`."><p>The axes scale automatically, and the curve is there: up, over, down.</p>
+<blockquote>
+<p><strong>Note:</strong> <code>plot()</code> needs to know <em>where to evaluate</em>, so the interval is not optional. If SageMath complains about not knowing what to plot, it almost always means you forgot <code>xmin = ...</code> or <code>xmax = ...</code>.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329029-8" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **3.3 All the angles at once**
+
+One curve is one angle. The goalkeeper wants the whole family: angles from 20 to 70 degrees. The tool for repeating a computation with different values is the list comprehension, `[expression for item in list]`, met here for the first time. It works for plots too, because in SageMath a plot is an object like any number:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329029-8" class="markdown-preview" style="display: block;" data-original-markdown="## **3.3 All the angles at once**
+
+One curve is one angle. The goalkeeper wants the whole family: angles from 20 to 70 degrees. The tool for repeating a computation with different values is the list comprehension, `[expression for item in list]`, met here for the first time. It works for plots too, because in SageMath a plot is an object like any number:"><h2 id="33-all-the-angles-at-once"><strong>3.3 All the angles at once</strong></h2>
+<p>One curve is one angle. The goalkeeper wants the whole family: angles from 20 to 70 degrees. The tool for repeating a computation with different values is the list comprehension, <code>[expression for item in list]</code>, met here for the first time. It works for plots too, because in SageMath a plot is an object like any number:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">angles = [20, 30, 40, 50, 60, 70]      # in degrees
+
+# one plot object per angle, collected in a list
+plots = [plot(y_traj(x).subs(alpha = a*pi/180, v0 = 15, g = 9.81),
+              xmin = 0, xmax = 25,
+              color = hue(a/90),
+              legend_label = str(a) + ' degrees')
+         for a in angles]
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329029-9" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Each plot got a `color` and a `legend_label` so we can tell them apart. Plots are combined by simply adding them, and the sum is drawn with `show()`. A habit worth forming right here: *build the sum, give it a name, and only then show it*. The sum is a plot object like any other, so it deserves a name like any other; the next sections will keep adding to this picture, and nobody wants to retype a list comprehension for that." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329029-9" class="markdown-preview" style="display: block;" data-original-markdown="Each plot got a `color` and a `legend_label` so we can tell them apart. Plots are combined by simply adding them, and the sum is drawn with `show()`. A habit worth forming right here: *build the sum, give it a name, and only then show it*. The sum is a plot object like any other, so it deserves a name like any other; the next sections will keep adding to this picture, and nobody wants to retype a list comprehension for that."><p>Each plot got a <code>color</code> and a <code>legend_label</code> so we can tell them apart. Plots are combined by simply adding them, and the sum is drawn with <code>show()</code>. A habit worth forming right here: <em>build the sum, give it a name, and only then show it</em>. The sum is a plot object like any other, so it deserves a name like any other; the next sections will keep adding to this picture, and nobody wants to retype a list comprehension for that.</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the + operator overlays plots; store the sum under a name
+family_plot = sum(plots)
+
+show(family_plot, ymin=0)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329030-10" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Six parabolas with a clear pattern: 20 and 70 degrees land together, 30 and 60 together, and 40 with 50 almost together, exactly the $\sin 2\alpha$ symmetry from Chapter 2. The tallest arc lands no farther than the flattest one." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329030-10" class="markdown-preview" style="display: block;" data-original-markdown="Six parabolas with a clear pattern: 20 and 70 degrees land together, 30 and 60 together, and 40 with 50 almost together, exactly the $\sin 2\alpha$ symmetry from Chapter 2. The tallest arc lands no farther than the flattest one."><p>Six parabolas with a clear pattern: 20 and 70 degrees land together, 30 and 60 together, and 40 with 50 almost together, exactly the $\sin 2\alpha$ symmetry from Chapter 2. The tallest arc lands no farther than the flattest one.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329030-11" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **3.4 The envelope: where no ball lands**
+
+Look at the family of curves and you can see a ceiling: an outer border the balls touch but never cross. It is called the *envelope*, and SageMath can compute it, not just draw it. The trick is a substitution that makes the algebra pleasant. Write $u = \tan\alpha$, and use $1/\cos^2\alpha = 1 + \tan^2\alpha$:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329030-11" class="markdown-preview" style="display: block;" data-original-markdown="## **3.4 The envelope: where no ball lands**
+
+Look at the family of curves and you can see a ceiling: an outer border the balls touch but never cross. It is called the *envelope*, and SageMath can compute it, not just draw it. The trick is a substitution that makes the algebra pleasant. Write $u = \tan\alpha$, and use $1/\cos^2\alpha = 1 + \tan^2\alpha$:"><h2 id="34-the-envelope-where-no-ball-lands"><strong>3.4 The envelope: where no ball lands</strong></h2>
+<p>Look at the family of curves and you can see a ceiling: an outer border the balls touch but never cross. It is called the <em>envelope</em>, and SageMath can compute it, not just draw it. The trick is a substitution that makes the algebra pleasant. Write $u = \tan\alpha$, and use $1/\cos^2\alpha = 1 + \tan^2\alpha$:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">var('u')
+
+# the same trajectory, but in terms of u = tan(alpha)
+y_u(x) = u*x - g*x^2/(2*v0^2)*(1 + u^2)
+show(y_u(x))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329031-12" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="For a fixed distance $x$, the highest kick is the best $u$. The maximum of $y_u$ over $u$ sits where its derivative in $u$ is zero:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329031-12" class="markdown-preview" style="display: block;" data-original-markdown="For a fixed distance $x$, the highest kick is the best $u$. The maximum of $y_u$ over $u$ sits where its derivative in $u$ is zero:"><p>For a fixed distance $x$, the highest kick is the best $u$. The maximum of $y_u$ over $u$ sits where its derivative in $u$ is zero:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">u_best = solve(diff(y_u(x), u) == 0, u)[0].rhs()
+show(u_best)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329032-13" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Substitute this optimal kick back into the trajectory and the envelope falls out:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329032-13" class="markdown-preview" style="display: block;" data-original-markdown="Substitute this optimal kick back into the trajectory and the envelope falls out:"><p>Substitute this optimal kick back into the trajectory and the envelope falls out:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">envelope(x) = y_u(x).subs(u = u_best)
+show(envelope(x))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329033-14" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="$$y_{env} = \dfrac{v_0^2}{2g} - \dfrac{g\,x^2}{2v_0^2}$$
+
+A parabola again, but an upside-down one, sitting on top of all the others. Each point of it belongs to one ball, the ball kicked at just the right angle to be there.
+
+Now draw everything together. Plots take a `linestyle` option, `'--'` for a dashed curve:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329033-14" class="markdown-preview" style="display: block;" data-original-markdown="$$y_{env} = \dfrac{v_0^2}{2g} - \dfrac{g\,x^2}{2v_0^2}$$
+
+A parabola again, but an upside-down one, sitting on top of all the others. Each point of it belongs to one ball, the ball kicked at just the right angle to be there.
+
+Now draw everything together. Plots take a `linestyle` option, `'--'` for a dashed curve:"><p>$$y_{env} = \dfrac{v_0^2}{2g} - \dfrac{g\,x^2}{2v_0^2}$$</p>
+<p>A parabola again, but an upside-down one, sitting on top of all the others. Each point of it belongs to one ball, the ball kicked at just the right angle to be there.</p>
+<p>Now draw everything together. Plots take a <code>linestyle</code> option, <code>'--'</code> for a dashed curve:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">env_plot = plot(envelope(x).subs(v0 = 15, g = 9.81), xmin = 0, xmax = 25,
+                color = 'black', linestyle = '--', legend_label = 'envelope')
+
+# the family from before plus the envelope: one named picture
+combined_plot = family_plot + env_plot
+
+show(combined_plot, figsize = 5, ymin = 0)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329034-15" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="There is the goalkeeper's picture: everything inside the dashed parabola can be hit by some angle, everything above it is safe. The apex of the envelope, $v_0^2/2g$ at $x = 0$, is the highest a 15 m/s ball can ever reach, straight up." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329034-15" class="markdown-preview" style="display: block;" data-original-markdown="There is the goalkeeper's picture: everything inside the dashed parabola can be hit by some angle, everything above it is safe. The apex of the envelope, $v_0^2/2g$ at $x = 0$, is the highest a 15 m/s ball can ever reach, straight up."><p>There is the goalkeeper's picture: everything inside the dashed parabola can be hit by some angle, everything above it is safe. The apex of the envelope, $v_0^2/2g$ at $x = 0$, is the highest a 15 m/s ball can ever reach, straight up.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329034-16" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **3.5 Making the picture readable**
+
+A plot you cannot read is a wasted computation. Here is the payoff of the naming habit: the same `combined_plot` from the last section, dressed better, without rebuilding a single curve. The options are the everyday ones:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329034-16" class="markdown-preview" style="display: block;" data-original-markdown="## **3.5 Making the picture readable**
+
+A plot you cannot read is a wasted computation. Here is the payoff of the naming habit: the same `combined_plot` from the last section, dressed better, without rebuilding a single curve. The options are the everyday ones:"><h2 id="35-making-the-picture-readable"><strong>3.5 Making the picture readable</strong></h2>
+<p>A plot you cannot read is a wasted computation. Here is the payoff of the naming habit: the same <code>combined_plot</code> from the last section, dressed better, without rebuilding a single curve. The options are the everyday ones:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">show(combined_plot,
+     figsize = 6,             # size of the figure
+     ymin = 0, ymax = 12,     # vertical range
+     frame = True,            # box around the picture instead of axes
+     axes_labels = ['$x$ [m]', '$y$ [m]'],   # axis captions
+     gridlines = True)        # background grid
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329034-17" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Three details are worth a habit. First, `axes_labels` accept LaTeX: write the caption between dollar signs, and the `$x$ [m]` on the axis comes out typeset in mathematical script, the italic $x$ you know from formulas. Second, `axes_labels` is where units belong, per our convention from Chapter 1: numbers in the notebook stay bare, units live in labels. Third, `ymin = 0` is not cosmetic: without it, SageMath happily shows the ball landing below ground level.
+
+&gt; **Note:** Colors can be given as `hue(number)` between 0 and 1, which spreads a family of curves evenly over the rainbow, or as names like `'red'`, `'black'`. The `legend_label` is plain text, so it is built with `str(a) + ' degrees'` when the label has to contain a number.
+
+Curves say &quot;somewhere up there&quot;; a dot says &quot;exactly here&quot;. Worth marking are the *apexes* of the kicks, the points where each ball stops rising. Their time we know from Chapter 2: half the flight time, $t_{\mathrm{apex}} = v_0\sin\alpha / g$. For a picture we need the *place* of each apex, the pair (distance, height). The cleanest tool for that is a `lambda`. It is part of Python, not of SageMath's mathematics: with it, one easily writes down short procedures that accept one or more inputs, process them and provide output in any form - here, one input (the angle in degrees) and one number out, with our kick (`v0 = 15`, `g = 9.81`) and the degree-to-radian conversion baked inside:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329034-17" class="markdown-preview" style="display: block;" data-original-markdown="Three details are worth a habit. First, `axes_labels` accept LaTeX: write the caption between dollar signs, and the `$x$ [m]` on the axis comes out typeset in mathematical script, the italic $x$ you know from formulas. Second, `axes_labels` is where units belong, per our convention from Chapter 1: numbers in the notebook stay bare, units live in labels. Third, `ymin = 0` is not cosmetic: without it, SageMath happily shows the ball landing below ground level.
+
+&gt; **Note:** Colors can be given as `hue(number)` between 0 and 1, which spreads a family of curves evenly over the rainbow, or as names like `'red'`, `'black'`. The `legend_label` is plain text, so it is built with `str(a) + ' degrees'` when the label has to contain a number.
+
+Curves say &quot;somewhere up there&quot;; a dot says &quot;exactly here&quot;. Worth marking are the *apexes* of the kicks, the points where each ball stops rising. Their time we know from Chapter 2: half the flight time, $t_{\mathrm{apex}} = v_0\sin\alpha / g$. For a picture we need the *place* of each apex, the pair (distance, height). The cleanest tool for that is a `lambda`. It is part of Python, not of SageMath's mathematics: with it, one easily writes down short procedures that accept one or more inputs, process them and provide output in any form - here, one input (the angle in degrees) and one number out, with our kick (`v0 = 15`, `g = 9.81`) and the degree-to-radian conversion baked inside:"><p>Three details are worth a habit. First, <code>axes_labels</code> accept LaTeX: write the caption between dollar signs, and the <code>$x$ [m]</code> on the axis comes out typeset in mathematical script, the italic $x$ you know from formulas. Second, <code>axes_labels</code> is where units belong, per our convention from Chapter 1: numbers in the notebook stay bare, units live in labels. Third, <code>ymin = 0</code> is not cosmetic: without it, SageMath happily shows the ball landing below ground level.</p>
+<blockquote>
+<p><strong>Note:</strong> Colors can be given as <code>hue(number)</code> between 0 and 1, which spreads a family of curves evenly over the rainbow, or as names like <code>'red'</code>, <code>'black'</code>. The <code>legend_label</code> is plain text, so it is built with <code>str(a) + ' degrees'</code> when the label has to contain a number.</p>
+</blockquote>
+<p>Curves say "somewhere up there"; a dot says "exactly here". Worth marking are the <em>apexes</em> of the kicks, the points where each ball stops rising. Their time we know from Chapter 2: half the flight time, $t_{\mathrm{apex}} = v_0\sin\alpha / g$. For a picture we need the <em>place</em> of each apex, the pair (distance, height). The cleanest tool for that is a <code>lambda</code>. It is part of Python, not of SageMath's mathematics: with it, one easily writes down short procedures that accept one or more inputs, process them and provide output in any form - here, one input (the angle in degrees) and one number out, with our kick (<code>v0 = 15</code>, <code>g = 9.81</code>) and the degree-to-radian conversion baked inside:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the apex time, from the Chapter 2 symmetry
+t_apex = v0*sin(alpha)/g
+
+# a short procedure per coordinate: angle in degrees in, place in meters out
+x_apex = lambda a: N(x_(t_apex).subs(alpha = a*pi/180, v0 = 15, g = 9.81))
+y_apex = lambda a: N(y_(t_apex).subs(alpha = a*pi/180, v0 = 15, g = 9.81))
+
+show(x_apex(45))
+show(y_apex(45))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329035-18" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Read a definition from the left: the keyword `lambda`, the name of the input (`a`, the angle in degrees), a colon, and what to compute. A lambda is *not* a mathematical function like `x_(t) = ...`: it holds no equation to solve, nothing to differentiate, no formula to display - it is pure computing. Above, the 45 degree kick puts its apex 11.5 m out and 5.7 m up.
+
+&gt; **Note:** If you already know some Python, you may have met `def` statements: `def f(a): return ...` works the same way, with the body written on one or more indented lines. A `lambda` is the same idea squeezed into a single expression - the right tool when the procedure fits on one line, a `def` when it does not.
+
+The payoff comes in the list below: with all the substituting hidden inside the procedures, it stays as flat as the list of parabolas in Section 3.3. And this time we take the angles further, up to 90 degrees:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329035-18" class="markdown-preview" style="display: block;" data-original-markdown="Read a definition from the left: the keyword `lambda`, the name of the input (`a`, the angle in degrees), a colon, and what to compute. A lambda is *not* a mathematical function like `x_(t) = ...`: it holds no equation to solve, nothing to differentiate, no formula to display - it is pure computing. Above, the 45 degree kick puts its apex 11.5 m out and 5.7 m up.
+
+&gt; **Note:** If you already know some Python, you may have met `def` statements: `def f(a): return ...` works the same way, with the body written on one or more indented lines. A `lambda` is the same idea squeezed into a single expression - the right tool when the procedure fits on one line, a `def` when it does not.
+
+The payoff comes in the list below: with all the substituting hidden inside the procedures, it stays as flat as the list of parabolas in Section 3.3. And this time we take the angles further, up to 90 degrees:"><p>Read a definition from the left: the keyword <code>lambda</code>, the name of the input (<code>a</code>, the angle in degrees), a colon, and what to compute. A lambda is <em>not</em> a mathematical function like <code>x_(t) = ...</code>: it holds no equation to solve, nothing to differentiate, no formula to display - it is pure computing. Above, the 45 degree kick puts its apex 11.5 m out and 5.7 m up.</p>
+<blockquote>
+<p><strong>Note:</strong> If you already know some Python, you may have met <code>def</code> statements: <code>def f(a): return ...</code> works the same way, with the body written on one or more indented lines. A <code>lambda</code> is the same idea squeezed into a single expression - the right tool when the procedure fits on one line, a <code>def</code> when it does not.</p>
+</blockquote>
+<p>The payoff comes in the list below: with all the substituting hidden inside the procedures, it stays as flat as the list of parabolas in Section 3.3. And this time we take the angles further, up to 90 degrees:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># one (distance, height) pair per angle
+# the angles from before, plus the straight-up kick
+apex_angles = angles + [80, 90]
+
+apexes = [(x_apex(a), y_apex(a)) for a in apex_angles]
+
+show(apexes)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329036-19" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Eight pairs, from `(7.4, 1.3)` at 20 degrees up to `(0, 11.5)` at 90 degrees. The 90 degree kick has no parabola in the family above: kicked straight up, the ball gains no distance, and asking `y_traj` for that angle would mean dividing by $\cos 90^\circ = 0$. Its apex is still a perfectly good point - no distance, all height. Such a list is drawn with `point()`, which wants exactly this shape - a list of $(x, y)$ pairs - and nothing else:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329036-19" class="markdown-preview" style="display: block;" data-original-markdown="Eight pairs, from `(7.4, 1.3)` at 20 degrees up to `(0, 11.5)` at 90 degrees. The 90 degree kick has no parabola in the family above: kicked straight up, the ball gains no distance, and asking `y_traj` for that angle would mean dividing by $\cos 90^\circ = 0$. Its apex is still a perfectly good point - no distance, all height. Such a list is drawn with `point()`, which wants exactly this shape - a list of $(x, y)$ pairs - and nothing else:"><p>Eight pairs, from <code>(7.4, 1.3)</code> at 20 degrees up to <code>(0, 11.5)</code> at 90 degrees. The 90 degree kick has no parabola in the family above: kicked straight up, the ball gains no distance, and asking <code>y_traj</code> for that angle would mean dividing by $\cos 90^\circ = 0$. Its apex is still a perfectly good point - no distance, all height. Such a list is drawn with <code>point()</code>, which wants exactly this shape - a list of $(x, y)$ pairs - and nothing else:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># one dot per apex, on top of the picture
+apex_plot = point(apexes, size = 40, color = 'red')
+
+show(combined_plot + apex_plot, figsize = 5, ymin = 0)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329037-20" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Each dot sits on top of its own parabola, and the 90 degree dot sits exactly on the envelope's top, $v_0^2/2g$: the highest point of the picture belongs to the ball kicked straight up.
+
+Dots mark places; a line tells the story along them. `list_plot()` takes the very same list of pairs and adds one parameter worth knowing: `plotjoined = True` runs a line through the dots:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329037-20" class="markdown-preview" style="display: block;" data-original-markdown="Each dot sits on top of its own parabola, and the 90 degree dot sits exactly on the envelope's top, $v_0^2/2g$: the highest point of the picture belongs to the ball kicked straight up.
+
+Dots mark places; a line tells the story along them. `list_plot()` takes the very same list of pairs and adds one parameter worth knowing: `plotjoined = True` runs a line through the dots:"><p>Each dot sits on top of its own parabola, and the 90 degree dot sits exactly on the envelope's top, $v_0^2/2g$: the highest point of the picture belongs to the ball kicked straight up.</p>
+<p>Dots mark places; a line tells the story along them. <code>list_plot()</code> takes the very same list of pairs and adds one parameter worth knowing: <code>plotjoined = True</code> runs a line through the dots:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the same pairs, joined into one line
+apex_line = list_plot(apexes, plotjoined = True, color = 'red')
+
+show(combined_plot + apex_plot + apex_line, figsize = 5, ymin = 0)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329038-21" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="The line makes the pattern visible: the apexes climb a smooth arc that ends on the envelope's top. That arc is half of an ellipse - the apex of every kick angle lies on it, and its highest point is the ceiling itself.
+
+&gt; **Note:** `point()` for a handful of marked dots; `list_plot()` with `plotjoined = True` when the dots belong to one story." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329038-21" class="markdown-preview" style="display: block;" data-original-markdown="The line makes the pattern visible: the apexes climb a smooth arc that ends on the envelope's top. That arc is half of an ellipse - the apex of every kick angle lies on it, and its highest point is the ceiling itself.
+
+&gt; **Note:** `point()` for a handful of marked dots; `list_plot()` with `plotjoined = True` when the dots belong to one story."><p>The line makes the pattern visible: the apexes climb a smooth arc that ends on the envelope's top. That arc is half of an ellipse - the apex of every kick angle lies on it, and its highest point is the ceiling itself.</p>
+<blockquote>
+<p><strong>Note:</strong> <code>point()</code> for a handful of marked dots; <code>list_plot()</code> with <code>plotjoined = True</code> when the dots belong to one story.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329038-22" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **Exercises**
+
+**Exercise 1.** Rebuild the angle family for `v0 = 20` and `v0 = 10`, each with its own envelope. How does the envelope change? Check your reading against the formula $v_0^2/(2g)$ for its apex.
+
+**Exercise 2.** A fence of height 2 m stands 18 m away. Plot the 45 degree trajectory together with a horizontal line at 2 m (hint: `plot(2, x, xmin = 0, xmax = 25)` plots a constant; the plain `x` stays, because a bare constant tells SageMath nothing about the variable) and decide by eye whether the kick clears it. Then confirm with `solve()` from Chapter 2.
+
+**Exercise 3.** Plot the trajectories of a ball kicked from the edge of a 10 m cliff, angles 0 to 60 degrees. Where does the landing symmetry from Chapter 2 (the $\sin 2\alpha$ pairs) break, and why?
+
+**Exercise 4.** The flight *time* also depends on the angle. Plot `t_land` from Chapter 2 as a function of the angle, from 0 to 90 degrees, with `axes_labels`. Mark the angle where the time is longest and explain in one sentence why it is not 45 degrees." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329038-22" class="markdown-preview" style="display: block;" data-original-markdown="## **Exercises**
+
+**Exercise 1.** Rebuild the angle family for `v0 = 20` and `v0 = 10`, each with its own envelope. How does the envelope change? Check your reading against the formula $v_0^2/(2g)$ for its apex.
+
+**Exercise 2.** A fence of height 2 m stands 18 m away. Plot the 45 degree trajectory together with a horizontal line at 2 m (hint: `plot(2, x, xmin = 0, xmax = 25)` plots a constant; the plain `x` stays, because a bare constant tells SageMath nothing about the variable) and decide by eye whether the kick clears it. Then confirm with `solve()` from Chapter 2.
+
+**Exercise 3.** Plot the trajectories of a ball kicked from the edge of a 10 m cliff, angles 0 to 60 degrees. Where does the landing symmetry from Chapter 2 (the $\sin 2\alpha$ pairs) break, and why?
+
+**Exercise 4.** The flight *time* also depends on the angle. Plot `t_land` from Chapter 2 as a function of the angle, from 0 to 90 degrees, with `axes_labels`. Mark the angle where the time is longest and explain in one sentence why it is not 45 degrees."><h2 id="exercises"><strong>Exercises</strong></h2>
+<p><strong>Exercise 1.</strong> Rebuild the angle family for <code>v0 = 20</code> and <code>v0 = 10</code>, each with its own envelope. How does the envelope change? Check your reading against the formula $v_0^2/(2g)$ for its apex.</p>
+<p><strong>Exercise 2.</strong> A fence of height 2 m stands 18 m away. Plot the 45 degree trajectory together with a horizontal line at 2 m (hint: <code>plot(2, x, xmin = 0, xmax = 25)</code> plots a constant; the plain <code>x</code> stays, because a bare constant tells SageMath nothing about the variable) and decide by eye whether the kick clears it. Then confirm with <code>solve()</code> from Chapter 2.</p>
+<p><strong>Exercise 3.</strong> Plot the trajectories of a ball kicked from the edge of a 10 m cliff, angles 0 to 60 degrees. Where does the landing symmetry from Chapter 2 (the $\sin 2\alpha$ pairs) break, and why?</p>
+<p><strong>Exercise 4.</strong> The flight <em>time</em> also depends on the angle. Plot <code>t_land</code> from Chapter 2 as a function of the angle, from 0 to 90 degrees, with <code>axes_labels</code>. Mark the angle where the time is longest and explain in one sentence why it is not 45 degrees.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137329038-23" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **3.6 What you can do now**
+
+- **`plot(expr, xmin, xmax)`** draws a function of one variable; the axis range is required, and its names match `ymin` and `ymax`.
+- **A trailing underscore** (`x_`, `y_`) lets a function and a symbol share a letter; `show()` typesets both as plain $x$.
+- **Plot objects can be stored in lists** (list comprehension) and **added together** with `+` to overlay families of curves; give the sum a name (`family_plot`, `combined_plot`) before `show()`-ing it, so it can be reused and extended.
+- **`point(pairs)`** marks a list of $(x, y)$ points on a picture, here the apexes of the trajectories; **`list_plot(pairs, plotjoined = True)`** joins the dots into a line.
+- **`lambda a: ...`** is a one-line procedure from Python - inputs in, processed output out, in any form; it is not a mathematical function, so nothing to solve or display. A `def` statement works the same way for multiline procedures.
+- **`color`, `linestyle`, `legend_label`, `axes_labels`, `figsize`, `gridlines`, `ymin`, `frame`** are the everyday formatting options; `axes_labels` accept LaTeX between dollar signs.
+- **The envelope of a family of curves** is found by maximizing over the family parameter, here with a substitution and `diff()` + `solve()`: a symbolic result, drawn only at the end.
+- **Units live in axis labels**, not inside the numbers, following the convention from Chapter 1." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137329038-23" class="markdown-preview" style="display: block;" data-original-markdown="## **3.6 What you can do now**
+
+- **`plot(expr, xmin, xmax)`** draws a function of one variable; the axis range is required, and its names match `ymin` and `ymax`.
+- **A trailing underscore** (`x_`, `y_`) lets a function and a symbol share a letter; `show()` typesets both as plain $x$.
+- **Plot objects can be stored in lists** (list comprehension) and **added together** with `+` to overlay families of curves; give the sum a name (`family_plot`, `combined_plot`) before `show()`-ing it, so it can be reused and extended.
+- **`point(pairs)`** marks a list of $(x, y)$ points on a picture, here the apexes of the trajectories; **`list_plot(pairs, plotjoined = True)`** joins the dots into a line.
+- **`lambda a: ...`** is a one-line procedure from Python - inputs in, processed output out, in any form; it is not a mathematical function, so nothing to solve or display. A `def` statement works the same way for multiline procedures.
+- **`color`, `linestyle`, `legend_label`, `axes_labels`, `figsize`, `gridlines`, `ymin`, `frame`** are the everyday formatting options; `axes_labels` accept LaTeX between dollar signs.
+- **The envelope of a family of curves** is found by maximizing over the family parameter, here with a substitution and `diff()` + `solve()`: a symbolic result, drawn only at the end.
+- **Units live in axis labels**, not inside the numbers, following the convention from Chapter 1."><h2 id="36-what-you-can-do-now"><strong>3.6 What you can do now</strong></h2>
+<ul>
+<li><strong><code>plot(expr, xmin, xmax)</code></strong> draws a function of one variable; the axis range is required, and its names match <code>ymin</code> and <code>ymax</code>.</li>
+<li><strong>A trailing underscore</strong> (<code>x_</code>, <code>y_</code>) lets a function and a symbol share a letter; <code>show()</code> typesets both as plain $x$.</li>
+<li><strong>Plot objects can be stored in lists</strong> (list comprehension) and <strong>added together</strong> with <code>+</code> to overlay families of curves; give the sum a name (<code>family_plot</code>, <code>combined_plot</code>) before <code>show()</code>-ing it, so it can be reused and extended.</li>
+<li><strong><code>point(pairs)</code></strong> marks a list of $(x, y)$ points on a picture, here the apexes of the trajectories; <strong><code>list_plot(pairs, plotjoined = True)</code></strong> joins the dots into a line.</li>
+<li><strong><code>lambda a: ...</code></strong> is a one-line procedure from Python - inputs in, processed output out, in any form; it is not a mathematical function, so nothing to solve or display. A <code>def</code> statement works the same way for multiline procedures.</li>
+<li><strong><code>color</code>, <code>linestyle</code>, <code>legend_label</code>, <code>axes_labels</code>, <code>figsize</code>, <code>gridlines</code>, <code>ymin</code>, <code>frame</code></strong> are the everyday formatting options; <code>axes_labels</code> accept LaTeX between dollar signs.</li>
+<li><strong>The envelope of a family of curves</strong> is found by maximizing over the family parameter, here with a substitution and <code>diff()</code> + <code>solve()</code>: a symbolic result, drawn only at the end.</li>
+<li><strong>Units live in axis labels</strong>, not inside the numbers, following the convention from Chapter 1.</li>
+</ul>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># empty cells for exercises/experiments - feel free to add new cells anywhere by clicking "Add Bellow" button
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">
+</script></div></div></div></div></div>
+            
+        </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/embedded_sagecell_backup.js"></script>
+<script src="https://sage-sk.org/embedded_sagecell.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/FileSaver.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/nbplayerConfig.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/comment/comment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/markdown-fold.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.css">
+<script>let RUN_DELAY = 1000;</script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/customthemes15.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbrunner24.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaiengine23.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaipriming22.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbautocompletion20.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://code.datagridxl.com/datagridxl2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fflate@0.8.3/umd/index.min.js"></script>
+<script>
+  playerConfig={"panes":"Exec","lang":"sage","linked":true,"eval":false,"hide":["fullScreen"],"execute":true,"showRead":false,"collapsable":false,"playerPath":"https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main","name":"SageMath"};
+  playerMode={"showSage":true,"showNotebookInput":true,"showSageInput":true};
+  let API_KEY="";
+  let API_URL="";
+  let CURRENT_MODEL="";
+  let CURRENT_LANGUAGE="";
+  let SAGECELL_URL="https://sage-sk.org/";
+  let toggleEvalBtnsState=false;
+  let isFullWidthState=true;
+  window.hideCodeInputState=false;
+  let PRELOAD="";
+  let SETTINGS_PATH_NAME="settings.js";
+  let aiEduMode=true;
+  let aiCompleteMode=true;
+  let aiLogs=false;
+  window.aiLogs=false;
+  window.aiSettingsVisible=true;
+  window.aiLogsHistory=[];
+  makeMenu();
+  localize();
+  createTableOfContents();
+  loadStatus();
+  restoreUIState();
+  makeSageCells(playerConfig);
+  launchPlayer();
+  addControlPanel();
+  setupRunAllCells();
+  addSageCellNumbering();
+  enhanceSageCellsWithGlobalAutocomplete();
+  window.onload = initializeMarkdownCells;
+  let CUSTOM_CONTEXT="";
+  let CUSTOM_CSS="";
+  if (CUSTOM_CSS) applyCustomCSS(CUSTOM_CSS);
+  addCommentShortcutToAllSageCells();
+  applyPreloadCells();
+  setupBulkCellObserver();
+</script>
+<script src="settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;polygon points='50,6 88,28 88,72 50,94 12,72 12,28' fill='%234CAF50'/&gt;&lt;text x='50' y='68' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='%23fff' text-anchor='middle'&gt;S&lt;/text&gt;&lt;/svg&gt;">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/es5-shim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/ansi_up.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex-auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/notebook.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/prism.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/notebook.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/nbpreview.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/css/nbplayer24.css">
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/texme@1.2.2"></script>
+<div id="main">
+<div id="notebook-holder"><div class="nb-notebook"><div class="nb-worksheet"><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517727-1" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Faculty of Science, Pavol Jozef Šafárik University in Košice, Slovakia&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt;&nbsp;&lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt;&nbsp;&lt;/p&gt;" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517727-1" class="markdown-preview" style="display: block;" data-original-markdown="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Faculty of Science, Pavol Jozef Šafárik University in Košice, Slovakia&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt;&nbsp;&lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt;&nbsp;&lt;/p&gt;"><p><img style="float: right;" src="https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png" alt="" width="100" height="85"></p>
+<p><strong>Authors:</strong> Dominik Borovský<sup>1</sup> &amp; Jozef Hanč<sup>2</sup></p>
+<p><em>2026, Faculty of Science, Pavol Jozef Šafárik University in Košice, Slovakia</em></p>
+<p><sup>1</sup><a href="mailto:dominik.borovsky@student.upjs.sk">dominik.borovsky@student.upjs.sk,</a>&nbsp;<sup>2</sup><a href="mailto:jozef.hanc@upjs.sk">jozef.hanc@upjs.sk</a>&nbsp;</p></div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517727-2" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="# **Chapter 2: The Longest Kick**" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517727-2" class="markdown-preview" style="display: block;" data-original-markdown="# **Chapter 2: The Longest Kick**"><h1 id="chapter-2-the-longest-kick"><strong>Chapter 2: The Longest Kick</strong></h1>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517727-3" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="In this chapter you will learn how SageMath works with *formulas*, not just numbers: symbolic variables, solving equations for an unknown, and finding maxima with derivatives. Because we are dealing with variables - symbols, and not exact numerical values, we will work on some **symbolic calculations**. In return, we answer a question every football player argues about." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517727-3" class="markdown-preview" style="display: block;" data-original-markdown="In this chapter you will learn how SageMath works with *formulas*, not just numbers: symbolic variables, solving equations for an unknown, and finding maxima with derivatives. Because we are dealing with variables - symbols, and not exact numerical values, we will work on some **symbolic calculations**. In return, we answer a question every football player argues about."><p>In this chapter you will learn how SageMath works with <em>formulas</em>, not just numbers: symbolic variables, solving equations for an unknown, and finding maxima with derivatives. Because we are dealing with variables - symbols, and not exact numerical values, we will work on some <strong>symbolic calculations</strong>. In return, we answer a question every football player argues about.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517728-4" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **2.1 The task**
+
+&gt; You kick a football straight up the field at **15 m/s**. At what angle should you kick it so it lands as far away as possible? And how far is that?
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src='https://i.postimg.cc/sxbTYHYj/footbal-pitch-vector.png' width=&quot;500&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;Fig. 2.1: The setup for the argument: a ball, a field, and the question of the angle (source: AI generated).&lt;/em&gt;&lt;/p&gt;" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517728-4" class="markdown-preview" style="display: block;" data-original-markdown="## **2.1 The task**
+
+&gt; You kick a football straight up the field at **15 m/s**. At what angle should you kick it so it lands as far away as possible? And how far is that?
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src='https://i.postimg.cc/sxbTYHYj/footbal-pitch-vector.png' width=&quot;500&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;Fig. 2.1: The setup for the argument: a ball, a field, and the question of the angle (source: AI generated).&lt;/em&gt;&lt;/p&gt;"><h2 id="21-the-task"><strong>2.1 The task</strong></h2>
+<blockquote>
+<p>You kick a football straight up the field at <strong>15 m/s</strong>. At what angle should you kick it so it lands as far away as possible? And how far is that?</p>
+</blockquote>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://i.postimg.cc/sxbTYHYj/footbal-pitch-vector.png" width="500"></p>
+<p style="text-align: center;"><em>Fig. 2.1: The setup for the argument: a ball, a field, and the question of the angle (source: AI generated).</em></p></div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517728-5" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **2.2 The physics of the flying ball**
+
+Before SageMath gets anything to chew on, here is the physics behind the kick in words, because every formula in this chapter grows from one old idea.
+
+A kicked ball is a *projectile*: an object that got one push and afterwards flies on its own, with nothing steering it. Cannonballs, basketballs and the water of a fountain are projectiles too. The question of how far such a thing gets is as old as the cannon, and Galileo, around 1600, found the idea that cracks it: the flight is not one motion but two, happening at the same time.
+
+**Splitting the kick.** The ball leaves the boot with velocity $\vec{v}$: speed $v_0$ aimed at angle $\alpha$ above the ground. One arrow - but the field asks a horizontal question (how far?) and the goalkeeper a vertical one (how high?). So we split the arrow into a horizontal component $v_x$ and a vertical component $v_y$. Draw the three together and they form a right triangle: $v_0$ is the hypotenuse, and $\alpha$ sits between $v_0$ and $v_x$.
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src='https://i.postimg.cc/Vv2KqZqP/footbal-diagram.png' width=&quot;500&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;Fig. 2.2: A kick decomposed: speed $v_0$ at angle $\alpha$ splits into horizontal and vertical components, and the two together draw the arc (source: AI generated).&lt;/em&gt;&lt;/p&gt;
+
+
+That is exactly the triangle sine and cosine were invented for. In a right triangle, the cosine of an angle is the adjacent side over the hypotenuse, and the sine is the opposite side over the hypotenuse. Multiply each by the hypotenuse $v_0$ and you have the sides themselves:
+
+$$v_x = v_0\cos\alpha, \qquad v_y = v_0\sin\alpha.$$
+
+So $\cos\alpha$ is the share of the kick that travels along the field, and $\sin\alpha$ the share that travels upward. A flat 10 degree kick puts nearly everything into $v_x$; a ball kicked straight up at 90 degrees has $\cos(90^\circ) = 0$ and its whole speed vertical; at 45 degrees the two shares are equal.
+
+Let SageMath do the bookkeeping of that triangle for a 15 m/s kick at 30 degrees:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517728-5" class="markdown-preview" style="display: block;" data-original-markdown="## **2.2 The physics of the flying ball**
+
+Before SageMath gets anything to chew on, here is the physics behind the kick in words, because every formula in this chapter grows from one old idea.
+
+A kicked ball is a *projectile*: an object that got one push and afterwards flies on its own, with nothing steering it. Cannonballs, basketballs and the water of a fountain are projectiles too. The question of how far such a thing gets is as old as the cannon, and Galileo, around 1600, found the idea that cracks it: the flight is not one motion but two, happening at the same time.
+
+**Splitting the kick.** The ball leaves the boot with velocity $\vec{v}$: speed $v_0$ aimed at angle $\alpha$ above the ground. One arrow - but the field asks a horizontal question (how far?) and the goalkeeper a vertical one (how high?). So we split the arrow into a horizontal component $v_x$ and a vertical component $v_y$. Draw the three together and they form a right triangle: $v_0$ is the hypotenuse, and $\alpha$ sits between $v_0$ and $v_x$.
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src='https://i.postimg.cc/Vv2KqZqP/footbal-diagram.png' width=&quot;500&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;Fig. 2.2: A kick decomposed: speed $v_0$ at angle $\alpha$ splits into horizontal and vertical components, and the two together draw the arc (source: AI generated).&lt;/em&gt;&lt;/p&gt;
+
+
+That is exactly the triangle sine and cosine were invented for. In a right triangle, the cosine of an angle is the adjacent side over the hypotenuse, and the sine is the opposite side over the hypotenuse. Multiply each by the hypotenuse $v_0$ and you have the sides themselves:
+
+$$v_x = v_0\cos\alpha, \qquad v_y = v_0\sin\alpha.$$
+
+So $\cos\alpha$ is the share of the kick that travels along the field, and $\sin\alpha$ the share that travels upward. A flat 10 degree kick puts nearly everything into $v_x$; a ball kicked straight up at 90 degrees has $\cos(90^\circ) = 0$ and its whole speed vertical; at 45 degrees the two shares are equal.
+
+Let SageMath do the bookkeeping of that triangle for a 15 m/s kick at 30 degrees:"><h2 id="22-the-physics-of-the-flying-ball"><strong>2.2 The physics of the flying ball</strong></h2>
+<p>Before SageMath gets anything to chew on, here is the physics behind the kick in words, because every formula in this chapter grows from one old idea.</p>
+<p>A kicked ball is a <em>projectile</em>: an object that got one push and afterwards flies on its own, with nothing steering it. Cannonballs, basketballs and the water of a fountain are projectiles too. The question of how far such a thing gets is as old as the cannon, and Galileo, around 1600, found the idea that cracks it: the flight is not one motion but two, happening at the same time.</p>
+<p><strong>Splitting the kick.</strong> The ball leaves the boot with velocity $\vec{v}$: speed $v_0$ aimed at angle $\alpha$ above the ground. One arrow - but the field asks a horizontal question (how far?) and the goalkeeper a vertical one (how high?). So we split the arrow into a horizontal component $v_x$ and a vertical component $v_y$. Draw the three together and they form a right triangle: $v_0$ is the hypotenuse, and $\alpha$ sits between $v_0$ and $v_x$.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://i.postimg.cc/Vv2KqZqP/footbal-diagram.png" width="500"></p>
+<p style="text-align: center;"><em>Fig. 2.2: A kick decomposed: speed $v_0$ at angle $\alpha$ splits into horizontal and vertical components, and the two together draw the arc (source: AI generated).</em></p>
+
+
+<p>That is exactly the triangle sine and cosine were invented for. In a right triangle, the cosine of an angle is the adjacent side over the hypotenuse, and the sine is the opposite side over the hypotenuse. Multiply each by the hypotenuse $v_0$ and you have the sides themselves:</p>
+<p>$$v_x = v_0\cos\alpha, \qquad v_y = v_0\sin\alpha.$$</p>
+<p>So $\cos\alpha$ is the share of the kick that travels along the field, and $\sin\alpha$ the share that travels upward. A flat 10 degree kick puts nearly everything into $v_x$; a ball kicked straight up at 90 degrees has $\cos(90^\circ) = 0$ and its whole speed vertical; at 45 degrees the two shares are equal.</p>
+<p>Let SageMath do the bookkeeping of that triangle for a 15 m/s kick at 30 degrees:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the two components of a 15 m/s kick at 30 degrees
+N(15*cos(pi/6))
+N(15*sin(pi/6))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517728-6" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Note: angles in SageMath are in radians.** Your protractor says degrees, but `sin()`, `cos()` and in Sage expect radians. A full turn is $2\pi$ instead of 360, so 180 degrees is `pi` and 30 degrees is `pi/6`. To convert by hand, remember one equation: $\pi\ \mathrm{rad} = 180^\circ$. Dividing both sides by 180 turns degrees into radians, dividing by $\pi$ turns radians back into degrees. SageMath can carry the multiplication factors for you, exactly because $\pi$ stays exact:
+&gt;
+&gt; ```sage
+&gt; # degrees -&gt; radians: multiply by pi/180
+&gt; N(30*pi/180)                     # 30 degrees in radians, 0.524
+&gt;
+&gt; # radians -&gt; degrees: multiply by 180/pi
+&gt; N(pi/6*180/pi)                   # pi/6 in degrees, 30.0
+&gt; ```
+&gt;
+&gt; The same factors work inside the trig functions, which beats memorizing special angles: `cos(45*pi/180)` is cos of 45 degrees without knowing that 45 degrees is `pi/4`.
+
+
+13.0 m/s along the field, 7.5 m/s upward. And because the components are the legs of the triangle with $v_0$ as the hypotenuse, Pythagoras has to reassemble them into the kick speed:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517728-6" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Note: angles in SageMath are in radians.** Your protractor says degrees, but `sin()`, `cos()` and in Sage expect radians. A full turn is $2\pi$ instead of 360, so 180 degrees is `pi` and 30 degrees is `pi/6`. To convert by hand, remember one equation: $\pi\ \mathrm{rad} = 180^\circ$. Dividing both sides by 180 turns degrees into radians, dividing by $\pi$ turns radians back into degrees. SageMath can carry the multiplication factors for you, exactly because $\pi$ stays exact:
+&gt;
+&gt; ```sage
+&gt; # degrees -&gt; radians: multiply by pi/180
+&gt; N(30*pi/180)                     # 30 degrees in radians, 0.524
+&gt;
+&gt; # radians -&gt; degrees: multiply by 180/pi
+&gt; N(pi/6*180/pi)                   # pi/6 in degrees, 30.0
+&gt; ```
+&gt;
+&gt; The same factors work inside the trig functions, which beats memorizing special angles: `cos(45*pi/180)` is cos of 45 degrees without knowing that 45 degrees is `pi/4`.
+
+
+13.0 m/s along the field, 7.5 m/s upward. And because the components are the legs of the triangle with $v_0$ as the hypotenuse, Pythagoras has to reassemble them into the kick speed:"><blockquote>
+<p><strong>Note: angles in SageMath are in radians.</strong> Your protractor says degrees, but <code>sin()</code>, <code>cos()</code> and in Sage expect radians. A full turn is $2\pi$ instead of 360, so 180 degrees is <code>pi</code> and 30 degrees is <code>pi/6</code>. To convert by hand, remember one equation: $\pi\ \mathrm{rad} = 180^\circ$. Dividing both sides by 180 turns degrees into radians, dividing by $\pi$ turns radians back into degrees. SageMath can carry the multiplication factors for you, exactly because $\pi$ stays exact:</p>
+<pre><code class="language-sage"># degrees -&gt; radians: multiply by pi/180
+N(30*pi/180)                     # 30 degrees in radians, 0.524
+
+# radians -&gt; degrees: multiply by 180/pi
+N(pi/6*180/pi)                   # pi/6 in degrees, 30.0
+</code></pre>
+<p>The same factors work inside the trig functions, which beats memorizing special angles: <code>cos(45*pi/180)</code> is cos of 45 degrees without knowing that 45 degrees is <code>pi/4</code>.</p>
+</blockquote>
+<p>13.0 m/s along the field, 7.5 m/s upward. And because the components are the legs of the triangle with $v_0$ as the hypotenuse, Pythagoras has to reassemble them into the kick speed:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the two components reassemble into the original speed
+N(sqrt(15*cos(pi/6)^2 + 15*sin(pi/6)^2))   # note: 15*cos(...)^2 means (15*cos(...))^2
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517729-7" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Fifteen, the speed the kick left with.
+
+**Two motions that ignore each other.** The split only pays off because nature cooperates: the two directions leave each other alone. Moving horizontally does not change how the ball falls, and falling does not push it sideways. So each direction is its own little problem, and each is one you have already solved:
+
+- *Horizontal:* no force acts that way when we ignore air, so the ball coasts at the steady speed $v_x$. Distance is speed times time: $x = v_x\,t$.
+- *Vertical:* the ball climbs at $v_y$ while gravity pulls it down with the steady acceleration $g$ from Chapter 1's well. There a stone dropped from rest fell $\tfrac{1}{2}gt^2$ in time $t$; here that same fall is subtracted from a climb.
+
+Put the components in and the whole flight is two functions of time:
+
+$$x(t) = v_0\cos\alpha\, t, \qquad y(t) = v_0\sin\alpha\, t - \tfrac{1}{2}g t^2.$$
+
+The angle $\alpha$ decides how the kick divides, $v_0$ how big it is, and $g$ how hard the planet pulls back. Every projectile question in this book starts from this pair." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517729-7" class="markdown-preview" style="display: block;" data-original-markdown="Fifteen, the speed the kick left with.
+
+**Two motions that ignore each other.** The split only pays off because nature cooperates: the two directions leave each other alone. Moving horizontally does not change how the ball falls, and falling does not push it sideways. So each direction is its own little problem, and each is one you have already solved:
+
+- *Horizontal:* no force acts that way when we ignore air, so the ball coasts at the steady speed $v_x$. Distance is speed times time: $x = v_x\,t$.
+- *Vertical:* the ball climbs at $v_y$ while gravity pulls it down with the steady acceleration $g$ from Chapter 1's well. There a stone dropped from rest fell $\tfrac{1}{2}gt^2$ in time $t$; here that same fall is subtracted from a climb.
+
+Put the components in and the whole flight is two functions of time:
+
+$$x(t) = v_0\cos\alpha\, t, \qquad y(t) = v_0\sin\alpha\, t - \tfrac{1}{2}g t^2.$$
+
+The angle $\alpha$ decides how the kick divides, $v_0$ how big it is, and $g$ how hard the planet pulls back. Every projectile question in this book starts from this pair."><p>Fifteen, the speed the kick left with.</p>
+<p><strong>Two motions that ignore each other.</strong> The split only pays off because nature cooperates: the two directions leave each other alone. Moving horizontally does not change how the ball falls, and falling does not push it sideways. So each direction is its own little problem, and each is one you have already solved:</p>
+<ul>
+<li><em>Horizontal:</em> no force acts that way when we ignore air, so the ball coasts at the steady speed $v_x$. Distance is speed times time: $x = v_x\,t$.</li>
+<li><em>Vertical:</em> the ball climbs at $v_y$ while gravity pulls it down with the steady acceleration $g$ from Chapter 1's well. There a stone dropped from rest fell $\tfrac{1}{2}gt^2$ in time $t$; here that same fall is subtracted from a climb.</li>
+</ul>
+<p>Put the components in and the whole flight is two functions of time:</p>
+<p>$$x(t) = v_0\cos\alpha\, t, \qquad y(t) = v_0\sin\alpha\, t - \tfrac{1}{2}g t^2.$$</p>
+<p>The angle $\alpha$ decides how the kick divides, $v_0$ how big it is, and $g$ how hard the planet pulls back. Every projectile question in this book starts from this pair.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517729-8" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **2.3 Symbolic variables**
+
+So far we stored *numbers* under names. SageMath can also store letters. The command `var()` introduces symbolic variables:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517729-8" class="markdown-preview" style="display: block;" data-original-markdown="## **2.3 Symbolic variables**
+
+So far we stored *numbers* under names. SageMath can also store letters. The command `var()` introduces symbolic variables:"><h2 id="23-symbolic-variables"><strong>2.3 Symbolic variables</strong></h2>
+<p>So far we stored <em>numbers</em> under names. SageMath can also store letters. The command <code>var()</code> introduces symbolic variables:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># symbolic variables have no value yet; they are letters we can compute with
+var('t alpha v0 g')
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517729-9" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Here `t` is time, `alpha` the kick angle, `v0` the initial speed and `g` the gravitational acceleration. They are now empty slots. Any formula built from them stays a formula.
+
+Now the physics of Section 2.2 goes into SageMath. A projectile launched at angle $\alpha$ with speed $v_0$ has, ignoring air resistance, the motion:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517729-9" class="markdown-preview" style="display: block;" data-original-markdown="Here `t` is time, `alpha` the kick angle, `v0` the initial speed and `g` the gravitational acceleration. They are now empty slots. Any formula built from them stays a formula.
+
+Now the physics of Section 2.2 goes into SageMath. A projectile launched at angle $\alpha$ with speed $v_0$ has, ignoring air resistance, the motion:"><p>Here <code>t</code> is time, <code>alpha</code> the kick angle, <code>v0</code> the initial speed and <code>g</code> the gravitational acceleration. They are now empty slots. Any formula built from them stays a formula.</p>
+<p>Now the physics of Section 2.2 goes into SageMath. A projectile launched at angle $\alpha$ with speed $v_0$ has, ignoring air resistance, the motion:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">x(t) = v0*cos(alpha)*t
+y(t) = v0*sin(alpha)*t - 1/2*g*t^2
+
+show(x(t))
+show(y(t))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517730-10" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Two functions, defined exactly like the named numbers of Chapter 1, only now every quantity is symbolic. The parentheses in `x(t)` say: the function depends on `t`. The letters `alpha`, `v0` and `g` ride along as parameters." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517730-10" class="markdown-preview" style="display: block;" data-original-markdown="Two functions, defined exactly like the named numbers of Chapter 1, only now every quantity is symbolic. The parentheses in `x(t)` say: the function depends on `t`. The letters `alpha`, `v0` and `g` ride along as parameters."><p>Two functions, defined exactly like the named numbers of Chapter 1, only now every quantity is symbolic. The parentheses in <code>x(t)</code> say: the function depends on <code>t</code>. The letters <code>alpha</code>, <code>v0</code> and <code>g</code> ride along as parameters.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517730-11" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **2.4 When does the ball land?**
+
+The ball lands when its height drops back to zero. That is an equation, and SageMath solves equations symbolically with `solve()`:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517730-11" class="markdown-preview" style="display: block;" data-original-markdown="## **2.4 When does the ball land?**
+
+The ball lands when its height drops back to zero. That is an equation, and SageMath solves equations symbolically with `solve()`:"><h2 id="24-when-does-the-ball-land"><strong>2.4 When does the ball land?</strong></h2>
+<p>The ball lands when its height drops back to zero. That is an equation, and SageMath solves equations symbolically with <code>solve()</code>:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">solutions = solve(y(t) == 0, t)
+solutions
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># keep the first solution (index 0) and strip off its right side
+t_land = solutions[0].rhs()
+show(t_land)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517731-12" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Two answers: `t == 0` (the kick itself, obviously true but useless) and the interesting one. Solutions come back as a list, so we can pick the second one by index, and `.rhs()` keeps just the value: the ball is in the air for $2v_0\sin\alpha / g$. Twice the time to the apex, as expected from symmetry.
+
+&gt; **Note:** `solve()` returns a list of *equations*, not values. Indexing with `[0]` picks the first equation, `.rhs()` strips off its right side. If you ever see `t == ...` printed where you wanted a bare expression, you forgot the `.rhs()`." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517731-12" class="markdown-preview" style="display: block;" data-original-markdown="Two answers: `t == 0` (the kick itself, obviously true but useless) and the interesting one. Solutions come back as a list, so we can pick the second one by index, and `.rhs()` keeps just the value: the ball is in the air for $2v_0\sin\alpha / g$. Twice the time to the apex, as expected from symmetry.
+
+&gt; **Note:** `solve()` returns a list of *equations*, not values. Indexing with `[0]` picks the first equation, `.rhs()` strips off its right side. If you ever see `t == ...` printed where you wanted a bare expression, you forgot the `.rhs()`."><p>Two answers: <code>t == 0</code> (the kick itself, obviously true but useless) and the interesting one. Solutions come back as a list, so we can pick the second one by index, and <code>.rhs()</code> keeps just the value: the ball is in the air for $2v_0\sin\alpha / g$. Twice the time to the apex, as expected from symmetry.</p>
+<blockquote>
+<p><strong>Note:</strong> <code>solve()</code> returns a list of <em>equations</em>, not values. Indexing with <code>[0]</code> picks the first equation, <code>.rhs()</code> strips off its right side. If you ever see <code>t == ...</code> printed where you wanted a bare expression, you forgot the <code>.rhs()</code>.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517731-13" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **2.5 The range**
+
+The ball lands at horizontal position $x(t_{\mathrm{land}})$. Let SageMath substitute the landing time into the flight function all by itself:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517731-13" class="markdown-preview" style="display: block;" data-original-markdown="## **2.5 The range**
+
+The ball lands at horizontal position $x(t_{\mathrm{land}})$. Let SageMath substitute the landing time into the flight function all by itself:"><h2 id="25-the-range"><strong>2.5 The range</strong></h2>
+<p>The ball lands at horizontal position $x(t_{\mathrm{land}})$. Let SageMath substitute the landing time into the flight function all by itself:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">R(alpha) = x(t_land)
+show(R(alpha))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517731-14" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="It works, but it looks unfinished: sines and cosines fight each other. That is what `simplify()` and its sharper cousin `trig_reduce()` are for:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517731-14" class="markdown-preview" style="display: block;" data-original-markdown="It works, but it looks unfinished: sines and cosines fight each other. That is what `simplify()` and its sharper cousin `trig_reduce()` are for:"><p>It works, but it looks unfinished: sines and cosines fight each other. That is what <code>simplify()</code> and its sharper cousin <code>trig_reduce()</code> are for:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">show(R(alpha).trig_reduce())
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517731-15" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="There is the famous result, $\sin(2\alpha)$ and all. The range of a projectile is
+
+$$R = \dfrac{v_0^2 \sin 2\alpha}{g}.$$
+
+`trig_reduce()` is one wrench in a whole toolbox. SageMath has a shelf of simplification commands, because &quot;simple&quot; means different things in different situations: sometimes you want a product, sometimes a sum, sometimes one trig function instead of three. A quick tour on small examples:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517731-15" class="markdown-preview" style="display: block;" data-original-markdown="There is the famous result, $\sin(2\alpha)$ and all. The range of a projectile is
+
+$$R = \dfrac{v_0^2 \sin 2\alpha}{g}.$$
+
+`trig_reduce()` is one wrench in a whole toolbox. SageMath has a shelf of simplification commands, because &quot;simple&quot; means different things in different situations: sometimes you want a product, sometimes a sum, sometimes one trig function instead of three. A quick tour on small examples:"><p>There is the famous result, $\sin(2\alpha)$ and all. The range of a projectile is</p>
+<p>$$R = \dfrac{v_0^2 \sin 2\alpha}{g}.$$</p>
+<p><code>trig_reduce()</code> is one wrench in a whole toolbox. SageMath has a shelf of simplification commands, because "simple" means different things in different situations: sometimes you want a product, sometimes a sum, sometimes one trig function instead of three. A quick tour on small examples:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">var('x')
+
+show((x^2 - 4).factor())                       # factor into a product: (x + 2)*(x - 2)
+show(((x + 1)^2 - x^2).expand())               # the opposite: multiply out, 2*x + 1
+show((sin(x)^2 + cos(x)^2).trig_simplify())    # pack trig functions together: 1
+show(((x - 1)/(x^2 - 1)).simplify_rational())  # cancel fractions: 1/(x + 1)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517732-16" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="`factor()` pulls a polynomial apart into products and `expand()` flattens it back into a sum, `trig_simplify()` packs trigonometric functions together (the reverse of `trig_reduce()`, which splits them), and `simplify_rational()` cancels fractions. If you do not want to think about which one fits, `simplify_full()` chains several of them in one go, and often, but not always, lands on something readable.
+
+&gt; **Note:** There is no single command that makes a formula &quot;simple&quot;, because SageMath cannot know what *you* consider simple: `(x + 2)*(x - 2)` and `x^2 - 4` are both correct, and each is better for a different purpose. Work as we did here: look at the result, decide what bothers you about it, and pick the tool for exactly that." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517732-16" class="markdown-preview" style="display: block;" data-original-markdown="`factor()` pulls a polynomial apart into products and `expand()` flattens it back into a sum, `trig_simplify()` packs trigonometric functions together (the reverse of `trig_reduce()`, which splits them), and `simplify_rational()` cancels fractions. If you do not want to think about which one fits, `simplify_full()` chains several of them in one go, and often, but not always, lands on something readable.
+
+&gt; **Note:** There is no single command that makes a formula &quot;simple&quot;, because SageMath cannot know what *you* consider simple: `(x + 2)*(x - 2)` and `x^2 - 4` are both correct, and each is better for a different purpose. Work as we did here: look at the result, decide what bothers you about it, and pick the tool for exactly that."><p><code>factor()</code> pulls a polynomial apart into products and <code>expand()</code> flattens it back into a sum, <code>trig_simplify()</code> packs trigonometric functions together (the reverse of <code>trig_reduce()</code>, which splits them), and <code>simplify_rational()</code> cancels fractions. If you do not want to think about which one fits, <code>simplify_full()</code> chains several of them in one go, and often, but not always, lands on something readable.</p>
+<blockquote>
+<p><strong>Note:</strong> There is no single command that makes a formula "simple", because SageMath cannot know what <em>you</em> consider simple: <code>(x + 2)*(x - 2)</code> and <code>x^2 - 4</code> are both correct, and each is better for a different purpose. Work as we did here: look at the result, decide what bothers you about it, and pick the tool for exactly that.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517732-17" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **2.6 The optimal angle**
+
+
+Now the real question: which $\alpha$ makes $R$ largest?
+
+The tool for that is the *derivative*, so a word before the machinery, because the command that computes it does not tell you what one *is*. The derivative of a curve at a point is the slope of its tangent line there: rest a straight ruler on the curve so it touches at exactly one point, tilted exactly as the curve is tilted at that point, and the ruler's rise over run is the value of the derivative. A positive derivative means the curve climbs, a negative one means it falls, and the steeper the tangent, the faster.
+
+Here is a way to *see* that on any curve, not just our range formula. We borrow `plot()` from Chapter 3 ahead of schedule; for now, read the code as &quot;draw these curves&quot;. The sine is a good test subject, because it does all three things a curve can do, one after another:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517732-17" class="markdown-preview" style="display: block;" data-original-markdown="## **2.6 The optimal angle**
+
+
+Now the real question: which $\alpha$ makes $R$ largest?
+
+The tool for that is the *derivative*, so a word before the machinery, because the command that computes it does not tell you what one *is*. The derivative of a curve at a point is the slope of its tangent line there: rest a straight ruler on the curve so it touches at exactly one point, tilted exactly as the curve is tilted at that point, and the ruler's rise over run is the value of the derivative. A positive derivative means the curve climbs, a negative one means it falls, and the steeper the tangent, the faster.
+
+Here is a way to *see* that on any curve, not just our range formula. We borrow `plot()` from Chapter 3 ahead of schedule; for now, read the code as &quot;draw these curves&quot;. The sine is a good test subject, because it does all three things a curve can do, one after another:"><h2 id="26-the-optimal-angle"><strong>2.6 The optimal angle</strong></h2>
+<p>Now the real question: which $\alpha$ makes $R$ largest?</p>
+<p>The tool for that is the <em>derivative</em>, so a word before the machinery, because the command that computes it does not tell you what one <em>is</em>. The derivative of a curve at a point is the slope of its tangent line there: rest a straight ruler on the curve so it touches at exactly one point, tilted exactly as the curve is tilted at that point, and the ruler's rise over run is the value of the derivative. A positive derivative means the curve climbs, a negative one means it falls, and the steeper the tangent, the faster.</p>
+<p>Here is a way to <em>see</em> that on any curve, not just our range formula. We borrow <code>plot()</code> from Chapter 3 ahead of schedule; for now, read the code as "draw these curves". The sine is a good test subject, because it does all three things a curve can do, one after another:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">var('x')
+
+f(x) = sin(x)
+
+# the tangent at an arbitrary point x0: value plus slope times offset
+tangent(x, x0) = f(x0) + diff(f(x), x).subs(x = x0)*(x - x0)
+
+# three points: rising, at the maximum, at the minimum
+tan_rise  = tangent(x, pi/3)     # derivative cos(pi/3) = 1/2, positive
+tan_max   = tangent(x, pi/2)      # derivative cos(pi/2) = 0, horizontal
+tan_min   = tangent(x, 3*pi/2)    # derivative cos(3*pi/2) = 0, horizontal
+
+# three tangents
+sine_plot = plot(f(x), xmin=0, xmax=2*pi, color = 'blue', legend_label = '$\\sin(x)$')
+tan_rise_plot = plot(tan_rise, xmin=pi/3-0.7, xmax=pi/3+0.7, color = 'red', legend_label = 'tangent at x = $\\pi/3$', linestyle='--')
+tan_max_plot = plot(tan_max, xmin=pi/2-1, xmax=pi/2+1, color = 'green', legend_label = 'tangent at x = $\\pi/2$ (max)', linestyle='--')
+tan_min_plot = plot(tan_min, xmin=3*pi/2-1, xmax=3*pi/2+1, color = 'purple', legend_label = 'tangent at x = $3\\pi/2$ (min)', linestyle='--')
+
+combined_plot = sine_plot + tan_rise_plot + tan_max_plot + tan_min_plot
+
+combined_plot.show(frame=True)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517732-18" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Look at the slopes. At $x = \pi/3$ the tangent climbs alongside the sine wave: the curve is on its way up, and the tangent's tilt is the derivative there, positive. At $x = \pi/2$ the sine wave reaches its crest, and its tangent is dead flat: the derivative is zero. At $x = 3\pi/2$ the wave bottoms out in its trough, and the tangent is flat again: the derivative is zero there too. So a zero derivative does not whisper &quot;maximum&quot; - the crest and the trough both have one. The difference is what the curve *does* around the point:
+
+- at a **maximum** the curve rises, flattens, then falls: the derivative changes sign from positive to negative;
+- at a **minimum** the curve falls, flattens, then rises: the derivative changes from negative to positive.
+
+That is the method of this section in one picture: **look for the points where the tangent is horizontal, then check which kind they are.**
+
+The same game on the curve we actually care about, with the tangent glued to the maximum this time. The range of a 15 m/s kick on Earth, drawn over the angle:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517732-18" class="markdown-preview" style="display: block;" data-original-markdown="Look at the slopes. At $x = \pi/3$ the tangent climbs alongside the sine wave: the curve is on its way up, and the tangent's tilt is the derivative there, positive. At $x = \pi/2$ the sine wave reaches its crest, and its tangent is dead flat: the derivative is zero. At $x = 3\pi/2$ the wave bottoms out in its trough, and the tangent is flat again: the derivative is zero there too. So a zero derivative does not whisper &quot;maximum&quot; - the crest and the trough both have one. The difference is what the curve *does* around the point:
+
+- at a **maximum** the curve rises, flattens, then falls: the derivative changes sign from positive to negative;
+- at a **minimum** the curve falls, flattens, then rises: the derivative changes from negative to positive.
+
+That is the method of this section in one picture: **look for the points where the tangent is horizontal, then check which kind they are.**
+
+The same game on the curve we actually care about, with the tangent glued to the maximum this time. The range of a 15 m/s kick on Earth, drawn over the angle:"><p>Look at the slopes. At $x = \pi/3$ the tangent climbs alongside the sine wave: the curve is on its way up, and the tangent's tilt is the derivative there, positive. At $x = \pi/2$ the sine wave reaches its crest, and its tangent is dead flat: the derivative is zero. At $x = 3\pi/2$ the wave bottoms out in its trough, and the tangent is flat again: the derivative is zero there too. So a zero derivative does not whisper "maximum" - the crest and the trough both have one. The difference is what the curve <em>does</em> around the point:</p>
+<ul>
+<li>at a <strong>maximum</strong> the curve rises, flattens, then falls: the derivative changes sign from positive to negative;</li>
+<li>at a <strong>minimum</strong> the curve falls, flattens, then rises: the derivative changes from negative to positive.</li>
+</ul>
+<p>That is the method of this section in one picture: <strong>look for the points where the tangent is horizontal, then check which kind they are.</strong></p>
+<p>The same game on the curve we actually care about, with the tangent glued to the maximum this time. The range of a 15 m/s kick on Earth, drawn over the angle:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">var('a')
+
+R_curve(a) = R(a).subs(v0 = 15, g = 9.81)
+
+# the slope of the range curve at 30 degrees
+slope30 = diff(R_curve(a), a).subs(a = pi/6)
+tangent30(a) = R_curve(pi/6) + slope30*(a - pi/6)
+
+# and the tangent at the suspected maximum, 45 degrees
+slope45 = diff(R_curve(a), a).subs(a = pi/4)
+tangent45(a) = R_curve(pi/4) + slope45*(a - pi/4)
+
+range_plot   = plot(R_curve(a), xmin = 0, xmax = pi/2, color = 'blue', legend_label = 'range R')
+tan30_plot  = plot(tangent30(a), xmin = 0, xmax = pi/2, color = 'red', legend_label = f'tangent at 30 degrees or {round(30*pi/180, 2)} radians', linestyle = '--')
+tan45_plot  = plot(tangent45(a), xmin = 0, xmax = pi/2, color = 'green', legend_label = f'tangent at 45 degrees or {round(45*pi/180, 2)} radians', linestyle = '--')
+
+combined_plot = range_plot + tan30_plot + tan45_plot
+
+combined_plot.show(frame = True, axes_labels = ['angle [rad]', 'R [m]'])
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517732-19" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="The red line touches the blue curve at 30 degrees and copies its tilt: the range is still climbing there. The green line rests flat on the top of the hill at 45 degrees: the derivative is zero exactly at the maximum. Slide a tangent along the curve by hand and you can feel the method working - climb, flatten, tip over.
+
+SageMath computes the slope of the tangent for us, with `diff()` (&quot;differentiate&quot;, which means &quot;to find derivative&quot;):" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517732-19" class="markdown-preview" style="display: block;" data-original-markdown="The red line touches the blue curve at 30 degrees and copies its tilt: the range is still climbing there. The green line rests flat on the top of the hill at 45 degrees: the derivative is zero exactly at the maximum. Slide a tangent along the curve by hand and you can feel the method working - climb, flatten, tip over.
+
+SageMath computes the slope of the tangent for us, with `diff()` (&quot;differentiate&quot;, which means &quot;to find derivative&quot;):"><p>The red line touches the blue curve at 30 degrees and copies its tilt: the range is still climbing there. The green line rests flat on the top of the hill at 45 degrees: the derivative is zero exactly at the maximum. Slide a tangent along the curve by hand and you can feel the method working - climb, flatten, tip over.</p>
+<p>SageMath computes the slope of the tangent for us, with <code>diff()</code> ("differentiate", which means "to find derivative"):</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">show(diff(R(alpha), alpha))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517732-20" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Note:** Differentiating by hand follows a small set of rules: powers bring the exponent down and lower it by one, $\sin$ turns into $\cos$, and products or nested functions have their own recipes (the product and chain rules). Our range formula already needs the chain rule, because of the $\sin 2\alpha$ inside. The practical advantage of `diff()` is that SageMath knows all the rules and applies them for us: you do not have to remember a single one to find a maximum, and sometimes the formulas are far too long to differentiate by hand anyway.
+
+Set the derivative to zero and solve, this time for `alpha`:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517732-20" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Note:** Differentiating by hand follows a small set of rules: powers bring the exponent down and lower it by one, $\sin$ turns into $\cos$, and products or nested functions have their own recipes (the product and chain rules). Our range formula already needs the chain rule, because of the $\sin 2\alpha$ inside. The practical advantage of `diff()` is that SageMath knows all the rules and applies them for us: you do not have to remember a single one to find a maximum, and sometimes the formulas are far too long to differentiate by hand anyway.
+
+Set the derivative to zero and solve, this time for `alpha`:"><blockquote>
+<p><strong>Note:</strong> Differentiating by hand follows a small set of rules: powers bring the exponent down and lower it by one, $\sin$ turns into $\cos$, and products or nested functions have their own recipes (the product and chain rules). Our range formula already needs the chain rule, because of the $\sin 2\alpha$ inside. The practical advantage of <code>diff()</code> is that SageMath knows all the rules and applies them for us: you do not have to remember a single one to find a maximum, and sometimes the formulas are far too long to differentiate by hand anyway.</p>
+</blockquote>
+<p>Set the derivative to zero and solve, this time for <code>alpha</code>:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">optimal = solve(diff(R(alpha), alpha) == 0, alpha)
+optimal
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517733-21" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="One family of answers: $\alpha = \pi/4$, that is **45 degrees** (plus full turns and the mirrored kicks, which land backwards). Look at what is *not* in the answer: no $v_0$, no $g$. The optimal angle does not depend on how hard you kick, or on which planet you are standing on.
+
+But a zero derivative only says *the tangent is horizontal there*, and the sine picture above already showed what that costs: the top of a hill and the bottom of a valley both have horizontal tangents. So before celebrating, check which kind of point we found. The tool is the *sign* of the derivative on either side of the point, exactly the sign change we read off the sine wave. Let us look at the slope of the range curve below and above 45 degrees, in two small steps instead of one long line:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517733-21" class="markdown-preview" style="display: block;" data-original-markdown="One family of answers: $\alpha = \pi/4$, that is **45 degrees** (plus full turns and the mirrored kicks, which land backwards). Look at what is *not* in the answer: no $v_0$, no $g$. The optimal angle does not depend on how hard you kick, or on which planet you are standing on.
+
+But a zero derivative only says *the tangent is horizontal there*, and the sine picture above already showed what that costs: the top of a hill and the bottom of a valley both have horizontal tangents. So before celebrating, check which kind of point we found. The tool is the *sign* of the derivative on either side of the point, exactly the sign change we read off the sine wave. Let us look at the slope of the range curve below and above 45 degrees, in two small steps instead of one long line:"><p>One family of answers: $\alpha = \pi/4$, that is <strong>45 degrees</strong> (plus full turns and the mirrored kicks, which land backwards). Look at what is <em>not</em> in the answer: no $v_0$, no $g$. The optimal angle does not depend on how hard you kick, or on which planet you are standing on.</p>
+<p>But a zero derivative only says <em>the tangent is horizontal there</em>, and the sine picture above already showed what that costs: the top of a hill and the bottom of a valley both have horizontal tangents. So before celebrating, check which kind of point we found. The tool is the <em>sign</em> of the derivative on either side of the point, exactly the sign change we read off the sine wave. Let us look at the slope of the range curve below and above 45 degrees, in two small steps instead of one long line:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># differentiate once and keep the derivative as its own formula
+dR = diff(R(alpha), alpha)
+show(dR)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the slope of the range curve at 30 and at 60 degrees
+show(dR.subs(alpha = pi/6))    # positive: the range is still rising at 30 degrees
+show(dR.subs(alpha = pi/3))    # negative: the range is already falling at 60 degrees
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517733-22" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Positive below, negative above: the derivative flips from plus to minus at 45 degrees, and that sign change is the signature of a **maximum**.
+
+A second sanity check needs no derivatives at all: evaluate the range slightly left and slightly right of the suspected top and compare (borrowing the numbers of Section 2.7 for a moment):" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517733-22" class="markdown-preview" style="display: block;" data-original-markdown="Positive below, negative above: the derivative flips from plus to minus at 45 degrees, and that sign change is the signature of a **maximum**.
+
+A second sanity check needs no derivatives at all: evaluate the range slightly left and slightly right of the suspected top and compare (borrowing the numbers of Section 2.7 for a moment):"><p>Positive below, negative above: the derivative flips from plus to minus at 45 degrees, and that sign change is the signature of a <strong>maximum</strong>.</p>
+<p>A second sanity check needs no derivatives at all: evaluate the range slightly left and slightly right of the suspected top and compare (borrowing the numbers of Section 2.7 for a moment):</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># both neighbors of 45 degrees should land shorter than 45 degrees itself
+R_values = R.subs(v0 = 15, g = 9.81)
+N(R_values(40*pi/180))    # a flat-ish kick, 40 degrees
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">N(R_values(45*pi/180))    # the candidate
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">N(R_values(50*pi/180))    # a high-ish kick, 50 degrees
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517734-23" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="22.6 m, 22.9 m, 22.6 m: both neighbors lose to the candidate in the middle.
+
+And for those who prefer one computation instead of two sign checks, calculus bundles the check into a single number: the **second derivative**. If the first derivative is the slope of the curve, the second is the slope *of the slope*; a maximum sits where the slope decreases through zero, so the second derivative there is negative:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517734-23" class="markdown-preview" style="display: block;" data-original-markdown="22.6 m, 22.9 m, 22.6 m: both neighbors lose to the candidate in the middle.
+
+And for those who prefer one computation instead of two sign checks, calculus bundles the check into a single number: the **second derivative**. If the first derivative is the slope of the curve, the second is the slope *of the slope*; a maximum sits where the slope decreases through zero, so the second derivative there is negative:"><p>22.6 m, 22.9 m, 22.6 m: both neighbors lose to the candidate in the middle.</p>
+<p>And for those who prefer one computation instead of two sign checks, calculus bundles the check into a single number: the <strong>second derivative</strong>. If the first derivative is the slope of the curve, the second is the slope <em>of the slope</em>; a maximum sits where the slope decreases through zero, so the second derivative there is negative:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># differentiate R twice, keep the formula, then substitute 45 degrees
+d2R = diff(R(alpha), alpha, 2)
+show(d2R.subs(alpha = pi/4))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517734-24" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="With our formula this is $-4v_0^2/g$, negative for any kick on any planet, so the curve bends downward: $\pi/4$ is the top. And notice the symmetry around it:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517734-24" class="markdown-preview" style="display: block;" data-original-markdown="With our formula this is $-4v_0^2/g$, negative for any kick on any planet, so the curve bends downward: $\pi/4$ is the top. And notice the symmetry around it:"><p>With our formula this is $-4v_0^2/g$, negative for any kick on any planet, so the curve bends downward: $\pi/4$ is the top. And notice the symmetry around it:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># kicking at 30 degrees reaches exactly as far as kicking at 60 degrees
+simplify(R(pi/6) - R(pi/3))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517734-25" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Zero. Two angles that add to 90 degrees have the same range, one flat and fast, the other high and slow. Only the 45 degree kick is alone." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517734-25" class="markdown-preview" style="display: block;" data-original-markdown="Zero. Two angles that add to 90 degrees have the same range, one flat and fast, the other high and slow. Only the 45 degree kick is alone."><p>Zero. Two angles that add to 90 degrees have the same range, one flat and fast, the other high and slow. Only the 45 degree kick is alone.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517734-26" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **2.7 Numbers for our football**
+
+Formulas are nice, but the football field has meters on it. Substitute the values with `subs()` and let `N()` do the arithmetic:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517734-26" class="markdown-preview" style="display: block;" data-original-markdown="## **2.7 Numbers for our football**
+
+Formulas are nice, but the football field has meters on it. Substitute the values with `subs()` and let `N()` do the arithmetic:"><h2 id="27-numbers-for-our-football"><strong>2.7 Numbers for our football</strong></h2>
+<p>Formulas are nice, but the football field has meters on it. Substitute the values with <code>subs()</code> and let <code>N()</code> do the arithmetic:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># 15 m/s kick, Earth gravity, 45 degrees
+N(R(pi/4).subs(v0 = 15, g = 9.81))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517735-27" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="About `22.9` m. And while we are here, the flight time and the maximum height of that same kick:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517735-27" class="markdown-preview" style="display: block;" data-original-markdown="About `22.9` m. And while we are here, the flight time and the maximum height of that same kick:"><p>About <code>22.9</code> m. And while we are here, the flight time and the maximum height of that same kick:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># how long the ball is in the air
+N(t_land.subs(v0 = 15, alpha = pi/4, g = 9.81))
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># symmetry: the apex sits at half the flight time
+t_apex = t_land/2
+N(t_apex.subs(v0 = 15, alpha = pi/4, g = 9.81))
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the height of the ball at that moment
+N(y(t_apex).subs(v0 = 15, alpha = pi/4, g = 9.81))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517735-28" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="The same result is available with the derivative machinery from Section 2.6, only this time with numbers in. The apex is where the tangent on the height curve is horizontal, so first write that condition with our kick substituted, and look at it before solving:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517735-28" class="markdown-preview" style="display: block;" data-original-markdown="The same result is available with the derivative machinery from Section 2.6, only this time with numbers in. The apex is where the tangent on the height curve is horizontal, so first write that condition with our kick substituted, and look at it before solving:"><p>The same result is available with the derivative machinery from Section 2.6, only this time with numbers in. The apex is where the tangent on the height curve is horizontal, so first write that condition with our kick substituted, and look at it before solving:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the horizontal-tangent condition on the height curve, numbers in
+apex_eq = diff(y(t), t).subs(v0 = 15, alpha = pi/4, g = 9.81) == 0
+show(apex_eq)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517735-29" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="A falling straight line set to zero, and its single root is the apex. Now solve it:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517735-29" class="markdown-preview" style="display: block;" data-original-markdown="A falling straight line set to zero, and its single root is the apex. Now solve it:"><p>A falling straight line set to zero, and its single root is the apex. Now solve it:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the apex from the derivative: one equation, one root
+t_apex_d = solve(apex_eq, t)[0].rhs()
+N(t_apex_d)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the same apex, so the same height
+N(y(t_apex_d).subs(v0 = 15, alpha = pi/4, g = 9.81))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517736-30" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Same 1.08 s, same 5.7 m: the symmetry shortcut and the derivative agree. A real goalkeeper would point out that air resistance shortens all of this; we will put the air back in a later chapter.
+
+&gt; **Note:** Watch the order of operations we used, because it is the standard workflow for symbolic physics: *state the model* (two functions), *solve one condition* (landing), *substitute into the other* (range), *differentiate to optimize*, *only at the very end put in numbers*. Numbers went in exactly once, at the end. Compare that with a calculator, where you must commit to numbers in the first line and every later step inherits the rounding." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517736-30" class="markdown-preview" style="display: block;" data-original-markdown="Same 1.08 s, same 5.7 m: the symmetry shortcut and the derivative agree. A real goalkeeper would point out that air resistance shortens all of this; we will put the air back in a later chapter.
+
+&gt; **Note:** Watch the order of operations we used, because it is the standard workflow for symbolic physics: *state the model* (two functions), *solve one condition* (landing), *substitute into the other* (range), *differentiate to optimize*, *only at the very end put in numbers*. Numbers went in exactly once, at the end. Compare that with a calculator, where you must commit to numbers in the first line and every later step inherits the rounding."><p>Same 1.08 s, same 5.7 m: the symmetry shortcut and the derivative agree. A real goalkeeper would point out that air resistance shortens all of this; we will put the air back in a later chapter.</p>
+<blockquote>
+<p><strong>Note:</strong> Watch the order of operations we used, because it is the standard workflow for symbolic physics: <em>state the model</em> (two functions), <em>solve one condition</em> (landing), <em>substitute into the other</em> (range), <em>differentiate to optimize</em>, <em>only at the very end put in numbers</em>. Numbers went in exactly once, at the end. Compare that with a calculator, where you must commit to numbers in the first line and every later step inherits the rounding.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517736-31" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **Exercises**
+
+**Exercise 1.** You kick from the edge of a cliff **10 m** high, at 15 m/s. The landing condition is now $y(t) = -10$, not $y(t) = 0$. Solve it with `solve()`, pick the positive root, and find the range as a function of the angle. Is 45 degrees still optimal? Compute the ranges for 35, 45 and 55 degrees and compare.
+
+**Exercise 2.** For the flat kick at 15 m/s, use `solve()` on $y(t) = 2.44~\mathrm{m}$ (the crossbar) to find out how far from the goal line a 45 degree kick would still clear the bar.
+
+**Exercise 3.** A basketball free throw is 4.6 m from the ring, which is 3.05 m high, and the ball leaves the hands at 2.0 m. Try angles with a release speed of 7 m/s: solve $x(t) = 4.6$ for $t$, substitute into $y(t)$, and find which angles put the ball at 3.05 m. You should find two of them, a low line drive and a high arc. Which would you rather shoot?
+
+**Exercise 4.** Prove symbolically that the maximum height of a kick is $h_{max} = v_0^2 \sin^2\alpha / (2g)$: solve $\mathrm{d}y/\mathrm{d}t = 0$ for $t$, substitute into $y(t)$ and `simplify()`." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517736-31" class="markdown-preview" style="display: block;" data-original-markdown="## **Exercises**
+
+**Exercise 1.** You kick from the edge of a cliff **10 m** high, at 15 m/s. The landing condition is now $y(t) = -10$, not $y(t) = 0$. Solve it with `solve()`, pick the positive root, and find the range as a function of the angle. Is 45 degrees still optimal? Compute the ranges for 35, 45 and 55 degrees and compare.
+
+**Exercise 2.** For the flat kick at 15 m/s, use `solve()` on $y(t) = 2.44~\mathrm{m}$ (the crossbar) to find out how far from the goal line a 45 degree kick would still clear the bar.
+
+**Exercise 3.** A basketball free throw is 4.6 m from the ring, which is 3.05 m high, and the ball leaves the hands at 2.0 m. Try angles with a release speed of 7 m/s: solve $x(t) = 4.6$ for $t$, substitute into $y(t)$, and find which angles put the ball at 3.05 m. You should find two of them, a low line drive and a high arc. Which would you rather shoot?
+
+**Exercise 4.** Prove symbolically that the maximum height of a kick is $h_{max} = v_0^2 \sin^2\alpha / (2g)$: solve $\mathrm{d}y/\mathrm{d}t = 0$ for $t$, substitute into $y(t)$ and `simplify()`."><h2 id="exercises"><strong>Exercises</strong></h2>
+<p><strong>Exercise 1.</strong> You kick from the edge of a cliff <strong>10 m</strong> high, at 15 m/s. The landing condition is now $y(t) = -10$, not $y(t) = 0$. Solve it with <code>solve()</code>, pick the positive root, and find the range as a function of the angle. Is 45 degrees still optimal? Compute the ranges for 35, 45 and 55 degrees and compare.</p>
+<p><strong>Exercise 2.</strong> For the flat kick at 15 m/s, use <code>solve()</code> on $y(t) = 2.44~\mathrm{m}$ (the crossbar) to find out how far from the goal line a 45 degree kick would still clear the bar.</p>
+<p><strong>Exercise 3.</strong> A basketball free throw is 4.6 m from the ring, which is 3.05 m high, and the ball leaves the hands at 2.0 m. Try angles with a release speed of 7 m/s: solve $x(t) = 4.6$ for $t$, substitute into $y(t)$, and find which angles put the ball at 3.05 m. You should find two of them, a low line drive and a high arc. Which would you rather shoot?</p>
+<p><strong>Exercise 4.</strong> Prove symbolically that the maximum height of a kick is $h_{max} = v_0^2 \sin^2\alpha / (2g)$: solve $\mathrm{d}y/\mathrm{d}t = 0$ for $t$, substitute into $y(t)$ and <code>simplify()</code>.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793139517736-32" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **2.8 What you can do now**
+
+- **A projectile splits into components**: $v_x = v_0\cos\alpha$ along the field, $v_y = v_0\sin\alpha$ upward, the legs of a right triangle with the kick speed $v_0$ as the hypotenuse; the two directions then evolve independently, one coasting, one falling.
+
+- **`var()`** introduces symbolic variables; formulas built from them stay formulas and can be manipulated exactly.
+- **`solve(equation, unknown)`** returns a list of solutions as equations; pick one with `[i]` and strip the right side with `.rhs()`.
+- **`simplify()`, `trig_reduce()`, `factor()`, `expand()`, `trig_simplify()`, `simplify_rational()`, `simplify_full()`** clean up formulas, each in its own way; a clean formula is easier to check against a textbook.
+- **`diff(expr, x)`** differentiates; the derivative is the slope of the tangent line, the sine picture showed all three cases at once (rising tangent, flat at the maximum, flat at the minimum), and maxima and minima live where the derivative is zero, confirmed by the sign change of the derivative around the point or by the sign of the second derivative.
+- **`.subs(name = value)`** substitutes numbers into formulas; substitute once, at the end, and let `N()` finish the job." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793139517736-32" class="markdown-preview" style="display: block;" data-original-markdown="## **2.8 What you can do now**
+
+- **A projectile splits into components**: $v_x = v_0\cos\alpha$ along the field, $v_y = v_0\sin\alpha$ upward, the legs of a right triangle with the kick speed $v_0$ as the hypotenuse; the two directions then evolve independently, one coasting, one falling.
+
+- **`var()`** introduces symbolic variables; formulas built from them stay formulas and can be manipulated exactly.
+- **`solve(equation, unknown)`** returns a list of solutions as equations; pick one with `[i]` and strip the right side with `.rhs()`.
+- **`simplify()`, `trig_reduce()`, `factor()`, `expand()`, `trig_simplify()`, `simplify_rational()`, `simplify_full()`** clean up formulas, each in its own way; a clean formula is easier to check against a textbook.
+- **`diff(expr, x)`** differentiates; the derivative is the slope of the tangent line, the sine picture showed all three cases at once (rising tangent, flat at the maximum, flat at the minimum), and maxima and minima live where the derivative is zero, confirmed by the sign change of the derivative around the point or by the sign of the second derivative.
+- **`.subs(name = value)`** substitutes numbers into formulas; substitute once, at the end, and let `N()` finish the job."><h2 id="28-what-you-can-do-now"><strong>2.8 What you can do now</strong></h2>
+<ul>
+<li><p><strong>A projectile splits into components</strong>: $v_x = v_0\cos\alpha$ along the field, $v_y = v_0\sin\alpha$ upward, the legs of a right triangle with the kick speed $v_0$ as the hypotenuse; the two directions then evolve independently, one coasting, one falling.</p>
+</li>
+<li><p><strong><code>var()</code></strong> introduces symbolic variables; formulas built from them stay formulas and can be manipulated exactly.</p>
+</li>
+<li><p><strong><code>solve(equation, unknown)</code></strong> returns a list of solutions as equations; pick one with <code>[i]</code> and strip the right side with <code>.rhs()</code>.</p>
+</li>
+<li><p><strong><code>simplify()</code>, <code>trig_reduce()</code>, <code>factor()</code>, <code>expand()</code>, <code>trig_simplify()</code>, <code>simplify_rational()</code>, <code>simplify_full()</code></strong> clean up formulas, each in its own way; a clean formula is easier to check against a textbook.</p>
+</li>
+<li><p><strong><code>diff(expr, x)</code></strong> differentiates; the derivative is the slope of the tangent line, the sine picture showed all three cases at once (rising tangent, flat at the maximum, flat at the minimum), and maxima and minima live where the derivative is zero, confirmed by the sign change of the derivative around the point or by the sign of the second derivative.</p>
+</li>
+<li><p><strong><code>.subs(name = value)</code></strong> substitutes numbers into formulas; substitute once, at the end, and let <code>N()</code> finish the job.</p>
+</li>
+</ul>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># empty cells for exercises/experiments - feel free to add new cells anywhere by clicking "Add Bellow" button
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">
+</script></div></div></div></div></div>
+            
+        </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/embedded_sagecell_backup.js"></script>
+<script src="https://sage-sk.org/embedded_sagecell.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/FileSaver.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/nbplayerConfig.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/comment/comment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/markdown-fold.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.css">
+<script>let RUN_DELAY = 1000;</script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/customthemes15.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbrunner24.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaiengine23.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaipriming22.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbautocompletion20.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://code.datagridxl.com/datagridxl2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fflate@0.8.3/umd/index.min.js"></script>
+<script>
+  playerConfig={"panes":"Exec","lang":"sage","linked":true,"eval":false,"hide":["fullScreen"],"execute":true,"showRead":false,"collapsable":false,"playerPath":"https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main","name":"SageMath"};
+  playerMode={"showSage":true,"showNotebookInput":true,"showSageInput":true};
+  let API_KEY="";
+  let API_URL="";
+  let CURRENT_MODEL="";
+  let CURRENT_LANGUAGE="";
+  let SAGECELL_URL="https://sage-sk.org/";
+  let toggleEvalBtnsState=false;
+  let isFullWidthState=true;
+  window.hideCodeInputState=false;
+  let PRELOAD="";
+  let SETTINGS_PATH_NAME="settings.js";
+  let aiEduMode=true;
+  let aiCompleteMode=true;
+  let aiLogs=false;
+  window.aiLogs=false;
+  window.aiSettingsVisible=true;
+  window.aiLogsHistory=[];
+  makeMenu();
+  localize();
+  createTableOfContents();
+  loadStatus();
+  restoreUIState();
+  makeSageCells(playerConfig);
+  launchPlayer();
+  addControlPanel();
+  setupRunAllCells();
+  addSageCellNumbering();
+  enhanceSageCellsWithGlobalAutocomplete();
+  window.onload = initializeMarkdownCells;
+  let CUSTOM_CONTEXT="";
+  let CUSTOM_CSS="";
+  if (CUSTOM_CSS) applyCustomCSS(CUSTOM_CSS);
+  addCommentShortcutToAllSageCells();
+  applyPreloadCells();
+  setupBulkCellObserver();
+</script>
+<script src="settings.js"></script>
+</body>
+</html>

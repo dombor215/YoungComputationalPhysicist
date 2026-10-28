@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;polygon points='50,6 88,28 88,72 50,94 12,72 12,28' fill='%234CAF50'/&gt;&lt;text x='50' y='68' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='%23fff' text-anchor='middle'&gt;S&lt;/text&gt;&lt;/svg&gt;">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/es5-shim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/ansi_up.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex-auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/notebook.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/prism.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/notebook.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/nbpreview.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/css/nbplayer24.css">
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/texme@1.2.2"></script>
+<div id="main">
+<div id="notebook-holder"><div class="nb-notebook"><div class="nb-worksheet"><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336892-1" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Faculty of Science, Pavol Jozef Jozef Šafárik University in Košice, Slovakia&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt; &lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt; &lt;/p&gt;" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336892-1" class="markdown-preview" style="display: block;" data-original-markdown="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Faculty of Science, Pavol Jozef Jozef Šafárik University in Košice, Slovakia&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt; &lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt; &lt;/p&gt;"><p><img style="float: right;" src="https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png" alt="" width="100" height="85"></p>
+<p><strong>Authors:</strong> Dominik Borovský<sup>1</sup> &amp; Jozef Hanč<sup>2</sup></p>
+<p><em>2026, Faculty of Science, Pavol Jozef Jozef Šafárik University in Košice, Slovakia</em></p>
+<p><sup>1</sup><a href="mailto:dominik.borovsky@student.upjs.sk">dominik.borovsky@student.upjs.sk,</a> <sup>2</sup><a href="mailto:jozef.hanc@upjs.sk">jozef.hanc@upjs.sk</a> </p></div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336892-2" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="# **Chapter 5: The Spring Constant**
+
+In this chapter the formulas step aside and *data* takes over. A hundred measurements of one stretched spring enter SageMath as a table, get checked for holes and typos, averaged, drawn with error bars and fitted, until the spring constant $k$ falls out of them. The tool carrying it all is the `DataFrame` from `pandas`, the table tool that ships inside SageMath." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336892-2" class="markdown-preview" style="display: block;" data-original-markdown="# **Chapter 5: The Spring Constant**
+
+In this chapter the formulas step aside and *data* takes over. A hundred measurements of one stretched spring enter SageMath as a table, get checked for holes and typos, averaged, drawn with error bars and fitted, until the spring constant $k$ falls out of them. The tool carrying it all is the `DataFrame` from `pandas`, the table tool that ships inside SageMath."><h1 id="chapter-5-the-spring-constant"><strong>Chapter 5: The Spring Constant</strong></h1>
+<p>In this chapter the formulas step aside and <em>data</em> takes over. A hundred measurements of one stretched spring enter SageMath as a table, get checked for holes and typos, averaged, drawn with error bars and fitted, until the spring constant $k$ falls out of them. The tool carrying it all is the <code>DataFrame</code> from <code>pandas</code>, the table tool that ships inside SageMath.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336892-3" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.1 The task**
+
+&gt; A spring is stretched by hand to lengths of $1, 2, \ldots, 10~\mathrm{cm}$, and at each length the pulling force is read off a force meter ten times. That makes $10\times10=100$ readings of pairs $(x, F)$. Does the force grow linearly with the stretch, and what spring constant $k$ hides in the numbers?
+
+The physics is one line, Hooke's law: the force $F$ needed to stretch a spring by $x$ is
+
+$$F = kx$$
+
+where $F$ is the force in $\mathrm{N}$, $k$ the spring constant in $\mathrm{N/m}$ and $x$ the extension in $\mathrm{m}$. The measurement itself is honest but rough: the hand pulls, the meter wobbles, the eye rounds, and every one of the hundred readings carries its smear of doubt. That doubt is not a nuisance here, it is the material. This chapter enters it, checks it, cleans it, draws it, and finally averages it away.
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;https://i.postimg.cc/rwv68XJ7/suspension-spring-car.webp&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;Fig. 5.1: A shock absorber, which is nothing more than a large spring - its $k$ decides how the ride feels (source: &lt;a href=&quot;https://www.airedalesprings.co.uk/blog/choosing-the-best-materials-for-springs/&quot;&gt;airedalesprings.co.uk&lt;/a&gt;).&lt;/em&gt;&lt;/p&gt;
+
+And $k$ is worth knowing. A car's shock absorber is a spring in disguise, and its spring constant decides whether a pothole reaches the passengers as a bump or as a shrug. Too stiff and the ride punishes, too soft and the wheel cannot follow the road. Somewhere in the hundred readings below sits the number an engineer would need." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336892-3" class="markdown-preview" style="display: block;" data-original-markdown="## **5.1 The task**
+
+&gt; A spring is stretched by hand to lengths of $1, 2, \ldots, 10~\mathrm{cm}$, and at each length the pulling force is read off a force meter ten times. That makes $10\times10=100$ readings of pairs $(x, F)$. Does the force grow linearly with the stretch, and what spring constant $k$ hides in the numbers?
+
+The physics is one line, Hooke's law: the force $F$ needed to stretch a spring by $x$ is
+
+$$F = kx$$
+
+where $F$ is the force in $\mathrm{N}$, $k$ the spring constant in $\mathrm{N/m}$ and $x$ the extension in $\mathrm{m}$. The measurement itself is honest but rough: the hand pulls, the meter wobbles, the eye rounds, and every one of the hundred readings carries its smear of doubt. That doubt is not a nuisance here, it is the material. This chapter enters it, checks it, cleans it, draws it, and finally averages it away.
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;https://i.postimg.cc/rwv68XJ7/suspension-spring-car.webp&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;Fig. 5.1: A shock absorber, which is nothing more than a large spring - its $k$ decides how the ride feels (source: &lt;a href=&quot;https://www.airedalesprings.co.uk/blog/choosing-the-best-materials-for-springs/&quot;&gt;airedalesprings.co.uk&lt;/a&gt;).&lt;/em&gt;&lt;/p&gt;
+
+And $k$ is worth knowing. A car's shock absorber is a spring in disguise, and its spring constant decides whether a pothole reaches the passengers as a bump or as a shrug. Too stiff and the ride punishes, too soft and the wheel cannot follow the road. Somewhere in the hundred readings below sits the number an engineer would need."><h2 id="51-the-task"><strong>5.1 The task</strong></h2>
+<blockquote>
+<p>A spring is stretched by hand to lengths of $1, 2, \ldots, 10~\mathrm{cm}$, and at each length the pulling force is read off a force meter ten times. That makes $10\times10=100$ readings of pairs $(x, F)$. Does the force grow linearly with the stretch, and what spring constant $k$ hides in the numbers?</p>
+</blockquote>
+<p>The physics is one line, Hooke's law: the force $F$ needed to stretch a spring by $x$ is</p>
+<p>$$F = kx$$</p>
+<p>where $F$ is the force in $\mathrm{N}$, $k$ the spring constant in $\mathrm{N/m}$ and $x$ the extension in $\mathrm{m}$. The measurement itself is honest but rough: the hand pulls, the meter wobbles, the eye rounds, and every one of the hundred readings carries its smear of doubt. That doubt is not a nuisance here, it is the material. This chapter enters it, checks it, cleans it, draws it, and finally averages it away.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://i.postimg.cc/rwv68XJ7/suspension-spring-car.webp" width="500"></p>
+<p style="text-align: center;"><em>Fig. 5.1: A shock absorber, which is nothing more than a large spring - its $k$ decides how the ride feels (source: <a href="https://www.airedalesprings.co.uk/blog/choosing-the-best-materials-for-springs/">airedalesprings.co.uk</a>).</em></p>
+
+<p>And $k$ is worth knowing. A car's shock absorber is a spring in disguise, and its spring constant decides whether a pothole reaches the passengers as a bump or as a shrug. Too stiff and the ride punishes, too soft and the wheel cannot follow the road. Somewhere in the hundred readings below sits the number an engineer would need.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336892-4" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.2 From spreadsheet to DataFrame**
+
+Measured data rarely arrives as a list typed by hand. It arrives as a spreadsheet, and the first question of this chapter is how a spreadsheet enters SageMath. The answer depends on where you work.
+
+**In our HTML notebook.** Every code cell carries a small button with a grid icon, labeled **Import/Export Excel**. Click it, choose your `.xlsx` file, and the notebook writes the whole loading cell for you: the table is flattened into text and pasted into the cell, together with a few lines that rebuild it. Your only decision is the name the table will be known under.
+
+**In a local Jupyter.** `pandas` reads the file straight from the disk:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336892-4" class="markdown-preview" style="display: block;" data-original-markdown="## **5.2 From spreadsheet to DataFrame**
+
+Measured data rarely arrives as a list typed by hand. It arrives as a spreadsheet, and the first question of this chapter is how a spreadsheet enters SageMath. The answer depends on where you work.
+
+**In our HTML notebook.** Every code cell carries a small button with a grid icon, labeled **Import/Export Excel**. Click it, choose your `.xlsx` file, and the notebook writes the whole loading cell for you: the table is flattened into text and pasted into the cell, together with a few lines that rebuild it. Your only decision is the name the table will be known under.
+
+**In a local Jupyter.** `pandas` reads the file straight from the disk:"><h2 id="52-from-spreadsheet-to-dataframe"><strong>5.2 From spreadsheet to DataFrame</strong></h2>
+<p>Measured data rarely arrives as a list typed by hand. It arrives as a spreadsheet, and the first question of this chapter is how a spreadsheet enters SageMath. The answer depends on where you work.</p>
+<p><strong>In our HTML notebook.</strong> Every code cell carries a small button with a grid icon, labeled <strong>Import/Export Excel</strong>. Click it, choose your <code>.xlsx</code> file, and the notebook writes the whole loading cell for you: the table is flattened into text and pasted into the cell, together with a few lines that rebuild it. Your only decision is the name the table will be known under.</p>
+<p><strong>In a local Jupyter.</strong> <code>pandas</code> reads the file straight from the disk:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># loading the pandas library
+import pandas as pd
+
+# loading data from an Excel file - uncomment if you have the file available
+# data = pd.read_excel("hooks_law_data.xlsx")
+
+# loading data from a csv file - uncomment if you have the file available
+# data = pd.read_csv("hooks_law_data.csv")
+# data
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336893-5" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Note:** The argument of `read_excel` or `read_csv` is the file name, or the full path in the form `path/to/folder/file_name.csv`. For `read_excel`, the `openpyxl` library must be installed in addition to `pandas` (directly in a cell by `!pip install openpyxl`). And as everywhere in Sage, numbers use a **decimal point**, never a decimal comma.
+
+Here is the cell the button wrote for our spring data. Do not be put off by its length: the whole table lives inside it as one long text string, and the last two lines turn that text back into a table. Only `dataframe_name` is meant to be changed; the rest is best left as it is." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336893-5" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Note:** The argument of `read_excel` or `read_csv` is the file name, or the full path in the form `path/to/folder/file_name.csv`. For `read_excel`, the `openpyxl` library must be installed in addition to `pandas` (directly in a cell by `!pip install openpyxl`). And as everywhere in Sage, numbers use a **decimal point**, never a decimal comma.
+
+Here is the cell the button wrote for our spring data. Do not be put off by its length: the whole table lives inside it as one long text string, and the last two lines turn that text back into a table. Only `dataframe_name` is meant to be changed; the rest is best left as it is."><blockquote>
+<p><strong>Note:</strong> The argument of <code>read_excel</code> or <code>read_csv</code> is the file name, or the full path in the form <code>path/to/folder/file_name.csv</code>. For <code>read_excel</code>, the <code>openpyxl</code> library must be installed in addition to <code>pandas</code> (directly in a cell by <code>!pip install openpyxl</code>). And as everywhere in Sage, numbers use a <strong>decimal point</strong>, never a decimal comma.</p>
+</blockquote>
+<p>Here is the cell the button wrote for our spring data. Do not be put off by its length: the whole table lives inside it as one long text string, and the last two lines turn that text back into a table. Only <code>dataframe_name</code> is meant to be changed; the rest is best left as it is.</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># Change dataframe_name if needed. Apart from dataframe_name it is NOT RECOMMENDED to touch other parts of this code.
+dataframe_name = "data"
+import pandas as pd, json
+data_raw = r'[["x [cm]","F [N]"],[1,4.19052570380035],[1,2.03406262945916],[1,2.53282016367858],[1,2.9075162829965],[1,1.71107697137426],[1,2.50206557290594],[1,2.49910961414206],[1,0.745275693654579],[1,3.51765800566349],[1,3.10049851591954],[2,4.37457102603324],[2,4.82845173880427],[2,5.50529937419675],[2,4.73864358480835],[2,4.75725092132745],[2,3.5467585875092],[2,5.55458031189188],[2,5.12388090528703],[2,5.27445992375996],[2,3.47347546813016],[3,9.15069969118647],[3,7.65433553545635],[3,7.11286005671361],[3,9.52907222076111],[3,7.45461397013935],[3,6.04932130085342],[3,7.09477214457231],[3,5.21168489802827],[3,8.54939654934325],[3,7.08352568147998],[4,9.25744647479543],[4,11.0724701315754],[4,8.34892441059416],[4,10.535429356326],[4,7.93558519687882],[4,9.33784066033319],[4,8.79578015440026],[4,11.4619756272135],[4,11.7661608779293],[4,9.67058624808693],[5,13.3407332421435],[5,12.3200135987476],[5,13.0680618873279],[5,11.7471628035785],[5,10.7916607968329],[5,10.6969013415202],[5,12.8831218517575],[5,14.7475950528077],[5,12.7694116305078],[5,11.9753953805991],[6,16.9120188623319],[6,15.2373018466371],[6,15.1014339852116],[6,15.2525777355553],[6,14.8676228024331],[6,14.6905236594111],[6,13.5650365339644],[6,15.501624123181],[6,14.9052245495601],[6,16.193085922344],[7,17.1311815315521],[7,15.5936301214695],[7,17.4003893681051],[7,19.1995372967466],[7,17.1165768770684],[7,16.6101431389792],[7,16.3064080777418],[7,16.4499831889246],[7,17.1998062631998],[7,16.3200179065417],[8,21.4976391155975],[8,19.7173647639246],[8,20.1086483714947],[8,21.4382395207337],[8,21.5033185204169],[8,19.7872670329824],[8,20.3319742154884],[8,20.7350265843773],[8,19.8071445396502],[8,18.2219871470414],[9,23.1547057037031],[9,23.3943523048205],[9,22.915502614298],[9,21.5764553432867],[9,22.303972687692],[9,21.9092301811368],[9,22.2002887626721],[9,23.7968851927266],[9,24.0295796333931],[9,23.1694181934096],[10,25.5487451197783],[10,25.6766289895558],[10,24.9877578133935],[10,24.9243365385129],[10,24.3263548126239],[10,24.9441325499499],[10,27.2599469866262],[10,25.8690393292538],[10,24.6578829765731],[10,24.5280733478664]]'
+data_json = json.loads(data_raw)
+globals()[dataframe_name] = pd.DataFrame(data_json[1:], columns=data_json[0]); print(f"DataFrame '{dataframe_name}' created | Shape: {globals()[dataframe_name].shape} | Columns: {list(globals()[dataframe_name].columns)}")
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336894-6" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="What the cell does, piece by piece:
+
+1. `data_raw = r'...'` stores the table as text. Our notebook computes in the cloud: the input travels to a server, and text is the only luggage data can take. The `r` before the quotes keeps the string exactly as written.
+2. `json.loads(data_raw)` turns the text into a list of lists, one inner list per row of the table, the first one being the header `[&quot;x [cm]&quot;, &quot;F [N]&quot;]`.
+3. `pd.DataFrame(data_json[1:], columns=data_json[0])` builds the table from all rows after the header and names the columns.
+4. `globals()[dataframe_name]` stores the result under the chosen name, so that every later cell can simply write `data`." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336894-6" class="markdown-preview" style="display: block;" data-original-markdown="What the cell does, piece by piece:
+
+1. `data_raw = r'...'` stores the table as text. Our notebook computes in the cloud: the input travels to a server, and text is the only luggage data can take. The `r` before the quotes keeps the string exactly as written.
+2. `json.loads(data_raw)` turns the text into a list of lists, one inner list per row of the table, the first one being the header `[&quot;x [cm]&quot;, &quot;F [N]&quot;]`.
+3. `pd.DataFrame(data_json[1:], columns=data_json[0])` builds the table from all rows after the header and names the columns.
+4. `globals()[dataframe_name]` stores the result under the chosen name, so that every later cell can simply write `data`."><p>What the cell does, piece by piece:</p>
+<ol>
+<li><code>data_raw = r'...'</code> stores the table as text. Our notebook computes in the cloud: the input travels to a server, and text is the only luggage data can take. The <code>r</code> before the quotes keeps the string exactly as written.</li>
+<li><code>json.loads(data_raw)</code> turns the text into a list of lists, one inner list per row of the table, the first one being the header <code>["x [cm]", "F [N]"]</code>.</li>
+<li><code>pd.DataFrame(data_json[1:], columns=data_json[0])</code> builds the table from all rows after the header and names the columns.</li>
+<li><code>globals()[dataframe_name]</code> stores the result under the chosen name, so that every later cell can simply write <code>data</code>.</li>
+</ol>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># displaying part of the table
+data
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336894-7" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Note:** The button is a convenience, not magic. By hand the same route is: save the data as a csv table, open the csv file in a text editor (right-click, Open with, Notepad or [Notepad++](https://notepad-plus-plus.org/)), select all with `Ctrl+A`, copy with `Ctrl+C`, and paste it into a cell as text. The button only does the flattening for you.
+
+Loaded, the readings are now a `DataFrame`, the pandas version of an Excel table:
+
+- it has rows and named columns,
+- each column carries one type of data (whole numbers, decimals, text),
+- and it comes with commands for selecting, filtering and computing on the data.
+
+Each row is one reading, one pair $(x, F)$, and the lengths repeat on purpose: ten rows carry the value 1, ten carry 2, and so on. The length is a fact about a reading, not the title of a table. One row per measurement, repeats included, is called *long format*, and it is the shape every tool in the rest of the book feeds on.
+
+In data science, everything this chapter does before the physics has a name: *data cleaning* (finding the holes and typos) and *data preprocessing* (getting the values into shape - units converted, repeats averaged). The names sound industrial, the work is the opposite: small careful steps between the raw reading and the number worth believing.
+
+A `DataFrame` is the programmatic counterpart of Excel or Google Sheets: a grid of rows and named columns, worked through commands instead of mouse clicks. And it likes a tidy sheet as much as any spreadsheet user. When preparing an `.xlsx` file to become a `DataFrame`, be strict about its structure:
+
+- **one table per file**, not several tables sharing a sheet,
+- the **first row carries the column names**, exactly the ones the code will use for access,
+- **no empty columns or decorative header rows** above the data,
+- the data reads **top to bottom, one record per row** - not left to right in blocks across the sheet, as it is sometimes written by hand.
+
+A file laid out this way loads in one line. A file laid out any other way loads too, and then costs an afternoon of repairs." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336894-7" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Note:** The button is a convenience, not magic. By hand the same route is: save the data as a csv table, open the csv file in a text editor (right-click, Open with, Notepad or [Notepad++](https://notepad-plus-plus.org/)), select all with `Ctrl+A`, copy with `Ctrl+C`, and paste it into a cell as text. The button only does the flattening for you.
+
+Loaded, the readings are now a `DataFrame`, the pandas version of an Excel table:
+
+- it has rows and named columns,
+- each column carries one type of data (whole numbers, decimals, text),
+- and it comes with commands for selecting, filtering and computing on the data.
+
+Each row is one reading, one pair $(x, F)$, and the lengths repeat on purpose: ten rows carry the value 1, ten carry 2, and so on. The length is a fact about a reading, not the title of a table. One row per measurement, repeats included, is called *long format*, and it is the shape every tool in the rest of the book feeds on.
+
+In data science, everything this chapter does before the physics has a name: *data cleaning* (finding the holes and typos) and *data preprocessing* (getting the values into shape - units converted, repeats averaged). The names sound industrial, the work is the opposite: small careful steps between the raw reading and the number worth believing.
+
+A `DataFrame` is the programmatic counterpart of Excel or Google Sheets: a grid of rows and named columns, worked through commands instead of mouse clicks. And it likes a tidy sheet as much as any spreadsheet user. When preparing an `.xlsx` file to become a `DataFrame`, be strict about its structure:
+
+- **one table per file**, not several tables sharing a sheet,
+- the **first row carries the column names**, exactly the ones the code will use for access,
+- **no empty columns or decorative header rows** above the data,
+- the data reads **top to bottom, one record per row** - not left to right in blocks across the sheet, as it is sometimes written by hand.
+
+A file laid out this way loads in one line. A file laid out any other way loads too, and then costs an afternoon of repairs."><blockquote>
+<p><strong>Note:</strong> The button is a convenience, not magic. By hand the same route is: save the data as a csv table, open the csv file in a text editor (right-click, Open with, Notepad or <a href="https://notepad-plus-plus.org/">Notepad++</a>), select all with <code>Ctrl+A</code>, copy with <code>Ctrl+C</code>, and paste it into a cell as text. The button only does the flattening for you.</p>
+</blockquote>
+<p>Loaded, the readings are now a <code>DataFrame</code>, the pandas version of an Excel table:</p>
+<ul>
+<li>it has rows and named columns,</li>
+<li>each column carries one type of data (whole numbers, decimals, text),</li>
+<li>and it comes with commands for selecting, filtering and computing on the data.</li>
+</ul>
+<p>Each row is one reading, one pair $(x, F)$, and the lengths repeat on purpose: ten rows carry the value 1, ten carry 2, and so on. The length is a fact about a reading, not the title of a table. One row per measurement, repeats included, is called <em>long format</em>, and it is the shape every tool in the rest of the book feeds on.</p>
+<p>In data science, everything this chapter does before the physics has a name: <em>data cleaning</em> (finding the holes and typos) and <em>data preprocessing</em> (getting the values into shape - units converted, repeats averaged). The names sound industrial, the work is the opposite: small careful steps between the raw reading and the number worth believing.</p>
+<p>A <code>DataFrame</code> is the programmatic counterpart of Excel or Google Sheets: a grid of rows and named columns, worked through commands instead of mouse clicks. And it likes a tidy sheet as much as any spreadsheet user. When preparing an <code>.xlsx</code> file to become a <code>DataFrame</code>, be strict about its structure:</p>
+<ul>
+<li><strong>one table per file</strong>, not several tables sharing a sheet,</li>
+<li>the <strong>first row carries the column names</strong>, exactly the ones the code will use for access,</li>
+<li><strong>no empty columns or decorative header rows</strong> above the data,</li>
+<li>the data reads <strong>top to bottom, one record per row</strong> - not left to right in blocks across the sheet, as it is sometimes written by hand.</li>
+</ul>
+<p>A file laid out this way loads in one line. A file laid out any other way loads too, and then costs an afternoon of repairs.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336894-8" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.3 First check: `.info()`**
+
+However the table arrived, never trust it on arrival. One command gives the first health report:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336894-8" class="markdown-preview" style="display: block;" data-original-markdown="## **5.3 First check: `.info()`**
+
+However the table arrived, never trust it on arrival. One command gives the first health report:"><h2 id="53-first-check-info"><strong>5.3 First check: <code>.info()</code></strong></h2>
+<p>However the table arrived, never trust it on arrival. One command gives the first health report:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># a simple check of the data
+data.info()
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336895-9" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="From the report we can read that:
+
+- the table has two columns, named `x [cm]` and `F [N]`,
+- each column holds 100 *&quot;non-null&quot;* values. This does not mean there are no zeros among the readings, it means no cell was left empty. An empty cell would appear as `NaN` (*Not a Number*, pandas' word for a missing value),
+- the `x [cm]` column is of type `int64`, whole numbers, and `F [N]` is `float64`, decimal numbers (*floating-point*, a number whose decimal point &quot;floats&quot;).
+
+In this copy the data arrived whole. It usually does not. The next section shows what dirty data looks like, and how to find the dirt." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336895-9" class="markdown-preview" style="display: block;" data-original-markdown="From the report we can read that:
+
+- the table has two columns, named `x [cm]` and `F [N]`,
+- each column holds 100 *&quot;non-null&quot;* values. This does not mean there are no zeros among the readings, it means no cell was left empty. An empty cell would appear as `NaN` (*Not a Number*, pandas' word for a missing value),
+- the `x [cm]` column is of type `int64`, whole numbers, and `F [N]` is `float64`, decimal numbers (*floating-point*, a number whose decimal point &quot;floats&quot;).
+
+In this copy the data arrived whole. It usually does not. The next section shows what dirty data looks like, and how to find the dirt."><p>From the report we can read that:</p>
+<ul>
+<li>the table has two columns, named <code>x [cm]</code> and <code>F [N]</code>,</li>
+<li>each column holds 100 <em>"non-null"</em> values. This does not mean there are no zeros among the readings, it means no cell was left empty. An empty cell would appear as <code>NaN</code> (<em>Not a Number</em>, pandas' word for a missing value),</li>
+<li>the <code>x [cm]</code> column is of type <code>int64</code>, whole numbers, and <code>F [N]</code> is <code>float64</code>, decimal numbers (<em>floating-point</em>, a number whose decimal point "floats").</li>
+</ul>
+<p>In this copy the data arrived whole. It usually does not. The next section shows what dirty data looks like, and how to find the dirt.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336895-10" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.4 Real data arrives dirty**
+
+Here is the same measurement as it more often comes out of a real session: two cells never got filled, and three fingers slipped on the keyboard. It came in through the same **Import/Export Excel** button, this time under a different name:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336895-10" class="markdown-preview" style="display: block;" data-original-markdown="## **5.4 Real data arrives dirty**
+
+Here is the same measurement as it more often comes out of a real session: two cells never got filled, and three fingers slipped on the keyboard. It came in through the same **Import/Export Excel** button, this time under a different name:"><h2 id="54-real-data-arrives-dirty"><strong>5.4 Real data arrives dirty</strong></h2>
+<p>Here is the same measurement as it more often comes out of a real session: two cells never got filled, and three fingers slipped on the keyboard. It came in through the same <strong>Import/Export Excel</strong> button, this time under a different name:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># Change dataframe_name if needed. Apart from dataframe_name it is NOT RECOMMENDED to touch other parts of this code.
+dataframe_name = "data_corrupted"
+import pandas as pd, json
+data_raw = r'[["x [cm]","F [N]"],[1,4.19052570380035],[1,2.03406262945916],[1,2.53282016367858],[1,2.9075162829965],[1,1.71107697137426],[1,2.50206557290594],[1,2.49910961414206],[1,0.745275693654579],[1,3.51765800566349],[1,3.10049851591954],[2,4.37457102603324],[2,48.2845173880427],[2,5.50529937419675],[2,4.73864358480835],[2,4.75725092132745],[2,3.5467585875092],[2,5.55458031189188],[2,5.12388090528703],[2,5.27445992375996],[2,3.47347546813016],[3,9.15069969118647],[null,7.65433553545635],[3,7.11286005671361],[3,9.52907222076111],[3,7.45461397013935],[3,6.04932130085342],[3,7.09477214457231],[3,5.21168489802827],[3,8.54939654934325],[3,7.08352568147998],[4,9.25744647479543],[4,11.0724701315754],[4,8.34892441059416],[4,10.535429356326],[4,7.93558519687882],[4,9.33784066033319],[4,8.79578015440026],[4,11.4619756272135],[4,11.7661608779293],[4,9.67058624808693],[5,13.3407332421435],[5,12.3200135987476],[5,13.0680618873279],[5,11.7471628035785],[5,10.7916607968329],[5,10.6969013415202],[5,12.8831218517575],[5,14.7475950528077],[5,12.7694116305078],[5,11.9753953805991],[6,16.9120188623319],[6,151.2373018466371],[6,15.1014339852116],[6,15.2525777355553],[6,14.8676228024331],[6,14.6905236594111],[6,13.5650365339644],[6,15.501624123181],[6,14.9052245495601],[6,16.193085922344],[7,17.1311815315521],[7,15.5936301214695],[null,17.4003893681051],[7,19.1995372967466],[7,17.1165768770684],[7,16.6101431389792],[7,16.3064080777418],[7,16.4499831889246],[7,17.1998062631998],[7,16.3200179065417],[8,21.4976391155975],[8,19.7173647639246],[8,20.1086483714947],[8,21.4382395207337],[8,21.5033185204169],[8,19.7872670329824],[8,20.3319742154884],[8,20.7350265843773],[8,19.8071445396502],[8,18.2219871470414],[9,23.1547057037031],[9,23.3943523048205],[9,22.915502614298],[9,21.5764553432867],[9,22.303972687692],[9,21.9092301811368],[9,22.2002887626721],[9,237.968851927266],[9,24.0295796333931],[9,23.1694181934096],[10,25.5487451197783],[10,25.6766289895558],[10,24.9877578133935],[10,24.9243365385129],[10,24.3263548126239],[10,24.9441325499499],[10,27.2599469866262],[10,25.8690393292538],[10,24.6578829765731],[10,24.5280733478664]]'
+data_json = json.loads(data_raw)
+globals()[dataframe_name] = pd.DataFrame(data_json[1:], columns=data_json[0]); print(f"DataFrame '{dataframe_name}' created | Shape: {globals()[dataframe_name].shape} | Columns: {list(globals()[dataframe_name].columns)}")
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the health report of the corrupted data
+data_corrupted.info()
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336895-11" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="From this report we can read that:
+
+- the `x [cm]` column now counts 98 *&quot;non-null&quot;* values, so two readings lost their length,
+- and the column type changed from `int64` to `float64`: a column that contains a `NaN` can no longer be a column of whole numbers,
+- the `F [N]` column still counts 100 values, and the report is perfectly happy with it. It should not be.
+
+**Where are the holes?** Two commands locate them:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336895-11" class="markdown-preview" style="display: block;" data-original-markdown="From this report we can read that:
+
+- the `x [cm]` column now counts 98 *&quot;non-null&quot;* values, so two readings lost their length,
+- and the column type changed from `int64` to `float64`: a column that contains a `NaN` can no longer be a column of whole numbers,
+- the `F [N]` column still counts 100 values, and the report is perfectly happy with it. It should not be.
+
+**Where are the holes?** Two commands locate them:"><p>From this report we can read that:</p>
+<ul>
+<li>the <code>x [cm]</code> column now counts 98 <em>"non-null"</em> values, so two readings lost their length,</li>
+<li>and the column type changed from <code>int64</code> to <code>float64</code>: a column that contains a <code>NaN</code> can no longer be a column of whole numbers,</li>
+<li>the <code>F [N]</code> column still counts 100 values, and the report is perfectly happy with it. It should not be.</li>
+</ul>
+<p><strong>Where are the holes?</strong> Two commands locate them:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># counting NaN values in the 'x [cm]' column
+data_corrupted['x [cm]'].isna().value_counts()
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># rows with NaN values
+data_corrupted.loc[data_corrupted['x [cm]'].isna(), :]
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336896-12" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="The second cell deserves to be taken apart:
+
+1. `data_corrupted` - the `DataFrame` being worked with, defined in the cell above.
+2. `.loc[]` - a method for accessing rows and columns of a `DataFrame` by names or by boolean conditions.
+3. `data_corrupted['x [cm]'].isna()` - this part builds a column of `True`/`False` answers: it selects the column named `&quot;x [cm]&quot;`, and `.isna()` asks of every row whether its value is missing.
+4. `:` - the colon after the comma means we want to see all columns. A single column would do too, `'x [cm]'`, or a list of them, `['x [cm]', 'F [N]']`.
+
+&gt; **Note:** Just as numbering in Python starts at zero, the rows of a `DataFrame` are numbered from zero as well: the row with index 21 is the 22nd row. And unlike a Python slice, a `.loc` slice includes both ends, so `data.loc[17:22, :]` shows six rows, not five.
+
+**What `.info()` cannot see.** A hole announces itself in the report. A typo does not: a force of 151 N written down where 15.1 N belonged is, as far as `.info()` is concerned, a perfectly good decimal number. Wrong values are caught by the eye, and the eye needs a picture:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336896-12" class="markdown-preview" style="display: block;" data-original-markdown="The second cell deserves to be taken apart:
+
+1. `data_corrupted` - the `DataFrame` being worked with, defined in the cell above.
+2. `.loc[]` - a method for accessing rows and columns of a `DataFrame` by names or by boolean conditions.
+3. `data_corrupted['x [cm]'].isna()` - this part builds a column of `True`/`False` answers: it selects the column named `&quot;x [cm]&quot;`, and `.isna()` asks of every row whether its value is missing.
+4. `:` - the colon after the comma means we want to see all columns. A single column would do too, `'x [cm]'`, or a list of them, `['x [cm]', 'F [N]']`.
+
+&gt; **Note:** Just as numbering in Python starts at zero, the rows of a `DataFrame` are numbered from zero as well: the row with index 21 is the 22nd row. And unlike a Python slice, a `.loc` slice includes both ends, so `data.loc[17:22, :]` shows six rows, not five.
+
+**What `.info()` cannot see.** A hole announces itself in the report. A typo does not: a force of 151 N written down where 15.1 N belonged is, as far as `.info()` is concerned, a perfectly good decimal number. Wrong values are caught by the eye, and the eye needs a picture:"><p>The second cell deserves to be taken apart:</p>
+<ol>
+<li><code>data_corrupted</code> - the <code>DataFrame</code> being worked with, defined in the cell above.</li>
+<li><code>.loc[]</code> - a method for accessing rows and columns of a <code>DataFrame</code> by names or by boolean conditions.</li>
+<li><code>data_corrupted['x [cm]'].isna()</code> - this part builds a column of <code>True</code>/<code>False</code> answers: it selects the column named <code>"x [cm]"</code>, and <code>.isna()</code> asks of every row whether its value is missing.</li>
+<li><code>:</code> - the colon after the comma means we want to see all columns. A single column would do too, <code>'x [cm]'</code>, or a list of them, <code>['x [cm]', 'F [N]']</code>.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> Just as numbering in Python starts at zero, the rows of a <code>DataFrame</code> are numbered from zero as well: the row with index 21 is the 22nd row. And unlike a Python slice, a <code>.loc</code> slice includes both ends, so <code>data.loc[17:22, :]</code> shows six rows, not five.</p>
+</blockquote>
+<p><strong>What <code>.info()</code> cannot see.</strong> A hole announces itself in the report. A typo does not: a force of 151 N written down where 15.1 N belonged is, as far as <code>.info()</code> is concerned, a perfectly good decimal number. Wrong values are caught by the eye, and the eye needs a picture:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># rows with a missing x have no position, so leave them out of the picture only
+data_corrupted_dropped = data_corrupted.dropna()
+
+scatter_corrupted = points(list(zip(data_corrupted_dropped['x [cm]'], data_corrupted_dropped['F [N]'])),
+                           axes_labels = [r'$x$ [cm]', r'$F$ [N]'], frame=True, gridlines=True)
+scatter_corrupted
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336897-13" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="The spring was pulled by hand, and the strongest pull of the whole session stayed near 30 N. Readings of 48, 151 and 238 N are not measurements, they are keystrokes. The physics sets the limits, so the physics can write the filter, and the tool is a *boolean mask*: a column of `True` and `False` answers, one per row, built by asking every reading the same questions at once:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336897-13" class="markdown-preview" style="display: block;" data-original-markdown="The spring was pulled by hand, and the strongest pull of the whole session stayed near 30 N. Readings of 48, 151 and 238 N are not measurements, they are keystrokes. The physics sets the limits, so the physics can write the filter, and the tool is a *boolean mask*: a column of `True` and `False` answers, one per row, built by asking every reading the same questions at once:"><p>The spring was pulled by hand, and the strongest pull of the whole session stayed near 30 N. Readings of 48, 151 and 238 N are not measurements, they are keystrokes. The physics sets the limits, so the physics can write the filter, and the tool is a <em>boolean mask</em>: a column of <code>True</code> and <code>False</code> answers, one per row, built by asking every reading the same questions at once:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># a mask that keeps only plausible readings: force positive, force below 40 N, length present
+mask_plausible = (data_corrupted['F [N]'] > 0) & (data_corrupted['F [N]'] < 40) & data_corrupted['x [cm]'].notna()
+
+data_corrupted_clean = data_corrupted[mask_plausible]
+len(data_corrupted_clean)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336898-14" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Each comparison asks its question of all rows at once and returns a column of answers, and `&amp;` glues the questions together: a row survives only if it passes all three. Indexing the table with the answers keeps the surviving rows whole, $x$ and $F$ together, and drops the rest. Five rows go: two holes, three typos.
+
+&gt; **Note:** `dropna()` is the built-in broom: `data_corrupted.dropna()` removes every row that contains a `NaN`, in any column. It sweeps out the holes in one line, but it cannot see the typos, because a typo is not missing, it is wrong. Masks ask the questions you choose. A broom only sweeps holes.
+
+The rest of the chapter works with the clean table `data` from 5.2. On a real day, the cleaning above comes first and everything after it runs on `data_corrupted_clean`." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336898-14" class="markdown-preview" style="display: block;" data-original-markdown="Each comparison asks its question of all rows at once and returns a column of answers, and `&amp;` glues the questions together: a row survives only if it passes all three. Indexing the table with the answers keeps the surviving rows whole, $x$ and $F$ together, and drops the rest. Five rows go: two holes, three typos.
+
+&gt; **Note:** `dropna()` is the built-in broom: `data_corrupted.dropna()` removes every row that contains a `NaN`, in any column. It sweeps out the holes in one line, but it cannot see the typos, because a typo is not missing, it is wrong. Masks ask the questions you choose. A broom only sweeps holes.
+
+The rest of the chapter works with the clean table `data` from 5.2. On a real day, the cleaning above comes first and everything after it runs on `data_corrupted_clean`."><p>Each comparison asks its question of all rows at once and returns a column of answers, and <code>&amp;</code> glues the questions together: a row survives only if it passes all three. Indexing the table with the answers keeps the surviving rows whole, $x$ and $F$ together, and drops the rest. Five rows go: two holes, three typos.</p>
+<blockquote>
+<p><strong>Note:</strong> <code>dropna()</code> is the built-in broom: <code>data_corrupted.dropna()</code> removes every row that contains a <code>NaN</code>, in any column. It sweeps out the holes in one line, but it cannot see the typos, because a typo is not missing, it is wrong. Masks ask the questions you choose. A broom only sweeps holes.</p>
+</blockquote>
+<p>The rest of the chapter works with the clean table <code>data</code> from 5.2. On a real day, the cleaning above comes first and everything after it runs on <code>data_corrupted_clean</code>.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336898-15" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.5 Modifying the data**
+
+Small fixes belong in the table itself. The lengths were measured in centimeters, but the model $F = kx$ wants meters, so the conversion becomes a new column:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336898-15" class="markdown-preview" style="display: block;" data-original-markdown="## **5.5 Modifying the data**
+
+Small fixes belong in the table itself. The lengths were measured in centimeters, but the model $F = kx$ wants meters, so the conversion becomes a new column:"><h2 id="55-modifying-the-data"><strong>5.5 Modifying the data</strong></h2>
+<p>Small fixes belong in the table itself. The lengths were measured in centimeters, but the model $F = kx$ wants meters, so the conversion becomes a new column:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># data preprocessing - conversion from cm to m
+data["x [m]"] = data["x [cm]"]/100
+
+# displaying a random sample of the data
+data.sample(n=10)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336898-16" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="One line, and the table has a third column: the name in brackets on the left is created (or overwritten) by whatever stands on the right. In data science this step goes by the name *data preprocessing* or *feature engineering*: reshaping the raw table so that whatever analysis comes downstream meets it ready. The unit conversion could also be done later by hand, on each value, but then every use of the length would have to remember the factor. A new column does the work once, where the data lives. `sample(n=10)` shows ten random rows, different ones each run. The table stays put, only the look changes." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336898-16" class="markdown-preview" style="display: block;" data-original-markdown="One line, and the table has a third column: the name in brackets on the left is created (or overwritten) by whatever stands on the right. In data science this step goes by the name *data preprocessing* or *feature engineering*: reshaping the raw table so that whatever analysis comes downstream meets it ready. The unit conversion could also be done later by hand, on each value, but then every use of the length would have to remember the factor. A new column does the work once, where the data lives. `sample(n=10)` shows ten random rows, different ones each run. The table stays put, only the look changes."><p>One line, and the table has a third column: the name in brackets on the left is created (or overwritten) by whatever stands on the right. In data science this step goes by the name <em>data preprocessing</em> or <em>feature engineering</em>: reshaping the raw table so that whatever analysis comes downstream meets it ready. The unit conversion could also be done later by hand, on each value, but then every use of the length would have to remember the factor. A new column does the work once, where the data lives. <code>sample(n=10)</code> shows ten random rows, different ones each run. The table stays put, only the look changes.</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># displaying rows in a specific range
+data.loc[17:22, :]
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336899-17" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.6 A first plot**
+
+Sage plots points as pairs $[x_i, F_i]$, so the two columns are first zipped together:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336899-17" class="markdown-preview" style="display: block;" data-original-markdown="## **5.6 A first plot**
+
+Sage plots points as pairs $[x_i, F_i]$, so the two columns are first zipped together:"><h2 id="56-a-first-plot"><strong>5.6 A first plot</strong></h2>
+<p>Sage plots points as pairs $[x_i, F_i]$, so the two columns are first zipped together:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># creating a list of pairs in the form (x_1, F_1), (x_2, F_2), ...
+data_points = list(zip(data["x [m]"], data["F [N]"]))
+
+# a sample of the points
+data_points[17:22]
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336899-18" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Note:** The `zip()` function joins corresponding values into pairs, like a zipper, and `list()` turns the result into a plain Python list. Such a list can also be typed by hand, e.g. `[[0.01, 4.19], [0.01, 2.03], ...]`. A list of pairs is exactly the shape the `points()` command accepts. To connect points with a line, there is `line()`.
+
+First the formatting, then the data. An empty plot carries the frame:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336899-18" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Note:** The `zip()` function joins corresponding values into pairs, like a zipper, and `list()` turns the result into a plain Python list. Such a list can also be typed by hand, e.g. `[[0.01, 4.19], [0.01, 2.03], ...]`. A list of pairs is exactly the shape the `points()` command accepts. To connect points with a line, there is `line()`.
+
+First the formatting, then the data. An empty plot carries the frame:"><blockquote>
+<p><strong>Note:</strong> The <code>zip()</code> function joins corresponding values into pairs, like a zipper, and <code>list()</code> turns the result into a plain Python list. Such a list can also be typed by hand, e.g. <code>[[0.01, 4.19], [0.01, 2.03], ...]</code>. A list of pairs is exactly the shape the <code>points()</code> command accepts. To connect points with a line, there is <code>line()</code>.</p>
+</blockquote>
+<p>First the formatting, then the data. An empty plot carries the frame:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># empty plot carrying the formatting: title and axis labels in LaTeX
+plot_format = plot([], title="Measurement of the dependence $F(x)$",
+                   axes_labels = [r"$x\;\mathrm{[m]}$", r"$F\;\mathrm{[N]}$"],
+                   frame=True, gridlines=True)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336900-19" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Note:** `plot([])` draws an empty list of curves, so it paints nothing, but it still accepts every formatting option a real plot does. When plots are combined with `+`, the options of all summands merge, so the empty plot carries the title, frame, gridlines and axis labels into the final picture, and saves retyping them into whichever plot happens to remain in the combination." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336900-19" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Note:** `plot([])` draws an empty list of curves, so it paints nothing, but it still accepts every formatting option a real plot does. When plots are combined with `+`, the options of all summands merge, so the empty plot carries the title, frame, gridlines and axis labels into the final picture, and saves retyping them into whichever plot happens to remain in the combination."><blockquote>
+<p><strong>Note:</strong> <code>plot([])</code> draws an empty list of curves, so it paints nothing, but it still accepts every formatting option a real plot does. When plots are combined with <code>+</code>, the options of all summands merge, so the empty plot carries the title, frame, gridlines and axis labels into the final picture, and saves retyping them into whichever plot happens to remain in the combination.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the measured data as points
+measurement_plot = points(data_points, xmin=0, color='gray')
+
+# the resulting plot by "adding" plots together
+final_plot = measurement_plot + plot_format
+final_plot
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># saving the resulting plot as png, dpi sets the image quality
+final_plot.save("measurement_plot.png", dpi=300)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336900-20" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="It is worth noting that SageMath exports any plot as publication-quality graphics through `.save()`: the format follows the file extension (`png`, `pdf`, `svg`, ...), and the resolution of a pixel format such as `png` is controlled by `dpi` (*dots per inch*, the number of pixels the exporter packs into one inch of the picture). The default `dpi=100` is fine for the screen; `dpi=300` is the standard for print and leaves zooming room in a thesis. Vector formats like `pdf` need no `dpi` at all: they store the geometry itself, so they stay sharp at any magnification." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336900-20" class="markdown-preview" style="display: block;" data-original-markdown="It is worth noting that SageMath exports any plot as publication-quality graphics through `.save()`: the format follows the file extension (`png`, `pdf`, `svg`, ...), and the resolution of a pixel format such as `png` is controlled by `dpi` (*dots per inch*, the number of pixels the exporter packs into one inch of the picture). The default `dpi=100` is fine for the screen; `dpi=300` is the standard for print and leaves zooming room in a thesis. Vector formats like `pdf` need no `dpi` at all: they store the geometry itself, so they stay sharp at any magnification."><p>It is worth noting that SageMath exports any plot as publication-quality graphics through <code>.save()</code>: the format follows the file extension (<code>png</code>, <code>pdf</code>, <code>svg</code>, ...), and the resolution of a pixel format such as <code>png</code> is controlled by <code>dpi</code> (<em>dots per inch</em>, the number of pixels the exporter packs into one inch of the picture). The default <code>dpi=100</code> is fine for the screen; <code>dpi=300</code> is the standard for print and leaves zooming room in a thesis. Vector formats like <code>pdf</code> need no <code>dpi</code> at all: they store the geometry itself, so they stay sharp at any magnification.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336900-21" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.7 Averaging the repeats**
+
+Ten readings at one length are ten looks at the same pull. The scatter between them is the hand and the meter, not the spring. To see the spring, each length's ten readings collapse into a mean and a scatter:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336900-21" class="markdown-preview" style="display: block;" data-original-markdown="## **5.7 Averaging the repeats**
+
+Ten readings at one length are ten looks at the same pull. The scatter between them is the hand and the meter, not the spring. To see the spring, each length's ten readings collapse into a mean and a scatter:"><h2 id="57-averaging-the-repeats"><strong>5.7 Averaging the repeats</strong></h2>
+<p>Ten readings at one length are ten looks at the same pull. The scatter between them is the hand and the meter, not the spring. To see the spring, each length's ten readings collapse into a mean and a scatter:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># statistics from the data - means and standard deviation (std)
+stats = data.groupby("x [m]")["F [N]"].agg(["mean", "std"]).reset_index()
+stats
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336901-22" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="The line does four jobs, one after another:
+
+1. `data.groupby(&quot;x [m]&quot;)` sorts the hundred rows into ten groups, one per length.
+2. `[&quot;F [N]&quot;]` selects the column to compute on.
+3. `.agg([&quot;mean&quot;, &quot;std&quot;])` asks for two numbers per group: the mean and the standard deviation of its forces.
+4. `.reset_index()` turns the result back into a plain table, with `x [m]` as an ordinary column.
+
+The result is a new `DataFrame`, `stats`, one row per length: where that length's readings sit on average, and how far a typical reading strays from that average, in newtons. Doing the same in Excel is possible. Doing it in one line that survives a change of data is the reason this chapter exists." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336901-22" class="markdown-preview" style="display: block;" data-original-markdown="The line does four jobs, one after another:
+
+1. `data.groupby(&quot;x [m]&quot;)` sorts the hundred rows into ten groups, one per length.
+2. `[&quot;F [N]&quot;]` selects the column to compute on.
+3. `.agg([&quot;mean&quot;, &quot;std&quot;])` asks for two numbers per group: the mean and the standard deviation of its forces.
+4. `.reset_index()` turns the result back into a plain table, with `x [m]` as an ordinary column.
+
+The result is a new `DataFrame`, `stats`, one row per length: where that length's readings sit on average, and how far a typical reading strays from that average, in newtons. Doing the same in Excel is possible. Doing it in one line that survives a change of data is the reason this chapter exists."><p>The line does four jobs, one after another:</p>
+<ol>
+<li><code>data.groupby("x [m]")</code> sorts the hundred rows into ten groups, one per length.</li>
+<li><code>["F [N]"]</code> selects the column to compute on.</li>
+<li><code>.agg(["mean", "std"])</code> asks for two numbers per group: the mean and the standard deviation of its forces.</li>
+<li><code>.reset_index()</code> turns the result back into a plain table, with <code>x [m]</code> as an ordinary column.</li>
+</ol>
+<p>The result is a new <code>DataFrame</code>, <code>stats</code>, one row per length: where that length's readings sit on average, and how far a typical reading strays from that average, in newtons. Doing the same in Excel is possible. Doing it in one line that survives a change of data is the reason this chapter exists.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336901-23" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.8 Error bars, homemade**
+
+A mean without its scatter is half a number. The scatter belongs on the plot, as an *error bar*: a small line through the point, running from the value minus its uncertainty to the value plus its uncertainty. Sage has no ready-made command for that, which makes the error bar a good excuse to meet the homemade function: a recipe with a name, parameters in, one value out. One function per axis:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336901-23" class="markdown-preview" style="display: block;" data-original-markdown="## **5.8 Error bars, homemade**
+
+A mean without its scatter is half a number. The scatter belongs on the plot, as an *error bar*: a small line through the point, running from the value minus its uncertainty to the value plus its uncertainty. Sage has no ready-made command for that, which makes the error bar a good excuse to meet the homemade function: a recipe with a name, parameters in, one value out. One function per axis:"><h2 id="58-error-bars-homemade"><strong>5.8 Error bars, homemade</strong></h2>
+<p>A mean without its scatter is half a number. The scatter belongs on the plot, as an <em>error bar</em>: a small line through the point, running from the value minus its uncertainty to the value plus its uncertainty. Sage has no ready-made command for that, which makes the error bar a good excuse to meet the homemade function: a recipe with a name, parameters in, one value out. One function per axis:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># horizontal bar: x runs from x - dx to x + dx, at height y
+def x_errorbar(x, y, dx):
+    return line([(x - dx, y), (x + dx, y)], color='lime', thickness=1.5)
+
+# vertical bar: y runs from y - dy to y + dy, at position x
+def y_errorbar(x, y, dy):
+    return line([(x, y - dy), (x, y + dy)], color='lime', thickness=1.5)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336901-24" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="`def` gives the recipe its name, the parentheses list what it needs to know, and the indented body runs only when the function is called. A call like `y_errorbar(0.06, 15.2, 1.2)` computes one gray line and hands it back. That is the work of `return`: the function's answer is a value like any other, ready to be stored, listed or summed. The three numbers in the call fill the three parameters in order: position, height, half-length of the bar.
+
+The uncertainties are the chapter's own. The lengths were marked with a meter stick, good to half a millimeter: $\Delta x = 0.0005~\mathrm{m}$. The force scatter is already computed, it is the `std` column of `stats`. Feed the functions the ten means, one comprehension per axis:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336901-24" class="markdown-preview" style="display: block;" data-original-markdown="`def` gives the recipe its name, the parentheses list what it needs to know, and the indented body runs only when the function is called. A call like `y_errorbar(0.06, 15.2, 1.2)` computes one gray line and hands it back. That is the work of `return`: the function's answer is a value like any other, ready to be stored, listed or summed. The three numbers in the call fill the three parameters in order: position, height, half-length of the bar.
+
+The uncertainties are the chapter's own. The lengths were marked with a meter stick, good to half a millimeter: $\Delta x = 0.0005~\mathrm{m}$. The force scatter is already computed, it is the `std` column of `stats`. Feed the functions the ten means, one comprehension per axis:"><p><code>def</code> gives the recipe its name, the parentheses list what it needs to know, and the indented body runs only when the function is called. A call like <code>y_errorbar(0.06, 15.2, 1.2)</code> computes one gray line and hands it back. That is the work of <code>return</code>: the function's answer is a value like any other, ready to be stored, listed or summed. The three numbers in the call fill the three parameters in order: position, height, half-length of the bar.</p>
+<p>The uncertainties are the chapter's own. The lengths were marked with a meter stick, good to half a millimeter: $\Delta x = 0.0005~\mathrm{m}$. The force scatter is already computed, it is the <code>std</code> column of <code>stats</code>. Feed the functions the ten means, one comprehension per axis:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># error bars on the means: x to half a millimeter, y to one standard deviation
+x_bars = [x_errorbar(xm, m, 0.0005) for xm, m in zip(stats['x [m]'], stats['mean'])]
+y_bars = [y_errorbar(xm, m, s) for xm, m, s in zip(stats['x [m]'], stats['mean'], stats['std'])]
+
+# the means as large red points on top of the raw data
+plot_means = points(list(zip(stats['x [m]'], stats['mean'])), size=40, color='red', zorder=-200)
+
+err_plot = plot_means + measurement_plot + sum(x_bars + y_bars)
+err_plot.show(figsize=12)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336901-25" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="The `.show()` call ends with `figsize`, and the word is new, so it deserves a look. `figsize` sets the physical size of the picture, in inches: a pair such as `figsize=[12, 6]` means twelve inches wide and six tall. A single number, as here, means a square, `figsize=12` standing for `[12, 12]`. The scene itself is not stretched: SageMath keeps the plot's own aspect and draws the frame inside the figure, so the data never gets distorted, only the canvas grows.
+
+The canvas has to grow here, because the picture is dense: a hundred gray points, ten red means and twenty thin bars share one frame. On a small default canvas the horizontal bars, barely a millimeter long, would drown. Enlarging the figure enlarges every label, tick and bar with it, so at `figsize=12` the error bars are clearly visible. `figsize` works the same everywhere a plot appears: in `show()`, in `save()`, or straight in `plot()` and `points()`.
+
+&gt; **Note:** The pieces join by addition: in SageMath, one graphic plus another draws both in the same picture. `sum(bars, start)` is plain Python doing that addition in a loop, beginning at `start`, here the raw scatter with the red means, and joining every bar to it. The functions are chapter property now: any plot that needs doubt attached can call them.
+
+&gt; **Note:** The vertical bar drawn here is one standard deviation of the *readings*. The *mean* of ten is steadier than any single reading, its own uncertainty being $\mathrm{std}/\sqrt{10}$, the standard error of the mean. Exercise 5.4 asks what the picture says when that bar is drawn instead." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336901-25" class="markdown-preview" style="display: block;" data-original-markdown="The `.show()` call ends with `figsize`, and the word is new, so it deserves a look. `figsize` sets the physical size of the picture, in inches: a pair such as `figsize=[12, 6]` means twelve inches wide and six tall. A single number, as here, means a square, `figsize=12` standing for `[12, 12]`. The scene itself is not stretched: SageMath keeps the plot's own aspect and draws the frame inside the figure, so the data never gets distorted, only the canvas grows.
+
+The canvas has to grow here, because the picture is dense: a hundred gray points, ten red means and twenty thin bars share one frame. On a small default canvas the horizontal bars, barely a millimeter long, would drown. Enlarging the figure enlarges every label, tick and bar with it, so at `figsize=12` the error bars are clearly visible. `figsize` works the same everywhere a plot appears: in `show()`, in `save()`, or straight in `plot()` and `points()`.
+
+&gt; **Note:** The pieces join by addition: in SageMath, one graphic plus another draws both in the same picture. `sum(bars, start)` is plain Python doing that addition in a loop, beginning at `start`, here the raw scatter with the red means, and joining every bar to it. The functions are chapter property now: any plot that needs doubt attached can call them.
+
+&gt; **Note:** The vertical bar drawn here is one standard deviation of the *readings*. The *mean* of ten is steadier than any single reading, its own uncertainty being $\mathrm{std}/\sqrt{10}$, the standard error of the mean. Exercise 5.4 asks what the picture says when that bar is drawn instead."><p>The <code>.show()</code> call ends with <code>figsize</code>, and the word is new, so it deserves a look. <code>figsize</code> sets the physical size of the picture, in inches: a pair such as <code>figsize=[12, 6]</code> means twelve inches wide and six tall. A single number, as here, means a square, <code>figsize=12</code> standing for <code>[12, 12]</code>. The scene itself is not stretched: SageMath keeps the plot's own aspect and draws the frame inside the figure, so the data never gets distorted, only the canvas grows.</p>
+<p>The canvas has to grow here, because the picture is dense: a hundred gray points, ten red means and twenty thin bars share one frame. On a small default canvas the horizontal bars, barely a millimeter long, would drown. Enlarging the figure enlarges every label, tick and bar with it, so at <code>figsize=12</code> the error bars are clearly visible. <code>figsize</code> works the same everywhere a plot appears: in <code>show()</code>, in <code>save()</code>, or straight in <code>plot()</code> and <code>points()</code>.</p>
+<blockquote>
+<p><strong>Note:</strong> The pieces join by addition: in SageMath, one graphic plus another draws both in the same picture. <code>sum(bars, start)</code> is plain Python doing that addition in a loop, beginning at <code>start</code>, here the raw scatter with the red means, and joining every bar to it. The functions are chapter property now: any plot that needs doubt attached can call them.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> The vertical bar drawn here is one standard deviation of the <em>readings</em>. The <em>mean</em> of ten is steadier than any single reading, its own uncertainty being $\mathrm{std}/\sqrt{10}$, the standard error of the mean. Exercise 5.4 asks what the picture says when that bar is drawn instead.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336901-26" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.9 Fitting the model**
+
+Now for the spring constant itself. The model is $F = kx$ with $k$ unknown, and in Sage a model is written before it is used:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336901-26" class="markdown-preview" style="display: block;" data-original-markdown="## **5.9 Fitting the model**
+
+Now for the spring constant itself. The model is $F = kx$ with $k$ unknown, and in Sage a model is written before it is used:"><h2 id="59-fitting-the-model"><strong>5.9 Fitting the model</strong></h2>
+<p>Now for the spring constant itself. The model is $F = kx$ with $k$ unknown, and in Sage a model is written before it is used:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># variables appearing in the model - the spring constant k and the extension x
+k = var("k")
+x = var("x")
+
+# defining the model
+F(x) = k*x
+
+# displaying for check
+show(F)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336901-27" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="What goes into the fit? It can be all hundred raw points from `data_points`. A calmer choice is the ten means, one per length: the repeats are already averaged, and the fit asks ten questions instead of a hundred. The fitted points, then:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336901-27" class="markdown-preview" style="display: block;" data-original-markdown="What goes into the fit? It can be all hundred raw points from `data_points`. A calmer choice is the ten means, one per length: the repeats are already averaged, and the fit asks ten questions instead of a hundred. The fitted points, then:"><p>What goes into the fit? It can be all hundred raw points from <code>data_points</code>. A calmer choice is the ten means, one per length: the repeats are already averaged, and the fit asks ten questions instead of a hundred. The fitted points, then:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the fitted data: one (x, mean F) pair per length
+x_F_means = list(zip(stats['x [m]'], stats['mean']))
+x_F_means
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336901-28" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="The fitting itself is one command. `find_fit()` takes the list of points first and the model second, and hunts for the parameter values that bring the model as close to the points as possible:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336901-28" class="markdown-preview" style="display: block;" data-original-markdown="The fitting itself is one command. `find_fit()` takes the list of points first and the model second, and hunts for the parameter values that bring the model as close to the points as possible:"><p>The fitting itself is one command. <code>find_fit()</code> takes the list of points first and the model second, and hunts for the parameter values that bring the model as close to the points as possible:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># finding the parameter k, output in the form of a Python dictionary
+fit = find_fit(x_F_means, F, solution_dict=True)
+fit
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336902-29" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Note:** With `solution_dict=True` the answer comes back as a Python dictionary, a `key: value` pair that later code reads by name, as in `fit[k]`. What does the output look like without it, or with `solution_dict=False`? Try it and see." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336902-29" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Note:** With `solution_dict=True` the answer comes back as a Python dictionary, a `key: value` pair that later code reads by name, as in `fit[k]`. What does the output look like without it, or with `solution_dict=False`? Try it and see."><blockquote>
+<p><strong>Note:</strong> With <code>solution_dict=True</code> the answer comes back as a Python dictionary, a <code>key: value</code> pair that later code reads by name, as in <code>fit[k]</code>. What does the output look like without it, or with <code>solution_dict=False</code>? Try it and see.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336902-30" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.10 The result**
+
+The fit reports a spring constant of roughly $k \doteq 250~\mathrm{N/m}$. Whether that number describes the data is a question for the eyes, so the fitted line goes onto the plot. First, the found value is substituted into the symbolic model:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336902-30" class="markdown-preview" style="display: block;" data-original-markdown="## **5.10 The result**
+
+The fit reports a spring constant of roughly $k \doteq 250~\mathrm{N/m}$. Whether that number describes the data is a question for the eyes, so the fitted line goes onto the plot. First, the found value is substituted into the symbolic model:"><h2 id="510-the-result"><strong>5.10 The result</strong></h2>
+<p>The fit reports a spring constant of roughly $k \doteq 250~\mathrm{N/m}$. Whether that number describes the data is a question for the eyes, so the fitted line goes onto the plot. First, the found value is substituted into the symbolic model:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># substituting the numerical value of the parameter k into the original model
+F_fit(x) = F(x).subs(fit)
+
+# check
+F_fit
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># plotting the model with the found fitted value of the parameter k
+fit_label = rf"Fit, $k = $ {round(fit[k], 2)} N/m"
+plot_fit = plot(F_fit, xmin=0, xmax=0.1, legend_label=fit_label, color='orange', linestyle='--') # the fit will be a dashed orange line
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336902-31" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; **Note:** The label is built by string formatting. The `f` before the quotes lets the code drop values into the text between braces, here the fitted `k`, read from the dictionary as `fit[k]` and rounded to two decimals by `round(fit[k], 2)`. The `r` before the quotes, as elsewhere, keeps the string raw so the $\LaTeX$ commands inside pass through untouched. This is why building the label from the dictionary beats typing the number into the quotes: when the data changes, the refit changes `fit[k]`, and the label - and the legend - update in the next run by themselves. A hand-typed label tells the truth once; a formatted label keeps telling it." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336902-31" class="markdown-preview" style="display: block;" data-original-markdown="&gt; **Note:** The label is built by string formatting. The `f` before the quotes lets the code drop values into the text between braces, here the fitted `k`, read from the dictionary as `fit[k]` and rounded to two decimals by `round(fit[k], 2)`. The `r` before the quotes, as elsewhere, keeps the string raw so the $\LaTeX$ commands inside pass through untouched. This is why building the label from the dictionary beats typing the number into the quotes: when the data changes, the refit changes `fit[k]`, and the label - and the legend - update in the next run by themselves. A hand-typed label tells the truth once; a formatted label keeps telling it."><blockquote>
+<p><strong>Note:</strong> The label is built by string formatting. The <code>f</code> before the quotes lets the code drop values into the text between braces, here the fitted <code>k</code>, read from the dictionary as <code>fit[k]</code> and rounded to two decimals by <code>round(fit[k], 2)</code>. The <code>r</code> before the quotes, as elsewhere, keeps the string raw so the $\LaTeX$ commands inside pass through untouched. This is why building the label from the dictionary beats typing the number into the quotes: when the data changes, the refit changes <code>fit[k]</code>, and the label - and the legend - update in the next run by themselves. A hand-typed label tells the truth once; a formatted label keeps telling it.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">final_plot_fit = plot_fit + err_plot + plot_format
+final_plot_fit.show(figsize=12)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># saving the resulting plot
+final_plot_fit.save("final_plot_fit.png", figsize=12, dpi=300)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336903-32" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="That is the whole job of data processing, done: a hundred doubtful readings in, one number with its picture out. The line starts where Hooke's law says it must, zero force at zero stretch, and crosses the scatter at every length, so the value of $k$ it carries can be believed to about the width of those bars.
+
+**Beyond straight lines.** A straight line through the origin is the most forgiving model in physics, and fitting it is routine work: any spreadsheet, any click-and-pick fitting tool does it. The power of SageMath shows elsewhere. Suppose the physics is not Hooke's law but the pull between two stacks of magnets being pulled apart: the attraction is strongest at contact and dies away with distance, and an experimental formula for it reads
+
+$$F(x) = F_0\left(1 - \tanh\frac{x}{a}\right)\, e^{-x/a}$$
+
+a hyperbolic tangent damped by an exponential, with two parameters: the pull scale $F_0$ and the range $a$. Written in Sage, it is just another model:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336903-32" class="markdown-preview" style="display: block;" data-original-markdown="That is the whole job of data processing, done: a hundred doubtful readings in, one number with its picture out. The line starts where Hooke's law says it must, zero force at zero stretch, and crosses the scatter at every length, so the value of $k$ it carries can be believed to about the width of those bars.
+
+**Beyond straight lines.** A straight line through the origin is the most forgiving model in physics, and fitting it is routine work: any spreadsheet, any click-and-pick fitting tool does it. The power of SageMath shows elsewhere. Suppose the physics is not Hooke's law but the pull between two stacks of magnets being pulled apart: the attraction is strongest at contact and dies away with distance, and an experimental formula for it reads
+
+$$F(x) = F_0\left(1 - \tanh\frac{x}{a}\right)\, e^{-x/a}$$
+
+a hyperbolic tangent damped by an exponential, with two parameters: the pull scale $F_0$ and the range $a$. Written in Sage, it is just another model:"><p>That is the whole job of data processing, done: a hundred doubtful readings in, one number with its picture out. The line starts where Hooke's law says it must, zero force at zero stretch, and crosses the scatter at every length, so the value of $k$ it carries can be believed to about the width of those bars.</p>
+<p><strong>Beyond straight lines.</strong> A straight line through the origin is the most forgiving model in physics, and fitting it is routine work: any spreadsheet, any click-and-pick fitting tool does it. The power of SageMath shows elsewhere. Suppose the physics is not Hooke's law but the pull between two stacks of magnets being pulled apart: the attraction is strongest at contact and dies away with distance, and an experimental formula for it reads</p>
+<p>$$F(x) = F_0\left(1 - \tanh\frac{x}{a}\right)\, e^{-x/a}$$</p>
+<p>a hyperbolic tangent damped by an exponential, with two parameters: the pull scale $F_0$ and the range $a$. Written in Sage, it is just another model:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># variables of the magnet model
+F0, a, x = var("F0 a x")
+
+# defining the model
+F_magnet(x) = F0 * (1 - tanh(x/a)) * exp(-x/a)
+
+# a quick look at the model's shape with sample values F0 = 3.5 N, a = 1 cm
+plot(F_magnet.subs(F0=3.5, a=0.01), xmin=0, xmax=0.05, axes_labels=[r"$x$ [m]", r"$F$ [N]"], frame=True, gridlines=True)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336904-33" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="The curve starts at its maximum $F_0$ and falls smoothly to zero, at a pace the two parameters control. A model like this has no entry in the dropdown menu of a click-and-pick tool, where &quot;linear&quot;, &quot;polynomial&quot; and &quot;exponential&quot; live - the $\tanh$ alone is built from exponentials, $\tanh u = (e^{2u} - 1)/(e^{2u} + 1)$, which is why formulas of this shape are often called *nontrivial*. That is exactly where a symbolic tool earns its keep: SageMath fits nearly any formula that can be written down. Type the model, hand it to `find_fit`, and the parameters come out. The same recipe as with the spring, only the model is heavier.
+
+&gt; **Note:** The data in this chapter was randomly generated and serves only to show how repeated measurements of this kind are processed. Real springs, real holes and real typos behave exactly the same way." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336904-33" class="markdown-preview" style="display: block;" data-original-markdown="The curve starts at its maximum $F_0$ and falls smoothly to zero, at a pace the two parameters control. A model like this has no entry in the dropdown menu of a click-and-pick tool, where &quot;linear&quot;, &quot;polynomial&quot; and &quot;exponential&quot; live - the $\tanh$ alone is built from exponentials, $\tanh u = (e^{2u} - 1)/(e^{2u} + 1)$, which is why formulas of this shape are often called *nontrivial*. That is exactly where a symbolic tool earns its keep: SageMath fits nearly any formula that can be written down. Type the model, hand it to `find_fit`, and the parameters come out. The same recipe as with the spring, only the model is heavier.
+
+&gt; **Note:** The data in this chapter was randomly generated and serves only to show how repeated measurements of this kind are processed. Real springs, real holes and real typos behave exactly the same way."><p>The curve starts at its maximum $F_0$ and falls smoothly to zero, at a pace the two parameters control. A model like this has no entry in the dropdown menu of a click-and-pick tool, where "linear", "polynomial" and "exponential" live - the $\tanh$ alone is built from exponentials, $\tanh u = (e^{2u} - 1)/(e^{2u} + 1)$, which is why formulas of this shape are often called <em>nontrivial</em>. That is exactly where a symbolic tool earns its keep: SageMath fits nearly any formula that can be written down. Type the model, hand it to <code>find_fit</code>, and the parameters come out. The same recipe as with the spring, only the model is heavier.</p>
+<blockquote>
+<p><strong>Note:</strong> The data in this chapter was randomly generated and serves only to show how repeated measurements of this kind are processed. Real springs, real holes and real typos behave exactly the same way.</p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336904-34" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.11 Exercises**
+
+**5.1 Two brooms.** Clean `data_corrupted` with `dropna()` alone and count the survivors with `len()`. Why does the count differ from `len(data_corrupted_clean)`? Then combine the tools, the plausibility mask first and `dropna()` after, and explain why the order does not matter here.
+
+**5.2 The typo's damage.** Before cleaning, recompute the mean and the std of the 6 cm group of `data_corrupted` twice: once with the 151 N reading in, once with it masked out. Which number does the typo hurt more, the mean or the std? What would it have done to the fitted $k$, had it survived into `x_F_means`?
+
+**5.3 Your own file.** Save the spring data as a csv file on your computer and load it in a local Jupyter with `read_csv`. Compare the loading with the button cell of 5.2: what traveled to the cloud as text there, and what never leaves the disk here? Check the arrival with `.info()`.
+
+**5.4 A bar for the mean.** Redraw the plot of 5.8 with vertical bars of the standard error of the mean, `std/sqrt(10)`, instead of the std. Which of the two bars describes the red point, and which belongs to the gray ones? One sentence each.
+
+**5.5 All hundred points.** Run `find_fit` on the raw `data_points` instead of the ten means. Does the fitted $k$ move? Give one reason the two fits agree so well, and one situation, think of a typo surviving the cleaning, where they would not." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336904-34" class="markdown-preview" style="display: block;" data-original-markdown="## **5.11 Exercises**
+
+**5.1 Two brooms.** Clean `data_corrupted` with `dropna()` alone and count the survivors with `len()`. Why does the count differ from `len(data_corrupted_clean)`? Then combine the tools, the plausibility mask first and `dropna()` after, and explain why the order does not matter here.
+
+**5.2 The typo's damage.** Before cleaning, recompute the mean and the std of the 6 cm group of `data_corrupted` twice: once with the 151 N reading in, once with it masked out. Which number does the typo hurt more, the mean or the std? What would it have done to the fitted $k$, had it survived into `x_F_means`?
+
+**5.3 Your own file.** Save the spring data as a csv file on your computer and load it in a local Jupyter with `read_csv`. Compare the loading with the button cell of 5.2: what traveled to the cloud as text there, and what never leaves the disk here? Check the arrival with `.info()`.
+
+**5.4 A bar for the mean.** Redraw the plot of 5.8 with vertical bars of the standard error of the mean, `std/sqrt(10)`, instead of the std. Which of the two bars describes the red point, and which belongs to the gray ones? One sentence each.
+
+**5.5 All hundred points.** Run `find_fit` on the raw `data_points` instead of the ten means. Does the fitted $k$ move? Give one reason the two fits agree so well, and one situation, think of a typo surviving the cleaning, where they would not."><h2 id="511-exercises"><strong>5.11 Exercises</strong></h2>
+<p><strong>5.1 Two brooms.</strong> Clean <code>data_corrupted</code> with <code>dropna()</code> alone and count the survivors with <code>len()</code>. Why does the count differ from <code>len(data_corrupted_clean)</code>? Then combine the tools, the plausibility mask first and <code>dropna()</code> after, and explain why the order does not matter here.</p>
+<p><strong>5.2 The typo's damage.</strong> Before cleaning, recompute the mean and the std of the 6 cm group of <code>data_corrupted</code> twice: once with the 151 N reading in, once with it masked out. Which number does the typo hurt more, the mean or the std? What would it have done to the fitted $k$, had it survived into <code>x_F_means</code>?</p>
+<p><strong>5.3 Your own file.</strong> Save the spring data as a csv file on your computer and load it in a local Jupyter with <code>read_csv</code>. Compare the loading with the button cell of 5.2: what traveled to the cloud as text there, and what never leaves the disk here? Check the arrival with <code>.info()</code>.</p>
+<p><strong>5.4 A bar for the mean.</strong> Redraw the plot of 5.8 with vertical bars of the standard error of the mean, <code>std/sqrt(10)</code>, instead of the std. Which of the two bars describes the red point, and which belongs to the gray ones? One sentence each.</p>
+<p><strong>5.5 All hundred points.</strong> Run <code>find_fit</code> on the raw <code>data_points</code> instead of the ten means. Does the fitted $k$ move? Give one reason the two fits agree so well, and one situation, think of a typo surviving the cleaning, where they would not.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137336904-35" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **5.12 Summary**
+
+* **DataFrames.** The `pandas` table: rows, named columns, one row per measurement with the length repeated in its own column (*long format*). A tidy spreadsheet - one table per file, column names in the first row, data top to bottom - loads in one line. Every tool in this chapter feeds on that shape.
+* **Import/Export Excel.** In our notebook, the grid-icon button flattens an `.xlsx` into text and writes the loading cell for you. In a local Jupyter, `read_excel` and `read_csv` read the file from disk. Numbers use decimal points, never commas.
+* **`.info()` and `.isna()`.** The health report counts the holes (`NaN`) and names the column types. It cannot see wrong values. For those, the eye and a plot.
+* **Data cleaning.** Holes go out with `dropna()`, wrong values with a *boolean mask*: a comparison asks its question of every row at once, `&amp;` glues questions together, and indexing with the answers keeps the passing rows whole.
+* **Data preprocessing.** `data[&quot;x [m]&quot;] = data[&quot;x [cm]&quot;]/100` adds the unit conversion where the data lives; `sample()` and `.loc` give a look inside.
+* **`groupby` and `agg`.** Ten repeats per length collapse to a mean and a std, in one line that survives a change of data.
+* **Homemade functions.** `def` wraps a recipe in a name, parameters in, `return` hands one value out: `x_errorbar` and `y_errorbar` turn a missing command into a three-line tool any plot can call. `figsize` grows the canvas so thin bars stay readable.
+* **`find_fit`.** Points in, model in, parameter out. With `solution_dict=True` the answer is a dictionary the next cell reads by name. Straight lines are routine work for any tool; for a nontrivial model like $F_0(1-\tanh(x/a))e^{-x/a}$, a formula SageMath fits and a dropdown menu does not even list, this is where a symbolic tool earns its keep." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137336904-35" class="markdown-preview" style="display: block;" data-original-markdown="## **5.12 Summary**
+
+* **DataFrames.** The `pandas` table: rows, named columns, one row per measurement with the length repeated in its own column (*long format*). A tidy spreadsheet - one table per file, column names in the first row, data top to bottom - loads in one line. Every tool in this chapter feeds on that shape.
+* **Import/Export Excel.** In our notebook, the grid-icon button flattens an `.xlsx` into text and writes the loading cell for you. In a local Jupyter, `read_excel` and `read_csv` read the file from disk. Numbers use decimal points, never commas.
+* **`.info()` and `.isna()`.** The health report counts the holes (`NaN`) and names the column types. It cannot see wrong values. For those, the eye and a plot.
+* **Data cleaning.** Holes go out with `dropna()`, wrong values with a *boolean mask*: a comparison asks its question of every row at once, `&amp;` glues questions together, and indexing with the answers keeps the passing rows whole.
+* **Data preprocessing.** `data[&quot;x [m]&quot;] = data[&quot;x [cm]&quot;]/100` adds the unit conversion where the data lives; `sample()` and `.loc` give a look inside.
+* **`groupby` and `agg`.** Ten repeats per length collapse to a mean and a std, in one line that survives a change of data.
+* **Homemade functions.** `def` wraps a recipe in a name, parameters in, `return` hands one value out: `x_errorbar` and `y_errorbar` turn a missing command into a three-line tool any plot can call. `figsize` grows the canvas so thin bars stay readable.
+* **`find_fit`.** Points in, model in, parameter out. With `solution_dict=True` the answer is a dictionary the next cell reads by name. Straight lines are routine work for any tool; for a nontrivial model like $F_0(1-\tanh(x/a))e^{-x/a}$, a formula SageMath fits and a dropdown menu does not even list, this is where a symbolic tool earns its keep."><h2 id="512-summary"><strong>5.12 Summary</strong></h2>
+<ul>
+<li><strong>DataFrames.</strong> The <code>pandas</code> table: rows, named columns, one row per measurement with the length repeated in its own column (<em>long format</em>). A tidy spreadsheet - one table per file, column names in the first row, data top to bottom - loads in one line. Every tool in this chapter feeds on that shape.</li>
+<li><strong>Import/Export Excel.</strong> In our notebook, the grid-icon button flattens an <code>.xlsx</code> into text and writes the loading cell for you. In a local Jupyter, <code>read_excel</code> and <code>read_csv</code> read the file from disk. Numbers use decimal points, never commas.</li>
+<li><strong><code>.info()</code> and <code>.isna()</code>.</strong> The health report counts the holes (<code>NaN</code>) and names the column types. It cannot see wrong values. For those, the eye and a plot.</li>
+<li><strong>Data cleaning.</strong> Holes go out with <code>dropna()</code>, wrong values with a <em>boolean mask</em>: a comparison asks its question of every row at once, <code>&amp;</code> glues questions together, and indexing with the answers keeps the passing rows whole.</li>
+<li><strong>Data preprocessing.</strong> <code>data["x [m]"] = data["x [cm]"]/100</code> adds the unit conversion where the data lives; <code>sample()</code> and <code>.loc</code> give a look inside.</li>
+<li><strong><code>groupby</code> and <code>agg</code>.</strong> Ten repeats per length collapse to a mean and a std, in one line that survives a change of data.</li>
+<li><strong>Homemade functions.</strong> <code>def</code> wraps a recipe in a name, parameters in, <code>return</code> hands one value out: <code>x_errorbar</code> and <code>y_errorbar</code> turn a missing command into a three-line tool any plot can call. <code>figsize</code> grows the canvas so thin bars stay readable.</li>
+<li><strong><code>find_fit</code>.</strong> Points in, model in, parameter out. With <code>solution_dict=True</code> the answer is a dictionary the next cell reads by name. Straight lines are routine work for any tool; for a nontrivial model like $F_0(1-\tanh(x/a))e^{-x/a}$, a formula SageMath fits and a dropdown menu does not even list, this is where a symbolic tool earns its keep.</li>
+</ul>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># empty cells for exercises/experiments - feel free to add new cells anywhere by clicking "Add Below" button
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">
+</script></div></div></div></div></div>
+            
+        </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/embedded_sagecell_backup.js"></script>
+<script src="https://sage-sk.org/embedded_sagecell.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/FileSaver.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/nbplayerConfig.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/comment/comment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/markdown-fold.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.css">
+<script>let RUN_DELAY = 1000;</script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/customthemes15.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbrunner24.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaiengine23.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaipriming22.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbautocompletion20.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://code.datagridxl.com/datagridxl2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fflate@0.8.3/umd/index.min.js"></script>
+<script>
+  playerConfig={"panes":"Exec","lang":"sage","linked":true,"eval":false,"hide":["fullScreen"],"execute":true,"showRead":false,"collapsable":false,"playerPath":"https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main","name":"SageMath"};
+  playerMode={"showSage":true,"showNotebookInput":true,"showSageInput":true};
+  let API_KEY="";
+  let API_URL="";
+  let CURRENT_MODEL="";
+  let CURRENT_LANGUAGE="";
+  let SAGECELL_URL="https://sage-sk.org/";
+  let toggleEvalBtnsState=false;
+  let isFullWidthState=true;
+  window.hideCodeInputState=false;
+  let PRELOAD="";
+  let SETTINGS_PATH_NAME="settings.js";
+  let aiEduMode=true;
+  let aiCompleteMode=true;
+  let aiLogs=false;
+  window.aiLogs=false;
+  window.aiSettingsVisible=true;
+  window.aiLogsHistory=[];
+  makeMenu();
+  localize();
+  createTableOfContents();
+  loadStatus();
+  restoreUIState();
+  makeSageCells(playerConfig);
+  launchPlayer();
+  addControlPanel();
+  setupRunAllCells();
+  addSageCellNumbering();
+  enhanceSageCellsWithGlobalAutocomplete();
+  window.onload = initializeMarkdownCells;
+  let CUSTOM_CONTEXT="";
+  let CUSTOM_CSS="";
+  if (CUSTOM_CSS) applyCustomCSS(CUSTOM_CSS);
+  addCommentShortcutToAllSageCells();
+  applyPreloadCells();
+  setupBulkCellObserver();
+</script>
+<script src="settings.js"></script>
+</body>
+</html>

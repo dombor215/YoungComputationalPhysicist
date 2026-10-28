@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;polygon points='50,6 88,28 88,72 50,94 12,72 12,28' fill='%234CAF50'/&gt;&lt;text x='50' y='68' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='%23fff' text-anchor='middle'&gt;S&lt;/text&gt;&lt;/svg&gt;">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/es5-shim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/ansi_up.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/katex-auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/vendor/notebook.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/vendor/prism.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/notebook.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/css/nbpreview.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/css/nbplayer24.css">
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/texme@1.2.2"></script>
+<div id="main">
+<div id="notebook-holder"><div class="nb-notebook"><div class="nb-worksheet"><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137316999-1" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Faculty of Science, Pavol Jozef Šafárik University in Košice, Slovakia&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt; &lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt; &lt;/p&gt;" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137316999-1" class="markdown-preview" style="display: block;" data-original-markdown="&lt;p&gt;&lt;img style=&quot;float: right;&quot; src=&quot;https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;85&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Dominik Borovský&lt;sup&gt;1&lt;/sup&gt; &amp; Jozef Hanč&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2026, Faculty of Science, Pavol Jozef Šafárik University in Košice, Slovakia&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;a href=&quot;mailto:dominik.borovsky@student.upjs.sk&quot;&gt;dominik.borovsky@student.upjs.sk,&lt;/a&gt; &lt;sup&gt;2&lt;/sup&gt;&lt;a href=&quot;mailto:jozef.hanc@upjs.sk&quot;&gt;jozef.hanc@upjs.sk&lt;/a&gt; &lt;/p&gt;"><p><img style="float: right;" src="https://i.postimg.cc/YSFf8VV7/logo_PF_UPJS.png" alt="" width="100" height="85"></p>
+<p><strong>Authors:</strong> Dominik Borovský<sup>1</sup> &amp; Jozef Hanč<sup>2</sup></p>
+<p><em>2026, Faculty of Science, Pavol Jozef Šafárik University in Košice, Slovakia</em></p>
+<p><sup>1</sup><a href="mailto:dominik.borovsky@student.upjs.sk">dominik.borovsky@student.upjs.sk,</a> <sup>2</sup><a href="mailto:jozef.hanc@upjs.sk">jozef.hanc@upjs.sk</a> </p></div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137316999-2" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="# **Chapter 0: Welcome to SageMath!**" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137316999-2" class="markdown-preview" style="display: block;" data-original-markdown="# **Chapter 0: Welcome to SageMath!**"><h1 id="chapter-0-welcome-to-sagemath"><strong>Chapter 0: Welcome to SageMath!</strong></h1>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137316999-3" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Physics has always been done with three instruments: your head, a pencil and a lot of paper. Galileo managed with those, Newton too, and Einstein. But somewhere between them and us, physics grew. Today's questions - the collision of two black holes, the weather over Central Europe tomorrow, the hundreds of millions of collisions inside the LHC each second, a quantum dot a few hundred atoms wide - have left the pencil behind. Not because the physics got harder to *think*, but because the *amount of it* got out of hand. The fastest human alive, with a calculator and infinite patience, could not finish the arithmetic that a modern physics question demands by lunchtime.
+
+So today's physicist has a fourth instrument: the computer. Not as a replacement for the head, but as the head's drudge. Real physicists spend a striking part of their day *programming*: typing formulas for a machine to carry, because that is the only way to feed a real calculation - messy data, many coupled equations, a simulation run a thousand times - through to an answer.
+
+And here is the catch for a beginner. To go near that world you seemed to need two trades at once: a physicist's and a programmer's. This book is about the fact that you don't. There is a tool that lets you do serious, modern computational physics while writing nothing but formulas - **SageMath** - and this chapter is a look at what it can do before we get down to work." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137316999-3" class="markdown-preview" style="display: block;" data-original-markdown="Physics has always been done with three instruments: your head, a pencil and a lot of paper. Galileo managed with those, Newton too, and Einstein. But somewhere between them and us, physics grew. Today's questions - the collision of two black holes, the weather over Central Europe tomorrow, the hundreds of millions of collisions inside the LHC each second, a quantum dot a few hundred atoms wide - have left the pencil behind. Not because the physics got harder to *think*, but because the *amount of it* got out of hand. The fastest human alive, with a calculator and infinite patience, could not finish the arithmetic that a modern physics question demands by lunchtime.
+
+So today's physicist has a fourth instrument: the computer. Not as a replacement for the head, but as the head's drudge. Real physicists spend a striking part of their day *programming*: typing formulas for a machine to carry, because that is the only way to feed a real calculation - messy data, many coupled equations, a simulation run a thousand times - through to an answer.
+
+And here is the catch for a beginner. To go near that world you seemed to need two trades at once: a physicist's and a programmer's. This book is about the fact that you don't. There is a tool that lets you do serious, modern computational physics while writing nothing but formulas - **SageMath** - and this chapter is a look at what it can do before we get down to work."><p>Physics has always been done with three instruments: your head, a pencil and a lot of paper. Galileo managed with those, Newton too, and Einstein. But somewhere between them and us, physics grew. Today's questions - the collision of two black holes, the weather over Central Europe tomorrow, the hundreds of millions of collisions inside the LHC each second, a quantum dot a few hundred atoms wide - have left the pencil behind. Not because the physics got harder to <em>think</em>, but because the <em>amount of it</em> got out of hand. The fastest human alive, with a calculator and infinite patience, could not finish the arithmetic that a modern physics question demands by lunchtime.</p>
+<p>So today's physicist has a fourth instrument: the computer. Not as a replacement for the head, but as the head's drudge. Real physicists spend a striking part of their day <em>programming</em>: typing formulas for a machine to carry, because that is the only way to feed a real calculation - messy data, many coupled equations, a simulation run a thousand times - through to an answer.</p>
+<p>And here is the catch for a beginner. To go near that world you seemed to need two trades at once: a physicist's and a programmer's. This book is about the fact that you don't. There is a tool that lets you do serious, modern computational physics while writing nothing but formulas - <strong>SageMath</strong> - and this chapter is a look at what it can do before we get down to work.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137316999-4" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **0.1 What is SageMath?**
+
+SageMath is, honestly, hard to label. On the surface it is a *super-calculator* on which you type a formula and get an answer. One layer down it is *computer algebra software*: it keeps expressions symbolic and exact, in a similiar way you write them on paper. It draws publication-grade graphs, handles exact general solutions of equations, provides result with  arbitrary precission. And at its core it is the Python programming language, wearing physics clothes. When your work outgrows a single formula - and it will, the programming is already there under your fingers, waiting.
+
+To go throught this book, you do not need to install anything, own a powerful computer, or know any programming to follow this book. You mostly need a browser, some sense to observe patterns and eagerness to learn some new skills that are applicable beyond physics.
+
+&gt; **Note: where to run SageMath.** For simple, fast computations the quickest door is a SageMath cell: open https://sagecell.sagemath.org/ in a browser, type, evaluate. Our SageCell IDE at https://sage-sk.org/IDE/ offers the same cells in a more advanced mode. When your problem solving grows into something continuous, a *computational essay* mixing text, code and results, move to Jupyter notebooks. If you prefer the cloud, where the computations run on a web server, there is CoCalc (paid) and our SageMath AI Notebooks (free, suitable for lightweight work, you are already look at one right know, for more details and updates see https://sage-sk.org/). To install SageMath on your own computer, follow the instructions at https://www.sagemath.org/; on Windows the installation of SageMath (and full Jupyter environment alongside it) needs a little tweaking with WSL (Windows Subsystem for Linux), see https://doc.sagemath.org/html/en/installation/index.html. You can give it a try once you will deal with something more serious in the future on your own.
+
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;https://i.postimg.cc/FzYPJXLh/logo-sagemath.png&quot; alt=&quot;logo-sagemath&quot; width=&quot;70%&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;Fig. 0.1: The SageMath logo (source: &lt;a href=&quot;https://www.sagemath.org/&quot;&gt;sagemath.org&lt;/a&gt;).&lt;/em&gt;&lt;/p&gt;
+
+In this book we work in *notebooks*: documents where written explanations, mathematical formulas and executable cells of code live together, and every result sits right below the chunk of code that produced it. A finished notebook is a scientific document you can save, reopen, modify, hand over and re-run. The next section is a short tour of one." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137316999-4" class="markdown-preview" style="display: block;" data-original-markdown="## **0.1 What is SageMath?**
+
+SageMath is, honestly, hard to label. On the surface it is a *super-calculator* on which you type a formula and get an answer. One layer down it is *computer algebra software*: it keeps expressions symbolic and exact, in a similiar way you write them on paper. It draws publication-grade graphs, handles exact general solutions of equations, provides result with  arbitrary precission. And at its core it is the Python programming language, wearing physics clothes. When your work outgrows a single formula - and it will, the programming is already there under your fingers, waiting.
+
+To go throught this book, you do not need to install anything, own a powerful computer, or know any programming to follow this book. You mostly need a browser, some sense to observe patterns and eagerness to learn some new skills that are applicable beyond physics.
+
+&gt; **Note: where to run SageMath.** For simple, fast computations the quickest door is a SageMath cell: open https://sagecell.sagemath.org/ in a browser, type, evaluate. Our SageCell IDE at https://sage-sk.org/IDE/ offers the same cells in a more advanced mode. When your problem solving grows into something continuous, a *computational essay* mixing text, code and results, move to Jupyter notebooks. If you prefer the cloud, where the computations run on a web server, there is CoCalc (paid) and our SageMath AI Notebooks (free, suitable for lightweight work, you are already look at one right know, for more details and updates see https://sage-sk.org/). To install SageMath on your own computer, follow the instructions at https://www.sagemath.org/; on Windows the installation of SageMath (and full Jupyter environment alongside it) needs a little tweaking with WSL (Windows Subsystem for Linux), see https://doc.sagemath.org/html/en/installation/index.html. You can give it a try once you will deal with something more serious in the future on your own.
+
+
+&lt;p&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;https://i.postimg.cc/FzYPJXLh/logo-sagemath.png&quot; alt=&quot;logo-sagemath&quot; width=&quot;70%&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;Fig. 0.1: The SageMath logo (source: &lt;a href=&quot;https://www.sagemath.org/&quot;&gt;sagemath.org&lt;/a&gt;).&lt;/em&gt;&lt;/p&gt;
+
+In this book we work in *notebooks*: documents where written explanations, mathematical formulas and executable cells of code live together, and every result sits right below the chunk of code that produced it. A finished notebook is a scientific document you can save, reopen, modify, hand over and re-run. The next section is a short tour of one."><h2 id="01-what-is-sagemath"><strong>0.1 What is SageMath?</strong></h2>
+<p>SageMath is, honestly, hard to label. On the surface it is a <em>super-calculator</em> on which you type a formula and get an answer. One layer down it is <em>computer algebra software</em>: it keeps expressions symbolic and exact, in a similiar way you write them on paper. It draws publication-grade graphs, handles exact general solutions of equations, provides result with  arbitrary precission. And at its core it is the Python programming language, wearing physics clothes. When your work outgrows a single formula - and it will, the programming is already there under your fingers, waiting.</p>
+<p>To go throught this book, you do not need to install anything, own a powerful computer, or know any programming to follow this book. You mostly need a browser, some sense to observe patterns and eagerness to learn some new skills that are applicable beyond physics.</p>
+<blockquote>
+<p><strong>Note: where to run SageMath.</strong> For simple, fast computations the quickest door is a SageMath cell: open <a href="https://sagecell.sagemath.org/">https://sagecell.sagemath.org/</a> in a browser, type, evaluate. Our SageCell IDE at <a href="https://sage-sk.org/IDE/">https://sage-sk.org/IDE/</a> offers the same cells in a more advanced mode. When your problem solving grows into something continuous, a <em>computational essay</em> mixing text, code and results, move to Jupyter notebooks. If you prefer the cloud, where the computations run on a web server, there is CoCalc (paid) and our SageMath AI Notebooks (free, suitable for lightweight work, you are already look at one right know, for more details and updates see <a href="https://sage-sk.org/">https://sage-sk.org/</a>). To install SageMath on your own computer, follow the instructions at <a href="https://www.sagemath.org/">https://www.sagemath.org/</a>; on Windows the installation of SageMath (and full Jupyter environment alongside it) needs a little tweaking with WSL (Windows Subsystem for Linux), see <a href="https://doc.sagemath.org/html/en/installation/index.html">https://doc.sagemath.org/html/en/installation/index.html</a>. You can give it a try once you will deal with something more serious in the future on your own.</p>
+</blockquote>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://i.postimg.cc/FzYPJXLh/logo-sagemath.png" alt="logo-sagemath" width="70%"></p>
+<p style="text-align: center;"><em>Fig. 0.1: The SageMath logo (source: <a href="https://www.sagemath.org/">sagemath.org</a>).</em></p>
+
+<p>In this book we work in <em>notebooks</em>: documents where written explanations, mathematical formulas and executable cells of code live together, and every result sits right below the chunk of code that produced it. A finished notebook is a scientific document you can save, reopen, modify, hand over and re-run. The next section is a short tour of one.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137316999-5" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **0.2 The body of the notebook - cells**
+
+Every notebook is built from a series of **cells** - little chunks of content, either explanations (such as this one) or code.
+
+* **Text cells** carry the accompanying words for your computations. They are written in the simple *Markdown* formatting language, and they also support $\LaTeX$, which typesets great-looking mathematical formulas, e.g.:
+    * Euler's identity: $e^{i\pi} + 1 = 0$
+    * the Schrödinger equation:
+$$i\hbar \frac{\partial}{\partial t}\Psi(\vec{r},t)
+=
+\left[
+-\frac{\hbar^2}{2m}\nabla^2 + V(\vec{r},t)
+\right]\Psi(\vec{r},t)$$
+    * one you will meet again in Chapter 2, the trajectory of a kicked ball: $y = x\tan\alpha - \dfrac{g\,x^2}{2v_0^2\cos^2\alpha}$
+
+* **Code cells** contain executable Sage commands. The most important thing you can do with them is run them:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137316999-5" class="markdown-preview" style="display: block;" data-original-markdown="## **0.2 The body of the notebook - cells**
+
+Every notebook is built from a series of **cells** - little chunks of content, either explanations (such as this one) or code.
+
+* **Text cells** carry the accompanying words for your computations. They are written in the simple *Markdown* formatting language, and they also support $\LaTeX$, which typesets great-looking mathematical formulas, e.g.:
+    * Euler's identity: $e^{i\pi} + 1 = 0$
+    * the Schrödinger equation:
+$$i\hbar \frac{\partial}{\partial t}\Psi(\vec{r},t)
+=
+\left[
+-\frac{\hbar^2}{2m}\nabla^2 + V(\vec{r},t)
+\right]\Psi(\vec{r},t)$$
+    * one you will meet again in Chapter 2, the trajectory of a kicked ball: $y = x\tan\alpha - \dfrac{g\,x^2}{2v_0^2\cos^2\alpha}$
+
+* **Code cells** contain executable Sage commands. The most important thing you can do with them is run them:"><h2 id="02-the-body-of-the-notebook---cells"><strong>0.2 The body of the notebook - cells</strong></h2>
+<p>Every notebook is built from a series of <strong>cells</strong> - little chunks of content, either explanations (such as this one) or code.</p>
+<ul>
+<li><p><strong>Text cells</strong> carry the accompanying words for your computations. They are written in the simple <em>Markdown</em> formatting language, and they also support $\LaTeX$, which typesets great-looking mathematical formulas, e.g.:</p>
+<ul>
+<li>Euler's identity: $e^{i\pi} + 1 = 0$</li>
+<li>the Schrödinger equation:
+$$i\hbar \frac{\partial}{\partial t}\Psi(\vec{r},t)
+=
+\left[
+-\frac{\hbar^2}{2m}\nabla^2 + V(\vec{r},t)
+\right]\Psi(\vec{r},t)$$</li>
+<li>one you will meet again in Chapter 2, the trajectory of a kicked ball: $y = x\tan\alpha - \dfrac{g\,x^2}{2v_0^2\cos^2\alpha}$</li>
+</ul>
+</li>
+<li><p><strong>Code cells</strong> contain executable Sage commands. The most important thing you can do with them is run them:</p>
+</li>
+</ul>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># a line starting with a hash sign is a comment, ignored by Sage
+# store a greeting into the variable "greeting"
+greeting = "Hi there, this is Sage!"
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># display the value stored in the previous cell
+print(greeting)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137317001-6" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Run a cell with the Execute button, or with `Ctrl + Enter` (`Shift + Enter` runs it and moves on to the next cell). When a code cell runs, the commands are executed and either **the result is displayed** below the cell, or the data you entered (e.g. variables) **is stored in memory**.
+
+&gt; **Note: learning Markdown in the notebook.** Every text cell carries a small toolbar above it. Its **Edit** button reveals the raw Markdown source behind the rendered text, so you can see how any paragraph in this book was written, and the small **lightbulb** button opens a Markdown cheatsheet: a collection of ready-made snippets you can copy, paste into a cell and edit to your taste. The rendered result appears instantly below the cell, so you immediately see whether your Markdown did what you intended. One more tip for comfortable typing: set your keyboard to the **US English layout**. Programming, Markdown and $\LaTeX$ were all born on it, and symbols like `/`, `[`, `]`, `\` or `~` sit exactly where this book's code expects them, which makes writing code and Markdown considerably smoother.
+
+The notebook remembers. Code cells need to be **run in sequence**, starting from the first, so that intermediate results from earlier cells are available in the later ones. If you change a cell, **re-run** it: the new values overwrite the old ones and the outputs update.
+
+&gt; ***Try it out:** Change the text in `greeting` (the cell needs to be run to save the change) and display it again with `print()`. You can also invent your own variable and print it.*" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137317001-6" class="markdown-preview" style="display: block;" data-original-markdown="Run a cell with the Execute button, or with `Ctrl + Enter` (`Shift + Enter` runs it and moves on to the next cell). When a code cell runs, the commands are executed and either **the result is displayed** below the cell, or the data you entered (e.g. variables) **is stored in memory**.
+
+&gt; **Note: learning Markdown in the notebook.** Every text cell carries a small toolbar above it. Its **Edit** button reveals the raw Markdown source behind the rendered text, so you can see how any paragraph in this book was written, and the small **lightbulb** button opens a Markdown cheatsheet: a collection of ready-made snippets you can copy, paste into a cell and edit to your taste. The rendered result appears instantly below the cell, so you immediately see whether your Markdown did what you intended. One more tip for comfortable typing: set your keyboard to the **US English layout**. Programming, Markdown and $\LaTeX$ were all born on it, and symbols like `/`, `[`, `]`, `\` or `~` sit exactly where this book's code expects them, which makes writing code and Markdown considerably smoother.
+
+The notebook remembers. Code cells need to be **run in sequence**, starting from the first, so that intermediate results from earlier cells are available in the later ones. If you change a cell, **re-run** it: the new values overwrite the old ones and the outputs update.
+
+&gt; ***Try it out:** Change the text in `greeting` (the cell needs to be run to save the change) and display it again with `print()`. You can also invent your own variable and print it.*"><p>Run a cell with the Execute button, or with <code>Ctrl + Enter</code> (<code>Shift + Enter</code> runs it and moves on to the next cell). When a code cell runs, the commands are executed and either <strong>the result is displayed</strong> below the cell, or the data you entered (e.g. variables) <strong>is stored in memory</strong>.</p>
+<blockquote>
+<p><strong>Note: learning Markdown in the notebook.</strong> Every text cell carries a small toolbar above it. Its <strong>Edit</strong> button reveals the raw Markdown source behind the rendered text, so you can see how any paragraph in this book was written, and the small <strong>lightbulb</strong> button opens a Markdown cheatsheet: a collection of ready-made snippets you can copy, paste into a cell and edit to your taste. The rendered result appears instantly below the cell, so you immediately see whether your Markdown did what you intended. One more tip for comfortable typing: set your keyboard to the <strong>US English layout</strong>. Programming, Markdown and $\LaTeX$ were all born on it, and symbols like <code>/</code>, <code>[</code>, <code>]</code>, <code>\</code> or <code>~</code> sit exactly where this book's code expects them, which makes writing code and Markdown considerably smoother.</p>
+</blockquote>
+<p>The notebook remembers. Code cells need to be <strong>run in sequence</strong>, starting from the first, so that intermediate results from earlier cells are available in the later ones. If you change a cell, <strong>re-run</strong> it: the new values overwrite the old ones and the outputs update.</p>
+<blockquote>
+<p><em><strong>Try it out:</strong> Change the text in <code>greeting</code> (the cell needs to be run to save the change) and display it again with <code>print()</code>. You can also invent your own variable and print it.</em></p>
+</blockquote>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137317002-7" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **0.3 A first taste: Sage as a physicist's assistant**
+
+&gt; ***Note:** Do not worry if not everything in this section is clear yet. With a feel for patterns and formulas (plus a bit of English) you can work out what the individual commands mean. Try making small changes in the code and see how they play out. This chapter is a demonstration of what Sage can do for you; you will get to know everything properly in the chapters that follow.*
+
+Sage's favorite trick is the one that separates it from any pocket calculator: it treats formulas the way paper does. Store Newton's second law - not the numbers, the *law*:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137317002-7" class="markdown-preview" style="display: block;" data-original-markdown="## **0.3 A first taste: Sage as a physicist's assistant**
+
+&gt; ***Note:** Do not worry if not everything in this section is clear yet. With a feel for patterns and formulas (plus a bit of English) you can work out what the individual commands mean. Try making small changes in the code and see how they play out. This chapter is a demonstration of what Sage can do for you; you will get to know everything properly in the chapters that follow.*
+
+Sage's favorite trick is the one that separates it from any pocket calculator: it treats formulas the way paper does. Store Newton's second law - not the numbers, the *law*:"><h2 id="03-a-first-taste-sage-as-a-physicists-assistant"><strong>0.3 A first taste: Sage as a physicist's assistant</strong></h2>
+<blockquote>
+<p><em><strong>Note:</strong> Do not worry if not everything in this section is clear yet. With a feel for patterns and formulas (plus a bit of English) you can work out what the individual commands mean. Try making small changes in the code and see how they play out. This chapter is a demonstration of what Sage can do for you; you will get to know everything properly in the chapters that follow.</em></p>
+</blockquote>
+<p>Sage's favorite trick is the one that separates it from any pocket calculator: it treats formulas the way paper does. Store Newton's second law - not the numbers, the <em>law</em>:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># typical things in Sage: example of Newton's 2nd law
+var("F m a")                    # declare symbolic variables
+newtons_second_law = a == F/m  # store the law as an equation (double equals sign)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># pretty display of the stored law
+show(newtons_second_law)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># solve for the unknown m (mass)
+show(solve(newtons_second_law, m))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137317004-8" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="One stored equation, any unknown - and it scales up without effort. A system of three linear equations with three unknowns $x, y, z$:
+
+$$\begin{aligned}
+2x + y - z = 3 \\
+-x + 3y + 2z = 7 \\
+4x - 2y + z = 1
+\end{aligned}$$" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137317004-8" class="markdown-preview" style="display: block;" data-original-markdown="One stored equation, any unknown - and it scales up without effort. A system of three linear equations with three unknowns $x, y, z$:
+
+$$\begin{aligned}
+2x + y - z = 3 \\
+-x + 3y + 2z = 7 \\
+4x - 2y + z = 1
+\end{aligned}$$"><p>One stored equation, any unknown - and it scales up without effort. A system of three linear equations with three unknowns $x, y, z$:</p>
+<p>$$\begin{aligned}
+2x + y - z = 3 \\
+-x + 3y + 2z = 7 \\
+4x - 2y + z = 1
+\end{aligned}$$</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># solve the system, four lines of code
+var('x y z')
+eq1 = 2*x + y - z == 3
+eq2 = -x + 3*y + 2*z == 7
+eq3 = 4*x - 2*y + z == 1
+show(solve([eq1, eq2, eq3], x, y, z))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137317005-9" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Or take physics back in time: the equation of motion for a body thrown upward from a height $h_0$ with speed $v_0$,
+
+$$h = h_0 + v_0 t - \frac{1}{2}g t^2,$$
+
+and let Sage find the general formula for the times at which the body reaches a given height $h$ - rearranging that takes half a page by hand:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137317005-9" class="markdown-preview" style="display: block;" data-original-markdown="Or take physics back in time: the equation of motion for a body thrown upward from a height $h_0$ with speed $v_0$,
+
+$$h = h_0 + v_0 t - \frac{1}{2}g t^2,$$
+
+and let Sage find the general formula for the times at which the body reaches a given height $h$ - rearranging that takes half a page by hand:"><p>Or take physics back in time: the equation of motion for a body thrown upward from a height $h_0$ with speed $v_0$,</p>
+<p>$$h = h_0 + v_0 t - \frac{1}{2}g t^2,$$</p>
+<p>and let Sage find the general formula for the times at which the body reaches a given height $h$ - rearranging that takes half a page by hand:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># enter the equation of motion
+var("h h0 v0 t g")
+equation = h == h0 + v0*t - 1/2*g*t^2
+show(equation)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># general solution for the time t
+show(solve(equation, t))
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># substitute numerical values into the second solution
+values = [h0==100, v0==10, g==9.81, h==0]
+show(solve(equation, t)[1])
+show(solve(equation, t)[1].subs(values))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137317006-10" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Sage also cleans up after you, on expressions no pocket calculator would touch. Simplify, for instance, the expression $\sqrt{\dfrac{m^2 v^4}{m^2 v^2} \cdot x}$:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137317006-10" class="markdown-preview" style="display: block;" data-original-markdown="Sage also cleans up after you, on expressions no pocket calculator would touch. Simplify, for instance, the expression $\sqrt{\dfrac{m^2 v^4}{m^2 v^2} \cdot x}$:"><p>Sage also cleans up after you, on expressions no pocket calculator would touch. Simplify, for instance, the expression $\sqrt{\dfrac{m^2 v^4}{m^2 v^2} \cdot x}$:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># enter the expression
+var("m v x")
+expression = sqrt((m^2 * v^4)/(m^2 * v^2)*x)
+show(expression)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the expression simplified even further
+show(expression.canonicalize_radical())
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137317007-11" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="None of this is typing practice. Each of these moves - store the formula, solve for what you want, substitute numbers, simplify - is a move a working physicist makes daily, and each would cost minutes on paper, with every minute a chance for a slip. In Sage there is nothing to re-check: the steps that survive are exactly the ones that cannot go wrong. What remains your job - whether the physics you put in is the physics you meant - is the part worth your head." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137317007-11" class="markdown-preview" style="display: block;" data-original-markdown="None of this is typing practice. Each of these moves - store the formula, solve for what you want, substitute numbers, simplify - is a move a working physicist makes daily, and each would cost minutes on paper, with every minute a chance for a slip. In Sage there is nothing to re-check: the steps that survive are exactly the ones that cannot go wrong. What remains your job - whether the physics you put in is the physics you meant - is the part worth your head."><p>None of this is typing practice. Each of these moves - store the formula, solve for what you want, substitute numbers, simplify - is a move a working physicist makes daily, and each would cost minutes on paper, with every minute a chance for a slip. In Sage there is nothing to re-check: the steps that survive are exactly the ones that cannot go wrong. What remains your job - whether the physics you put in is the physics you meant - is the part worth your head.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137317007-12" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **0.4 Graphs as a first-class product**
+
+Enter a function and Sage draws it, precisely and instantly:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137317007-12" class="markdown-preview" style="display: block;" data-original-markdown="## **0.4 Graphs as a first-class product**
+
+Enter a function and Sage draws it, precisely and instantly:"><h2 id="04-graphs-as-a-first-class-product"><strong>0.4 Graphs as a first-class product</strong></h2>
+<p>Enter a function and Sage draws it, precisely and instantly:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># enter a function
+f(x) = 1/x*sin(x)
+show(f)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># a simple plot of f for x from -30 to 30
+show(plot(f, (x,-30,30)))
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137317007-13" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="&gt; ***Notice:** Although we formally entered $f(x) = \dfrac{1}{x} \cdot \sin x$, Sage automatically simplified it to $f(x) = \dfrac{\sin x}{x}$. It can do this on a much larger scale with far more complicated expressions too.*
+
+The same plot with &quot;pro&quot; formatting, ready to go into a lab report or even professional scientific article:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137317007-13" class="markdown-preview" style="display: block;" data-original-markdown="&gt; ***Notice:** Although we formally entered $f(x) = \dfrac{1}{x} \cdot \sin x$, Sage automatically simplified it to $f(x) = \dfrac{\sin x}{x}$. It can do this on a much larger scale with far more complicated expressions too.*
+
+The same plot with &quot;pro&quot; formatting, ready to go into a lab report or even professional scientific article:"><blockquote>
+<p><em><strong>Notice:</strong> Although we formally entered $f(x) = \dfrac{1}{x} \cdot \sin x$, Sage automatically simplified it to $f(x) = \dfrac{\sin x}{x}$. It can do this on a much larger scale with far more complicated expressions too.</em></p>
+</blockquote>
+<p>The same plot with "pro" formatting, ready to go into a lab report or even professional scientific article:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># the previous plot, formatted like a publication figure
+plot_f_formatted = plot(f, (x,-30,30), color="magenta")
+# colors are entered in English, e.g. "magenta", "red", "green", ...
+show(plot_f_formatted,
+     title=r"Plot of the function f = \dfrac{\sin x}{x}",
+     frame=True, gridlines=True)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137317008-14" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Where this stops being a calculator and becomes a physicist's tool is comparison: several variants of one phenomenon in one figure, with a legend. Here is damped oscillation, $x(t) = A\,e^{-bt}\cos(\omega t)$, under four different settings of amplitude, damping and frequency:" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137317008-14" class="markdown-preview" style="display: block;" data-original-markdown="Where this stops being a calculator and becomes a physicist's tool is comparison: several variants of one phenomenon in one figure, with a legend. Here is damped oscillation, $x(t) = A\,e^{-bt}\cos(\omega t)$, under four different settings of amplitude, damping and frequency:"><p>Where this stops being a calculator and becomes a physicist's tool is comparison: several variants of one phenomenon in one figure, with a legend. Here is damped oscillation, $x(t) = A\,e^{-bt}\cos(\omega t)$, under four different settings of amplitude, damping and frequency:</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># definition of damped oscillations depending on time t
+# and the parameters A, b, omega
+x(t, A, b, omega) = A * e^(-b*t) * cos(omega*t)
+show(x)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># curve 1: basic parameters (A=1, b=1, omega=1)
+plot_1 = plot(x(t, 1, 1, 1), (t, 0, 10),
+              legend_label=r"$A, b, \omega$ = 1, 1, 1")
+
+# curve 2: increased frequency (omega=5)
+plot_2 = plot(x(t, 1, 1, 5), (t, 0, 10),
+              color="red",
+              legend_label=r"$A, b, \omega$ = 1, 1, 5")
+
+# curve 3: reduced damping (b=0.3)
+plot_3 = plot(x(t, 1, 0.3, 1), (t, 0, 10),
+              color="green",
+              legend_label=r"$A, b, \omega$ = 1, 0.3, 1")
+
+# curve 4: increased amplitude (A=2)
+plot_4 = plot(x(t, 2, 1, 1), (t, 0, 10),
+              color="cyan",
+              legend_label=r"$A, b, \omega$ = 2, 1, 1",
+              frame=True, gridlines=True,
+              title="Damped oscillation for various parameters",
+              axes_labels=[r"$t$", r"$x(t)$"])
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># combine all the plots into one
+plot_final = plot_1 + plot_2 + plot_3 + plot_4
+
+# display the final plot
+show(plot_final)
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># save the plot in HD quality (300 DPI) as a PNG file
+plot_final.save("damped_oscillations.png", dpi=300)
+</script></div></div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137317009-15" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="Change a parameter, re-run, and the figure redraws. That rhythm - *formula, plot, adjust, compare, save* - is the daily bread of physics from the teaching lab to the research paper, and in Sage it takes a few cells. (The chapters that follow work the same way: motion in Chapter 2, more plotting in Chapter 3, energy in Chapter 4.)" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137317009-15" class="markdown-preview" style="display: block;" data-original-markdown="Change a parameter, re-run, and the figure redraws. That rhythm - *formula, plot, adjust, compare, save* - is the daily bread of physics from the teaching lab to the research paper, and in Sage it takes a few cells. (The chapters that follow work the same way: motion in Chapter 2, more plotting in Chapter 3, energy in Chapter 4.)"><p>Change a parameter, re-run, and the figure redraws. That rhythm - <em>formula, plot, adjust, compare, save</em> - is the daily bread of physics from the teaching lab to the research paper, and in Sage it takes a few cells. (The chapters that follow work the same way: motion in Chapter 2, more plotting in Chapter 3, energy in Chapter 4.)</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137317009-16" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **0.5 Why Sage, and why in this book?**
+
+The honest competition first. Paper, pen and a calculator do fine for a quadratic equation. A spreadsheet (e. g. MS Excel) will draw a graph, if you first compute a table of its points by hand. GeoGebra draws graphs nicely, but each parameter change is another round of clicking.
+
+Then the work grows. The data from a real experiment - Chapter 5 - arrives as a spreadsheet of a hundred measurements with uncertainties attached, and no calculator has a button for that. Loading it into a table, checking it for holes and typos, drawing it with error bars, fitting a model to it and reading the physics out of the fit - all of it Chapter 5 - are tasks where the pencil does not come back. This is the arithmetic that fills the days of modern physics, and it is exactly the arithmetic computers eat.
+
+SageMath is our vehicle for that journey because it meets a beginner where they stand:
+
+* **it reads like math.** `sqrt(2*h/g)` is the formula, not a program wrapped around it.
+* **it is exact when you want exact** and numerical when you ask - and it knows the difference (Chapter 1 is devoted to this).
+* **it is open and free**, running in any browser through the links above, or you can install it without any fees
+* **it does not hide the road ahead.** Sage is built on Python, the language of scientific computing, so what starts as a super-calculator typing trivial code grows, without changing tools, into the skills real research runs on.
+
+One honest warning before the first chapter: Sage will not think for you. It carries the arithmetic flawlessly, but what to compute, and whether the answer is sensible, stays your job. Chapter 1 starts exactly there: a stone, a well, and why the number of digits you report is a physics decision, not a calculator's." style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137317009-16" class="markdown-preview" style="display: block;" data-original-markdown="## **0.5 Why Sage, and why in this book?**
+
+The honest competition first. Paper, pen and a calculator do fine for a quadratic equation. A spreadsheet (e. g. MS Excel) will draw a graph, if you first compute a table of its points by hand. GeoGebra draws graphs nicely, but each parameter change is another round of clicking.
+
+Then the work grows. The data from a real experiment - Chapter 5 - arrives as a spreadsheet of a hundred measurements with uncertainties attached, and no calculator has a button for that. Loading it into a table, checking it for holes and typos, drawing it with error bars, fitting a model to it and reading the physics out of the fit - all of it Chapter 5 - are tasks where the pencil does not come back. This is the arithmetic that fills the days of modern physics, and it is exactly the arithmetic computers eat.
+
+SageMath is our vehicle for that journey because it meets a beginner where they stand:
+
+* **it reads like math.** `sqrt(2*h/g)` is the formula, not a program wrapped around it.
+* **it is exact when you want exact** and numerical when you ask - and it knows the difference (Chapter 1 is devoted to this).
+* **it is open and free**, running in any browser through the links above, or you can install it without any fees
+* **it does not hide the road ahead.** Sage is built on Python, the language of scientific computing, so what starts as a super-calculator typing trivial code grows, without changing tools, into the skills real research runs on.
+
+One honest warning before the first chapter: Sage will not think for you. It carries the arithmetic flawlessly, but what to compute, and whether the answer is sensible, stays your job. Chapter 1 starts exactly there: a stone, a well, and why the number of digits you report is a physics decision, not a calculator's."><h2 id="05-why-sage-and-why-in-this-book"><strong>0.5 Why Sage, and why in this book?</strong></h2>
+<p>The honest competition first. Paper, pen and a calculator do fine for a quadratic equation. A spreadsheet (e. g. MS Excel) will draw a graph, if you first compute a table of its points by hand. GeoGebra draws graphs nicely, but each parameter change is another round of clicking.</p>
+<p>Then the work grows. The data from a real experiment - Chapter 5 - arrives as a spreadsheet of a hundred measurements with uncertainties attached, and no calculator has a button for that. Loading it into a table, checking it for holes and typos, drawing it with error bars, fitting a model to it and reading the physics out of the fit - all of it Chapter 5 - are tasks where the pencil does not come back. This is the arithmetic that fills the days of modern physics, and it is exactly the arithmetic computers eat.</p>
+<p>SageMath is our vehicle for that journey because it meets a beginner where they stand:</p>
+<ul>
+<li><strong>it reads like math.</strong> <code>sqrt(2*h/g)</code> is the formula, not a program wrapped around it.</li>
+<li><strong>it is exact when you want exact</strong> and numerical when you ask - and it knows the difference (Chapter 1 is devoted to this).</li>
+<li><strong>it is open and free</strong>, running in any browser through the links above, or you can install it without any fees</li>
+<li><strong>it does not hide the road ahead.</strong> Sage is built on Python, the language of scientific computing, so what starts as a super-calculator typing trivial code grows, without changing tools, into the skills real research runs on.</li>
+</ul>
+<p>One honest warning before the first chapter: Sage will not think for you. It carries the arithmetic flawlessly, but what to compute, and whether the answer is sensible, stays your job. Chapter 1 starts exactly there: a stone, a well, and why the number of digits you report is a physics decision, not a calculator's.</p>
+</div>
+    </div><div class="nb-cell nb-markdown-cell">
+        <div class="editor-container">
+            <textarea id="md-editor-1793137317009-17" placeholder="Enter your Markdown or HTML here" class="markdown-textarea" data-original="## **Exercises**
+
+**Exercise 1.** Using the code from section 0.3 as a template, solve the system
+
+$$\begin{aligned}
+x + 2y - z = 0 \\
+2x - y + z = 5 \\
+3x + y + 2z = 7
+\end{aligned}$$
+
+with `solve()`. *(Extra: change the right-hand sides to your own numbers and check whether Sage reports no solution - yes, it does that too.)*
+
+**Exercise 2.** In the damped oscillation example, change the damping of curve 3 to `b=0.1` and the amplitude of curve 4 to `A=3`, re-run the cells, and describe in one sentence each what changes in the final figure. Add your own curve 5 with a color of your choice and a matching legend label.
+
+**Exercise 3.** *(Challenge)* Plot the *resonance curve* of a driven oscillation, $A(\omega) = \dfrac{1}{\sqrt{(1-\omega^2)^2 + (0.2\,\omega)^2}}$ for $\omega$ from 0 to 3, and reproduce the styling of the &quot;pro&quot; plot in section 0.4: a title, a frame, gridlines and axis labels $\omega$ and $A$. What does the peak of the curve tell you happens near $\omega = 1$?" style="display: none;"></textarea>
+        </div>
+        <div id="preview-1793137317009-17" class="markdown-preview" style="display: block;" data-original-markdown="## **Exercises**
+
+**Exercise 1.** Using the code from section 0.3 as a template, solve the system
+
+$$\begin{aligned}
+x + 2y - z = 0 \\
+2x - y + z = 5 \\
+3x + y + 2z = 7
+\end{aligned}$$
+
+with `solve()`. *(Extra: change the right-hand sides to your own numbers and check whether Sage reports no solution - yes, it does that too.)*
+
+**Exercise 2.** In the damped oscillation example, change the damping of curve 3 to `b=0.1` and the amplitude of curve 4 to `A=3`, re-run the cells, and describe in one sentence each what changes in the final figure. Add your own curve 5 with a color of your choice and a matching legend label.
+
+**Exercise 3.** *(Challenge)* Plot the *resonance curve* of a driven oscillation, $A(\omega) = \dfrac{1}{\sqrt{(1-\omega^2)^2 + (0.2\,\omega)^2}}$ for $\omega$ from 0 to 3, and reproduce the styling of the &quot;pro&quot; plot in section 0.4: a title, a frame, gridlines and axis labels $\omega$ and $A$. What does the peak of the curve tell you happens near $\omega = 1$?"><h2 id="exercises"><strong>Exercises</strong></h2>
+<p><strong>Exercise 1.</strong> Using the code from section 0.3 as a template, solve the system</p>
+<p>$$\begin{aligned}
+x + 2y - z = 0 \\
+2x - y + z = 5 \\
+3x + y + 2z = 7
+\end{aligned}$$</p>
+<p>with <code>solve()</code>. <em>(Extra: change the right-hand sides to your own numbers and check whether Sage reports no solution - yes, it does that too.)</em></p>
+<p><strong>Exercise 2.</strong> In the damped oscillation example, change the damping of curve 3 to <code>b=0.1</code> and the amplitude of curve 4 to <code>A=3</code>, re-run the cells, and describe in one sentence each what changes in the final figure. Add your own curve 5 with a color of your choice and a matching legend label.</p>
+<p><strong>Exercise 3.</strong> <em>(Challenge)</em> Plot the <em>resonance curve</em> of a driven oscillation, $A(\omega) = \dfrac{1}{\sqrt{(1-\omega^2)^2 + (0.2\,\omega)^2}}$ for $\omega$ from 0 to 3, and reproduce the styling of the "pro" plot in section 0.4: a title, a frame, gridlines and axis labels $\omega$ and $A$. What does the peak of the curve tell you happens near $\omega = 1$?</p>
+</div>
+    </div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage"># empty cells for exercises/experiments - feel free to add new cells anywhere by clicking "Add Bellow" button
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">
+</script></div></div><div class="nb-cell nb-code-cell"><div class="compute" style="display: none;"><script type="text/x-sage">
+</script></div></div></div></div></div>
+            
+        </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/embedded_sagecell_backup.js"></script>
+<script src="https://sage-sk.org/embedded_sagecell.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/vendor/js/FileSaver.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/nbplayerConfig.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/comment/comment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/markdown-fold.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.css">
+<script>let RUN_DELAY = 1000;</script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/customthemes15.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbrunner24.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaiengine23.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbaipriming22.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main/js/nbautocompletion20.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://code.datagridxl.com/datagridxl2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fflate@0.8.3/umd/index.min.js"></script>
+<script>
+  playerConfig={"panes":"Exec","lang":"sage","linked":true,"eval":false,"hide":["fullScreen"],"execute":true,"showRead":false,"collapsable":false,"playerPath":"https://cdn.jsdelivr.net/gh/JupyterPER/SageMathAINotebooks@main","name":"SageMath"};
+  playerMode={"showSage":true,"showNotebookInput":true,"showSageInput":true};
+  let API_KEY="";
+  let API_URL="";
+  let CURRENT_MODEL="";
+  let CURRENT_LANGUAGE="";
+  let SAGECELL_URL="https://sage-sk.org/";
+  let toggleEvalBtnsState=false;
+  let isFullWidthState=true;
+  window.hideCodeInputState=false;
+  let PRELOAD="";
+  let SETTINGS_PATH_NAME="settings.js";
+  let aiEduMode=true;
+  let aiCompleteMode=true;
+  let aiLogs=false;
+  window.aiLogs=false;
+  window.aiSettingsVisible=true;
+  window.aiLogsHistory=[];
+  makeMenu();
+  localize();
+  createTableOfContents();
+  loadStatus();
+  restoreUIState();
+  makeSageCells(playerConfig);
+  launchPlayer();
+  addControlPanel();
+  setupRunAllCells();
+  addSageCellNumbering();
+  enhanceSageCellsWithGlobalAutocomplete();
+  window.onload = initializeMarkdownCells;
+  let CUSTOM_CONTEXT="";
+  let CUSTOM_CSS="";
+  if (CUSTOM_CSS) applyCustomCSS(CUSTOM_CSS);
+  addCommentShortcutToAllSageCells();
+  applyPreloadCells();
+  setupBulkCellObserver();
+</script>
+<script src="settings.js"></script>
+</body>
+</html>

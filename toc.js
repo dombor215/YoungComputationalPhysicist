@@ -14,7 +14,7 @@ const tocData = {
                     path: "pages/02_Sage_ako_superkalkulačka.html"
                 }
             ]
-        }
+        },
         // Add more sections here as needed
         // {
         //     name: "Ďalšia kapitola",
